@@ -7,6 +7,7 @@ import cucumber.api.java.en.Then;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -18,12 +19,13 @@ public class PageCompositionDef {
 
     @Before
     public void setUp() {
-        System.setProperty("webdriver.chrome.driver",
+        /*System.setProperty("webdriver.chrome.driver",
                 "drivers\\chromedriver.exe");
         System.setProperty("phantomjs.binary.path",
-                "drivers\\phantomjs.exe");
-        driver = new ChromeDriver();
+                "drivers\\phantomjs.exe");*/
+        //driver = new ChromeDriver();
 // driver = new PhantomJSDriver();
+        driver = new HtmlUnitDriver();
     }
     @After
     public void tearDown() {
