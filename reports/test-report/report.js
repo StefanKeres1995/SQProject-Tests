@@ -5,7 +5,7 @@ formatter.feature({
   "keyword": "Feature"
 });
 formatter.scenario({
-  "name": "Landing page\u0027s title and text contains \"Contacts Orchestrator Solution\"",
+  "name": "Landing page\u0027s title and text contains \"Welcome to nginx!\"",
   "description": "",
   "keyword": "Scenario"
 });
