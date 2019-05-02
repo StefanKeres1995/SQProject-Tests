@@ -1,3 +1,5 @@
+package Cucumber;
+
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.And;
@@ -24,7 +26,7 @@ public class PageCompositionDef {
         System.setProperty("phantomjs.binary.path",
                 "drivers\\phantomjs.exe");*/
         //driver = new ChromeDriver();
-// driver = new PhantomJSDriver();
+        // driver = new PhantomJSDriver();
         
         driver = new HtmlUnitDriver();
     }
