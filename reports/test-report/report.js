@@ -20,8 +20,7 @@ formatter.match({
   "location": "ListContactsPageDef.iAccessTheLandingPageOfCOS()"
 });
 formatter.result({
-  "error_message": "junit.framework.ComparisonFailure: expected:\u003c[Contacts]\u003e but was:\u003c[]\u003e\r\n\tat junit.framework.Assert.assertEquals(Assert.java:100)\r\n\tat junit.framework.Assert.assertEquals(Assert.java:107)\r\n\tat junit.framework.TestCase.assertEquals(TestCase.java:269)\r\n\tat Cucumber.ListContactsPageDef.iAccessTheLandingPageOfCOS(ListContactsPageDef.java:43)\r\n\tat ✽.I access the landing page of COS(ListContactsPage.feature:7)\r\n",
-  "status": "failed"
+  "status": "passed"
 });
 formatter.step({
   "name": "the title of the page should be \"Contacts\"",
@@ -31,7 +30,7 @@ formatter.match({
   "location": "ListContactsPageDef.theTitleOfThePageShouldBe(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "status": "passed"
 });
 formatter.step({
   "name": "I can see the text \"Contacts\"",
@@ -41,7 +40,7 @@ formatter.match({
   "location": "ListContactsPageDef.iCanSeeTheText(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "status": "passed"
 });
 formatter.after({
   "status": "passed"

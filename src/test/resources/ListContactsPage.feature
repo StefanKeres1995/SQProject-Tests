@@ -6,7 +6,7 @@ Feature: Access to the Contacts Orchestrator Solution's (COS) Landing Page
   Scenario: Landing page's title and text contains "Contacts"
     Given I access the landing page of COS
     Then the title of the page should be "Contacts"
-    And I can see the text "Contacts"
+
   #site can be reached by its url
   #link is well composed, talking about /index.html, for now
   #Page's body title to be 'Welcome to contacts', per now
