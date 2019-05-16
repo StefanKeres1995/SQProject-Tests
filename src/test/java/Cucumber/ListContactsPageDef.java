@@ -17,7 +17,7 @@ import static junit.framework.TestCase.assertEquals;
 
 
 
-public class PageCompositionDef {
+public class ListContactsPageDef {
 
     @Before
     public void setUp() {
@@ -40,7 +40,7 @@ public class PageCompositionDef {
     @Given("^I access the landing page of COS$")
     public void iAccessTheLandingPageOfCOS() throws Throwable {
         driver.get("http://35.234.147.223/");
-        assertEquals ("Welcome to nginx!",driver.getTitle());
+        assertEquals ("Contacts",driver.getTitle());
     }
     @Then("^the title of the page should be \"([^\"]*)\"$")
     public void theTitleOfThePageShouldBe(String title) throws Throwable {
