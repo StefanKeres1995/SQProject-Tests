@@ -2,10 +2,19 @@ Feature: Access to the Contacts Orchestrator Solution's (COS) Landing Page
   As a user
   I want to access to the URL address provided for the landing page
   So that I can see the list of the contacts available
-  #no-error
-  Scenario: Landing page's title and text contains "Contacts"
+  Scenario: Landing page's title and text contains "Contacts Orchestrator Solution"
     Given I access the landing page of COS
-    Then the title of the page should be "Contacts"
+    Then the title of the page should be "Contacts Landing Page"
+    And I should see the same name as in the database position
+
+ #Feature: Access to the Contacts Orchestrator Solution's (COS) Landing Page
+ #  As a user
+ #  I want to access to the URL address provided for the landing page
+ #  So that I can see the list of the contacts available
+ #  #no-error
+ #  Scenario: Landing page's title and text contains "Contacts"
+ #    Given I access the landing page of COS
+ #    Then the title of the page should be "Contacts"
 
   #site can be reached by its url
   #link is well composed, talking about /index.html, for now
