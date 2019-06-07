@@ -1,25 +1,23 @@
+package Cucumber;
+
 import Model.Contact;
-import com.gargoylesoftware.htmlunit.BrowserVersion;
-import com.google.common.base.Function;
 import com.google.gson.Gson;
 import cucumber.api.java.After;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.*;
-import org.openqa.selenium.htmlunit.HtmlUnitDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -31,8 +29,8 @@ public class StepsDefUS1 {
     private static final String NULL_STRING = "--------------";
     static {
         Logger.getLogger("").setLevel(Level.OFF);
-        System.setProperty("webdriver.chrome.driver", "drivers\\chromedriver.exe");
-        System.setProperty("phantomjs.binary.path", "drivers\\phantomjs.exe");
+        System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
+        System.setProperty("phantomjs.binary.path", "drivers/phantomjs.exe");
         if (driver == null) {
             driver = new ChromeDriver();
             // driver = new PhantomJSDriver();
