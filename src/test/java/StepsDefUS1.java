@@ -27,7 +27,7 @@ public class StepsDefUS1 {
     private static final String NULL_STRING = "--------------";
     static {
         Logger.getLogger("").setLevel(Level.OFF);
-        System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "drivers/chromedriver");
         System.setProperty("phantomjs.binary.path", "drivers/phantomjs.exe");
         if (driver == null) {
             driver = new ChromeDriver();
