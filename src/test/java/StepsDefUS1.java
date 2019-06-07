@@ -1,5 +1,3 @@
-package Cucumber;
-
 import Model.Contact;
 import com.google.gson.Gson;
 import cucumber.api.java.After;
