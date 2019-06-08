@@ -36,7 +36,7 @@ public class StepsDefUS1 {
     private static final String NULL_STRING = "--------------";
     static {
         Logger.getLogger("").setLevel(Level.OFF);
-        System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "/home/glnaceg/chromedrivers/chromedriver76");
         System.setProperty("phantomjs.binary.path", "drivers/phantomjs.exe");
         System.setProperty("webdriver.gecko.driver", "drivers/geckodriver.exe");
         if (driver == null) {
@@ -51,6 +51,7 @@ public class StepsDefUS1 {
             driver = new ChromeDriver(options);*/
 
             ChromeOptions options = new ChromeOptions();
+            options.setBinary("/home/glnaceg/chromedrivers/chromedriver76");
             options.addArguments("--headless");
 
             driver = new ChromeDriver(options);
