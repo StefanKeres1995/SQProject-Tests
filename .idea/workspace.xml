@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="30f41c5b-6552-404b-9355-101023761eb9" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/reports/test-report/report.js" beforeDir="false" afterPath="$PROJECT_DIR$/reports/test-report/report.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/StepsDefUS1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/StepsDefUS1.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -20,8 +21,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/StepsDefUS1.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="38" selection-start-line="38" selection-end-line="38" />
+            <state relative-caret-position="187">
+              <caret line="35" column="91" selection-start-line="35" selection-start-column="91" selection-end-line="35" selection-end-column="91" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -209,44 +210,44 @@
       <updated>1559933562519</updated>
       <workItem from="1559933564628" duration="7730000" />
       <workItem from="1559988383157" duration="909000" />
-      <workItem from="1559989326862" duration="6592000" />
+      <workItem from="1559989326862" duration="8194000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="CucumberRunner - 2019.06.08 at 12h 34m 57s.xml">
+    <history-entry file="CucumberRunner - 2019.06.08 at 13h 38m 25s.xml">
       <configuration name="CucumberRunner" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CucumberRunner - 2019.06.08 at 12h 42m 21s.xml">
+    <history-entry file="CucumberRunner - 2019.06.08 at 13h 39m 39s.xml">
       <configuration name="CucumberRunner" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CucumberRunner - 2019.06.08 at 12h 43m 51s.xml">
+    <history-entry file="CucumberRunner - 2019.06.08 at 13h 40m 17s.xml">
       <configuration name="CucumberRunner" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CucumberRunner - 2019.06.08 at 12h 47m 54s.xml">
+    <history-entry file="CucumberRunner - 2019.06.08 at 13h 41m 08s.xml">
       <configuration name="CucumberRunner" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CucumberRunner - 2019.06.08 at 12h 49m 40s.xml">
+    <history-entry file="CucumberRunner - 2019.06.08 at 13h 41m 49s.xml">
       <configuration name="CucumberRunner" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CucumberRunner - 2019.06.08 at 13h 05m 23s.xml">
+    <history-entry file="CucumberRunner - 2019.06.08 at 13h 42m 11s.xml">
       <configuration name="CucumberRunner" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CucumberRunner - 2019.06.08 at 13h 14m 20s.xml">
+    <history-entry file="CucumberRunner - 2019.06.08 at 13h 42m 37s.xml">
       <configuration name="CucumberRunner" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CucumberRunner - 2019.06.08 at 13h 14m 53s.xml">
+    <history-entry file="CucumberRunner - 2019.06.08 at 13h 42m 58s.xml">
       <configuration name="CucumberRunner" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CucumberRunner - 2019.06.08 at 13h 16m 20s.xml">
+    <history-entry file="CucumberRunner - 2019.06.08 at 13h 43m 19s.xml">
       <configuration name="CucumberRunner" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CucumberRunner - 2019.06.08 at 13h 16m 59s.xml">
+    <history-entry file="CucumberRunner - 2019.06.08 at 13h 43m 53s.xml">
       <configuration name="CucumberRunner" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15231000" />
+    <option name="totallyTimeSpent" value="16833000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -261,7 +262,7 @@
     <frame x="708" y="0" width="1219" height="1047" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.10526316" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16307162" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -419,8 +420,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/StepsDefUS1.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="38" selection-start-line="38" selection-end-line="38" />
+        <state relative-caret-position="187">
+          <caret line="35" column="91" selection-start-line="35" selection-start-column="91" selection-end-line="35" selection-end-column="91" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

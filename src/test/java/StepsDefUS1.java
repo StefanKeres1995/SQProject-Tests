@@ -8,12 +8,16 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeDriverService;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
+import org.openqa.selenium.phantomjs.PhantomJSDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -29,29 +33,21 @@ public class StepsDefUS1 {
     private static final String NULL_STRING = "--------------";
     static {
         Logger.getLogger("").setLevel(Level.OFF);
-        System.setProperty("webdriver.chrome.driver", "/home/glnaceg/chromedriver/chromedriver");
+        System.setProperty("webdriver.chrome.driver", "./var/lib/jenkins/tools/chromedriver");
         System.setProperty("phantomjs.binary.path", "drivers/phantomjs.exe");
         System.setProperty("webdriver.gecko.driver", "drivers/geckodriver.exe");
         if (driver == null) {
-            ChromeOptions chromeOptions = new ChromeOptions();
-            chromeOptions.setBinary("/home/glnaceg/chromedriver/chromedriver");
-            //chromeOptions.setBinary("/drivers/chromedriver.exe");
 
-            chromeOptions.addArguments("--no-sandbox"); // Bypass OS security model
-            chromeOptions.addArguments("headless");
-            chromeOptions.addArguments("disable-infobars"); // disabling infobars
-            chromeOptions.addArguments("--disable-extensions"); // disabling extensions
-            chromeOptions.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
-            driver = new ChromeDriver(chromeOptions);
+            /*ChromeOptions options = new ChromeOptions();
+            options.setBinary("drivers/chromedriver.exe");
+            options.addArguments("--no-sandbox"); // Bypass OS security model, MUST BE THE VERY FIRST OPTION
+            options.addArguments("--headless");
+            options.addArguments("disable-infobars"); // disabling infobars
+            options.addArguments("--disable-extensions"); // disabling extensions
+            options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
+            driver = new ChromeDriver(options);*/
 
-
-            //driver = new FirefoxDriver();
-
-            /*DesiredCapabilities jsCapabilities = new DesiredCapabilities();
-            jsCapabilities.setJavascriptEnabled(true);
-            jsCapabilities.setCapability(PhantomJSDriverService.PHANTOMJS_EXECUTABLE_PATH_PROPERTY,
-                    "drivers/phantomjs.exe");
-            driver = new PhantomJSDriver(jsCapabilities);*/
+            driver = new ChromeDriver();
 
             //driver = new HtmlUnitDriver(true);
 
