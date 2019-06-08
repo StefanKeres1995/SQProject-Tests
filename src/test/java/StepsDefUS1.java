@@ -79,6 +79,7 @@ public class StepsDefUS1 {
         System.setProperty("webdriver.chrome.driver","drivers/chromedriver");
         //System.setProperty("phantomjs.binary.path", "drivers\\phantomjs.exe");
         ChromeOptions options = new ChromeOptions();
+        options.setBinary("/home/glnaceg/chromedrivers/chromedriver76");
         options.addArguments("--headless");
         options.addArguments("--no-sandbox");
         driver = new ChromeDriver(options);
