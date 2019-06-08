@@ -9,6 +9,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -30,15 +32,21 @@ public class StepsDefUS1 {
         Logger.getLogger("").setLevel(Level.OFF);
         //System.setProperty("webdriver.chrome.driver", "/home/glnaceg/chromedriver/chromedriver");
         //System.setProperty("phantomjs.binary.path", "drivers/phantomjs.exe");
+        System.setProperty("webdriver.gecko.driver", "drivers/geckodriver.exe");
         if (driver == null) {
-            ChromeOptions chromeOptions = new ChromeOptions();
+            /*ChromeOptions chromeOptions = new ChromeOptions();
             chromeOptions.setBinary("/home/glnaceg/chromedriver/chromedriver");
 
             chromeOptions.addArguments("--no-sandbox");
             chromeOptions.addArguments("--disable-dev-shm-usage");
-            driver = new ChromeDriver(chromeOptions);
+            driver = new ChromeDriver(chromeOptions);*/
+
+            //driver = new ChromeDriver();
+
+            //driver = new FirefoxDriver();
+
             // driver = new PhantomJSDriver();
-            //driver = new HtmlUnitDriver();
+            driver = new HtmlUnitDriver();
         }
         try {
             getHTML("http://contactsqs2.apphb.com/Service.svc/rest/contacts");
