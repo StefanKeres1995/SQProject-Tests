@@ -8,6 +8,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -27,10 +28,12 @@ public class StepsDefUS1 {
     private static final String NULL_STRING = "--------------";
     static {
         Logger.getLogger("").setLevel(Level.OFF);
-        System.setProperty("webdriver.chrome.driver", "/home/glnaceg/chromedriver/chromedriver");
-        System.setProperty("phantomjs.binary.path", "drivers/phantomjs.exe");
+        //System.setProperty("webdriver.chrome.driver", "/home/glnaceg/chromedriver/chromedriver");
+        //System.setProperty("phantomjs.binary.path", "drivers/phantomjs.exe");
         if (driver == null) {
-            driver = new ChromeDriver();
+            ChromeOptions chromeOptions = new ChromeOptions();
+            chromeOptions.setBinary("/home/glnaceg/chromedriver/chromedriver");
+            driver = new ChromeDriver(chromeOptions);
             // driver = new PhantomJSDriver();
             //driver = new HtmlUnitDriver();
         }
