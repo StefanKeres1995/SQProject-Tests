@@ -47,7 +47,11 @@ public class StepsDefUS1 {
             options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
             driver = new ChromeDriver(options);*/
 
-            driver = new ChromeDriver();
+            ChromeOptions options = new ChromeOptions();
+            options.addArguments("--headless");
+            options.setBinary("/var/lib/jenkins/tools/chromedriver/chromedriver");
+
+            driver = new ChromeDriver(options);
 
             //driver = new HtmlUnitDriver(true);
 
