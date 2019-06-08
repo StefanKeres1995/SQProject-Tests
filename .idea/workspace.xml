@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="30f41c5b-6552-404b-9355-101023761eb9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reports/test-report/report.js" beforeDir="false" afterPath="$PROJECT_DIR$/reports/test-report/report.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/StepsDefUS1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/StepsDefUS1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/US1.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/US1.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/StepsDefUS1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/StepsDefUS1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/US1.feature" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/US1.feature" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -25,8 +20,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/StepsDefUS1.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="31" column="94" selection-start-line="31" selection-start-column="94" selection-end-line="31" selection-end-column="94" />
+            <state relative-caret-position="323">
+              <caret line="36" column="76" selection-start-line="36" selection-start-column="76" selection-end-line="36" selection-end-column="76" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -214,7 +209,7 @@
       <updated>1559933562519</updated>
       <workItem from="1559933564628" duration="7730000" />
       <workItem from="1559988383157" duration="909000" />
-      <workItem from="1559989326862" duration="6041000" />
+      <workItem from="1559989326862" duration="6320000" />
     </task>
     <servers />
   </component>
@@ -251,7 +246,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14680000" />
+    <option name="totallyTimeSpent" value="14959000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -424,8 +419,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/StepsDefUS1.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="31" column="94" selection-start-line="31" selection-start-column="94" selection-end-line="31" selection-end-column="94" />
+        <state relative-caret-position="323">
+          <caret line="36" column="76" selection-start-line="36" selection-start-column="76" selection-end-line="36" selection-end-column="76" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
