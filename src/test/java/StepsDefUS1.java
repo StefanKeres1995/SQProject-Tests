@@ -1,10 +1,12 @@
 import Model.Contact;
+import com.gargoylesoftware.htmlunit.BrowserVersion;
 import com.google.gson.Gson;
 import cucumber.api.java.After;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -12,6 +14,7 @@ import org.openqa.selenium.chrome.ChromeDriverService;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import org.openqa.selenium.phantomjs.PhantomJSDriver;
+import org.openqa.selenium.phantomjs.PhantomJSDriverService;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -33,27 +36,33 @@ public class StepsDefUS1 {
     private static final String NULL_STRING = "--------------";
     static {
         Logger.getLogger("").setLevel(Level.OFF);
-        System.setProperty("webdriver.chrome.driver", "/home/glnaceg/chromedrivers/chromedriver73");
+        System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
         System.setProperty("phantomjs.binary.path", "drivers/phantomjs.exe");
         System.setProperty("webdriver.gecko.driver", "drivers/geckodriver.exe");
         if (driver == null) {
 
-            ChromeOptions options = new ChromeOptions();
+            /*ChromeOptions options = new ChromeOptions();
             options.setBinary("/home/glnaceg/chromedrivers/chromedriver73");
             options.addArguments("--no-sandbox"); // Bypass OS security model, MUST BE THE VERY FIRST OPTION
             options.addArguments("--headless");
             options.addArguments("disable-infobars"); // disabling infobars
             options.addArguments("--disable-extensions"); // disabling extensions
             options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
-            driver = new ChromeDriver(options);
-
-            /*ChromeOptions options = new ChromeOptions();
-            options.addArguments("--headless");
-            options.setBinary("/home/glnaceg/chromedrivers/chromedriver75");
-
             driver = new ChromeDriver(options);*/
 
-            //driver = new HtmlUnitDriver(true);
+            ChromeOptions options = new ChromeOptions();
+            options.addArguments("--headless");
+
+            driver = new ChromeDriver(options);
+
+
+
+            //driver = new ChromeDriver();
+
+            //driver = new HtmlUnitDriver();
+
+
+            //driver = new PhantomJSDriver();
 
         }
         try {

@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="30f41c5b-6552-404b-9355-101023761eb9" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/test-report/report.js" beforeDir="false" afterPath="$PROJECT_DIR$/reports/test-report/report.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/StepsDefUS1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/StepsDefUS1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/StepsDefUS1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/StepsDefUS1.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -20,8 +23,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/StepsDefUS1.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="35" column="97" selection-start-line="35" selection-start-column="97" selection-end-line="35" selection-end-column="97" />
+            <state relative-caret-position="324">
+              <caret line="55" column="45" selection-start-line="55" selection-start-column="45" selection-end-line="55" selection-end-column="45" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -72,9 +75,9 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="708" />
-    <option name="width" value="1219" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="953" />
+    <option name="width" value="974" />
     <option name="height" value="1047" />
   </component>
   <component name="ProjectView">
@@ -209,44 +212,45 @@
       <updated>1559933562519</updated>
       <workItem from="1559933564628" duration="7730000" />
       <workItem from="1559988383157" duration="909000" />
-      <workItem from="1559989326862" duration="10034000" />
+      <workItem from="1559989326862" duration="10232000" />
+      <workItem from="1560004459065" duration="1837000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="CucumberRunner - 2019.06.08 at 13h 38m 25s.xml">
+    <history-entry file="CucumberRunner - 2019.06.08 at 15h 38m 38s.xml">
       <configuration name="CucumberRunner" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CucumberRunner - 2019.06.08 at 13h 39m 39s.xml">
+    <history-entry file="CucumberRunner - 2019.06.08 at 15h 40m 17s.xml">
       <configuration name="CucumberRunner" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CucumberRunner - 2019.06.08 at 13h 40m 17s.xml">
+    <history-entry file="CucumberRunner - 2019.06.08 at 15h 40m 34s.xml">
       <configuration name="CucumberRunner" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CucumberRunner - 2019.06.08 at 13h 41m 08s.xml">
+    <history-entry file="CucumberRunner - 2019.06.08 at 15h 44m 27s.xml">
       <configuration name="CucumberRunner" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CucumberRunner - 2019.06.08 at 13h 41m 49s.xml">
+    <history-entry file="CucumberRunner - 2019.06.08 at 15h 47m 56s.xml">
       <configuration name="CucumberRunner" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CucumberRunner - 2019.06.08 at 13h 42m 11s.xml">
+    <history-entry file="CucumberRunner - 2019.06.08 at 15h 53m 09s.xml">
       <configuration name="CucumberRunner" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CucumberRunner - 2019.06.08 at 13h 42m 37s.xml">
+    <history-entry file="CucumberRunner - 2019.06.08 at 15h 54m 18s.xml">
       <configuration name="CucumberRunner" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CucumberRunner - 2019.06.08 at 13h 42m 58s.xml">
+    <history-entry file="CucumberRunner - 2019.06.08 at 15h 54m 52s.xml">
       <configuration name="CucumberRunner" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CucumberRunner - 2019.06.08 at 13h 43m 19s.xml">
+    <history-entry file="CucumberRunner - 2019.06.08 at 15h 58m 46s.xml">
       <configuration name="CucumberRunner" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CucumberRunner - 2019.06.08 at 13h 43m 53s.xml">
+    <history-entry file="CucumberRunner - 2019.06.08 at 15h 59m 46s.xml">
       <configuration name="CucumberRunner" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18673000" />
+    <option name="totallyTimeSpent" value="20708000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -258,10 +262,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="708" y="0" width="1219" height="1047" extended-state="0" />
+    <frame x="953" y="0" width="974" height="1047" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16307162" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21006565" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -399,13 +403,6 @@
     <entry file="file://$PROJECT_DIR$/.idea/uiDesigner.xml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/resources/US1.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/seleniumhq/selenium/htmlunit-driver/2.29.0/htmlunit-driver-2.29.0.jar!/org/openqa/selenium/htmlunit/HtmlUnitDriver.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="368">
@@ -417,10 +414,35 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resources/US1.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/seleniumhq/selenium/selenium-api/3.11.0/selenium-api-3.11.0.jar!/org/openqa/selenium/Capabilities.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/codeborne/phantomjsdriver/1.4.1/phantomjsdriver-1.4.1.jar!/org/openqa/selenium/phantomjs/PhantomJSDriver.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="29" column="29" lean-forward="true" selection-start-line="29" selection-start-column="29" selection-end-line="29" selection-end-column="29" />
+          <folding>
+            <element signature="e#980#981#0" expanded="true" />
+            <element signature="e#1033#1034#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/StepsDefUS1.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="35" column="97" selection-start-line="35" selection-start-column="97" selection-end-line="35" selection-end-column="97" />
+        <state relative-caret-position="324">
+          <caret line="55" column="45" selection-start-line="55" selection-start-column="45" selection-end-line="55" selection-end-column="45" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
