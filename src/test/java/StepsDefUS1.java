@@ -76,7 +76,7 @@ public class StepsDefUS1 {
     }*/
     @Before
     public void setUp() {
-        System.setProperty("webdriver.chrome.driver","drivers/chromedriver");
+        System.setProperty("webdriver.chrome.driver","/home/glnaceg/chromedrivers/chromedriver76");
         //System.setProperty("phantomjs.binary.path", "drivers\\phantomjs.exe");
         ChromeOptions options = new ChromeOptions();
         options.setBinary("/home/glnaceg/chromedrivers/chromedriver76");
