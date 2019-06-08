@@ -33,6 +33,9 @@ public class StepsDefUS1 {
         if (driver == null) {
             ChromeOptions chromeOptions = new ChromeOptions();
             chromeOptions.setBinary("/home/glnaceg/chromedriver/chromedriver");
+
+            chromeOptions.addArguments("--no-sandbox");
+            chromeOptions.addArguments("--disable-dev-shm-usage");
             driver = new ChromeDriver(chromeOptions);
             // driver = new PhantomJSDriver();
             //driver = new HtmlUnitDriver();
