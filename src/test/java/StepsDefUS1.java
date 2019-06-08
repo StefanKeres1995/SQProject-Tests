@@ -80,7 +80,7 @@ public class StepsDefUS1 {
         System.setProperty("webdriver.chrome.driver","drivers/chromedriver.exe");
         //System.setProperty("phantomjs.binary.path", "drivers\\phantomjs.exe");
         ChromeOptions options = new ChromeOptions();
-        //try binary later
+        options.setBinary("drivers/chromedriver.exe");
         options.addArguments("--headless");
         driver = new ChromeDriver(options);
         try {
