@@ -2,6 +2,7 @@ import Model.Contact;
 import com.gargoylesoftware.htmlunit.BrowserVersion;
 import com.google.gson.Gson;
 import cucumber.api.java.After;
+import cucumber.api.java.Before;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -12,9 +13,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeDriverService;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
-import org.openqa.selenium.phantomjs.PhantomJSDriver;
-import org.openqa.selenium.phantomjs.PhantomJSDriverService;
+//import org.openqa.selenium.phantomjs.PhantomJSDriver;
+//import org.openqa.selenium.phantomjs.PhantomJSDriverService;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -34,13 +36,13 @@ public class StepsDefUS1 {
     private static WebDriver driver;
     private static Contact[] contacts = null;
     private static final String NULL_STRING = "--------------";
-    static {
+    /*static {
         Logger.getLogger("").setLevel(Level.OFF);
-        System.setProperty("webdriver.chrome.driver", "/home/glnaceg/chromedrivers/chromedriver76");
-        System.setProperty("phantomjs.binary.path", "drivers/phantomjs.exe");
+        System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
+        //System.setProperty("phantomjs.binary.path", "drivers/phantomjs.exe");
         System.setProperty("webdriver.gecko.driver", "drivers/geckodriver.exe");
         if (driver == null) {
-
+*/
             /*ChromeOptions options = new ChromeOptions();
             options.setBinary("/home/glnaceg/chromedrivers/chromedriver73");
             options.addArguments("--no-sandbox"); // Bypass OS security model, MUST BE THE VERY FIRST OPTION
@@ -49,9 +51,9 @@ public class StepsDefUS1 {
             options.addArguments("--disable-extensions"); // disabling extensions
             options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
             driver = new ChromeDriver(options);*/
-
+/*
             ChromeOptions options = new ChromeOptions();
-            options.setBinary("/home/glnaceg/chromedrivers/chromedriver76");
+            //options.setBinary("drivers/chromedriver.exe");
             options.addArguments("--headless");
 
             driver = new ChromeDriver(options);
@@ -71,7 +73,22 @@ public class StepsDefUS1 {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }*/
+    @Before
+    public void setUp() {
+        System.setProperty("webdriver.chrome.driver","/drivers/chromedriver.exe");
+        //System.setProperty("phantomjs.binary.path", "drivers\\phantomjs.exe");
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--headless");
+        driver = new ChromeDriver(options);
+        try {
+        getHTML("http://contactsqs2.apphb.com/Service.svc/rest/contacts");
+        } catch (Exception e) {
+        e.printStackTrace();
+        }
+// driver = new PhantomJSDriver();
     }
+
 
     @Given("^I access the landing page of COS$")
     public void iAccessTheLandingPageOfCOS() throws Throwable {
@@ -118,7 +135,7 @@ public class StepsDefUS1 {
     public void iShouldSeeTheSameNameAsInTheDatabasePosition() throws InterruptedException {
         //Wait till he gets up;
         WebDriverWait wait = new WebDriverWait(driver, 10);
-        System.out.println(driver.getPageSource());
+        //System.out.println(driver.getPageSource());
         wait.until(ExpectedConditions.numberOfElementsToBeMoreThan(By.xpath(".//table[@id='contactsTable']/tbody/tr"), 0));
         //wait.until(ExpectedConditions.);
 
