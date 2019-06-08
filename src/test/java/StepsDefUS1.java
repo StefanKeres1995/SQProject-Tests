@@ -9,7 +9,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -30,23 +29,30 @@ public class StepsDefUS1 {
     private static final String NULL_STRING = "--------------";
     static {
         Logger.getLogger("").setLevel(Level.OFF);
-        //System.setProperty("webdriver.chrome.driver", "/home/glnaceg/chromedriver/chromedriver");
-        //System.setProperty("phantomjs.binary.path", "drivers/phantomjs.exe");
+        System.setProperty("webdriver.chrome.driver", "/home/glnaceg/chromedriver/chromedriver");
+        System.setProperty("phantomjs.binary.path", "drivers/phantomjs.exe");
         System.setProperty("webdriver.gecko.driver", "drivers/geckodriver.exe");
         if (driver == null) {
-            /*ChromeOptions chromeOptions = new ChromeOptions();
-            chromeOptions.setBinary("/home/glnaceg/chromedriver/chromedriver");
+            ChromeOptions chromeOptions = new ChromeOptions();
+            //chromeOptions.setBinary("/home/glnaceg/chromedriver/chromedriver");
+            //chromeOptions.setBinary("/drivers/chromedriver.exe");
 
-            chromeOptions.addArguments("--no-sandbox");
-            chromeOptions.addArguments("--disable-dev-shm-usage");
-            driver = new ChromeDriver(chromeOptions);*/
+            //chromeOptions.addArguments("--no-sandbox");
+            //chromeOptions.addArguments("--disable-dev-shm-usage");
+            chromeOptions.addArguments("headless");
+            driver = new ChromeDriver(chromeOptions);
 
-            //driver = new ChromeDriver();
 
             //driver = new FirefoxDriver();
 
-            // driver = new PhantomJSDriver();
-            driver = new HtmlUnitDriver();
+            /*DesiredCapabilities jsCapabilities = new DesiredCapabilities();
+            jsCapabilities.setJavascriptEnabled(true);
+            jsCapabilities.setCapability(PhantomJSDriverService.PHANTOMJS_EXECUTABLE_PATH_PROPERTY,
+                    "drivers/phantomjs.exe");
+            driver = new PhantomJSDriver(jsCapabilities);*/
+
+            //driver = new HtmlUnitDriver(true);
+
         }
         try {
             getHTML("http://contactsqs2.apphb.com/Service.svc/rest/contacts");
@@ -99,8 +105,8 @@ public class StepsDefUS1 {
     @And("^I should see the same name as in the database position$")
     public void iShouldSeeTheSameNameAsInTheDatabasePosition() throws InterruptedException {
         //Wait till he gets up;
-        WebDriverWait wait = new WebDriverWait(driver, 5);
-
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        System.out.println(driver.getPageSource());
         wait.until(ExpectedConditions.numberOfElementsToBeMoreThan(By.xpath(".//table[@id='contactsTable']/tbody/tr"), 0));
         //wait.until(ExpectedConditions.);
 
