@@ -29,7 +29,7 @@ public class StepsDefUS1 {
     private static final String NULL_STRING = "--------------";
     static {
         Logger.getLogger("").setLevel(Level.OFF);
-        //System.setProperty("webdriver.chrome.driver", "/home/glnaceg/chromedriver/chromedriver");
+        System.setProperty("webdriver.chrome.driver", "/home/glnaceg/chromedriver/chromedriver");
         System.setProperty("phantomjs.binary.path", "drivers/phantomjs.exe");
         System.setProperty("webdriver.gecko.driver", "drivers/geckodriver.exe");
         if (driver == null) {
@@ -37,9 +37,11 @@ public class StepsDefUS1 {
             chromeOptions.setBinary("/home/glnaceg/chromedriver/chromedriver");
             //chromeOptions.setBinary("/drivers/chromedriver.exe");
 
-            //chromeOptions.addArguments("--no-sandbox");
-            //chromeOptions.addArguments("--disable-dev-shm-usage");
+            chromeOptions.addArguments("--no-sandbox"); // Bypass OS security model
             chromeOptions.addArguments("headless");
+            chromeOptions.addArguments("disable-infobars"); // disabling infobars
+            chromeOptions.addArguments("--disable-extensions"); // disabling extensions
+            chromeOptions.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
             driver = new ChromeDriver(chromeOptions);
 
 
