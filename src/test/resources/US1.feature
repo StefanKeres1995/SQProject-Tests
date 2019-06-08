@@ -5,7 +5,7 @@ Feature: Access to the Contacts Orchestrator Solution's (COS) Landing Page
   Scenario: Landing page's title and text contains "Contacts Orchestrator Solution"
     Given I access the landing page of COS
     Then the title of the page should be "Contacts Landing Page"
-    And I should see the same name as in the database position
+    #And I should see the same name as in the database position
 
  #Feature: Access to the Contacts Orchestrator Solution's (COS) Landing Page
  #  As a user
