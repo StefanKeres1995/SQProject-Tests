@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="03117274-e1de-49ff-a184-bcebe5546a36" name="Default Changelist" comment="Trying paths to find the chromedriver on centos7">
-      <change beforePath="$PROJECT_DIR$/reports/test-report/formatter.js" beforeDir="false" afterPath="$PROJECT_DIR$/reports/test-report/formatter.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reports/test-report/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/reports/test-report/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reports/test-report/jquery-1.8.2.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/reports/test-report/jquery-1.8.2.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reports/test-report/report.js" beforeDir="false" afterPath="$PROJECT_DIR$/reports/test-report/report.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reports/test-report/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/reports/test-report/style.css" afterDir="false" />
+    <list default="true" id="03117274-e1de-49ff-a184-bcebe5546a36" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/StepsDefUS1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/StepsDefUS1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/StepsDefUS1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/StepsDefUS1.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -23,11 +18,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/StepsDefUS1.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="329">
-              <caret line="81" column="43" lean-forward="true" selection-start-line="81" selection-start-column="43" selection-end-line="81" selection-end-column="43" />
+            <state relative-caret-position="312">
+              <caret line="83" column="43" lean-forward="true" selection-start-line="83" selection-start-column="43" selection-end-line="83" selection-end-column="43" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -35,7 +30,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/reports/test-report/style.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="150">
@@ -257,6 +252,28 @@
       <workItem from="1559989326862" duration="10232000" />
       <workItem from="1560004459065" duration="1915000" />
     </task>
+    <task id="LOCAL-00001" summary="Trying paths to find the chromedriver on centos7">
+      <created>1560010529971</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1560010529971</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Jenkins changed the ip again">
+      <created>1560010717358</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1560010717358</updated>
+    </task>
+    <task id="LOCAL-00003" summary="chromedriver local try number 2">
+      <created>1560010884605</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1560010884605</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -292,7 +309,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23287000" />
+    <option name="totallyTimeSpent" value="23881000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -343,20 +360,22 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Trying paths to find the chromedriver on centos7" />
-    <option name="LAST_COMMIT_MESSAGE" value="Trying paths to find the chromedriver on centos7" />
+    <MESSAGE value="Jenkins changed the ip again" />
+    <MESSAGE value="chromedriver local try number 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="chromedriver local try number 2" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/StepsDefUS1.java</url>
-          <line>152</line>
+          <line>154</line>
           <properties />
           <option name="timeStamp" value="25" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/StepsDefUS1.java</url>
-          <line>158</line>
+          <line>160</line>
           <properties />
           <option name="timeStamp" value="26" />
         </line-breakpoint>
@@ -499,20 +518,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/StepsDefUS1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
-          <caret line="81" column="43" lean-forward="true" selection-start-line="81" selection-start-column="43" selection-end-line="81" selection-end-column="43" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/reports/test-report/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="82" column="9" lean-forward="true" selection-start-line="82" selection-start-column="9" selection-end-line="82" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/StepsDefUS1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="83" column="43" lean-forward="true" selection-start-line="83" selection-start-column="43" selection-end-line="83" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
