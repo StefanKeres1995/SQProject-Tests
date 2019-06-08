@@ -33,13 +33,13 @@ public class StepsDefUS1 {
     private static final String NULL_STRING = "--------------";
     static {
         Logger.getLogger("").setLevel(Level.OFF);
-        System.setProperty("webdriver.chrome.driver", "/home/glnaceg/chromedrivers/chromedriver74");
+        System.setProperty("webdriver.chrome.driver", "/home/glnaceg/chromedrivers/chromedriver73");
         System.setProperty("phantomjs.binary.path", "drivers/phantomjs.exe");
         System.setProperty("webdriver.gecko.driver", "drivers/geckodriver.exe");
         if (driver == null) {
 
             ChromeOptions options = new ChromeOptions();
-            options.setBinary("/home/glnaceg/chromedrivers/chromedriver74");
+            options.setBinary("/home/glnaceg/chromedrivers/chromedriver73");
             options.addArguments("--no-sandbox"); // Bypass OS security model, MUST BE THE VERY FIRST OPTION
             options.addArguments("--headless");
             options.addArguments("disable-infobars"); // disabling infobars
