@@ -76,9 +76,11 @@ public class StepsDefUS1 {
     }*/
     @Before
     public void setUp() {
+        //maybe the slashes
         System.setProperty("webdriver.chrome.driver","/drivers/chromedriver.exe");
         //System.setProperty("phantomjs.binary.path", "drivers\\phantomjs.exe");
         ChromeOptions options = new ChromeOptions();
+        //try binary later
         options.addArguments("--headless");
         driver = new ChromeDriver(options);
         try {
