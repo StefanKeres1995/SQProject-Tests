@@ -10,6 +10,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.BufferedReader;
@@ -28,12 +29,12 @@ public class StepsDefUS1 {
     private static final String NULL_STRING = "--------------";
     static {
         Logger.getLogger("").setLevel(Level.OFF);
-        System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "/home/glnaceg/chromedriver/chromedriver");
         System.setProperty("phantomjs.binary.path", "drivers/phantomjs.exe");
         if (driver == null) {
-            // driver = new ChromeDriver();
+            driver = new ChromeDriver();
             // driver = new PhantomJSDriver();
-            driver = new HtmlUnitDriver();
+            //driver = new HtmlUnitDriver();
         }
         try {
             getHTML("http://contactsqs2.apphb.com/Service.svc/rest/contacts");
@@ -84,10 +85,15 @@ public class StepsDefUS1 {
     }
 
     @And("^I should see the same name as in the database position$")
-    public void iShouldSeeTheSameNameAsInTheDatabasePosition() {
+    public void iShouldSeeTheSameNameAsInTheDatabasePosition() throws InterruptedException {
         //Wait till he gets up;
-        WebDriverWait wait = new WebDriverWait(driver, 10);
-        wait.until((ExpectedConditions.numberOfElementsToBeMoreThan(By.xpath(".//table[@id='contactsTable']/thead"),0)));
+        WebDriverWait wait = new WebDriverWait(driver, 5);
+
+        wait.until(ExpectedConditions.numberOfElementsToBeMoreThan(By.xpath(".//table[@id='contactsTable']/tbody/tr"), 0));
+        //wait.until(ExpectedConditions.);
+
+
+        //wait.until((ExpectedConditions.elementToBeClickable(By.xpath(".//table[@id='contactsTable']/thead"))));
 
         //Click on the paginator
         driver.findElements(By.xpath(".//div[@id='contactsTable_paginate']/span/a[3]")).get(0).click();

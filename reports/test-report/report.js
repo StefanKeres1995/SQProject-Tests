@@ -33,7 +33,7 @@ formatter.match({
   "location": "StepsDefUS1.iAccessTheLandingPageOfCOS()"
 });
 formatter.result({
-  "duration": 8476555500,
+  "duration": 8849510700,
   "status": "passed"
 });
 formatter.match({
@@ -46,18 +46,18 @@ formatter.match({
   "location": "StepsDefUS1.theTitleOfThePageShouldBe(String)"
 });
 formatter.result({
-  "duration": 11291900,
+  "duration": 17432200,
   "status": "passed"
 });
 formatter.match({
   "location": "StepsDefUS1.iShouldSeeTheSameNameAsInTheDatabasePosition()"
 });
 formatter.result({
-  "duration": 918706800,
+  "duration": 847947900,
   "status": "passed"
 });
 formatter.after({
-  "duration": 173274000,
+  "duration": 129442000,
   "status": "passed"
 });
 });
