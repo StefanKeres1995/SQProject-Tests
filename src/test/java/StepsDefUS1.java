@@ -1,5 +1,4 @@
 import Model.Contact;
-import com.gargoylesoftware.htmlunit.BrowserVersion;
 import com.gargoylesoftware.htmlunit.NicelyResynchronizingAjaxController;
 import com.gargoylesoftware.htmlunit.WebClient;
 import com.gargoylesoftware.htmlunit.html.HtmlPage;
@@ -10,22 +9,12 @@ import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeDriverService;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.htmlunit.HtmlUnitDriver;
-//import org.openqa.selenium.phantomjs.PhantomJSDriver;
-//import org.openqa.selenium.phantomjs.PhantomJSDriverService;
-import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.BufferedReader;
-import java.io.File;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -35,6 +24,9 @@ import java.util.logging.Logger;
 
 import static junit.framework.TestCase.assertEquals;
 
+//import org.openqa.selenium.phantomjs.PhantomJSDriver;
+//import org.openqa.selenium.phantomjs.PhantomJSDriverService;
+
 public class StepsDefUS1 {
     private static WebDriver driver;
 
@@ -43,13 +35,12 @@ public class StepsDefUS1 {
 
     private static Contact[] contacts = null;
     private static final String NULL_STRING = "--------------";
-    /*static {
+    static {
         Logger.getLogger("").setLevel(Level.OFF);
         System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
         //System.setProperty("phantomjs.binary.path", "drivers/phantomjs.exe");
         System.setProperty("webdriver.gecko.driver", "drivers/geckodriver.exe");
         if (driver == null) {
-*/
             /*ChromeOptions options = new ChromeOptions();
             options.setBinary("/home/glnaceg/chromedrivers/chromedriver73");
             options.addArguments("--no-sandbox"); // Bypass OS security model, MUST BE THE VERY FIRST OPTION
@@ -57,13 +48,6 @@ public class StepsDefUS1 {
             options.addArguments("disable-infobars"); // disabling infobars
             options.addArguments("--disable-extensions"); // disabling extensions
             options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
-<<<<<<< HEAD
-            driver = new ChromeDriver(options);
-
-=======
-            driver = new ChromeDriver(options);*/
-/*
->>>>>>> b6ab607d8f7a6f9c1aeee6744e1ff0a8ce8017b6
             ChromeOptions options = new ChromeOptions();
             //options.setBinary("drivers/chromedriver.exe");
             options.addArguments("--headless");
@@ -81,22 +65,12 @@ public class StepsDefUS1 {
         } catch (Exception e) {
             e.printStackTrace();
         }
-    }*/
+    }
+
     @Before
-    public void setUp() {
-        System.setProperty("webdriver.chrome.driver","/home/glnaceg/chromedrivers/chromedriver76");
-        //System.setProperty("phantomjs.binary.path", "drivers\\phantomjs.exe");
-        ChromeOptions options = new ChromeOptions();
-        options.setBinary("/home/glnaceg/chromedrivers/chromedriver76");
-        options.addArguments("--headless");
-        options.addArguments("--no-sandbox");
-        driver = new ChromeDriver(options);
-        try {
-        getHTML("http://contactsqs2.apphb.com/Service.svc/rest/contacts");
-        } catch (Exception e) {
-        e.printStackTrace();
-        }
-// driver = new PhantomJSDriver();
+    public void setUp()
+    {
+
     }
 
 
@@ -107,6 +81,16 @@ public class StepsDefUS1 {
         webClient.setAjaxController(new NicelyResynchronizingAjaxController());
         webClient.waitForBackgroundJavaScript(30 * 1000);
         webClient.waitForBackgroundJavaScriptStartingBefore(30 * 1000);
+        webClient.getOptions().setJavaScriptEnabled(true);
+        for (int i = 0; i < 20; i++){
+            List<?> strings = htmlPage.getByXPath(".//table[@id='contactsTable']/tbody/tr");
+            if(strings.size() != 0){
+                break;
+            }
+            synchronized (htmlPage){
+                htmlPage.wait(500);
+            }
+        }
         //assertEquals ("Contacts Landing Page",driver.getTitle());
         assertEquals ("Contacts Landing Page", htmlPage.getTitleText());
     }
@@ -150,17 +134,11 @@ public class StepsDefUS1 {
     @And("^I should see the same name as in the database position$")
     public void iShouldSeeTheSameNameAsInTheDatabasePosition() throws InterruptedException {
         //Wait till he gets up;
-<<<<<<< HEAD
+
         /*WebDriverWait wait = new WebDriverWait(driver, 10);
         System.out.println(driver.getPageSource());
         wait.until(ExpectedConditions.numberOfElementsToBeMoreThan(By.xpath(".//table[@id='contactsTable']/tbody/tr"), 0));*/
-=======
-        WebDriverWait wait = new WebDriverWait(driver, 10);
-        //System.out.println(driver.getPageSource());
-        wait.until(ExpectedConditions.numberOfElementsToBeMoreThan(By.xpath(".//table[@id='contactsTable']/tbody/tr"), 0));
->>>>>>> b6ab607d8f7a6f9c1aeee6744e1ff0a8ce8017b6
         //wait.until(ExpectedConditions.);
-
 
         //wait.until((ExpectedConditions.elementToBeClickable(By.xpath(".//table[@id='contactsTable']/thead"))));
 
@@ -168,14 +146,15 @@ public class StepsDefUS1 {
         //driver.findElements(By.xpath(".//div[@id='contactsTable_paginate']/span/a[3]")).get(0).click();
 
 
-        htmlPage.getByXPath(".//table[@id='contactsTable']/tbody/tr[2]/td");
+
 
         //Get value
         //Select select = new Select(driver.findElements(By.xpath(".//select[@name='contactsTable_length']")).get(0));
         //int pagination = Integer.parseInt(select.getFirstSelectedOption().getText());
 
-        /*List<WebElement> strings = driver.findElements(By.xpath(".//table[@id='contactsTable']/tbody/tr[2]/td"));
-        checkIntegrityOfContact(Integer.parseInt(strings.get(0).getText()) - 1, strings);*/
+//        List<WebElement> strings = driver.findElements(By.xpath(".//table[@id='contactsTable']/tbody/tr[2]/td"));
+        List<?> strings = htmlPage.getByXPath(".//table[@id='contactsTable']/tbody/tr[2]/td");
+        //checkIntegrityOfContact(Integer.parseInt(strings.get(0).getText()) - 1, strings);
     }
 
     private void checkIntegrityOfContact(int id, List<WebElement> strings){
