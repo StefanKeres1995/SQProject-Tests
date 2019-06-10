@@ -34,18 +34,18 @@ formatter.match({
   "location": "StepsDefUS1.iAccessTheLandingPageOfCOS()"
 });
 formatter.result({
-  "duration": 4851876800,
+  "duration": 5407317800,
   "status": "passed"
 });
 formatter.match({
   "location": "StepsDefUS1.iShouldSeeTheSameNameAsInTheDatabasePosition()"
 });
 formatter.result({
-  "duration": 96199400,
+  "duration": 113620800,
   "status": "passed"
 });
 formatter.after({
-  "duration": 26012800,
+  "duration": 6835100,
   "status": "passed"
 });
 });
