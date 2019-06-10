@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="30f41c5b-6552-404b-9355-101023761eb9" name="Default Changelist" comment="">
+=======
+    <list default="true" id="03117274-e1de-49ff-a184-bcebe5546a36" name="Default Changelist" comment="">
+>>>>>>> b6ab607d8f7a6f9c1aeee6744e1ff0a8ce8017b6
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -20,8 +24,13 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/StepsDefUS1.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="418">
               <caret line="81" column="59" selection-start-line="81" selection-start-column="59" selection-end-line="81" selection-end-column="59" />
+=======
+            <state relative-caret-position="227">
+              <caret line="78" column="8" selection-start-line="78" selection-start-column="8" selection-end-line="78" selection-end-column="8" />
+>>>>>>> b6ab607d8f7a6f9c1aeee6744e1ff0a8ce8017b6
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1886#2691#0" />
@@ -31,10 +40,42 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/reports/test-report/style.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="82" column="9" lean-forward="true" selection-start-line="82" selection-start-column="9" selection-end-line="82" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/resources/US1.feature">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="119">
               <caret line="7" column="19" lean-forward="true" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
+=======
+            <state relative-caret-position="17">
+              <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
+>>>>>>> b6ab607d8f7a6f9c1aeee6744e1ff0a8ce8017b6
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/Model/Contact.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/CucumberRunner.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -74,64 +115,81 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="953" />
-    <option name="width" value="974" />
-    <option name="height" value="1047" />
+    <option name="x" value="85" />
+    <option name="y" value="25" />
+    <option name="width" value="1750" />
+    <option name="height" value="980" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <OptionsSetting value="false" id="Update" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+<<<<<<< HEAD
+=======
+      <pane id="Scope" />
+>>>>>>> b6ab607d8f7a6f9c1aeee6744e1ff0a8ce8017b6
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="Repo-Tests" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Repo-Tests" type="462c0819:PsiDirectoryNode" />
+              <item name="ContactsTest" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ContactsTest" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Repo-Tests" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Repo-Tests" type="462c0819:PsiDirectoryNode" />
-              <item name=".idea" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Repo-Tests" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Repo-Tests" type="462c0819:PsiDirectoryNode" />
+              <item name="ContactsTest" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ContactsTest" type="462c0819:PsiDirectoryNode" />
               <item name="drivers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Repo-Tests" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Repo-Tests" type="462c0819:PsiDirectoryNode" />
+              <item name="ContactsTest" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ContactsTest" type="462c0819:PsiDirectoryNode" />
               <item name="reports" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Repo-Tests" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Repo-Tests" type="462c0819:PsiDirectoryNode" />
+              <item name="ContactsTest" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ContactsTest" type="462c0819:PsiDirectoryNode" />
               <item name="reports" type="462c0819:PsiDirectoryNode" />
               <item name="test-report" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Repo-Tests" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Repo-Tests" type="462c0819:PsiDirectoryNode" />
+              <item name="ContactsTest" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ContactsTest" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Repo-Tests" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Repo-Tests" type="462c0819:PsiDirectoryNode" />
+              <item name="ContactsTest" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ContactsTest" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ContactsTest" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ContactsTest" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Repo-Tests" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Repo-Tests" type="462c0819:PsiDirectoryNode" />
+              <item name="ContactsTest" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ContactsTest" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Repo-Tests" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Repo-Tests" type="462c0819:PsiDirectoryNode" />
+              <item name="ContactsTest" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ContactsTest" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="Model" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ContactsTest" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ContactsTest" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
@@ -141,7 +199,10 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
+<<<<<<< HEAD
       <pane id="Scope" />
+=======
+>>>>>>> b6ab607d8f7a6f9c1aeee6744e1ff0a8ce8017b6
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -216,9 +277,60 @@
       <workItem from="1560159866009" duration="17000" />
       <workItem from="1560159907842" duration="1616000" />
     </task>
+    <task id="LOCAL-00001" summary="Trying paths to find the chromedriver on centos7">
+      <created>1560010529971</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1560010529971</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Jenkins changed the ip again">
+      <created>1560010717358</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1560010717358</updated>
+    </task>
+    <task id="LOCAL-00003" summary="chromedriver local try number 2">
+      <created>1560010884605</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1560010884605</updated>
+    </task>
+    <task id="LOCAL-00004" summary="chromedriver local try number 3">
+      <created>1560011126250</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1560011126250</updated>
+    </task>
+    <task id="LOCAL-00005" summary="chromedriver local try number 4">
+      <created>1560011290249</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1560011290249</updated>
+    </task>
+    <task id="LOCAL-00006" summary="chromedriver local try number 5">
+      <created>1560011524781</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1560011524781</updated>
+    </task>
+    <task id="LOCAL-00007" summary="chromedriver local try number 6">
+      <created>1560013656228</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1560013656228</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TestHistory">
+<<<<<<< HEAD
     <history-entry file="CucumberRunner - 2019.06.08 at 15h 54m 52s.xml">
       <configuration name="CucumberRunner" configurationId="JUnit" />
     </history-entry>
@@ -247,11 +359,45 @@
       <configuration name="CucumberRunner" configurationId="JUnit" />
     </history-entry>
     <history-entry file="CucumberRunner - 2019.06.10 at 11h 12m 04s.xml">
+=======
+    <history-entry file="CucumberRunner - 2019.06.08 at 16h 51m 32s.xml">
+      <configuration name="CucumberRunner" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CucumberRunner - 2019.06.08 at 16h 51m 59s.xml">
+      <configuration name="CucumberRunner" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CucumberRunner - 2019.06.08 at 16h 52m 50s.xml">
+      <configuration name="CucumberRunner" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CucumberRunner - 2019.06.08 at 17h 02m 53s.xml">
+      <configuration name="CucumberRunner" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CucumberRunner - 2019.06.08 at 17h 03m 21s.xml">
+      <configuration name="CucumberRunner" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CucumberRunner - 2019.06.08 at 17h 04m 50s.xml">
+      <configuration name="CucumberRunner" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CucumberRunner - 2019.06.08 at 17h 05m 55s.xml">
+      <configuration name="CucumberRunner" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CucumberRunner - 2019.06.08 at 17h 12m 25s.xml">
+      <configuration name="CucumberRunner" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CucumberRunner - 2019.06.08 at 17h 13m 33s.xml">
+      <configuration name="CucumberRunner" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CucumberRunner - 2019.06.08 at 17h 27m 53s.xml">
+>>>>>>> b6ab607d8f7a6f9c1aeee6744e1ff0a8ce8017b6
       <configuration name="CucumberRunner" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="22790000" />
+=======
+    <option name="totallyTimeSpent" value="26769000" />
+>>>>>>> b6ab607d8f7a6f9c1aeee6744e1ff0a8ce8017b6
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -263,10 +409,14 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
+<<<<<<< HEAD
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.10554371" />
+=======
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.29932886" />
+>>>>>>> b6ab607d8f7a6f9c1aeee6744e1ff0a8ce8017b6
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -275,8 +425,8 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32936078" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.3997833" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3286119" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49932885" weight="0.39943343" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32936078" />
@@ -284,8 +434,13 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Terminal" order="10" weight="0.32936078" />
+<<<<<<< HEAD
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.32719395" />
+=======
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50067115" side_tool="true" weight="0.39943343" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.32719547" />
+>>>>>>> b6ab607d8f7a6f9c1aeee6744e1ff0a8ce8017b6
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -300,11 +455,22 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Trying paths to find the chromedriver on centos7" />
+    <MESSAGE value="Jenkins changed the ip again" />
+    <MESSAGE value="chromedriver local try number 2" />
+    <MESSAGE value="chromedriver local try number 3" />
+    <MESSAGE value="chromedriver local try number 4" />
+    <MESSAGE value="chromedriver local try number 5" />
+    <MESSAGE value="chromedriver local try number 6" />
+    <option name="LAST_COMMIT_MESSAGE" value="chromedriver local try number 6" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/StepsDefUS1.java</url>
+<<<<<<< HEAD
           <line>140</line>
           <properties />
           <option name="timeStamp" value="1" />
@@ -314,14 +480,34 @@
           <line>86</line>
           <properties />
           <option name="timeStamp" value="2" />
+=======
+          <line>153</line>
+          <properties />
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/StepsDefUS1.java</url>
+          <line>159</line>
+          <properties />
+          <option name="timeStamp" value="26" />
+>>>>>>> b6ab607d8f7a6f9c1aeee6744e1ff0a8ce8017b6
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>
       <configuration name="JUnit">
+<<<<<<< HEAD
         <watch expression="driver.findElements(By.xpath(&quot;.//table[@id='contactsTable']/tbody&quot;))" language="JAVA" />
         <watch expression="htmlPage.getByXPath(&quot;.//table[@id='contactsTable']/tbody/tr[2]/td&quot;);" language="JAVA" />
         <watch expression="htmlPage.getElementsById(&quot;&quot;)" language="JAVA" />
+=======
+        <watch expression="driver.findElement(By.id(&quot;resultPanel&quot;))" language="JAVA" />
+        <watch expression="driver.findElements(By.xpath(&quot;*//table[@id='contactsTable']/tbody/tr&quot;))" language="JAVA" />
+        <watch expression="driver.findElements(By.xpath(&quot;.//table[@id='contactsTable']/tbody/tr[2]/td&quot;))" language="JAVA" />
+        <watch expression="strings.get(0).getText()" language="JAVA" />
+        <watch expression="contacts[1].getGivenName()" language="JAVA" />
+        <watch expression="strings.get(1).getText()" language="JAVA" />
+>>>>>>> b6ab607d8f7a6f9c1aeee6744e1ff0a8ce8017b6
       </configuration>
     </watches-manager>
   </component>
@@ -379,29 +565,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/CucumberRunner.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/Model/Contact.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/reports/test-report/report.js">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/reports/test-report/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1411">
-          <caret line="83" column="10" selection-start-line="83" selection-start-column="10" selection-end-line="83" selection-end-column="10" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/reports/test-report/formatter.js">
       <provider selected="true" editor-type-id="text-editor" />
@@ -461,17 +626,50 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/test/resources/US1.feature">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="19" lean-forward="true" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/test/java/Model/Contact.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/CucumberRunner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resources/US1.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reports/test-report/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="82" column="9" lean-forward="true" selection-start-line="82" selection-start-column="9" selection-end-line="82" selection-end-column="9" />
+>>>>>>> b6ab607d8f7a6f9c1aeee6744e1ff0a8ce8017b6
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/StepsDefUS1.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="418">
           <caret line="81" column="59" selection-start-line="81" selection-start-column="59" selection-end-line="81" selection-end-column="59" />
+=======
+        <state relative-caret-position="227">
+          <caret line="78" column="8" selection-start-line="78" selection-start-column="8" selection-end-line="78" selection-end-column="8" />
+>>>>>>> b6ab607d8f7a6f9c1aeee6744e1ff0a8ce8017b6
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1886#2691#0" />
