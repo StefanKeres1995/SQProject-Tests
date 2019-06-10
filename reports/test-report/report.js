@@ -20,44 +20,32 @@ formatter.step({
   "keyword": "Given "
 });
 formatter.step({
-  "line": 7,
-  "name": "the title of the page should be \"Contacts Landing Page\"",
-  "keyword": "Then "
-});
-formatter.step({
+  "comments": [
+    {
+      "line": 7,
+      "value": "#Then the title of the page should be \"Contacts Landing Page\""
+    }
+  ],
   "line": 8,
   "name": "I should see the same name as in the database position",
-  "keyword": "And "
+  "keyword": "Then "
 });
 formatter.match({
   "location": "StepsDefUS1.iAccessTheLandingPageOfCOS()"
 });
 formatter.result({
-  "duration": 18854219500,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Contacts Landing Page",
-      "offset": 33
-    }
-  ],
-  "location": "StepsDefUS1.theTitleOfThePageShouldBe(String)"
-});
-formatter.result({
-  "duration": 44273900,
+  "duration": 4851876800,
   "status": "passed"
 });
 formatter.match({
   "location": "StepsDefUS1.iShouldSeeTheSameNameAsInTheDatabasePosition()"
 });
 formatter.result({
-  "duration": 454347700,
+  "duration": 96199400,
   "status": "passed"
 });
 formatter.after({
-  "duration": 168604600,
+  "duration": 26012800,
   "status": "passed"
 });
 });

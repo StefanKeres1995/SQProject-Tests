@@ -1,5 +1,8 @@
 import Model.Contact;
 import com.gargoylesoftware.htmlunit.BrowserVersion;
+import com.gargoylesoftware.htmlunit.NicelyResynchronizingAjaxController;
+import com.gargoylesoftware.htmlunit.WebClient;
+import com.gargoylesoftware.htmlunit.html.HtmlPage;
 import com.google.gson.Gson;
 import cucumber.api.java.After;
 import cucumber.api.java.en.And;
@@ -32,6 +35,10 @@ import static junit.framework.TestCase.assertEquals;
 
 public class StepsDefUS1 {
     private static WebDriver driver;
+
+    private static WebClient webClient;
+    private static HtmlPage htmlPage;
+
     private static Contact[] contacts = null;
     private static final String NULL_STRING = "--------------";
     static {
@@ -48,23 +55,19 @@ public class StepsDefUS1 {
             options.addArguments("disable-infobars"); // disabling infobars
             options.addArguments("--disable-extensions"); // disabling extensions
             options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
-            driver = new ChromeDriver(options);*/
+            driver = new ChromeDriver(options);
 
             ChromeOptions options = new ChromeOptions();
             options.setBinary("/home/glnaceg/chromedrivers/chromedriver76");
             options.addArguments("--headless");
 
-            driver = new ChromeDriver(options);
-
-
+            driver = new ChromeDriver(options);*/
 
             //driver = new ChromeDriver();
-
             //driver = new HtmlUnitDriver();
-
-
             //driver = new PhantomJSDriver();
 
+            webClient = new WebClient();
         }
         try {
             getHTML("http://contactsqs2.apphb.com/Service.svc/rest/contacts");
@@ -75,8 +78,13 @@ public class StepsDefUS1 {
 
     @Given("^I access the landing page of COS$")
     public void iAccessTheLandingPageOfCOS() throws Throwable {
-        driver.get("http://35.246.92.202/");
-        assertEquals ("Contacts Landing Page",driver.getTitle());
+        //driver.get("http://35.246.92.202/");
+        htmlPage = webClient.getPage("http://35.246.92.202/");
+        webClient.setAjaxController(new NicelyResynchronizingAjaxController());
+        webClient.waitForBackgroundJavaScript(30 * 1000);
+        webClient.waitForBackgroundJavaScriptStartingBefore(30 * 1000);
+        //assertEquals ("Contacts Landing Page",driver.getTitle());
+        assertEquals ("Contacts Landing Page", htmlPage.getTitleText());
     }
     @Then("^the title of the page should be \"([^\"]*)\"$")
     public void theTitleOfThePageShouldBe(String title) throws Throwable {
@@ -92,7 +100,8 @@ public class StepsDefUS1 {
 
     @After
     public void tearDown() throws Exception {
-        driver.close();
+        //driver.close();
+        webClient.close();
     }
 
     private static void getHTML(String urlToRead) throws Exception {
@@ -117,23 +126,26 @@ public class StepsDefUS1 {
     @And("^I should see the same name as in the database position$")
     public void iShouldSeeTheSameNameAsInTheDatabasePosition() throws InterruptedException {
         //Wait till he gets up;
-        WebDriverWait wait = new WebDriverWait(driver, 10);
+        /*WebDriverWait wait = new WebDriverWait(driver, 10);
         System.out.println(driver.getPageSource());
-        wait.until(ExpectedConditions.numberOfElementsToBeMoreThan(By.xpath(".//table[@id='contactsTable']/tbody/tr"), 0));
+        wait.until(ExpectedConditions.numberOfElementsToBeMoreThan(By.xpath(".//table[@id='contactsTable']/tbody/tr"), 0));*/
         //wait.until(ExpectedConditions.);
 
 
         //wait.until((ExpectedConditions.elementToBeClickable(By.xpath(".//table[@id='contactsTable']/thead"))));
 
         //Click on the paginator
-        driver.findElements(By.xpath(".//div[@id='contactsTable_paginate']/span/a[3]")).get(0).click();
+        //driver.findElements(By.xpath(".//div[@id='contactsTable_paginate']/span/a[3]")).get(0).click();
+
+
+        htmlPage.getByXPath(".//table[@id='contactsTable']/tbody/tr[2]/td");
 
         //Get value
         //Select select = new Select(driver.findElements(By.xpath(".//select[@name='contactsTable_length']")).get(0));
         //int pagination = Integer.parseInt(select.getFirstSelectedOption().getText());
 
-        List<WebElement> strings = driver.findElements(By.xpath(".//table[@id='contactsTable']/tbody/tr[2]/td"));
-        checkIntegrityOfContact(Integer.parseInt(strings.get(0).getText()) - 1, strings);
+        /*List<WebElement> strings = driver.findElements(By.xpath(".//table[@id='contactsTable']/tbody/tr[2]/td"));
+        checkIntegrityOfContact(Integer.parseInt(strings.get(0).getText()) - 1, strings);*/
     }
 
     private void checkIntegrityOfContact(int id, List<WebElement> strings){
