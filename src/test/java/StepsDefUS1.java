@@ -13,6 +13,7 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.phantomjs.PhantomJSDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -103,10 +104,14 @@ public class StepsDefUS1 {
             //webClient = new WebClient();
 
             //driver = new FirefoxDriver(getDefaultFirefoxOptions());
-            FirefoxOptions options = new FirefoxOptions();
-            options.setBinary("/home/glnaceg/firefox/geckodriverx");
 
-            driver = new FirefoxDriver(options);
+            System.setProperty("webdriver.gecko.driver", "/home/glnaceg/firefox/geckodriverx");
+            DesiredCapabilities dc = new DesiredCapabilities();
+            dc.setCapability("marionatte", false);
+            FirefoxOptions opt = new FirefoxOptions();
+            opt.setBinary("/home/glnaceg/firefox/geckodriverx");
+            opt.merge(dc);
+            FirefoxDriver driver =  new FirefoxDriver(opt);
             try {
                 getHTML("http://contactsqs2.apphb.com/Service.svc/rest/contacts");
             } catch (Exception e) {
