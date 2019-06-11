@@ -109,7 +109,7 @@ public class StepsDefUS1 {
             DesiredCapabilities dc = new DesiredCapabilities();
             dc.setCapability("marionatte", false);
             FirefoxOptions opt = new FirefoxOptions();
-            opt.setBinary("/home/glnaceg/firefox/geckodriverx");
+            //opt.setBinary("/home/glnaceg/firefox/geckodriverx");
             opt.merge(dc);
             FirefoxDriver driver =  new FirefoxDriver(opt);
             try {

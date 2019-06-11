@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="30f41c5b-6552-404b-9355-101023761eb9" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/StepsDefUS1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/StepsDefUS1.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
@@ -21,7 +22,7 @@
         <entry file="file://$PROJECT_DIR$/src/test/java/StepsDefUS1.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="311">
-              <caret line="111" column="64" selection-start-line="111" selection-start-column="64" selection-end-line="111" selection-end-column="64" />
+              <caret line="111" column="14" selection-end-line="265" selection-end-column="1" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1500#3037#0" />
@@ -182,7 +183,7 @@
       <workItem from="1560264473806" duration="219000" />
       <workItem from="1560273505412" duration="177000" />
       <workItem from="1560273708388" duration="8273000" />
-      <workItem from="1560285220896" duration="2700000" />
+      <workItem from="1560285220896" duration="3344000" />
     </task>
     <servers />
   </component>
@@ -219,7 +220,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14411000" />
+    <option name="totallyTimeSpent" value="15055000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -451,7 +452,7 @@
     <entry file="file://$PROJECT_DIR$/src/test/java/StepsDefUS1.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="311">
-          <caret line="111" column="64" selection-start-line="111" selection-start-column="64" selection-end-line="111" selection-end-column="64" />
+          <caret line="111" column="14" selection-end-line="265" selection-end-column="1" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1500#3037#0" />
