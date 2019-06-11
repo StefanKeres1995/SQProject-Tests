@@ -249,8 +249,8 @@ public class StepsDefUS1 {
                 .setBinary("/home/glnaceg/firefox/geckodriverx")
                 //.addArguments("--marionette-port")
                 //.addArguments("2828")
-                .addArguments("--headless")
+                .addArguments("--headless");
                 //.addPreference("devtools.selfxss.count", 100) //this helps to use console and evaluate xpath, e.g. $x(".//xpath")
-                .setLogLevel(TRACE);
+                //.setLogLevel(TRACE);
     }
 }
