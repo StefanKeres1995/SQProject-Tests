@@ -2,15 +2,18 @@ import Model.Contact;
 import com.gargoylesoftware.htmlunit.NicelyResynchronizingAjaxController;
 import com.gargoylesoftware.htmlunit.WebClient;
 import com.gargoylesoftware.htmlunit.html.HtmlPage;
+import com.google.common.base.Predicate;
 import com.google.gson.Gson;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.phantomjs.PhantomJSDriver;
+import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -23,6 +26,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import static junit.framework.TestCase.assertEquals;
+import static org.openqa.selenium.firefox.FirefoxDriverLogLevel.TRACE;
 
 //import org.openqa.selenium.phantomjs.PhantomJSDriver;
 //import org.openqa.selenium.phantomjs.PhantomJSDriverService;
@@ -35,12 +39,48 @@ public class StepsDefUS1 {
 
     private static Contact[] contacts = null;
     private static final String NULL_STRING = "--------------";
-    static {
+    /*static {
         Logger.getLogger("").setLevel(Level.OFF);
         System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
         //System.setProperty("phantomjs.binary.path", "drivers/phantomjs.exe");
-        System.setProperty("webdriver.gecko.driver", "drivers/geckodriver.exe");
+        System.setProperty("webdriver.gecko.driver", "drivers/geckodriverx.exe");
         if (driver == null) {
+            /*ChromeOptions options = new ChromeOptions();
+            options.setBinary("/home/glnaceg/chromedrivers/chromedriver73");
+            options.addArguments("--no-sandbox"); // Bypass OS security model, MUST BE THE VERY FIRST OPTION
+            options.addArguments("--headless");
+            options.addArguments("disable-infobars"); // disabling infobars
+            options.addArguments("--disable-extensions"); // disabling extensions
+            options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
+            ChromeOptions options = new ChromeOptions();
+            //options.setBinary("drivers/chromedriver.exe");
+            options.addArguments("--headless");
+
+            driver = new ChromeDriver(options);
+
+            //driver = new ChromeDriver();
+            //driver = new HtmlUnitDriver();
+            //driver = new PhantomJSDriver();
+
+            //webClient = new WebClient();
+
+            /*driver = new FirefoxDriver(getDefaultFirefoxOptions());
+
+        }
+        try {
+            getHTML("http://contactsqs2.apphb.com/Service.svc/rest/contacts");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }*/
+
+    @Before
+    public void setUp()
+    {
+        if(driver == null) {
+            System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
+            //System.setProperty("phantomjs.binary.path", "drivers/phantomjs.exe");
+            System.setProperty("webdriver.gecko.driver", "drivers/geckodriverx.exe");
             /*ChromeOptions options = new ChromeOptions();
             options.setBinary("/home/glnaceg/chromedrivers/chromedriver73");
             options.addArguments("--no-sandbox"); // Bypass OS security model, MUST BE THE VERY FIRST OPTION
@@ -58,26 +98,31 @@ public class StepsDefUS1 {
             //driver = new HtmlUnitDriver();
             //driver = new PhantomJSDriver();
 
-            webClient = new WebClient();
-        }
-        try {
-            getHTML("http://contactsqs2.apphb.com/Service.svc/rest/contacts");
-        } catch (Exception e) {
-            e.printStackTrace();
+            //webClient = new WebClient();
+
+            driver = new FirefoxDriver(getDefaultFirefoxOptions());
+            try {
+                getHTML("http://contactsqs2.apphb.com/Service.svc/rest/contacts");
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
     }
 
-    @Before
-    public void setUp()
-    {
-
+    @After
+    public void tearDown() throws Exception {
+        //System.clearProperty("webdriver.gecko.driver");
+        //driver.close();
+        //We won't close up here. These two commands shall be used in Jenkins, after the automaticCode runs.
+        //ps -ef | grep firefox | awk '{print $2}' | xargs kill -9
+        //ps -ef | grep geckodriverx | awk '{print $2}' | xargs kill -9
     }
-
 
     @Given("^I access the landing page of COS$")
     public void iAccessTheLandingPageOfCOS() throws Throwable {
-        //driver.get("http://35.246.92.202/");
-        htmlPage = webClient.getPage("http://35.246.92.202/");
+        driver.get("http://35.246.50.214/");
+
+        /*htmlPage = webClient.getPage("http://35.246.92.202/");
         webClient.setAjaxController(new NicelyResynchronizingAjaxController());
         webClient.waitForBackgroundJavaScript(30 * 1000);
         webClient.waitForBackgroundJavaScriptStartingBefore(30 * 1000);
@@ -90,26 +135,22 @@ public class StepsDefUS1 {
             synchronized (htmlPage){
                 htmlPage.wait(500);
             }
-        }
-        //assertEquals ("Contacts Landing Page",driver.getTitle());
-        assertEquals ("Contacts Landing Page", htmlPage.getTitleText());
+        }*/
+        assertEquals ("Contacts Landing Page",driver.getTitle());
+        //assertEquals ("Contacts Landing Page", htmlPage.getTitleText());
     }
+
     @Then("^the title of the page should be \"([^\"]*)\"$")
     public void theTitleOfThePageShouldBe(String title) throws Throwable {
         WebDriverWait wait = new WebDriverWait(driver, 3);
         wait.until(ExpectedConditions.titleContains(title));
     }
+
     @And("^I can see the text \"([^\"]*)\"$")
     public void iCanSeeTheText(String text) throws Throwable {
         WebDriverWait wait = new WebDriverWait(driver, 3);
         wait.until(ExpectedConditions.textToBePresentInElement(
                 driver.findElement(By.tagName("body")),text));
-    }
-
-    @After
-    public void tearDown() throws Exception {
-        //driver.close();
-        webClient.close();
     }
 
     private static void getHTML(String urlToRead) throws Exception {
@@ -134,13 +175,22 @@ public class StepsDefUS1 {
     @And("^I should see the same name as in the database position$")
     public void iShouldSeeTheSameNameAsInTheDatabasePosition() throws InterruptedException {
         //Wait till he gets up;
+        boolean asd = true;
+        do {
+            try {
+                WebDriverWait wait = new WebDriverWait(driver, 10);
+                wait.until((ExpectedConditions.elementToBeClickable(By.xpath(".//table[@id='contactsTable']/thead"))));
+                asd = true;
+            } catch (TimeoutException ex) {
+                asd = false;
+                driver = new FirefoxDriver(getDefaultFirefoxOptions());
+                driver.get("http://35.246.50.214/");
+            }
+        }while(!asd);
+        //wait.until(ExpectedConditions.numberOfElementsToBe(By.xpath(".//table[@id='contactsTable']/tbody/tr"), 10));
 
-        /*WebDriverWait wait = new WebDriverWait(driver, 10);
-        System.out.println(driver.getPageSource());
-        wait.until(ExpectedConditions.numberOfElementsToBeMoreThan(By.xpath(".//table[@id='contactsTable']/tbody/tr"), 0));*/
         //wait.until(ExpectedConditions.);
 
-        //wait.until((ExpectedConditions.elementToBeClickable(By.xpath(".//table[@id='contactsTable']/thead"))));
 
         //Click on the paginator
         //driver.findElements(By.xpath(".//div[@id='contactsTable_paginate']/span/a[3]")).get(0).click();
@@ -152,9 +202,9 @@ public class StepsDefUS1 {
         //Select select = new Select(driver.findElements(By.xpath(".//select[@name='contactsTable_length']")).get(0));
         //int pagination = Integer.parseInt(select.getFirstSelectedOption().getText());
 
-//        List<WebElement> strings = driver.findElements(By.xpath(".//table[@id='contactsTable']/tbody/tr[2]/td"));
-        List<?> strings = htmlPage.getByXPath(".//table[@id='contactsTable']/tbody/tr[2]/td");
-        //checkIntegrityOfContact(Integer.parseInt(strings.get(0).getText()) - 1, strings);
+        List<WebElement> strings = driver.findElements(By.xpath(".//table[@id='contactsTable']/tbody/tr[2]/td"));
+        //List<?> strings = htmlPage.getByXPath(".//table[@id='contactsTable']/tbody/tr[2]/td");
+        checkIntegrityOfContact(Integer.parseInt(strings.get(0).getText()) - 1, strings);
     }
 
     private void checkIntegrityOfContact(int id, List<WebElement> strings){
@@ -189,5 +239,15 @@ public class StepsDefUS1 {
         }else{
             assertEquals(contacts[id].getCity(), strings.get(5).getText());
         }
+    }
+
+    static FirefoxOptions getDefaultFirefoxOptions() {
+        return new FirefoxOptions()
+                .setLegacy(false)
+                .addArguments("--marionette-port")
+                .addArguments("2828")
+                .addArguments("--headless")
+                .addPreference("devtools.selfxss.count", 100) //this helps to use console and evaluate xpath, e.g. $x(".//xpath")
+                .setLogLevel(TRACE);
     }
 }
