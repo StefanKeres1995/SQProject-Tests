@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="30f41c5b-6552-404b-9355-101023761eb9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reports/test-report/report.js" beforeDir="false" afterPath="$PROJECT_DIR$/reports/test-report/report.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/StepsDefUS1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/StepsDefUS1.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
@@ -22,8 +20,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/StepsDefUS1.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="250" column="18" selection-start-line="250" selection-start-column="18" selection-end-line="250" selection-end-column="18" />
+            <state relative-caret-position="340">
+              <caret line="84" column="12" lean-forward="true" selection-start-line="84" selection-start-column="12" selection-end-line="84" selection-end-column="12" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1500#3037#0" />
@@ -183,7 +181,7 @@
       <workItem from="1560264473806" duration="219000" />
       <workItem from="1560273505412" duration="177000" />
       <workItem from="1560273708388" duration="8273000" />
-      <workItem from="1560285220896" duration="697000" />
+      <workItem from="1560285220896" duration="884000" />
     </task>
     <servers />
   </component>
@@ -220,7 +218,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12408000" />
+    <option name="totallyTimeSpent" value="12595000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -270,16 +268,6 @@
     <option name="version" value="1" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/StepsDefUS1.java</url>
-          <line>83</line>
-          <properties />
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <watches-manager>
       <configuration name="JUnit">
         <watch expression="driver.getPageSource()" language="JAVA" />
@@ -443,8 +431,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/StepsDefUS1.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="250" column="18" selection-start-line="250" selection-start-column="18" selection-end-line="250" selection-end-column="18" />
+        <state relative-caret-position="340">
+          <caret line="84" column="12" lean-forward="true" selection-start-line="84" selection-start-column="12" selection-end-line="84" selection-end-column="12" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1500#3037#0" />
