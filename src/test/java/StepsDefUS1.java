@@ -81,7 +81,7 @@ public class StepsDefUS1 {
             System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
             //System.setProperty("phantomjs.binary.path", "drivers/phantomjs.exe");
             //System.setProperty("webdriver.gecko.driver", "drivers/geckodriverx.exe");
-            System.setProperty("webdriver.gecko.driver", "/home/glnaceg/firefox/");
+            System.setProperty("webdriver.gecko.driver", "/home/glnaceg/firefox/geckodriverx");
             /*ChromeOptions options = new ChromeOptions();
             options.setBinary("/home/glnaceg/chromedrivers/chromedriver73");
             options.addArguments("--no-sandbox"); // Bypass OS security model, MUST BE THE VERY FIRST OPTION
@@ -245,6 +245,7 @@ public class StepsDefUS1 {
     static FirefoxOptions getDefaultFirefoxOptions() {
         return new FirefoxOptions()
                 .setLegacy(false)
+                .setBinary("/home/glnaceg/firefox/geckodriverx")
                 .addArguments("--marionette-port")
                 .addArguments("2828")
                 .addArguments("--headless")
