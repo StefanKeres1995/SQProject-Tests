@@ -250,7 +250,7 @@ public class StepsDefUS1 {
                 //.addArguments("--marionette-port")
                 //.addArguments("2828")
                 .addArguments("--headless")
-                .addPreference("devtools.selfxss.count", 100) //this helps to use console and evaluate xpath, e.g. $x(".//xpath")
+                //.addPreference("devtools.selfxss.count", 100) //this helps to use console and evaluate xpath, e.g. $x(".//xpath")
                 .setLogLevel(TRACE);
     }
 }
