@@ -247,7 +247,7 @@ public class StepsDefUS1 {
         return new FirefoxOptions()
                 //.setLegacy(false)
                 .setBinary("/home/glnaceg/firefox/geckodriverx")
-                .setHeadless(true);
+                //.setHeadless(true);
                 //.addArguments("--marionette-port")
                 //.addArguments("2828")
                 //.addArguments("--headless");
