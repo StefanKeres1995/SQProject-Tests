@@ -103,7 +103,10 @@ public class StepsDefUS1 {
             //webClient = new WebClient();
 
             //driver = new FirefoxDriver(getDefaultFirefoxOptions());
-            driver = new FirefoxDriver();
+            FirefoxOptions options = new FirefoxOptions();
+            options.setBinary("/home/glnaceg/firefox/geckodriverx");
+
+            driver = new FirefoxDriver(options);
             try {
                 getHTML("http://contactsqs2.apphb.com/Service.svc/rest/contacts");
             } catch (Exception e) {
