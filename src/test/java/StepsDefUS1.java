@@ -97,7 +97,6 @@ public class StepsDefUS1 {
             options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
             options.addArguments("--marionette-port");
             options.addArguments("2828");
-            options.addArguments("--remote-debugging-port=9222");
             options.addArguments("--ignore-certificate-errors");
             options.addArguments("--disable-popup-blocking");
             options.addArguments("--incognito");
