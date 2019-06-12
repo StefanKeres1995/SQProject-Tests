@@ -13,6 +13,7 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxDriverLogLevel;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.phantomjs.PhantomJSDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -118,6 +119,7 @@ public class StepsDefUS1 {
             //dc.setCapability("marionatte", false);
             FirefoxOptions opt = new FirefoxOptions();
             opt.setBinary("/home/glnaceg/firefox/geckodriverx");
+            opt.setLogLevel(FirefoxDriverLogLevel.ERROR);
             opt.setHeadless(true);
             //opt.merge(dc);
             FirefoxDriver driver =  new FirefoxDriver(opt);
