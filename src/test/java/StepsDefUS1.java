@@ -114,11 +114,12 @@ public class StepsDefUS1 {
             //driver = new FirefoxDriver(getDefaultFirefoxOptions());
 
             System.setProperty("webdriver.gecko.driver", "/home/glnaceg/firefox/geckodriverx");
-            DesiredCapabilities dc = new DesiredCapabilities();
+            //DesiredCapabilities dc = new DesiredCapabilities();
             //dc.setCapability("marionatte", false);
             FirefoxOptions opt = new FirefoxOptions();
             opt.setBinary("/home/glnaceg/firefox/geckodriverx");
-            opt.merge(dc);
+            opt.setHeadless(true);
+            //opt.merge(dc);
             FirefoxDriver driver =  new FirefoxDriver(opt);
             try {
                 getHTML("http://contactsqs2.apphb.com/Service.svc/rest/contacts");
