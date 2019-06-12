@@ -82,9 +82,9 @@ public class StepsDefUS1 {
     public void setUp()
     {
         if(driver == null) {
-            System.setProperty("webdriver.chrome.driver", "/home/glnaceg/chromedrivers/chromedriver76");
+            //System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
             //System.setProperty("phantomjs.binary.path", "drivers/phantomjs.exe");
-            //System.setProperty("webdriver.gecko.driver", "drivers/geckodriverx.exe");
+            System.setProperty("webdriver.gecko.driver", "drivers/geckodriverx.exe");
             //String path = "/home/glnaceg/firefox/geckodriverx";
             //System.setProperty("webdriver.gecko.driver", "/home/glnaceg/firefox/geckodriverx");
 
@@ -108,21 +108,21 @@ public class StepsDefUS1 {
 
             //driver = new ChromeDriver();
             //driver = new HtmlUnitDriver();
-            //driver = new PhantomJSDriver();
 
             //webClient = new WebClient();
 
-            //driver = new FirefoxDriver(getDefaultFirefoxOptions());
+            driver = new FirefoxDriver(getDefaultFirefoxOptions());
 
-            System.setProperty("webdriver.gecko.driver", "/home/glnaceg/firefox/geckodriverx");
+            //System.setProperty("webdriver.gecko.driver", "/home/glnaceg/firefox/geckodriverx");
             //DesiredCapabilities dc = new DesiredCapabilities();
             //dc.setCapability("marionatte", false);
-            FirefoxOptions opt = new FirefoxOptions();
+            /*FirefoxOptions opt = new FirefoxOptions();
             opt.setBinary("/home/glnaceg/firefox/geckodriverx");
             opt.setLogLevel(FirefoxDriverLogLevel.ERROR);
             opt.setHeadless(true);
             //opt.merge(dc);
-            FirefoxDriver driver =  new FirefoxDriver(opt);
+            FirefoxDriver driver =  new FirefoxDriver(opt);*/
+
             try {
                 getHTML("http://contactsqs2.apphb.com/Service.svc/rest/contacts");
             } catch (Exception e) {
@@ -265,11 +265,11 @@ public class StepsDefUS1 {
 
     static FirefoxOptions getDefaultFirefoxOptions() {
         return new FirefoxOptions()
-                //.setLegacy(false)
-                .setBinary("/home/glnaceg/firefox/geckodriverx");
-                //.setHeadless(true);
-                //.addArguments("--marionette-port")
-                //.addArguments("2828")
+                .setLegacy(false)
+                //.setBinary("drivers/geckodriverx.exe")
+                .setHeadless(true)
+                .addArguments("--marionette-port")
+                .addArguments("2828");
                 //.addArguments("--headless");
                 //.addPreference("devtools.selfxss.count", 100) //this helps to use console and evaluate xpath, e.g. $x(".//xpath")
                 //.setLogLevel(TRACE);
