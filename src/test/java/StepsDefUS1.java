@@ -10,6 +10,8 @@ import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import org.openqa.selenium.*;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.phantomjs.PhantomJSDriver;
@@ -79,23 +81,29 @@ public class StepsDefUS1 {
     public void setUp()
     {
         if(driver == null) {
-            System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
+            System.setProperty("webdriver.chrome.driver", "/home/glnaceg/chromedrivers/chromedriver76");
             //System.setProperty("phantomjs.binary.path", "drivers/phantomjs.exe");
             //System.setProperty("webdriver.gecko.driver", "drivers/geckodriverx.exe");
-            String path = "/home/glnaceg/firefox/geckodriverx";
-            System.setProperty("webdriver.gecko.driver", "/home/glnaceg/firefox/geckodriverx");
-            /*ChromeOptions options = new ChromeOptions();
-            options.setBinary("/home/glnaceg/chromedrivers/chromedriver73");
+            //String path = "/home/glnaceg/firefox/geckodriverx";
+            //System.setProperty("webdriver.gecko.driver", "/home/glnaceg/firefox/geckodriverx");
+
+
+            ChromeOptions options = new ChromeOptions();
+            options.setBinary("/home/glnaceg/chromedrivers/chromedriver76");
             options.addArguments("--no-sandbox"); // Bypass OS security model, MUST BE THE VERY FIRST OPTION
             options.addArguments("--headless");
             options.addArguments("disable-infobars"); // disabling infobars
             options.addArguments("--disable-extensions"); // disabling extensions
             options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
-            ChromeOptions options = new ChromeOptions();
-            //options.setBinary("drivers/chromedriver.exe");
-            options.addArguments("--headless");
+            options.addArguments("--marionette-port");
+            options.addArguments("2828");
 
-            driver = new ChromeDriver(options);*/
+            driver = new ChromeDriver(options);
+
+
+
+
+
 
             //driver = new ChromeDriver();
             //driver = new HtmlUnitDriver();
@@ -105,13 +113,13 @@ public class StepsDefUS1 {
 
             //driver = new FirefoxDriver(getDefaultFirefoxOptions());
 
-            System.setProperty("webdriver.gecko.driver", "/home/glnaceg/firefox/geckodriverx");
+            /*System.setProperty("webdriver.gecko.driver", "/home/glnaceg/firefox/geckodriverx");
             DesiredCapabilities dc = new DesiredCapabilities();
             dc.setCapability("marionatte", false);
             FirefoxOptions opt = new FirefoxOptions();
             //opt.setBinary("/home/glnaceg/firefox/geckodriverx");
             opt.merge(dc);
-            FirefoxDriver driver =  new FirefoxDriver(opt);
+            FirefoxDriver driver =  new FirefoxDriver(opt);*/
             try {
                 getHTML("http://contactsqs2.apphb.com/Service.svc/rest/contacts");
             } catch (Exception e) {
