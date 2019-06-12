@@ -21,7 +21,7 @@
         <entry file="file://$PROJECT_DIR$/src/test/java/StepsDefUS1.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="467">
-              <caret line="121" column="59" lean-forward="true" selection-start-line="121" selection-start-column="59" selection-end-line="121" selection-end-column="59" />
+              <caret line="119" column="12" selection-start-line="119" selection-start-column="12" selection-end-line="119" selection-end-column="12" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#theTitleOfThePageShouldBe#0;class#StepsDefUS1#0" />
@@ -181,7 +181,7 @@
       <workItem from="1560273505412" duration="177000" />
       <workItem from="1560273708388" duration="8273000" />
       <workItem from="1560285220896" duration="3713000" />
-      <workItem from="1560347149162" duration="3169000" />
+      <workItem from="1560347149162" duration="3251000" />
     </task>
     <servers />
   </component>
@@ -218,7 +218,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18593000" />
+    <option name="totallyTimeSpent" value="18675000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -443,7 +443,7 @@
     <entry file="file://$PROJECT_DIR$/src/test/java/StepsDefUS1.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="467">
-          <caret line="121" column="59" lean-forward="true" selection-start-line="121" selection-start-column="59" selection-end-line="121" selection-end-column="59" />
+          <caret line="119" column="12" selection-start-line="119" selection-start-column="12" selection-end-line="119" selection-end-column="12" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#theTitleOfThePageShouldBe#0;class#StepsDefUS1#0" />

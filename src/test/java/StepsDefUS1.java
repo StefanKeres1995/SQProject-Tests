@@ -115,9 +115,9 @@ public class StepsDefUS1 {
 
             System.setProperty("webdriver.gecko.driver", "/home/glnaceg/firefox/geckodriverx");
             DesiredCapabilities dc = new DesiredCapabilities();
-            dc.setCapability("marionatte", false);
+            //dc.setCapability("marionatte", false);
             FirefoxOptions opt = new FirefoxOptions();
-            //opt.setBinary("/home/glnaceg/firefox/geckodriverx");
+            opt.setBinary("/home/glnaceg/firefox/geckodriverx");
             opt.merge(dc);
             FirefoxDriver driver =  new FirefoxDriver(opt);
             try {
