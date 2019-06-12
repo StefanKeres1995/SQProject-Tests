@@ -98,7 +98,9 @@ public class StepsDefUS1 {
             options.addArguments("--marionette-port");
             options.addArguments("2828");
             options.addArguments("--remote-debugging-port=9222");
-
+            options.addArguments("--ignore-certificate-errors");
+            options.addArguments("--disable-popup-blocking");
+            options.addArguments("--incognito");
 
             driver = new ChromeDriver(options);
 

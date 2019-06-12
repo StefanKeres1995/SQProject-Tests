@@ -20,8 +20,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/StepsDefUS1.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="359">
-              <caret line="99" column="32" selection-start-line="99" selection-start-column="32" selection-end-line="99" selection-end-column="32" />
+            <state relative-caret-position="427">
+              <caret line="99" column="65" selection-start-line="99" selection-start-column="65" selection-end-line="99" selection-end-column="65" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#theTitleOfThePageShouldBe#0;class#StepsDefUS1#0" />
@@ -181,7 +181,7 @@
       <workItem from="1560273505412" duration="177000" />
       <workItem from="1560273708388" duration="8273000" />
       <workItem from="1560285220896" duration="3713000" />
-      <workItem from="1560347149162" duration="2086000" />
+      <workItem from="1560347149162" duration="2555000" />
     </task>
     <servers />
   </component>
@@ -218,7 +218,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17510000" />
+    <option name="totallyTimeSpent" value="17979000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -442,8 +442,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/StepsDefUS1.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="359">
-          <caret line="99" column="32" selection-start-line="99" selection-start-column="32" selection-end-line="99" selection-end-column="32" />
+        <state relative-caret-position="427">
+          <caret line="99" column="65" selection-start-line="99" selection-start-column="65" selection-end-line="99" selection-end-column="65" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#theTitleOfThePageShouldBe#0;class#StepsDefUS1#0" />
