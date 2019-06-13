@@ -10,63 +10,6 @@ Feature: Access to the Contacts Orchestrator Solution's (COS) Landing Page
     Given I access the landing page of COS
     #Then the title of the page should be "Contacts Landing Page"
     Then I should see the same name as in the database position
-  Scenario: Landing page's title and text contains "Contacts Landing Page"
-    Given I access the landing page of COS
-    #Then the title of the page should be "Contacts Landing Page"
-    Then I should see the same name as in the database position
-  Scenario: Landing page's title and text contains "Contacts Landing Page"
-    Given I access the landing page of COS
-    #Then the title of the page should be "Contacts Landing Page"
-    Then I should see the same name as in the database position
-  Scenario: Landing page's title and text contains "Contacts Landing Page"
-    Given I access the landing page of COS
-    #Then the title of the page should be "Contacts Landing Page"
-    Then I should see the same name as in the database position
-  Scenario: Landing page's title and text contains "Contacts Landing Page"
-    Given I access the landing page of COS
-    #Then the title of the page should be "Contacts Landing Page"
-    Then I should see the same name as in the database position
-  Scenario: Landing page's title and text contains "Contacts Landing Page"
-    Given I access the landing page of COS
-    #Then the title of the page should be "Contacts Landing Page"
-    Then I should see the same name as in the database position
-  Scenario: Landing page's title and text contains "Contacts Landing Page"
-    Given I access the landing page of COS
-    #Then the title of the page should be "Contacts Landing Page"
-    Then I should see the same name as in the database position
-  Scenario: Landing page's title and text contains "Contacts Landing Page"
-    Given I access the landing page of COS
-    #Then the title of the page should be "Contacts Landing Page"
-    Then I should see the same name as in the database position
-  Scenario: Landing page's title and text contains "Contacts Landing Page"
-    Given I access the landing page of COS
-    #Then the title of the page should be "Contacts Landing Page"
-    Then I should see the same name as in the database position
-  Scenario: Landing page's title and text contains "Contacts Landing Page"
-    Given I access the landing page of COS
-    #Then the title of the page should be "Contacts Landing Page"
-    Then I should see the same name as in the database position
-  Scenario: Landing page's title and text contains "Contacts Landing Page"
-    Given I access the landing page of COS
-    #Then the title of the page should be "Contacts Landing Page"
-    Then I should see the same name as in the database position
-  Scenario: Landing page's title and text contains "Contacts Landing Page"
-    Given I access the landing page of COS
-    #Then the title of the page should be "Contacts Landing Page"
-    Then I should see the same name as in the database position
-  Scenario: Landing page's title and text contains "Contacts Landing Page"
-    Given I access the landing page of COS
-    #Then the title of the page should be "Contacts Landing Page"
-    Then I should see the same name as in the database position
-  Scenario: Landing page's title and text contains "Contacts Landing Page"
-    Given I access the landing page of COS
-    #Then the title of the page should be "Contacts Landing Page"
-    Then I should see the same name as in the database position
-  Scenario: Landing page's title and text contains "Contacts Landing Page"
-    Given I access the landing page of COS
-    #Then the title of the page should be "Contacts Landing Page"
-    Then I should see the same name as in the database position
-
 
  #Feature: Access to the Contacts Orchestrator Solution's (COS) Landing Page
  #  As a user

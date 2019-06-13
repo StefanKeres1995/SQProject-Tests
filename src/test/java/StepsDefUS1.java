@@ -1,23 +1,19 @@
 import Model.Contact;
-import com.gargoylesoftware.htmlunit.NicelyResynchronizingAjaxController;
 import com.gargoylesoftware.htmlunit.WebClient;
 import com.gargoylesoftware.htmlunit.html.HtmlPage;
-import com.google.common.base.Predicate;
 import com.google.gson.Gson;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
-import org.openqa.selenium.*;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.By;
+import org.openqa.selenium.TimeoutException;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.firefox.FirefoxDriverLogLevel;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.phantomjs.PhantomJSDriver;
-import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -26,11 +22,8 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 import static junit.framework.TestCase.assertEquals;
-import static org.openqa.selenium.firefox.FirefoxDriverLogLevel.TRACE;
 
 //import org.openqa.selenium.phantomjs.PhantomJSDriver;
 //import org.openqa.selenium.phantomjs.PhantomJSDriverService;
@@ -43,40 +36,6 @@ public class StepsDefUS1 {
 
     private static Contact[] contacts = null;
     private static final String NULL_STRING = "--------------";
-    /*static {
-        Logger.getLogger("").setLevel(Level.OFF);
-        System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
-        //System.setProperty("phantomjs.binary.path", "drivers/phantomjs.exe");
-        System.setProperty("webdriver.gecko.driver", "drivers/geckodriverx.exe");
-        if (driver == null) {
-            /*ChromeOptions options = new ChromeOptions();
-            options.setBinary("/home/glnaceg/chromedrivers/chromedriver73");
-            options.addArguments("--no-sandbox"); // Bypass OS security model, MUST BE THE VERY FIRST OPTION
-            options.addArguments("--headless");
-            options.addArguments("disable-infobars"); // disabling infobars
-            options.addArguments("--disable-extensions"); // disabling extensions
-            options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
-            ChromeOptions options = new ChromeOptions();
-            //options.setBinary("drivers/chromedriver.exe");
-            options.addArguments("--headless");
-
-            driver = new ChromeDriver(options);
-
-            //driver = new ChromeDriver();
-            //driver = new HtmlUnitDriver();
-            //driver = new PhantomJSDriver();
-
-            //webClient = new WebClient();
-
-            /*driver = new FirefoxDriver(getDefaultFirefoxOptions());
-
-        }
-        try {
-            getHTML("http://contactsqs2.apphb.com/Service.svc/rest/contacts");
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }*/
 
     @Before
     public void setUp()
@@ -84,9 +43,9 @@ public class StepsDefUS1 {
         if(driver == null) {
             //System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
             //System.setProperty("phantomjs.binary.path", "drivers/phantomjs.exe");
-            System.setProperty("webdriver.gecko.driver", "drivers/geckodriverx.exe");
+            //System.setProperty("webdriver.gecko.driver", "drivers/geckodriverx.exe");
             //String path = "/home/glnaceg/firefox/geckodriverx";
-            //System.setProperty("webdriver.gecko.driver", "/home/glnaceg/firefox/geckodriverx");
+            System.setProperty("webdriver.gecko.driver", "/home/glnaceg/firefox/geckodriverx");
 
 
             /*ChromeOptions options = new ChromeOptions();
@@ -111,7 +70,9 @@ public class StepsDefUS1 {
 
             //webClient = new WebClient();
 
-            driver = new FirefoxDriver(getDefaultFirefoxOptions());
+            driver = new PhantomJSDriver();
+
+            //driver = new FirefoxDriver(getDefaultFirefoxOptions());
 
             //System.setProperty("webdriver.gecko.driver", "/home/glnaceg/firefox/geckodriverx");
             //DesiredCapabilities dc = new DesiredCapabilities();
@@ -142,7 +103,7 @@ public class StepsDefUS1 {
 
     @Given("^I access the landing page of COS$")
     public void iAccessTheLandingPageOfCOS() throws Throwable {
-        driver.get("http://35.246.50.214/");
+        driver.get("http://35.246.92.202/");
 
         /*htmlPage = webClient.getPage("http://35.246.92.202/");
         webClient.setAjaxController(new NicelyResynchronizingAjaxController());
@@ -198,27 +159,24 @@ public class StepsDefUS1 {
     public void iShouldSeeTheSameNameAsInTheDatabasePosition() throws InterruptedException {
         //Wait till he gets up;
         boolean asd = true;
-        do {
+        //do {
             try {
                 WebDriverWait wait = new WebDriverWait(driver, 10);
                 wait.until((ExpectedConditions.elementToBeClickable(By.xpath(".//table[@id='contactsTable']/thead"))));
                 asd = true;
             } catch (TimeoutException ex) {
                 asd = false;
-                driver = new FirefoxDriver(getDefaultFirefoxOptions());
-                driver.get("http://35.246.50.214/");
+                //driver = new FirefoxDriver(getDefaultFirefoxOptions());
+                driver = new PhantomJSDriver();
+                driver.get("http://35.246.92.202/");
+                System.out.println("Something ");
             }
-        }while(!asd);
+        //}while(!asd);
         //wait.until(ExpectedConditions.numberOfElementsToBe(By.xpath(".//table[@id='contactsTable']/tbody/tr"), 10));
-
         //wait.until(ExpectedConditions.);
-
 
         //Click on the paginator
         //driver.findElements(By.xpath(".//div[@id='contactsTable_paginate']/span/a[3]")).get(0).click();
-
-
-
 
         //Get value
         //Select select = new Select(driver.findElements(By.xpath(".//select[@name='contactsTable_length']")).get(0));
@@ -266,7 +224,7 @@ public class StepsDefUS1 {
     static FirefoxOptions getDefaultFirefoxOptions() {
         return new FirefoxOptions()
                 .setLegacy(false)
-                //.setBinary("drivers/geckodriverx.exe")
+                .setBinary("/home/glnaceg/firefox/firefox")
                 .setHeadless(true)
                 .addArguments("--marionette-port")
                 .addArguments("2828");
