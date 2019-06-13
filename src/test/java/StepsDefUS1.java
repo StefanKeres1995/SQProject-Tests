@@ -11,6 +11,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.phantomjs.PhantomJSDriver;
@@ -45,23 +47,23 @@ public class StepsDefUS1 {
             //System.setProperty("phantomjs.binary.path", "drivers/phantomjs.exe");
             //System.setProperty("webdriver.gecko.driver", "drivers/geckodriverx.exe");
             //String path = "/home/glnaceg/firefox/geckodriverx";
-            System.setProperty("webdriver.gecko.driver", "/home/glnaceg/drivers/geckodriverx");
+            //System.setProperty("webdriver.gecko.driver", "/home/glnaceg/drivers/geckodriverx");
 
 
-            /*ChromeOptions options = new ChromeOptions();
-            options.setBinary("/home/glnaceg/chromedrivers/chromedriver76");
-            options.addArguments("--no-sandbox"); // Bypass OS security model, MUST BE THE VERY FIRST OPTION
+            ChromeOptions options = new ChromeOptions();
+            //options.setBinary("/home/glnaceg/chromedrivers/chromedriver76");
+            //options.addArguments("--no-sandbox"); // Bypass OS security model, MUST BE THE VERY FIRST OPTION
             options.addArguments("--headless");
-            options.addArguments("disable-infobars"); // disabling infobars
+            /*options.addArguments("disable-infobars"); // disabling infobars
             options.addArguments("--disable-extensions"); // disabling extensions
             options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
             //options.addArguments("--marionette-port");
             //options.addArguments("2828");
             options.addArguments("--ignore-certificate-errors");
             options.addArguments("--disable-popup-blocking");
-            options.addArguments("--incognito");
+            options.addArguments("--incognito");*/
 
-            driver = new ChromeDriver(options);*/
+            driver = new ChromeDriver(options);
 
 
 
@@ -72,7 +74,7 @@ public class StepsDefUS1 {
 
             //driver = new PhantomJSDriver();
 
-            driver = new FirefoxDriver(getDefaultFirefoxOptions());
+            //driver = new FirefoxDriver(getDefaultFirefoxOptions());
 
             //System.setProperty("webdriver.gecko.driver", "/home/glnaceg/firefox/geckodriverx");
             //DesiredCapabilities dc = new DesiredCapabilities();
@@ -159,19 +161,18 @@ public class StepsDefUS1 {
     public void iShouldSeeTheSameNameAsInTheDatabasePosition() throws InterruptedException {
         //Wait till he gets up;
         boolean asd = true;
-        //do {
+        do {
             try {
                 WebDriverWait wait = new WebDriverWait(driver, 10);
                 wait.until((ExpectedConditions.elementToBeClickable(By.xpath(".//table[@id='contactsTable']/thead"))));
                 asd = true;
             } catch (TimeoutException ex) {
                 asd = false;
-                //driver = new FirefoxDriver(getDefaultFirefoxOptions());
-                driver = new PhantomJSDriver();
+                driver = new ChromeDriver();
                 driver.get("http://35.246.92.202/");
                 System.out.println("Something ");
             }
-        //}while(!asd);
+        }while(!asd);
         //wait.until(ExpectedConditions.numberOfElementsToBe(By.xpath(".//table[@id='contactsTable']/tbody/tr"), 10));
         //wait.until(ExpectedConditions.);
 
@@ -224,7 +225,7 @@ public class StepsDefUS1 {
     static FirefoxOptions getDefaultFirefoxOptions() {
         return new FirefoxOptions()
                 .setLegacy(false)
-                .setBinary("/home/glnaceg/firefox32/firefox/firefox")
+                .setBinary("/home/glnaceg/firefox41/firefox/firefox")
                 .setHeadless(true)
                 .addArguments("--marionette-port")
                 .addArguments("2828");
