@@ -224,7 +224,7 @@ public class StepsDefUS1 {
     static FirefoxOptions getDefaultFirefoxOptions() {
         return new FirefoxOptions()
                 .setLegacy(false)
-                .setBinary("/home/glnaceg/firefox/firefox")
+                .setBinary("/home/glnaceg/firefox32/firefox/firefox")
                 .setHeadless(true)
                 .addArguments("--marionette-port")
                 .addArguments("2828");
