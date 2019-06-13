@@ -45,7 +45,7 @@ public class StepsDefUS1 {
             //System.setProperty("phantomjs.binary.path", "drivers/phantomjs.exe");
             //System.setProperty("webdriver.gecko.driver", "drivers/geckodriverx.exe");
             //String path = "/home/glnaceg/firefox/geckodriverx";
-            System.setProperty("webdriver.gecko.driver", "/home/glnaceg/firefox/geckodriverx");
+            System.setProperty("webdriver.gecko.driver", "/home/glnaceg/drivers/geckodriverx");
 
 
             /*ChromeOptions options = new ChromeOptions();
