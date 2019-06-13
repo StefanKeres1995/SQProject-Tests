@@ -70,9 +70,9 @@ public class StepsDefUS1 {
 
             //webClient = new WebClient();
 
-            driver = new PhantomJSDriver();
+            //driver = new PhantomJSDriver();
 
-            //driver = new FirefoxDriver(getDefaultFirefoxOptions());
+            driver = new FirefoxDriver(getDefaultFirefoxOptions());
 
             //System.setProperty("webdriver.gecko.driver", "/home/glnaceg/firefox/geckodriverx");
             //DesiredCapabilities dc = new DesiredCapabilities();
