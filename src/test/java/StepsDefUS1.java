@@ -53,7 +53,7 @@ public class StepsDefUS1 {
 
     @Given("^I access the landing page of COS$")
     public void iAccessTheLandingPageOfCOS() throws Throwable {
-        driver.get("http://35.246.50.21/");
+        driver.get("http://35.246.50.214//");
         assertEquals ("Contacts Landing Page",driver.getTitle());
     }
 
