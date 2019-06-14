@@ -13,7 +13,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -27,9 +26,6 @@ import static junit.framework.TestCase.assertEquals;
 
 public class StepsDefUS1 {
     private static WebDriver driver;
-
-    private static WebClient webClient;
-    private static HtmlPage htmlPage;
 
     private static Contact[] contacts = null;
     private static final String NULL_STRING = "--------------";
@@ -52,13 +48,12 @@ public class StepsDefUS1 {
 
     @After
     public void tearDown() throws Exception {
-        driver.close();
         //driver.close();
     }
 
     @Given("^I access the landing page of COS$")
     public void iAccessTheLandingPageOfCOS() throws Throwable {
-        driver.get("http://35.246.92.202/");
+        driver.get("http://35.246.50.21/");
         assertEquals ("Contacts Landing Page",driver.getTitle());
     }
 
@@ -106,7 +101,7 @@ public class StepsDefUS1 {
             } catch (TimeoutException ex) {
                 asd = false;
                 driver = new ChromeDriver();
-                driver.get("http://35.246.92.202/");
+                driver.get("http://35.246.50.214/");
                 System.out.println("Something ");
             }
         }while(!asd);
