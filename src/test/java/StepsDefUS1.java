@@ -4,11 +4,13 @@ import Model.ContactConstants;
 import com.gargoylesoftware.htmlunit.WebClient;
 import com.gargoylesoftware.htmlunit.html.HtmlPage;
 import com.google.gson.Gson;
+import cucumber.api.PendingException;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
 import org.junit.AfterClass;
 import org.openqa.selenium.By;
 import org.openqa.selenium.TimeoutException;
@@ -41,7 +43,7 @@ public class StepsDefUS1 {
     {
         //Is the driver initializing for for first time?
         if(driver == null) {
-            //System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
+            System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
         }
 
         //Are contacts null? Then populate.
@@ -92,12 +94,12 @@ public class StepsDefUS1 {
         //Get the elements that are related to the XPath
         List<WebElement> valuesFromTable = driver.findElements(By.xpath(xpath));
 
-        //Need to remove the first position (ID). This is because of the function.
+        //Get ID
         int id = Integer.parseInt(valuesFromTable.get(0).getText());
-        valuesFromTable.remove(0);
 
         //Get list of Constants to Verify... These need to be ordered
         LinkedList<Integer> constantToVerify = new LinkedList<Integer>();
+        constantToVerify.add(ContactConstants.ID);
         constantToVerify.add(ContactConstants.GIVEN_NAME);
         constantToVerify.add(ContactConstants.SURNAME);
         constantToVerify.add(ContactConstants.PHONE);
@@ -105,7 +107,7 @@ public class StepsDefUS1 {
         constantToVerify.add(ContactConstants.CITY);
 
         //Is this value correct?
-        Helper.getInstance().checkIntegrityOfContact(id - 1, valuesFromTable, constantToVerify, contacts);
+        Helper.getInstance().checkIntegrityOfContact(valuesFromTable, constantToVerify, contacts[id-1]);
     }
 
     @Then("^I should see exactly the same amount of contacts that exist in the database$")
@@ -140,4 +142,76 @@ public class StepsDefUS1 {
             fail("XPath came empty. Verify if the XPath is correct");
         }
     }
+
+    @When("^I sort the column \"([^\"]*)\"$")
+    public void iSortTheColumn(String columnName) throws Throwable{
+
+        //XPath to the correct position
+        String xpath = ".//table[@id='contactsTable']/thead/tr/th";
+
+        //Wait for the position related to the XPath to be clickable (If it exists)
+        Helper.getInstance().waitForSomething(driver, 10, HelperConstants.WaitCondition_ElementToBeClickable, xpath);
+
+        List<WebElement> valuesFromTh = driver.findElements(By.xpath(xpath));
+
+        //Ignore the last position, as its related to Details!
+        for(int position = 0; position < valuesFromTh.size() - 1; position++){
+            //Click on the position
+            if(valuesFromTh.get(position).getText().equals(columnName)){
+                valuesFromTh.get(position).click();
+                return;
+            }
+        }
+        fail("Couldn't find the column");
+    }
+
+    @Then("^The first column should contain the most relevant contact regarded to the sorted \"([^\"]*)\"$")
+    public void theFirstColumnShouldContainTheMostRelevantContactRegardedToTheSorted(String columnName) throws Throwable {
+        //Get first position of the table
+        //XPath to the correct position
+        String xpath = ".//table[@id='contactsTable']/tbody/tr[1]/td";
+
+        //Wait for the position related to the XPath is clickable (If it exists)
+        Helper.getInstance().waitForSomething(driver, 10, HelperConstants.WaitCondition_ElementToBeClickable, xpath);
+
+        //Get the elements that are related to the XPath
+        List<WebElement> valuesFromTable = driver.findElements(By.xpath(xpath));
+
+        LinkedList<Integer> constantToVerify = new LinkedList<>();
+        constantToVerify.add(ContactConstants.ID);
+        constantToVerify.add(ContactConstants.GIVEN_NAME);
+        constantToVerify.add(ContactConstants.SURNAME);
+        constantToVerify.add(ContactConstants.PHONE);
+        constantToVerify.add(ContactConstants.SOURCE);
+        constantToVerify.add(ContactConstants.CITY);
+
+        int value = 0;
+        switch (columnName) {
+            case "ID":
+                value = ContactConstants.ID;
+                break;
+            case "GivenName":
+                value = ContactConstants.GIVEN_NAME;
+                break;
+            case "Surname":
+                value = ContactConstants.SURNAME;
+                break;
+            case "Phone":
+                value = ContactConstants.PHONE;
+                break;
+            case "Source":
+                value = ContactConstants.SOURCE;
+                break;
+            case "City":
+                value = ContactConstants.CITY;
+                break;
+            default:
+                fail("No column Name should be named as : " + columnName);
+                break;
+        }
+
+        //Order database and check the integrity
+        Helper.getInstance().orderDatabaseAndVerifyFirstContact(value, valuesFromTable, constantToVerify, contacts);
+    }
+
 }

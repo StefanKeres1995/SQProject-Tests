@@ -18,7 +18,7 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.sql.Time;
-import java.util.List;
+import java.util.*;
 
 import static junit.framework.TestCase.assertEquals;
 import static org.junit.Assert.fail;
@@ -56,7 +56,44 @@ public class Helper {
 
             String jsonStr = result.toString();
             Gson gson = new Gson();
-            return gson.fromJson(jsonStr, Contact[].class);
+            Contact[] contacts = gson.fromJson(jsonStr, Contact[].class);
+
+            //Remove all nulls on the array of Contact[]
+            for (int pos = 0; pos < contacts.length; pos++) {
+                contacts[pos].setID(pos+1);
+                if(contacts[pos].getBirthday() == null){
+                    contacts[pos].setBirthday(HelperConstants.NULL_STRING);
+                }
+                if(contacts[pos].getCity() == null){
+                    contacts[pos].setCity(HelperConstants.NULL_STRING);
+                }
+                if(contacts[pos].getCompany() == null){
+                    contacts[pos].setCompany(HelperConstants.NULL_STRING);
+                }
+                if(contacts[pos].getEmail() == null){
+                    contacts[pos].setEmail(HelperConstants.NULL_STRING);
+                }
+                if(contacts[pos].getGivenName() == null){
+                    contacts[pos].setGivenName(HelperConstants.NULL_STRING);
+                }
+                if(contacts[pos].getOccupation() == null){
+                    contacts[pos].setOccupation(HelperConstants.NULL_STRING);
+                }
+                if(contacts[pos].getPhotoUrl() == null){
+                    contacts[pos].setPhotoUrl("https://upload.wikimedia.org/wikipedia/en/e/ee/Unknown-person.gif");
+                }
+                if(contacts[pos].getSource() == null){
+                    contacts[pos].setSource(HelperConstants.NULL_STRING);
+                }
+                if(contacts[pos].getStreetAddress() == null){
+                    contacts[pos].setStreetAddress(HelperConstants.NULL_STRING);
+                }
+                if(contacts[pos].getSurname() == null){
+                    contacts[pos].setSurname(HelperConstants.NULL_STRING);
+                }
+            }
+            return contacts;
+
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -66,12 +103,11 @@ public class Helper {
 
     /*
      * Function that will verify the integrity of a contact. It will assert each position.
-     * @param id - the ID of the contact. Don't forget, ID's start at 0.
      * @param webElementList - List of WebElements, which should be retrieved with a driver.findElements()...
      * @param listFields - List of integers, which are represented by the ContactConstants. These should be ordered based on the previous one.
-     * @param contacts - List of contacts, gotten from getHTML() function
+     * @param contacts - the specific contact to compare with, gotten from getHTML() function
      */
-    public void checkIntegrityOfContact(int id, List<WebElement> webElementList, List<Integer> listFields, Contact[] contacts){
+    public void checkIntegrityOfContact(List<WebElement> webElementList, List<Integer> listFields, Contact contact){
 
         for(int field: listFields ){
             int position = listFields.indexOf(field);
@@ -79,111 +115,115 @@ public class Helper {
 
                 //Birthday
                 case ContactConstants.BIRTHDAY:
-                    if(contacts[id].getBirthday() == null){
+                    if(contact.getBirthday() == null){
                         assertEquals(HelperConstants.NULL_STRING, webElementList.get(position).getText());
                     }else{
-                        assertEquals(contacts[id].getBirthday(), webElementList.get(position).getText());
+                        assertEquals(contact.getBirthday(), webElementList.get(position).getText());
                     }
                     break;
 
                 //City
                 case ContactConstants.CITY:
-                    if(contacts[id].getCity() == null){
+                    if(contact.getCity() == null){
                         assertEquals(HelperConstants.NULL_STRING, webElementList.get(position).getText());
                     }else{
-                        assertEquals(contacts[id].getCity(), webElementList.get(position).getText());
+                        assertEquals(contact.getCity(), webElementList.get(position).getText());
                     }
                     break;
 
                 //Company
                 case ContactConstants.COMPANY:
-                    if(contacts[id].getCompany() == null){
+                    if(contact.getCompany() == null){
                         assertEquals(HelperConstants.NULL_STRING, webElementList.get(position).getText());
                     }else{
-                        assertEquals(contacts[id].getCompany(), webElementList.get(position).getText());
+                        assertEquals(contact.getCompany(), webElementList.get(position).getText());
                     }
                     break;
 
                 //Email
                 case ContactConstants.EMAIL:
-                    if(contacts[id].getEmail() == null){
+                    if(contact.getEmail() == null){
                         assertEquals(HelperConstants.NULL_STRING, webElementList.get(position).getText());
                     }else{
-                        assertEquals(contacts[id].getEmail(), webElementList.get(position).getText());
+                        assertEquals(contact.getEmail(), webElementList.get(position).getText());
                     }
                     break;
 
                 //Given Name
                 case ContactConstants.GIVEN_NAME:
-                    if(contacts[id].getGivenName() == null){
+                    if(contact.getGivenName() == null){
                         assertEquals(HelperConstants.NULL_STRING, webElementList.get(position).getText());
                     }else{
-                        assertEquals(contacts[id].getGivenName(), webElementList.get(position).getText());
+                        assertEquals(contact.getGivenName(), webElementList.get(position).getText());
                     }
                     break;
 
                 //Guid
                 case ContactConstants.GUID:
-                    if(contacts[id].getGuid() == null){
+                    if(contact.getGuid() == null){
                         assertEquals(HelperConstants.NULL_STRING, webElementList.get(position).getText());
                     }else{
-                        assertEquals(contacts[id].getGuid(), webElementList.get(position).getText());
+                        assertEquals(contact.getGuid(), webElementList.get(position).getText());
                     }
                     break;
 
                 //Occupation
                 case ContactConstants.OCCUPATION:
-                    if(contacts[id].getOccupation() == null){
+                    if(contact.getOccupation() == null){
                         assertEquals(HelperConstants.NULL_STRING, webElementList.get(position).getText());
                     }else{
-                        assertEquals(contacts[id].getOccupation(), webElementList.get(position).getText());
+                        assertEquals(contact.getOccupation(), webElementList.get(position).getText());
                     }
                     break;
 
                 //Phone
                 case ContactConstants.PHONE:
-                    if(contacts[id].getPhone() == null){
+                    if(contact.getPhone() == null){
                         assertEquals(HelperConstants.NULL_STRING, webElementList.get(position).getText());
                     }else{
-                        assertEquals(contacts[id].getPhone().toString(), webElementList.get(position).getText());
+                        assertEquals(contact.getPhone().toString(), webElementList.get(position).getText());
                     }
                     break;
 
                 //Phone Url
                 case ContactConstants.PHOTO_URL:
                     //Recheck!
-                    if(contacts[id].getPhotoUrl() == null){
+                    if(contact.getPhotoUrl() == null){
                         assertEquals(HelperConstants.NULL_STRING, webElementList.get(position).getText());
                     }else{
-                        assertEquals(contacts[id].getPhotoUrl().toString(), webElementList.get(position).getText());
+                        assertEquals(contact.getPhotoUrl().toString(), webElementList.get(position).getText());
                     }
                     break;
 
                 //Source
                 case ContactConstants.SOURCE:
-                    if(contacts[id].getSource() == null){
+                    if(contact.getSource() == null){
                         assertEquals(HelperConstants.NULL_STRING, webElementList.get(position).getText());
                     }else{
-                        assertEquals(contacts[id].getSource(), webElementList.get(position).getText());
+                        assertEquals(contact.getSource(), webElementList.get(position).getText());
                     }
                     break;
 
                 //Street Address
                 case ContactConstants.STREET_ADDRESS:
-                    if(contacts[id].getStreetAddress() == null){
+                    if(contact.getStreetAddress() == null){
                         assertEquals(HelperConstants.NULL_STRING, webElementList.get(position).getText());
                     }else{
-                        assertEquals(contacts[id].getStreetAddress(), webElementList.get(position).getText());
+                        assertEquals(contact.getStreetAddress(), webElementList.get(position).getText());
                     }
                     break;
 
                 //Surname
                 case ContactConstants.SURNAME:
-                    if(contacts[id].getSurname() == null){
+                    if(contact.getSurname() == null){
                         assertEquals(HelperConstants.NULL_STRING, webElementList.get(position).getText());
                     }else {
-                        assertEquals(contacts[id].getSurname(), webElementList.get(position).getText());
+                        assertEquals(contact.getSurname(), webElementList.get(position).getText());
                     }
+                    break;
+
+                case ContactConstants.ID:
+                    assertEquals(String.valueOf(contact.getID()), webElementList.get(position).getText());
                     break;
                 default:
                     //Can't come here.
@@ -220,5 +260,64 @@ public class Helper {
             default:
                 TestCase.fail("Error! You aren't supposed to be here.");
         }
+    }
+
+    public void orderDatabaseAndVerifyFirstContact(int field, List<WebElement> webElementList, LinkedList<Integer> listFields, Contact[] contacts){
+        //Order Database by Position, and get the 1st contact
+        Contact firstContact = orderDatabase(field, contacts);
+
+        checkIntegrityOfContact(webElementList, listFields, firstContact);
+
+    }
+
+    private Contact orderDatabase(int field, Contact[] contacts) {
+        //Convert this Contact[] to LinkedList
+        LinkedList<Contact> contactLinkedList = new LinkedList<Contact>(Arrays.asList(contacts));
+
+        switch (field){
+            case ContactConstants.BIRTHDAY:
+                contactLinkedList.sort((c1, c2) -> c1.getBirthday().compareTo(c2.getBirthday()));
+                break;
+            case ContactConstants.CITY:
+                contactLinkedList.sort((c1, c2) -> c1.getCity().compareTo(c2.getCity()));
+                break;
+            case ContactConstants.COMPANY:
+                contactLinkedList.sort((c1, c2) -> c1.getCompany().compareTo(c2.getCompany()));
+                break;
+            case ContactConstants.EMAIL:
+                contactLinkedList.sort((c1, c2) -> c1.getEmail().compareTo(c2.getEmail()));
+                break;
+            case ContactConstants.GIVEN_NAME:
+                contactLinkedList.sort((c1, c2) -> c1.getGivenName().compareTo(c2.getGivenName()));
+                break;
+            case ContactConstants.GUID:
+                contactLinkedList.sort((c1, c2) -> c1.getGuid().compareTo(c2.getGuid()));
+                break;
+            case ContactConstants.OCCUPATION:
+                contactLinkedList.sort((c1, c2) -> c1.getOccupation().compareTo(c2.getOccupation()));
+                break;
+            case ContactConstants.PHOTO_URL:
+                contactLinkedList.sort((c1, c2) -> c1.getPhotoUrl().toString().compareTo(c2.getPhotoUrl().toString()));
+                break;
+            case ContactConstants.SOURCE:
+                contactLinkedList.sort((c1, c2) -> c1.getSource().compareTo(c2.getSource()));
+                break;
+            case ContactConstants.STREET_ADDRESS:
+                contactLinkedList.sort((c1, c2) -> c1.getStreetAddress().compareTo(c2.getStreetAddress()));
+                break;
+            case ContactConstants.SURNAME:
+                contactLinkedList.sort((c1, c2) -> c1.getSurname().compareTo(c2.getSurname()));
+                break;
+            case ContactConstants.PHONE:
+                contactLinkedList.sort((c1, c2) -> c1.getPhone().toString().compareTo(c2.getPhone().toString()));
+                break;
+            case ContactConstants.ID:
+                contactLinkedList.sort((c1, c2) -> String.valueOf(c1.getID()).compareTo(String.valueOf(c2.getID())));
+                break;
+            default:
+                //Can't come here.
+                fail("Error! You aren't supposed to be here.");
+        }
+        return contactLinkedList.getFirst();
     }
 }

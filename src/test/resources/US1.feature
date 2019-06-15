@@ -14,9 +14,20 @@ Feature: Access to the Contacts Orchestrator Solution's (COS) Landing Page
     Given I access the landing page of COS
     Then I should see the same name as in the database position
 
+  Scenario Outline: Landing page contains the table and columns are sortable
+    Given I access the landing page of COS
+    When I sort the column "<column>"
+    Then The first column should contain the most relevant contact regarded to the sorted "<column>"
+
+    Examples:
+      | column    | column |
+      | ID        | -1  |
+      | GivenName | 4   |
+      | Surname   | 11  |
+      | Phone     | 7   |
+      | Source    | 9   |
+      | City      | 1   |
   #The table's header columns are sortable
-
-
 
   #SELECTOR FOR SOURCES
   #Text label exists
@@ -32,10 +43,6 @@ Feature: Access to the Contacts Orchestrator Solution's (COS) Landing Page
   #Button is always enabled
   #When selector has 'ALL' as selected option, the button get data from this link /contacts
   #When selector has a specific selected option, the button get data from this link /contacts/bysource/{selectedsource}
-
-  #TABLE SKELETON
-  #Table exists even with empty data
-
 
   #CONTACTS IN TABLE
   #All contacts need to be loaded in the table

@@ -1,8 +1,11 @@
 package Model;
 
+import Helper.HelperConstants;
+
 import java.net.URL;
 
 public class Contact {
+    private int ID;
     private String Birthday;
     private String City;
     private String Company;
@@ -11,15 +14,16 @@ public class Contact {
     private String Guid;
     private String Occupation;
     private Long Phone;
-    private URL PhotoUrl;
+    private String PhotoUrl;
     private String Source;
     private String StreetAddress;
     private String Surname;
 
-    public Contact(String birthday, String city, String company,
+    public Contact(int id, String birthday, String city, String company,
                    String email, String givenName, String guid,
-                   String occupation, Long phone, URL photoUrl,
+                   String occupation, Long phone, String photoUrl,
                    String source, String streetAddress, String surname) {
+        ID = id;
         Birthday = birthday;
         City = city;
         Company = company;
@@ -98,11 +102,11 @@ public class Contact {
         Phone = phone;
     }
 
-    public URL getPhotoUrl() {
+    public String getPhotoUrl() {
         return PhotoUrl;
     }
 
-    public void setPhotoUrl(URL photoUrl) {
+    public void setPhotoUrl(String photoUrl) {
         PhotoUrl = photoUrl;
     }
 
@@ -128,5 +132,13 @@ public class Contact {
 
     public void setSurname(String surname) {
         Surname = surname;
+    }
+
+    public int getID() {
+        return ID;
+    }
+
+    public void setID(int ID) {
+        this.ID = ID;
     }
 }

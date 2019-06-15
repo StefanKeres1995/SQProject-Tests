@@ -7,7 +7,7 @@ formatter.feature({
   "keyword": "Feature"
 });
 formatter.before({
-  "duration": 7844999700,
+  "duration": 4063333600,
   "status": "passed"
 });
 formatter.scenario({
@@ -32,7 +32,7 @@ formatter.match({
   "location": "StepsDefUS1.iAccessTheLandingPageOfCOS()"
 });
 formatter.result({
-  "duration": 1758808900,
+  "duration": 1203838600,
   "status": "passed"
 });
 formatter.match({
@@ -45,15 +45,15 @@ formatter.match({
   "location": "StepsDefUS1.theTitleOfThePageShouldBe(String)"
 });
 formatter.result({
-  "duration": 11620800,
+  "duration": 9671600,
   "status": "passed"
 });
 formatter.after({
-  "duration": 72641300,
+  "duration": 53738300,
   "status": "passed"
 });
 formatter.before({
-  "duration": 3777295000,
+  "duration": 2668918200,
   "status": "passed"
 });
 formatter.scenario({
@@ -78,22 +78,22 @@ formatter.match({
   "location": "StepsDefUS1.iAccessTheLandingPageOfCOS()"
 });
 formatter.result({
-  "duration": 1959692600,
+  "duration": 820660200,
   "status": "passed"
 });
 formatter.match({
   "location": "StepsDefUS1.iShouldSeeExactlyTheSameAmountOfContactsThatExistInTheDatabase()"
 });
 formatter.result({
-  "duration": 3502308700,
+  "duration": 693196900,
   "status": "passed"
 });
 formatter.after({
-  "duration": 3284149300,
+  "duration": 40340100,
   "status": "passed"
 });
 formatter.before({
-  "duration": 7230741000,
+  "duration": 2641623700,
   "status": "passed"
 });
 formatter.scenario({
@@ -118,18 +118,526 @@ formatter.match({
   "location": "StepsDefUS1.iAccessTheLandingPageOfCOS()"
 });
 formatter.result({
-  "duration": 1132998900,
+  "duration": 707234100,
   "status": "passed"
 });
 formatter.match({
   "location": "StepsDefUS1.iShouldSeeTheSameNameAsInTheDatabasePosition()"
 });
 formatter.result({
-  "duration": 2466768500,
+  "duration": 846726900,
   "status": "passed"
 });
 formatter.after({
-  "duration": 79715300,
+  "duration": 37667800,
+  "status": "passed"
+});
+formatter.scenarioOutline({
+  "line": 17,
+  "name": "Landing page contains the table and columns are sortable",
+  "description": "",
+  "id": "access-to-the-contacts-orchestrator-solution\u0027s-(cos)-landing-page;landing-page-contains-the-table-and-columns-are-sortable",
+  "type": "scenario_outline",
+  "keyword": "Scenario Outline"
+});
+formatter.step({
+  "line": 18,
+  "name": "I access the landing page of COS",
+  "keyword": "Given "
+});
+formatter.step({
+  "line": 19,
+  "name": "I sort the column \"\u003ccolumn\u003e\"",
+  "keyword": "When "
+});
+formatter.step({
+  "line": 20,
+  "name": "The first column should contain the most relevant contact regarded to the sorted \"\u003ccolumn\u003e\"",
+  "keyword": "Then "
+});
+formatter.examples({
+  "line": 22,
+  "name": "",
+  "description": "",
+  "id": "access-to-the-contacts-orchestrator-solution\u0027s-(cos)-landing-page;landing-page-contains-the-table-and-columns-are-sortable;",
+  "rows": [
+    {
+      "cells": [
+        "column",
+        "column"
+      ],
+      "line": 23,
+      "id": "access-to-the-contacts-orchestrator-solution\u0027s-(cos)-landing-page;landing-page-contains-the-table-and-columns-are-sortable;;1"
+    },
+    {
+      "cells": [
+        "ID",
+        "-1"
+      ],
+      "line": 24,
+      "id": "access-to-the-contacts-orchestrator-solution\u0027s-(cos)-landing-page;landing-page-contains-the-table-and-columns-are-sortable;;2"
+    },
+    {
+      "cells": [
+        "GivenName",
+        "4"
+      ],
+      "line": 25,
+      "id": "access-to-the-contacts-orchestrator-solution\u0027s-(cos)-landing-page;landing-page-contains-the-table-and-columns-are-sortable;;3"
+    },
+    {
+      "cells": [
+        "Surname",
+        "11"
+      ],
+      "line": 26,
+      "id": "access-to-the-contacts-orchestrator-solution\u0027s-(cos)-landing-page;landing-page-contains-the-table-and-columns-are-sortable;;4"
+    },
+    {
+      "cells": [
+        "Phone",
+        "7"
+      ],
+      "line": 27,
+      "id": "access-to-the-contacts-orchestrator-solution\u0027s-(cos)-landing-page;landing-page-contains-the-table-and-columns-are-sortable;;5"
+    },
+    {
+      "cells": [
+        "Source",
+        "9"
+      ],
+      "line": 28,
+      "id": "access-to-the-contacts-orchestrator-solution\u0027s-(cos)-landing-page;landing-page-contains-the-table-and-columns-are-sortable;;6"
+    },
+    {
+      "cells": [
+        "City",
+        "1"
+      ],
+      "line": 29,
+      "id": "access-to-the-contacts-orchestrator-solution\u0027s-(cos)-landing-page;landing-page-contains-the-table-and-columns-are-sortable;;7"
+    }
+  ],
+  "keyword": "Examples"
+});
+formatter.before({
+  "duration": 2637658200,
+  "status": "passed"
+});
+formatter.scenario({
+  "line": 24,
+  "name": "Landing page contains the table and columns are sortable",
+  "description": "",
+  "id": "access-to-the-contacts-orchestrator-solution\u0027s-(cos)-landing-page;landing-page-contains-the-table-and-columns-are-sortable;;2",
+  "type": "scenario",
+  "keyword": "Scenario Outline"
+});
+formatter.step({
+  "line": 18,
+  "name": "I access the landing page of COS",
+  "keyword": "Given "
+});
+formatter.step({
+  "line": 19,
+  "name": "I sort the column \"ID\"",
+  "matchedColumns": [
+    0
+  ],
+  "keyword": "When "
+});
+formatter.step({
+  "line": 20,
+  "name": "The first column should contain the most relevant contact regarded to the sorted \"ID\"",
+  "matchedColumns": [
+    0
+  ],
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "StepsDefUS1.iAccessTheLandingPageOfCOS()"
+});
+formatter.result({
+  "duration": 850262700,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "ID",
+      "offset": 19
+    }
+  ],
+  "location": "StepsDefUS1.iSortTheColumn(String)"
+});
+formatter.result({
+  "duration": 767229300,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "ID",
+      "offset": 82
+    }
+  ],
+  "location": "StepsDefUS1.theFirstColumnShouldContainTheMostRelevantContactRegardedToTheSorted(String)"
+});
+formatter.result({
+  "duration": 131365200,
+  "status": "passed"
+});
+formatter.after({
+  "duration": 35297000,
+  "status": "passed"
+});
+formatter.before({
+  "duration": 2918732600,
+  "status": "passed"
+});
+formatter.scenario({
+  "line": 25,
+  "name": "Landing page contains the table and columns are sortable",
+  "description": "",
+  "id": "access-to-the-contacts-orchestrator-solution\u0027s-(cos)-landing-page;landing-page-contains-the-table-and-columns-are-sortable;;3",
+  "type": "scenario",
+  "keyword": "Scenario Outline"
+});
+formatter.step({
+  "line": 18,
+  "name": "I access the landing page of COS",
+  "keyword": "Given "
+});
+formatter.step({
+  "line": 19,
+  "name": "I sort the column \"GivenName\"",
+  "matchedColumns": [
+    0
+  ],
+  "keyword": "When "
+});
+formatter.step({
+  "line": 20,
+  "name": "The first column should contain the most relevant contact regarded to the sorted \"GivenName\"",
+  "matchedColumns": [
+    0
+  ],
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "StepsDefUS1.iAccessTheLandingPageOfCOS()"
+});
+formatter.result({
+  "duration": 1149365100,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "GivenName",
+      "offset": 19
+    }
+  ],
+  "location": "StepsDefUS1.iSortTheColumn(String)"
+});
+formatter.result({
+  "duration": 645057800,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "GivenName",
+      "offset": 82
+    }
+  ],
+  "location": "StepsDefUS1.theFirstColumnShouldContainTheMostRelevantContactRegardedToTheSorted(String)"
+});
+formatter.result({
+  "duration": 140101200,
+  "status": "passed"
+});
+formatter.after({
+  "duration": 34984300,
+  "status": "passed"
+});
+formatter.before({
+  "duration": 2817732900,
+  "status": "passed"
+});
+formatter.scenario({
+  "line": 26,
+  "name": "Landing page contains the table and columns are sortable",
+  "description": "",
+  "id": "access-to-the-contacts-orchestrator-solution\u0027s-(cos)-landing-page;landing-page-contains-the-table-and-columns-are-sortable;;4",
+  "type": "scenario",
+  "keyword": "Scenario Outline"
+});
+formatter.step({
+  "line": 18,
+  "name": "I access the landing page of COS",
+  "keyword": "Given "
+});
+formatter.step({
+  "line": 19,
+  "name": "I sort the column \"Surname\"",
+  "matchedColumns": [
+    0
+  ],
+  "keyword": "When "
+});
+formatter.step({
+  "line": 20,
+  "name": "The first column should contain the most relevant contact regarded to the sorted \"Surname\"",
+  "matchedColumns": [
+    0
+  ],
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "StepsDefUS1.iAccessTheLandingPageOfCOS()"
+});
+formatter.result({
+  "duration": 891279300,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "Surname",
+      "offset": 19
+    }
+  ],
+  "location": "StepsDefUS1.iSortTheColumn(String)"
+});
+formatter.result({
+  "duration": 777923700,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "Surname",
+      "offset": 82
+    }
+  ],
+  "location": "StepsDefUS1.theFirstColumnShouldContainTheMostRelevantContactRegardedToTheSorted(String)"
+});
+formatter.result({
+  "duration": 131932800,
+  "status": "passed"
+});
+formatter.after({
+  "duration": 31580500,
+  "status": "passed"
+});
+formatter.before({
+  "duration": 2989844000,
+  "status": "passed"
+});
+formatter.scenario({
+  "line": 27,
+  "name": "Landing page contains the table and columns are sortable",
+  "description": "",
+  "id": "access-to-the-contacts-orchestrator-solution\u0027s-(cos)-landing-page;landing-page-contains-the-table-and-columns-are-sortable;;5",
+  "type": "scenario",
+  "keyword": "Scenario Outline"
+});
+formatter.step({
+  "line": 18,
+  "name": "I access the landing page of COS",
+  "keyword": "Given "
+});
+formatter.step({
+  "line": 19,
+  "name": "I sort the column \"Phone\"",
+  "matchedColumns": [
+    0
+  ],
+  "keyword": "When "
+});
+formatter.step({
+  "line": 20,
+  "name": "The first column should contain the most relevant contact regarded to the sorted \"Phone\"",
+  "matchedColumns": [
+    0
+  ],
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "StepsDefUS1.iAccessTheLandingPageOfCOS()"
+});
+formatter.result({
+  "duration": 873229200,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "Phone",
+      "offset": 19
+    }
+  ],
+  "location": "StepsDefUS1.iSortTheColumn(String)"
+});
+formatter.result({
+  "duration": 828407000,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "Phone",
+      "offset": 82
+    }
+  ],
+  "location": "StepsDefUS1.theFirstColumnShouldContainTheMostRelevantContactRegardedToTheSorted(String)"
+});
+formatter.result({
+  "duration": 139038800,
+  "status": "passed"
+});
+formatter.after({
+  "duration": 32833100,
+  "status": "passed"
+});
+formatter.before({
+  "duration": 2984852500,
+  "status": "passed"
+});
+formatter.scenario({
+  "line": 28,
+  "name": "Landing page contains the table and columns are sortable",
+  "description": "",
+  "id": "access-to-the-contacts-orchestrator-solution\u0027s-(cos)-landing-page;landing-page-contains-the-table-and-columns-are-sortable;;6",
+  "type": "scenario",
+  "keyword": "Scenario Outline"
+});
+formatter.step({
+  "line": 18,
+  "name": "I access the landing page of COS",
+  "keyword": "Given "
+});
+formatter.step({
+  "line": 19,
+  "name": "I sort the column \"Source\"",
+  "matchedColumns": [
+    0
+  ],
+  "keyword": "When "
+});
+formatter.step({
+  "line": 20,
+  "name": "The first column should contain the most relevant contact regarded to the sorted \"Source\"",
+  "matchedColumns": [
+    0
+  ],
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "StepsDefUS1.iAccessTheLandingPageOfCOS()"
+});
+formatter.result({
+  "duration": 999293000,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "Source",
+      "offset": 19
+    }
+  ],
+  "location": "StepsDefUS1.iSortTheColumn(String)"
+});
+formatter.result({
+  "duration": 787544300,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "Source",
+      "offset": 82
+    }
+  ],
+  "location": "StepsDefUS1.theFirstColumnShouldContainTheMostRelevantContactRegardedToTheSorted(String)"
+});
+formatter.result({
+  "duration": 127990500,
+  "status": "passed"
+});
+formatter.after({
+  "duration": 34399000,
+  "status": "passed"
+});
+formatter.before({
+  "duration": 3141883000,
+  "status": "passed"
+});
+formatter.scenario({
+  "line": 29,
+  "name": "Landing page contains the table and columns are sortable",
+  "description": "",
+  "id": "access-to-the-contacts-orchestrator-solution\u0027s-(cos)-landing-page;landing-page-contains-the-table-and-columns-are-sortable;;7",
+  "type": "scenario",
+  "keyword": "Scenario Outline"
+});
+formatter.step({
+  "line": 18,
+  "name": "I access the landing page of COS",
+  "keyword": "Given "
+});
+formatter.step({
+  "line": 19,
+  "name": "I sort the column \"City\"",
+  "matchedColumns": [
+    0
+  ],
+  "keyword": "When "
+});
+formatter.step({
+  "line": 20,
+  "name": "The first column should contain the most relevant contact regarded to the sorted \"City\"",
+  "matchedColumns": [
+    0
+  ],
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "StepsDefUS1.iAccessTheLandingPageOfCOS()"
+});
+formatter.result({
+  "duration": 1116933700,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "City",
+      "offset": 19
+    }
+  ],
+  "location": "StepsDefUS1.iSortTheColumn(String)"
+});
+formatter.result({
+  "duration": 856841700,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "City",
+      "offset": 82
+    }
+  ],
+  "location": "StepsDefUS1.theFirstColumnShouldContainTheMostRelevantContactRegardedToTheSorted(String)"
+});
+formatter.result({
+  "duration": 136345200,
+  "status": "passed"
+});
+formatter.after({
+  "duration": 49932600,
   "status": "passed"
 });
 });

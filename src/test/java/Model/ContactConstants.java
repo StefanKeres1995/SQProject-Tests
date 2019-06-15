@@ -1,6 +1,7 @@
 package Model;
 
 public final class ContactConstants {
+    public static final int ID = -1;
     public static final int BIRTHDAY = 0;
     public static final int CITY = 1;
     public static final int COMPANY = 2;
