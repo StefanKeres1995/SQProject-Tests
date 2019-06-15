@@ -3,20 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="30f41c5b-6552-404b-9355-101023761eb9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reports/test-report/report.js" beforeDir="false" afterPath="$PROJECT_DIR$/reports/test-report/report.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Helper/Helper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Helper/Helper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Model/Contact.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Model/Contact.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Model/ContactConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Model/ContactConstants.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/StepsDefUS1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/StepsDefUS1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/US1.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/US1.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/CucumberRunner.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/CucumberRunner.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/Helper/Helper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Helper/Helper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/Helper/HelperConstants.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Helper/HelperConstants.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/Model/Contact.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Model/Contact.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/Model/ContactConstants.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Model/ContactConstants.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/StepsDefUS1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/StepsDefUS1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/US1.feature" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/US1.feature" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -31,11 +18,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/StepsDefUS1.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1080">
-              <caret line="59" column="8" lean-forward="true" selection-start-line="59" selection-start-column="8" selection-end-line="59" selection-end-column="8" />
+            <state relative-caret-position="365">
+              <caret line="45" column="67" lean-forward="true" selection-start-line="45" selection-start-column="67" selection-end-line="45" selection-end-column="67" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#3831#3840#0" expanded="true" />
@@ -46,10 +33,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/Helper/Helper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="559">
+            <state relative-caret-position="1105">
               <caret line="77" column="17" lean-forward="true" selection-start-line="77" selection-start-column="17" selection-end-line="77" selection-end-column="17" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -225,9 +212,9 @@
         <option value="$PROJECT_DIR$/src/test/java/Helper/HelperConstants.java" />
         <option value="$PROJECT_DIR$/src/test/java/Model/ContactConstants.java" />
         <option value="$PROJECT_DIR$/src/test/resources/US1.feature" />
-        <option value="$PROJECT_DIR$/src/test/java/StepsDefUS1.java" />
         <option value="$PROJECT_DIR$/src/test/java/Model/Contact.java" />
         <option value="$PROJECT_DIR$/src/test/java/Helper/Helper.java" />
+        <option value="$PROJECT_DIR$/src/test/java/StepsDefUS1.java" />
       </list>
     </option>
   </component>
@@ -364,7 +351,7 @@
       <workItem from="1560529472583" duration="2611000" />
       <workItem from="1560532405726" duration="3122000" />
       <workItem from="1560540888420" duration="3797000" />
-      <workItem from="1560597018076" duration="16032000" />
+      <workItem from="1560597018076" duration="16381000" />
     </task>
     <servers />
   </component>
@@ -401,7 +388,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="52959000" />
+    <option name="totallyTimeSpent" value="53308000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -765,19 +752,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/StepsDefUS1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1080">
-          <caret line="59" column="8" lean-forward="true" selection-start-line="59" selection-start-column="8" selection-end-line="59" selection-end-column="8" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3831#3840#0" expanded="true" />
-            <element signature="method#iShouldSeeExactlyTheSameAmountOfContactsThatExistInTheDatabase#0;class#StepsDefUS1#0" />
-            <element signature="e#5167#5175#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/Model/Contact.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="508">
@@ -842,13 +816,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/Helper/Helper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="559">
+        <state relative-caret-position="1105">
           <caret line="77" column="17" lean-forward="true" selection-start-line="77" selection-start-column="17" selection-end-line="77" selection-end-column="17" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#checkIntegrityOfContact#0;class#Helper#0" />
             <element signature="method#waitForSomething#0;class#Helper#0" />
             <element signature="e#9944#9953#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/StepsDefUS1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="365">
+          <caret line="45" column="67" lean-forward="true" selection-start-line="45" selection-start-column="67" selection-end-line="45" selection-end-column="67" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3831#3840#0" expanded="true" />
+            <element signature="method#iShouldSeeExactlyTheSameAmountOfContactsThatExistInTheDatabase#0;class#StepsDefUS1#0" />
+            <element signature="e#5167#5175#0" expanded="true" />
           </folding>
         </state>
       </provider>
