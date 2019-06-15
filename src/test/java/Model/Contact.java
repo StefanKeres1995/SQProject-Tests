@@ -3,18 +3,18 @@ package Model;
 import java.net.URL;
 
 public class Contact {
-    String Birthday;
-    String City;
-    String Company;
-    String Email;
-    String GivenName;
-    String Guid;
-    String Occupation;
-    Long Phone;
-    URL PhotoUrl;
-    String Source;
-    String StreetAddress;
-    String Surname;
+    private String Birthday;
+    private String City;
+    private String Company;
+    private String Email;
+    private String GivenName;
+    private String Guid;
+    private String Occupation;
+    private Long Phone;
+    private URL PhotoUrl;
+    private String Source;
+    private String StreetAddress;
+    private String Surname;
 
     public Contact(String birthday, String city, String company,
                    String email, String givenName, String guid,

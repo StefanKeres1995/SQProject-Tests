@@ -4,28 +4,19 @@ Feature: Access to the Contacts Orchestrator Solution's (COS) Landing Page
   So that I can see the list of the contacts available
   Scenario: Landing page's title and text contains "Contacts Landing Page"
     Given I access the landing page of COS
-    #Then the title of the page should be "Contacts Landing Page"
-    Then I should see the same name as in the database position
-  Scenario: Landing page's title and text contains "Contacts Landing Page"
+    Then the title of the page should be "Contacts Landing Page"
+
+  Scenario: Landing page contains all contacts available in the
     Given I access the landing page of COS
-    #Then the title of the page should be "Contacts Landing Page"
+    Then I should see exactly the same amount of contacts that exist in the database
+
+  Scenario: Landing page seems to have data that is coherent with the database
+    Given I access the landing page of COS
     Then I should see the same name as in the database position
 
- #Feature: Access to the Contacts Orchestrator Solution's (COS) Landing Page
- #  As a user
- #  I want to access to the URL address provided for the landing page
- #  So that I can see the list of the contacts available
- #  #no-error
- #  Scenario: Landing page's title and text contains "Contacts"
- #    Given I access the landing page of COS
- #    Then the title of the page should be "Contacts"
+  #The table's header columns are sortable
 
-  #site can be reached by its url
-  #link is well composed, talking about /index.html, for now
-  #Page's body title to be 'Welcome to contacts', per now
-  #The page loads contacts from this link
-  #Page loads exactly 'count' contacts
-  #All contacts need to have this and that obrigatory parameters
+
 
   #SELECTOR FOR SOURCES
   #Text label exists
@@ -44,8 +35,7 @@ Feature: Access to the Contacts Orchestrator Solution's (COS) Landing Page
 
   #TABLE SKELETON
   #Table exists even with empty data
-  #Table has these columns
-  #The table's header columns are sortable
+
 
   #CONTACTS IN TABLE
   #All contacts need to be loaded in the table
@@ -67,7 +57,3 @@ Feature: Access to the Contacts Orchestrator Solution's (COS) Landing Page
   #Chack duplicates link exists
   #Check duplicates link is above table
   #Check duplicates link redirects to this link (make it)
-
-
-
-

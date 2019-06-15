@@ -7,7 +7,7 @@ formatter.feature({
   "keyword": "Feature"
 });
 formatter.before({
-  "duration": 12081837200,
+  "duration": 7844999700,
   "status": "passed"
 });
 formatter.scenario({
@@ -24,44 +24,43 @@ formatter.step({
   "keyword": "Given "
 });
 formatter.step({
-  "comments": [
-    {
-      "line": 7,
-      "value": "#Then the title of the page should be \"Contacts Landing Page\""
-    }
-  ],
-  "line": 8,
-  "name": "I should see the same name as in the database position",
+  "line": 7,
+  "name": "the title of the page should be \"Contacts Landing Page\"",
   "keyword": "Then "
 });
 formatter.match({
   "location": "StepsDefUS1.iAccessTheLandingPageOfCOS()"
 });
 formatter.result({
-  "duration": 1003433400,
+  "duration": 1758808900,
   "status": "passed"
 });
 formatter.match({
-  "location": "StepsDefUS1.iShouldSeeTheSameNameAsInTheDatabasePosition()"
+  "arguments": [
+    {
+      "val": "Contacts Landing Page",
+      "offset": 33
+    }
+  ],
+  "location": "StepsDefUS1.theTitleOfThePageShouldBe(String)"
 });
 formatter.result({
-  "duration": 2901771836600,
-  "error_message": "java.lang.IndexOutOfBoundsException: Index 0 out of bounds for length 0\r\n\tat java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:64)\r\n\tat java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:70)\r\n\tat java.base/jdk.internal.util.Preconditions.checkIndex(Preconditions.java:248)\r\n\tat java.base/java.util.Objects.checkIndex(Objects.java:372)\r\n\tat java.base/java.util.ArrayList.get(ArrayList.java:458)\r\n\tat StepsDefUS1.iShouldSeeTheSameNameAsInTheDatabasePosition(StepsDefUS1.java:187)\r\n\tat ✽.Then I should see the same name as in the database position(US1.feature:8)\r\n",
-  "status": "failed"
+  "duration": 11620800,
+  "status": "passed"
 });
 formatter.after({
-  "duration": 46399,
+  "duration": 72641300,
   "status": "passed"
 });
 formatter.before({
-  "duration": 32100,
+  "duration": 3777295000,
   "status": "passed"
 });
 formatter.scenario({
   "line": 9,
-  "name": "Landing page\u0027s title and text contains \"Contacts Landing Page\"",
+  "name": "Landing page contains all contacts available in the",
   "description": "",
-  "id": "access-to-the-contacts-orchestrator-solution\u0027s-(cos)-landing-page;landing-page\u0027s-title-and-text-contains-\"contacts-landing-page\"",
+  "id": "access-to-the-contacts-orchestrator-solution\u0027s-(cos)-landing-page;landing-page-contains-all-contacts-available-in-the",
   "type": "scenario",
   "keyword": "Scenario"
 });
@@ -71,13 +70,47 @@ formatter.step({
   "keyword": "Given "
 });
 formatter.step({
-  "comments": [
-    {
-      "line": 11,
-      "value": "#Then the title of the page should be \"Contacts Landing Page\""
-    }
-  ],
-  "line": 12,
+  "line": 11,
+  "name": "I should see exactly the same amount of contacts that exist in the database",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "StepsDefUS1.iAccessTheLandingPageOfCOS()"
+});
+formatter.result({
+  "duration": 1959692600,
+  "status": "passed"
+});
+formatter.match({
+  "location": "StepsDefUS1.iShouldSeeExactlyTheSameAmountOfContactsThatExistInTheDatabase()"
+});
+formatter.result({
+  "duration": 3502308700,
+  "status": "passed"
+});
+formatter.after({
+  "duration": 3284149300,
+  "status": "passed"
+});
+formatter.before({
+  "duration": 7230741000,
+  "status": "passed"
+});
+formatter.scenario({
+  "line": 13,
+  "name": "Landing page seems to have data that is coherent with the database",
+  "description": "",
+  "id": "access-to-the-contacts-orchestrator-solution\u0027s-(cos)-landing-page;landing-page-seems-to-have-data-that-is-coherent-with-the-database",
+  "type": "scenario",
+  "keyword": "Scenario"
+});
+formatter.step({
+  "line": 14,
+  "name": "I access the landing page of COS",
+  "keyword": "Given "
+});
+formatter.step({
+  "line": 15,
   "name": "I should see the same name as in the database position",
   "keyword": "Then "
 });
@@ -85,9 +118,18 @@ formatter.match({
   "location": "StepsDefUS1.iAccessTheLandingPageOfCOS()"
 });
 formatter.result({
-  "duration": 55796800,
+  "duration": 1132998900,
   "status": "passed"
 });
 formatter.match({
   "location": "StepsDefUS1.iShouldSeeTheSameNameAsInTheDatabasePosition()"
+});
+formatter.result({
+  "duration": 2466768500,
+  "status": "passed"
+});
+formatter.after({
+  "duration": 79715300,
+  "status": "passed"
+});
 });
