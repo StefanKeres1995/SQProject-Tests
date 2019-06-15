@@ -42,10 +42,8 @@ public class StepsDefUS1 {
     public void setUp()
     {
         //Is the driver initializing for for first time?
-        if(driver == null) {
-            if(!System.getProperty("user.dir").contains("jenkins")){
-                System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
-            }
+        if(!System.getProperty("user.dir").contains("jenkins") || driver == null) {
+            System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
         }
 
         //Are contacts null? Then populate.
