@@ -41,7 +41,7 @@ public class StepsDefUS1 {
     {
         //Is the driver initializing for for first time?
         if(driver == null) {
-            System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
+            //System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
         }
 
         //Are contacts null? Then populate.
