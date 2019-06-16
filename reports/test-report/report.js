@@ -7,7 +7,7 @@ formatter.feature({
   "keyword": "Feature"
 });
 formatter.before({
-  "duration": 5620338200,
+  "duration": 6625768000,
   "status": "passed"
 });
 formatter.scenario({
@@ -32,7 +32,7 @@ formatter.match({
   "location": "StepsDefUS1.iAccessTheLandingPageOfCOS()"
 });
 formatter.result({
-  "duration": 1150121000,
+  "duration": 1728062501,
   "status": "passed"
 });
 formatter.match({
@@ -45,15 +45,15 @@ formatter.match({
   "location": "StepsDefUS1.theTitleOfThePageShouldBe(String)"
 });
 formatter.result({
-  "duration": 10967000,
+  "duration": 37537500,
   "status": "passed"
 });
 formatter.after({
-  "duration": 39105400,
+  "duration": 138550200,
   "status": "passed"
 });
 formatter.before({
-  "duration": 2724145800,
+  "duration": 4180640700,
   "status": "passed"
 });
 formatter.scenario({
@@ -78,22 +78,22 @@ formatter.match({
   "location": "StepsDefUS1.iAccessTheLandingPageOfCOS()"
 });
 formatter.result({
-  "duration": 828951100,
+  "duration": 1793103300,
   "status": "passed"
 });
 formatter.match({
   "location": "StepsDefUS1.iShouldSeeExactlyTheSameAmountOfContactsThatExistInTheDatabase()"
 });
 formatter.result({
-  "duration": 703693300,
+  "duration": 998572701,
   "status": "passed"
 });
 formatter.after({
-  "duration": 35419600,
+  "duration": 41480300,
   "status": "passed"
 });
 formatter.before({
-  "duration": 2722502000,
+  "duration": 3446747000,
   "status": "passed"
 });
 formatter.scenario({
@@ -111,25 +111,25 @@ formatter.step({
 });
 formatter.step({
   "line": 15,
-  "name": "I should see the same name as in the database position",
+  "name": "I should see the contact as in the database position",
   "keyword": "Then "
 });
 formatter.match({
   "location": "StepsDefUS1.iAccessTheLandingPageOfCOS()"
 });
 formatter.result({
-  "duration": 685193800,
+  "duration": 1012605300,
   "status": "passed"
 });
 formatter.match({
-  "location": "StepsDefUS1.iShouldSeeTheSameNameAsInTheDatabasePosition()"
+  "location": "StepsDefUS1.iShouldSeeTheContactAsInTheDatabasePosition()"
 });
 formatter.result({
-  "duration": 878321800,
+  "duration": 1613420701,
   "status": "passed"
 });
 formatter.after({
-  "duration": 32662800,
+  "duration": 78894399,
   "status": "passed"
 });
 formatter.scenarioOutline({
@@ -163,7 +163,6 @@ formatter.examples({
   "rows": [
     {
       "cells": [
-        "column",
         "column"
       ],
       "line": 23,
@@ -171,48 +170,42 @@ formatter.examples({
     },
     {
       "cells": [
-        "ID",
-        "-1"
+        "ID"
       ],
       "line": 24,
       "id": "access-to-the-contacts-orchestrator-solution\u0027s-(cos)-landing-page;landing-page-contains-the-table-and-columns-are-sortable;;2"
     },
     {
       "cells": [
-        "GivenName",
-        "4"
+        "GivenName"
       ],
       "line": 25,
       "id": "access-to-the-contacts-orchestrator-solution\u0027s-(cos)-landing-page;landing-page-contains-the-table-and-columns-are-sortable;;3"
     },
     {
       "cells": [
-        "Surname",
-        "11"
+        "Surname"
       ],
       "line": 26,
       "id": "access-to-the-contacts-orchestrator-solution\u0027s-(cos)-landing-page;landing-page-contains-the-table-and-columns-are-sortable;;4"
     },
     {
       "cells": [
-        "Phone",
-        "7"
+        "Phone"
       ],
       "line": 27,
       "id": "access-to-the-contacts-orchestrator-solution\u0027s-(cos)-landing-page;landing-page-contains-the-table-and-columns-are-sortable;;5"
     },
     {
       "cells": [
-        "Source",
-        "9"
+        "Source"
       ],
       "line": 28,
       "id": "access-to-the-contacts-orchestrator-solution\u0027s-(cos)-landing-page;landing-page-contains-the-table-and-columns-are-sortable;;6"
     },
     {
       "cells": [
-        "City",
-        "1"
+        "City"
       ],
       "line": 29,
       "id": "access-to-the-contacts-orchestrator-solution\u0027s-(cos)-landing-page;landing-page-contains-the-table-and-columns-are-sortable;;7"
@@ -221,7 +214,7 @@ formatter.examples({
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 2783898200,
+  "duration": 4807294200,
   "status": "passed"
 });
 formatter.scenario({
@@ -257,7 +250,7 @@ formatter.match({
   "location": "StepsDefUS1.iAccessTheLandingPageOfCOS()"
 });
 formatter.result({
-  "duration": 756257600,
+  "duration": 1251597000,
   "status": "passed"
 });
 formatter.match({
@@ -270,7 +263,7 @@ formatter.match({
   "location": "StepsDefUS1.iSortTheColumn(String)"
 });
 formatter.result({
-  "duration": 767591800,
+  "duration": 1005746500,
   "status": "passed"
 });
 formatter.match({
@@ -283,15 +276,15 @@ formatter.match({
   "location": "StepsDefUS1.theFirstColumnShouldContainTheMostRelevantContactRegardedToTheSorted(String)"
 });
 formatter.result({
-  "duration": 160834300,
+  "duration": 156429600,
   "status": "passed"
 });
 formatter.after({
-  "duration": 32226300,
+  "duration": 73778000,
   "status": "passed"
 });
 formatter.before({
-  "duration": 2691079400,
+  "duration": 4274092900,
   "status": "passed"
 });
 formatter.scenario({
@@ -327,7 +320,7 @@ formatter.match({
   "location": "StepsDefUS1.iAccessTheLandingPageOfCOS()"
 });
 formatter.result({
-  "duration": 962393100,
+  "duration": 1635169699,
   "status": "passed"
 });
 formatter.match({
@@ -340,7 +333,7 @@ formatter.match({
   "location": "StepsDefUS1.iSortTheColumn(String)"
 });
 formatter.result({
-  "duration": 917495000,
+  "duration": 898643601,
   "status": "passed"
 });
 formatter.match({
@@ -353,15 +346,15 @@ formatter.match({
   "location": "StepsDefUS1.theFirstColumnShouldContainTheMostRelevantContactRegardedToTheSorted(String)"
 });
 formatter.result({
-  "duration": 137408700,
+  "duration": 173895300,
   "status": "passed"
 });
 formatter.after({
-  "duration": 32374900,
+  "duration": 38820500,
   "status": "passed"
 });
 formatter.before({
-  "duration": 3772740300,
+  "duration": 3733371800,
   "status": "passed"
 });
 formatter.scenario({
@@ -397,7 +390,7 @@ formatter.match({
   "location": "StepsDefUS1.iAccessTheLandingPageOfCOS()"
 });
 formatter.result({
-  "duration": 1234627200,
+  "duration": 1648488001,
   "status": "passed"
 });
 formatter.match({
@@ -410,7 +403,7 @@ formatter.match({
   "location": "StepsDefUS1.iSortTheColumn(String)"
 });
 formatter.result({
-  "duration": 1515668400,
+  "duration": 784740401,
   "status": "passed"
 });
 formatter.match({
@@ -423,15 +416,15 @@ formatter.match({
   "location": "StepsDefUS1.theFirstColumnShouldContainTheMostRelevantContactRegardedToTheSorted(String)"
 });
 formatter.result({
-  "duration": 224817800,
+  "duration": 165067399,
   "status": "passed"
 });
 formatter.after({
-  "duration": 57966400,
+  "duration": 45399900,
   "status": "passed"
 });
 formatter.before({
-  "duration": 3441651200,
+  "duration": 3357599499,
   "status": "passed"
 });
 formatter.scenario({
@@ -467,7 +460,7 @@ formatter.match({
   "location": "StepsDefUS1.iAccessTheLandingPageOfCOS()"
 });
 formatter.result({
-  "duration": 1355890000,
+  "duration": 23466229201,
   "status": "passed"
 });
 formatter.match({
@@ -480,7 +473,7 @@ formatter.match({
   "location": "StepsDefUS1.iSortTheColumn(String)"
 });
 formatter.result({
-  "duration": 911231100,
+  "duration": 759005200,
   "status": "passed"
 });
 formatter.match({
@@ -493,15 +486,15 @@ formatter.match({
   "location": "StepsDefUS1.theFirstColumnShouldContainTheMostRelevantContactRegardedToTheSorted(String)"
 });
 formatter.result({
-  "duration": 141827500,
+  "duration": 160490000,
   "status": "passed"
 });
 formatter.after({
-  "duration": 34891400,
+  "duration": 44414100,
   "status": "passed"
 });
 formatter.before({
-  "duration": 3402785000,
+  "duration": 3567951800,
   "status": "passed"
 });
 formatter.scenario({
@@ -537,7 +530,7 @@ formatter.match({
   "location": "StepsDefUS1.iAccessTheLandingPageOfCOS()"
 });
 formatter.result({
-  "duration": 1748554200,
+  "duration": 1702962201,
   "status": "passed"
 });
 formatter.match({
@@ -550,7 +543,7 @@ formatter.match({
   "location": "StepsDefUS1.iSortTheColumn(String)"
 });
 formatter.result({
-  "duration": 851602500,
+  "duration": 869990500,
   "status": "passed"
 });
 formatter.match({
@@ -563,15 +556,15 @@ formatter.match({
   "location": "StepsDefUS1.theFirstColumnShouldContainTheMostRelevantContactRegardedToTheSorted(String)"
 });
 formatter.result({
-  "duration": 130147700,
+  "duration": 154039801,
   "status": "passed"
 });
 formatter.after({
-  "duration": 34896600,
+  "duration": 48173300,
   "status": "passed"
 });
 formatter.before({
-  "duration": 2837041300,
+  "duration": 3589470299,
   "status": "passed"
 });
 formatter.scenario({
@@ -607,7 +600,7 @@ formatter.match({
   "location": "StepsDefUS1.iAccessTheLandingPageOfCOS()"
 });
 formatter.result({
-  "duration": 973184700,
+  "duration": 1840092901,
   "status": "passed"
 });
 formatter.match({
@@ -620,7 +613,7 @@ formatter.match({
   "location": "StepsDefUS1.iSortTheColumn(String)"
 });
 formatter.result({
-  "duration": 905762300,
+  "duration": 832769900,
   "status": "passed"
 });
 formatter.match({
@@ -633,11 +626,1031 @@ formatter.match({
   "location": "StepsDefUS1.theFirstColumnShouldContainTheMostRelevantContactRegardedToTheSorted(String)"
 });
 formatter.result({
-  "duration": 146695500,
+  "duration": 149966600,
   "status": "passed"
 });
 formatter.after({
-  "duration": 36406900,
+  "duration": 33329300,
+  "status": "passed"
+});
+formatter.scenarioOutline({
+  "line": 31,
+  "name": "Landing page contains the table and the search bar is operational",
+  "description": "",
+  "id": "access-to-the-contacts-orchestrator-solution\u0027s-(cos)-landing-page;landing-page-contains-the-table-and-the-search-bar-is-operational",
+  "type": "scenario_outline",
+  "keyword": "Scenario Outline"
+});
+formatter.step({
+  "line": 32,
+  "name": "I access the landing page of COS",
+  "keyword": "Given "
+});
+formatter.step({
+  "line": 33,
+  "name": "I search for \"\u003csearch\u003e\"",
+  "keyword": "When "
+});
+formatter.step({
+  "line": 34,
+  "name": "I should only see columns that are related to what I\u0027ve just searched, related to \"\u003ctype\u003e\" (\"\u003csearch\u003e\")",
+  "keyword": "Then "
+});
+formatter.examples({
+  "line": 36,
+  "name": "",
+  "description": "",
+  "id": "access-to-the-contacts-orchestrator-solution\u0027s-(cos)-landing-page;landing-page-contains-the-table-and-the-search-bar-is-operational;",
+  "rows": [
+    {
+      "cells": [
+        "search",
+        "type"
+      ],
+      "line": 37,
+      "id": "access-to-the-contacts-orchestrator-solution\u0027s-(cos)-landing-page;landing-page-contains-the-table-and-the-search-bar-is-operational;;1"
+    },
+    {
+      "cells": [
+        "Viseu",
+        "City"
+      ],
+      "line": 38,
+      "id": "access-to-the-contacts-orchestrator-solution\u0027s-(cos)-landing-page;landing-page-contains-the-table-and-the-search-bar-is-operational;;2"
+    },
+    {
+      "cells": [
+        "Joao",
+        "GivenName"
+      ],
+      "line": 39,
+      "id": "access-to-the-contacts-orchestrator-solution\u0027s-(cos)-landing-page;landing-page-contains-the-table-and-the-search-bar-is-operational;;3"
+    },
+    {
+      "cells": [
+        "234216838",
+        "Phone"
+      ],
+      "line": 40,
+      "id": "access-to-the-contacts-orchestrator-solution\u0027s-(cos)-landing-page;landing-page-contains-the-table-and-the-search-bar-is-operational;;4"
+    },
+    {
+      "cells": [
+        "Almeida",
+        "Surname"
+      ],
+      "line": 41,
+      "id": "access-to-the-contacts-orchestrator-solution\u0027s-(cos)-landing-page;landing-page-contains-the-table-and-the-search-bar-is-operational;;5"
+    },
+    {
+      "cells": [
+        "Something",
+        "GivenName"
+      ],
+      "line": 42,
+      "id": "access-to-the-contacts-orchestrator-solution\u0027s-(cos)-landing-page;landing-page-contains-the-table-and-the-search-bar-is-operational;;6"
+    }
+  ],
+  "keyword": "Examples"
+});
+formatter.before({
+  "duration": 3552496600,
+  "status": "passed"
+});
+formatter.scenario({
+  "line": 38,
+  "name": "Landing page contains the table and the search bar is operational",
+  "description": "",
+  "id": "access-to-the-contacts-orchestrator-solution\u0027s-(cos)-landing-page;landing-page-contains-the-table-and-the-search-bar-is-operational;;2",
+  "type": "scenario",
+  "keyword": "Scenario Outline"
+});
+formatter.step({
+  "line": 32,
+  "name": "I access the landing page of COS",
+  "keyword": "Given "
+});
+formatter.step({
+  "line": 33,
+  "name": "I search for \"Viseu\"",
+  "matchedColumns": [
+    0
+  ],
+  "keyword": "When "
+});
+formatter.step({
+  "line": 34,
+  "name": "I should only see columns that are related to what I\u0027ve just searched, related to \"City\" (\"Viseu\")",
+  "matchedColumns": [
+    0,
+    1
+  ],
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "StepsDefUS1.iAccessTheLandingPageOfCOS()"
+});
+formatter.result({
+  "duration": 1886961701,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "Viseu",
+      "offset": 14
+    }
+  ],
+  "location": "StepsDefUS1.iSearchFor(String)"
+});
+formatter.result({
+  "duration": 760619000,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "City",
+      "offset": 83
+    },
+    {
+      "val": "Viseu",
+      "offset": 91
+    }
+  ],
+  "location": "StepsDefUS1.iShouldOnlySeeColumnsThatAreRelatedToWhatIVeJustSearchedRelatedTo(String,String)"
+});
+formatter.result({
+  "duration": 270162800,
+  "status": "passed"
+});
+formatter.after({
+  "duration": 61139101,
+  "status": "passed"
+});
+formatter.before({
+  "duration": 3685552101,
+  "status": "passed"
+});
+formatter.scenario({
+  "line": 39,
+  "name": "Landing page contains the table and the search bar is operational",
+  "description": "",
+  "id": "access-to-the-contacts-orchestrator-solution\u0027s-(cos)-landing-page;landing-page-contains-the-table-and-the-search-bar-is-operational;;3",
+  "type": "scenario",
+  "keyword": "Scenario Outline"
+});
+formatter.step({
+  "line": 32,
+  "name": "I access the landing page of COS",
+  "keyword": "Given "
+});
+formatter.step({
+  "line": 33,
+  "name": "I search for \"Joao\"",
+  "matchedColumns": [
+    0
+  ],
+  "keyword": "When "
+});
+formatter.step({
+  "line": 34,
+  "name": "I should only see columns that are related to what I\u0027ve just searched, related to \"GivenName\" (\"Joao\")",
+  "matchedColumns": [
+    0,
+    1
+  ],
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "StepsDefUS1.iAccessTheLandingPageOfCOS()"
+});
+formatter.result({
+  "duration": 1758169100,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "Joao",
+      "offset": 14
+    }
+  ],
+  "location": "StepsDefUS1.iSearchFor(String)"
+});
+formatter.result({
+  "duration": 765437000,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "GivenName",
+      "offset": 83
+    },
+    {
+      "val": "Joao",
+      "offset": 96
+    }
+  ],
+  "location": "StepsDefUS1.iShouldOnlySeeColumnsThatAreRelatedToWhatIVeJustSearchedRelatedTo(String,String)"
+});
+formatter.result({
+  "duration": 500533800,
+  "status": "passed"
+});
+formatter.after({
+  "duration": 36002500,
+  "status": "passed"
+});
+formatter.before({
+  "duration": 3528811700,
+  "status": "passed"
+});
+formatter.scenario({
+  "line": 40,
+  "name": "Landing page contains the table and the search bar is operational",
+  "description": "",
+  "id": "access-to-the-contacts-orchestrator-solution\u0027s-(cos)-landing-page;landing-page-contains-the-table-and-the-search-bar-is-operational;;4",
+  "type": "scenario",
+  "keyword": "Scenario Outline"
+});
+formatter.step({
+  "line": 32,
+  "name": "I access the landing page of COS",
+  "keyword": "Given "
+});
+formatter.step({
+  "line": 33,
+  "name": "I search for \"234216838\"",
+  "matchedColumns": [
+    0
+  ],
+  "keyword": "When "
+});
+formatter.step({
+  "line": 34,
+  "name": "I should only see columns that are related to what I\u0027ve just searched, related to \"Phone\" (\"234216838\")",
+  "matchedColumns": [
+    0,
+    1
+  ],
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "StepsDefUS1.iAccessTheLandingPageOfCOS()"
+});
+formatter.result({
+  "duration": 3760047200,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "234216838",
+      "offset": 14
+    }
+  ],
+  "location": "StepsDefUS1.iSearchFor(String)"
+});
+formatter.result({
+  "duration": 914951401,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "Phone",
+      "offset": 83
+    },
+    {
+      "val": "234216838",
+      "offset": 92
+    }
+  ],
+  "location": "StepsDefUS1.iShouldOnlySeeColumnsThatAreRelatedToWhatIVeJustSearchedRelatedTo(String,String)"
+});
+formatter.result({
+  "duration": 243558999,
+  "status": "passed"
+});
+formatter.after({
+  "duration": 76084300,
+  "status": "passed"
+});
+formatter.before({
+  "duration": 3392173401,
+  "status": "passed"
+});
+formatter.scenario({
+  "line": 41,
+  "name": "Landing page contains the table and the search bar is operational",
+  "description": "",
+  "id": "access-to-the-contacts-orchestrator-solution\u0027s-(cos)-landing-page;landing-page-contains-the-table-and-the-search-bar-is-operational;;5",
+  "type": "scenario",
+  "keyword": "Scenario Outline"
+});
+formatter.step({
+  "line": 32,
+  "name": "I access the landing page of COS",
+  "keyword": "Given "
+});
+formatter.step({
+  "line": 33,
+  "name": "I search for \"Almeida\"",
+  "matchedColumns": [
+    0
+  ],
+  "keyword": "When "
+});
+formatter.step({
+  "line": 34,
+  "name": "I should only see columns that are related to what I\u0027ve just searched, related to \"Surname\" (\"Almeida\")",
+  "matchedColumns": [
+    0,
+    1
+  ],
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "StepsDefUS1.iAccessTheLandingPageOfCOS()"
+});
+formatter.result({
+  "duration": 1823969300,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "Almeida",
+      "offset": 14
+    }
+  ],
+  "location": "StepsDefUS1.iSearchFor(String)"
+});
+formatter.result({
+  "duration": 1045023101,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "Surname",
+      "offset": 83
+    },
+    {
+      "val": "Almeida",
+      "offset": 94
+    }
+  ],
+  "location": "StepsDefUS1.iShouldOnlySeeColumnsThatAreRelatedToWhatIVeJustSearchedRelatedTo(String,String)"
+});
+formatter.result({
+  "duration": 360845401,
+  "status": "passed"
+});
+formatter.after({
+  "duration": 37472900,
+  "status": "passed"
+});
+formatter.before({
+  "duration": 3508478100,
+  "status": "passed"
+});
+formatter.scenario({
+  "line": 42,
+  "name": "Landing page contains the table and the search bar is operational",
+  "description": "",
+  "id": "access-to-the-contacts-orchestrator-solution\u0027s-(cos)-landing-page;landing-page-contains-the-table-and-the-search-bar-is-operational;;6",
+  "type": "scenario",
+  "keyword": "Scenario Outline"
+});
+formatter.step({
+  "line": 32,
+  "name": "I access the landing page of COS",
+  "keyword": "Given "
+});
+formatter.step({
+  "line": 33,
+  "name": "I search for \"Something\"",
+  "matchedColumns": [
+    0
+  ],
+  "keyword": "When "
+});
+formatter.step({
+  "line": 34,
+  "name": "I should only see columns that are related to what I\u0027ve just searched, related to \"GivenName\" (\"Something\")",
+  "matchedColumns": [
+    0,
+    1
+  ],
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "StepsDefUS1.iAccessTheLandingPageOfCOS()"
+});
+formatter.result({
+  "duration": 1134309400,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "Something",
+      "offset": 14
+    }
+  ],
+  "location": "StepsDefUS1.iSearchFor(String)"
+});
+formatter.result({
+  "duration": 804323199,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "GivenName",
+      "offset": 83
+    },
+    {
+      "val": "Something",
+      "offset": 96
+    }
+  ],
+  "location": "StepsDefUS1.iShouldOnlySeeColumnsThatAreRelatedToWhatIVeJustSearchedRelatedTo(String,String)"
+});
+formatter.result({
+  "duration": 13939901,
+  "status": "passed"
+});
+formatter.after({
+  "duration": 49486199,
+  "status": "passed"
+});
+formatter.scenarioOutline({
+  "line": 44,
+  "name": "Landing page contains the table and the search bar is operational, along with columns sortable",
+  "description": "",
+  "id": "access-to-the-contacts-orchestrator-solution\u0027s-(cos)-landing-page;landing-page-contains-the-table-and-the-search-bar-is-operational,-along-with-columns-sortable",
+  "type": "scenario_outline",
+  "keyword": "Scenario Outline"
+});
+formatter.step({
+  "line": 45,
+  "name": "I access the landing page of COS",
+  "keyword": "Given "
+});
+formatter.step({
+  "line": 46,
+  "name": "I search for \"\u003csearch\u003e\"",
+  "keyword": "When "
+});
+formatter.step({
+  "line": 47,
+  "name": "I sort the column \"\u003ccolumn\u003e\"",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 48,
+  "name": "I should be able to see the sorted table by \"\u003ccolumn\u003e\", while only appearing what I searched for, related to \"\u003csearch\u003e\"",
+  "keyword": "Then "
+});
+formatter.examples({
+  "line": 50,
+  "name": "",
+  "description": "",
+  "id": "access-to-the-contacts-orchestrator-solution\u0027s-(cos)-landing-page;landing-page-contains-the-table-and-the-search-bar-is-operational,-along-with-columns-sortable;",
+  "rows": [
+    {
+      "cells": [
+        "search",
+        "column"
+      ],
+      "line": 51,
+      "id": "access-to-the-contacts-orchestrator-solution\u0027s-(cos)-landing-page;landing-page-contains-the-table-and-the-search-bar-is-operational,-along-with-columns-sortable;;1"
+    },
+    {
+      "cells": [
+        "Joao",
+        "ID"
+      ],
+      "line": 52,
+      "id": "access-to-the-contacts-orchestrator-solution\u0027s-(cos)-landing-page;landing-page-contains-the-table-and-the-search-bar-is-operational,-along-with-columns-sortable;;2"
+    },
+    {
+      "cells": [
+        "Joao",
+        "GivenName"
+      ],
+      "line": 53,
+      "id": "access-to-the-contacts-orchestrator-solution\u0027s-(cos)-landing-page;landing-page-contains-the-table-and-the-search-bar-is-operational,-along-with-columns-sortable;;3"
+    },
+    {
+      "cells": [
+        "Joao",
+        "Surname"
+      ],
+      "line": 54,
+      "id": "access-to-the-contacts-orchestrator-solution\u0027s-(cos)-landing-page;landing-page-contains-the-table-and-the-search-bar-is-operational,-along-with-columns-sortable;;4"
+    },
+    {
+      "cells": [
+        "Joao",
+        "Phone"
+      ],
+      "line": 55,
+      "id": "access-to-the-contacts-orchestrator-solution\u0027s-(cos)-landing-page;landing-page-contains-the-table-and-the-search-bar-is-operational,-along-with-columns-sortable;;5"
+    },
+    {
+      "cells": [
+        "Joao",
+        "City"
+      ],
+      "line": 56,
+      "id": "access-to-the-contacts-orchestrator-solution\u0027s-(cos)-landing-page;landing-page-contains-the-table-and-the-search-bar-is-operational,-along-with-columns-sortable;;6"
+    }
+  ],
+  "keyword": "Examples"
+});
+formatter.before({
+  "duration": 3364651600,
+  "status": "passed"
+});
+formatter.scenario({
+  "line": 52,
+  "name": "Landing page contains the table and the search bar is operational, along with columns sortable",
+  "description": "",
+  "id": "access-to-the-contacts-orchestrator-solution\u0027s-(cos)-landing-page;landing-page-contains-the-table-and-the-search-bar-is-operational,-along-with-columns-sortable;;2",
+  "type": "scenario",
+  "keyword": "Scenario Outline"
+});
+formatter.step({
+  "line": 45,
+  "name": "I access the landing page of COS",
+  "keyword": "Given "
+});
+formatter.step({
+  "line": 46,
+  "name": "I search for \"Joao\"",
+  "matchedColumns": [
+    0
+  ],
+  "keyword": "When "
+});
+formatter.step({
+  "line": 47,
+  "name": "I sort the column \"ID\"",
+  "matchedColumns": [
+    1
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 48,
+  "name": "I should be able to see the sorted table by \"ID\", while only appearing what I searched for, related to \"Joao\"",
+  "matchedColumns": [
+    0,
+    1
+  ],
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "StepsDefUS1.iAccessTheLandingPageOfCOS()"
+});
+formatter.result({
+  "duration": 1189923999,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "Joao",
+      "offset": 14
+    }
+  ],
+  "location": "StepsDefUS1.iSearchFor(String)"
+});
+formatter.result({
+  "duration": 745608300,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "ID",
+      "offset": 19
+    }
+  ],
+  "location": "StepsDefUS1.iSortTheColumn(String)"
+});
+formatter.result({
+  "duration": 99555101,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "ID",
+      "offset": 45
+    },
+    {
+      "val": "Joao",
+      "offset": 104
+    }
+  ],
+  "location": "StepsDefUS1.iShouldBeAbleToSeeTheSortedTableByWhileOnlyAppearingWhatISearchedForRelatedTo(String,String)"
+});
+formatter.result({
+  "duration": 486915300,
+  "status": "passed"
+});
+formatter.after({
+  "duration": 42603200,
+  "status": "passed"
+});
+formatter.before({
+  "duration": 3517817500,
+  "status": "passed"
+});
+formatter.scenario({
+  "line": 53,
+  "name": "Landing page contains the table and the search bar is operational, along with columns sortable",
+  "description": "",
+  "id": "access-to-the-contacts-orchestrator-solution\u0027s-(cos)-landing-page;landing-page-contains-the-table-and-the-search-bar-is-operational,-along-with-columns-sortable;;3",
+  "type": "scenario",
+  "keyword": "Scenario Outline"
+});
+formatter.step({
+  "line": 45,
+  "name": "I access the landing page of COS",
+  "keyword": "Given "
+});
+formatter.step({
+  "line": 46,
+  "name": "I search for \"Joao\"",
+  "matchedColumns": [
+    0
+  ],
+  "keyword": "When "
+});
+formatter.step({
+  "line": 47,
+  "name": "I sort the column \"GivenName\"",
+  "matchedColumns": [
+    1
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 48,
+  "name": "I should be able to see the sorted table by \"GivenName\", while only appearing what I searched for, related to \"Joao\"",
+  "matchedColumns": [
+    0,
+    1
+  ],
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "StepsDefUS1.iAccessTheLandingPageOfCOS()"
+});
+formatter.result({
+  "duration": 1573176300,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "Joao",
+      "offset": 14
+    }
+  ],
+  "location": "StepsDefUS1.iSearchFor(String)"
+});
+formatter.result({
+  "duration": 767635200,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "GivenName",
+      "offset": 19
+    }
+  ],
+  "location": "StepsDefUS1.iSortTheColumn(String)"
+});
+formatter.result({
+  "duration": 119202300,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "GivenName",
+      "offset": 45
+    },
+    {
+      "val": "Joao",
+      "offset": 111
+    }
+  ],
+  "location": "StepsDefUS1.iShouldBeAbleToSeeTheSortedTableByWhileOnlyAppearingWhatISearchedForRelatedTo(String,String)"
+});
+formatter.result({
+  "duration": 499972800,
+  "status": "passed"
+});
+formatter.after({
+  "duration": 49885300,
+  "status": "passed"
+});
+formatter.before({
+  "duration": 3494231700,
+  "status": "passed"
+});
+formatter.scenario({
+  "line": 54,
+  "name": "Landing page contains the table and the search bar is operational, along with columns sortable",
+  "description": "",
+  "id": "access-to-the-contacts-orchestrator-solution\u0027s-(cos)-landing-page;landing-page-contains-the-table-and-the-search-bar-is-operational,-along-with-columns-sortable;;4",
+  "type": "scenario",
+  "keyword": "Scenario Outline"
+});
+formatter.step({
+  "line": 45,
+  "name": "I access the landing page of COS",
+  "keyword": "Given "
+});
+formatter.step({
+  "line": 46,
+  "name": "I search for \"Joao\"",
+  "matchedColumns": [
+    0
+  ],
+  "keyword": "When "
+});
+formatter.step({
+  "line": 47,
+  "name": "I sort the column \"Surname\"",
+  "matchedColumns": [
+    1
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 48,
+  "name": "I should be able to see the sorted table by \"Surname\", while only appearing what I searched for, related to \"Joao\"",
+  "matchedColumns": [
+    0,
+    1
+  ],
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "StepsDefUS1.iAccessTheLandingPageOfCOS()"
+});
+formatter.result({
+  "duration": 1695382800,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "Joao",
+      "offset": 14
+    }
+  ],
+  "location": "StepsDefUS1.iSearchFor(String)"
+});
+formatter.result({
+  "duration": 872772001,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "Surname",
+      "offset": 19
+    }
+  ],
+  "location": "StepsDefUS1.iSortTheColumn(String)"
+});
+formatter.result({
+  "duration": 128440000,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "Surname",
+      "offset": 45
+    },
+    {
+      "val": "Joao",
+      "offset": 109
+    }
+  ],
+  "location": "StepsDefUS1.iShouldBeAbleToSeeTheSortedTableByWhileOnlyAppearingWhatISearchedForRelatedTo(String,String)"
+});
+formatter.result({
+  "duration": 497650300,
+  "status": "passed"
+});
+formatter.after({
+  "duration": 72028399,
+  "status": "passed"
+});
+formatter.before({
+  "duration": 3749699500,
+  "status": "passed"
+});
+formatter.scenario({
+  "line": 55,
+  "name": "Landing page contains the table and the search bar is operational, along with columns sortable",
+  "description": "",
+  "id": "access-to-the-contacts-orchestrator-solution\u0027s-(cos)-landing-page;landing-page-contains-the-table-and-the-search-bar-is-operational,-along-with-columns-sortable;;5",
+  "type": "scenario",
+  "keyword": "Scenario Outline"
+});
+formatter.step({
+  "line": 45,
+  "name": "I access the landing page of COS",
+  "keyword": "Given "
+});
+formatter.step({
+  "line": 46,
+  "name": "I search for \"Joao\"",
+  "matchedColumns": [
+    0
+  ],
+  "keyword": "When "
+});
+formatter.step({
+  "line": 47,
+  "name": "I sort the column \"Phone\"",
+  "matchedColumns": [
+    1
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 48,
+  "name": "I should be able to see the sorted table by \"Phone\", while only appearing what I searched for, related to \"Joao\"",
+  "matchedColumns": [
+    0,
+    1
+  ],
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "StepsDefUS1.iAccessTheLandingPageOfCOS()"
+});
+formatter.result({
+  "duration": 1853345100,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "Joao",
+      "offset": 14
+    }
+  ],
+  "location": "StepsDefUS1.iSearchFor(String)"
+});
+formatter.result({
+  "duration": 892611100,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "Phone",
+      "offset": 19
+    }
+  ],
+  "location": "StepsDefUS1.iSortTheColumn(String)"
+});
+formatter.result({
+  "duration": 252206800,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "Phone",
+      "offset": 45
+    },
+    {
+      "val": "Joao",
+      "offset": 107
+    }
+  ],
+  "location": "StepsDefUS1.iShouldBeAbleToSeeTheSortedTableByWhileOnlyAppearingWhatISearchedForRelatedTo(String,String)"
+});
+formatter.result({
+  "duration": 550356700,
+  "status": "passed"
+});
+formatter.after({
+  "duration": 41743101,
+  "status": "passed"
+});
+formatter.before({
+  "duration": 3805795000,
+  "status": "passed"
+});
+formatter.scenario({
+  "line": 56,
+  "name": "Landing page contains the table and the search bar is operational, along with columns sortable",
+  "description": "",
+  "id": "access-to-the-contacts-orchestrator-solution\u0027s-(cos)-landing-page;landing-page-contains-the-table-and-the-search-bar-is-operational,-along-with-columns-sortable;;6",
+  "type": "scenario",
+  "keyword": "Scenario Outline"
+});
+formatter.step({
+  "line": 45,
+  "name": "I access the landing page of COS",
+  "keyword": "Given "
+});
+formatter.step({
+  "line": 46,
+  "name": "I search for \"Joao\"",
+  "matchedColumns": [
+    0
+  ],
+  "keyword": "When "
+});
+formatter.step({
+  "line": 47,
+  "name": "I sort the column \"City\"",
+  "matchedColumns": [
+    1
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 48,
+  "name": "I should be able to see the sorted table by \"City\", while only appearing what I searched for, related to \"Joao\"",
+  "matchedColumns": [
+    0,
+    1
+  ],
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "StepsDefUS1.iAccessTheLandingPageOfCOS()"
+});
+formatter.result({
+  "duration": 2077813101,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "Joao",
+      "offset": 14
+    }
+  ],
+  "location": "StepsDefUS1.iSearchFor(String)"
+});
+formatter.result({
+  "duration": 738574499,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "City",
+      "offset": 19
+    }
+  ],
+  "location": "StepsDefUS1.iSortTheColumn(String)"
+});
+formatter.result({
+  "duration": 177741699,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "City",
+      "offset": 45
+    },
+    {
+      "val": "Joao",
+      "offset": 106
+    }
+  ],
+  "location": "StepsDefUS1.iShouldBeAbleToSeeTheSortedTableByWhileOnlyAppearingWhatISearchedForRelatedTo(String,String)"
+});
+formatter.result({
+  "duration": 511993600,
+  "status": "passed"
+});
+formatter.after({
+  "duration": 39666900,
   "status": "passed"
 });
 });

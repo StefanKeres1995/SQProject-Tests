@@ -1,30 +1,19 @@
 import Helper.*;
 import Model.Contact;
 import Model.ContactConstants;
-import com.gargoylesoftware.htmlunit.WebClient;
-import com.gargoylesoftware.htmlunit.html.HtmlPage;
-import com.google.gson.Gson;
-import cucumber.api.PendingException;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
-import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import org.junit.AfterClass;
 import org.openqa.selenium.By;
-import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.regex.Matcher;
@@ -38,9 +27,11 @@ public class StepsDefUS1 {
 
     private static Contact[] contacts = null;
 
+    //Get list of Constants to Verify
+    private static LinkedList<Integer> constantToVerify = new LinkedList<>();
+
     @Before
-    public void setUp()
-    {
+    public void setUp() {
         //Is the driver initializing for for first time?
         if(!System.getProperty("user.dir").contains("jenkins") || driver == null) {
             System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
@@ -48,6 +39,18 @@ public class StepsDefUS1 {
 
         //Are contacts null? Then populate.
         if(contacts == null) {
+            //Is the list of what is on the table empty?
+            if(constantToVerify.isEmpty()){
+                constantToVerify.add(ContactConstants.ID);
+                constantToVerify.add(ContactConstants.GIVEN_NAME);
+                constantToVerify.add(ContactConstants.SURNAME);
+                constantToVerify.add(ContactConstants.PHONE);
+                constantToVerify.add(ContactConstants.SOURCE);
+                constantToVerify.add(ContactConstants.CITY);
+                constantToVerify.add(ContactConstants.GUID);
+            }
+
+            //Get the list of Contacts
             try {
                 contacts = Helper.getInstance().getHTML("http://contactsqs2.apphb.com/Service.svc/rest/contacts");
             } catch (Exception e) {
@@ -70,23 +73,23 @@ public class StepsDefUS1 {
     @Given("^I access the landing page of COS$")
     public void iAccessTheLandingPageOfCOS() throws Throwable {
         //Access the COS, and then assert if we are on the correct page
-        driver.get("http://35.246.92.202/");
+        driver.get(HelperConstants.IP_ADDRESS_INDEX);
         assertEquals ("Contacts Landing Page",driver.getTitle());
     }
 
     @Then("^the title of the page should be \"([^\"]*)\"$")
     public void theTitleOfThePageShouldBe(String title) throws Throwable {
         //Wait for the "title" to match the PageTitle
-        Helper.getInstance().waitForSomething(driver, 3, HelperConstants.WaitCondition_TitleContains, title);
+        Helper.getInstance().waitForSomething(driver, 3, HelperConstants.WaitCondition_TitleContains, title, HelperConstants.IP_ADDRESS_INDEX);
     }
 
-    @And("^I should see the same name as in the database position$")
-    public void iShouldSeeTheSameNameAsInTheDatabasePosition() throws InterruptedException {
+    @Then("^I should see the contact as in the database position$")
+    public void iShouldSeeTheContactAsInTheDatabasePosition() {
         //XPath to the correct position
         String xpath = ".//table[@id='contactsTable']/tbody/tr[2]/td";
 
         //Wait for the position related to the XPath is clickable (If it exists)
-        Helper.getInstance().waitForSomething(driver, 10, HelperConstants.WaitCondition_ElementToBeClickable, xpath);
+        Helper.getInstance().waitForSomething(driver, 10, HelperConstants.WaitCondition_ElementToBeClickable, xpath, HelperConstants.IP_ADDRESS_INDEX);
 
         //Click on the "5" on the pagination.
         driver.findElements(By.xpath(".//div[@id='contactsTable_paginate']/span/a")).get(4).click();
@@ -96,15 +99,6 @@ public class StepsDefUS1 {
 
         //Get ID
         int id = Integer.parseInt(valuesFromTable.get(0).getText());
-
-        //Get list of Constants to Verify... These need to be ordered
-        LinkedList<Integer> constantToVerify = new LinkedList<Integer>();
-        constantToVerify.add(ContactConstants.ID);
-        constantToVerify.add(ContactConstants.GIVEN_NAME);
-        constantToVerify.add(ContactConstants.SURNAME);
-        constantToVerify.add(ContactConstants.PHONE);
-        constantToVerify.add(ContactConstants.SOURCE);
-        constantToVerify.add(ContactConstants.CITY);
 
         //Is this value correct?
         Helper.getInstance().checkIntegrityOfContact(valuesFromTable, constantToVerify, contacts[id-1]);
@@ -117,7 +111,7 @@ public class StepsDefUS1 {
         String xpath = ".//div[@id='contactsTable_info']";
 
         //Wait for the position related to the XPath to be clickable (If it exists)
-        Helper.getInstance().waitForSomething(driver, 10, HelperConstants.WaitCondition_ElementToBeClickable, xpath);
+        Helper.getInstance().waitForSomething(driver, 10, HelperConstants.WaitCondition_ElementToBeClickable, xpath, HelperConstants.IP_ADDRESS_INDEX);
 
         //Get the elements that are related to the XPath
         List<WebElement> valuesFromDiv = driver.findElements(By.xpath(xpath));
@@ -134,7 +128,7 @@ public class StepsDefUS1 {
             if(chunks.isEmpty()){
                 fail("chunks came empty. Verify if the XPath is correct");
             }else{
-                //Get last position -- Thats where the size is!
+                //Get last position -- That's where the size is!
                 assertEquals(contacts.length, Integer.parseInt(chunks.get(chunks.size() - 1)));
             }
         }else{
@@ -150,7 +144,7 @@ public class StepsDefUS1 {
         String xpath = ".//table[@id='contactsTable']/thead/tr/th";
 
         //Wait for the position related to the XPath to be clickable (If it exists)
-        Helper.getInstance().waitForSomething(driver, 10, HelperConstants.WaitCondition_ElementToBeClickable, xpath);
+        Helper.getInstance().waitForSomething(driver, 10, HelperConstants.WaitCondition_ElementToBeClickable, xpath, HelperConstants.IP_ADDRESS_INDEX);
 
         List<WebElement> valuesFromTh = driver.findElements(By.xpath(xpath));
 
@@ -167,24 +161,17 @@ public class StepsDefUS1 {
 
     @Then("^The first column should contain the most relevant contact regarded to the sorted \"([^\"]*)\"$")
     public void theFirstColumnShouldContainTheMostRelevantContactRegardedToTheSorted(String columnName) throws Throwable {
-        //Get first position of the table
+
         //XPath to the correct position
         String xpath = ".//table[@id='contactsTable']/tbody/tr[1]/td";
 
         //Wait for the position related to the XPath is clickable (If it exists)
-        Helper.getInstance().waitForSomething(driver, 10, HelperConstants.WaitCondition_ElementToBeClickable, xpath);
+        Helper.getInstance().waitForSomething(driver, 10, HelperConstants.WaitCondition_ElementToBeClickable, xpath, HelperConstants.IP_ADDRESS_INDEX);
 
         //Get the elements that are related to the XPath
         List<WebElement> valuesFromTable = driver.findElements(By.xpath(xpath));
 
-        LinkedList<Integer> constantToVerify = new LinkedList<>();
-        constantToVerify.add(ContactConstants.ID);
-        constantToVerify.add(ContactConstants.GIVEN_NAME);
-        constantToVerify.add(ContactConstants.SURNAME);
-        constantToVerify.add(ContactConstants.PHONE);
-        constantToVerify.add(ContactConstants.SOURCE);
-        constantToVerify.add(ContactConstants.CITY);
-
+        //Get the specific value, for the column...
         int value = 0;
         switch (columnName) {
             case "ID":
@@ -211,7 +198,84 @@ public class StepsDefUS1 {
         }
 
         //Order database and check the integrity
-        Helper.getInstance().orderDatabaseAndVerifyFirstContact(value, valuesFromTable, constantToVerify, contacts);
+        Helper.getInstance().orderDatabaseAndVerifyFirstContact(value, valuesFromTable, constantToVerify, new ArrayList<Contact>(Arrays.asList(contacts)));
     }
 
+    @When("^I search for \"([^\"]*)\"$")
+    public void iSearchFor(String string) throws Throwable {
+
+        //XPath to the correct position
+        String xpath = ".//div[@id='contactsTable_filter']/label/input";
+
+        //Wait for the position related to the XPath is clickable (If it exists)
+        Helper.getInstance().waitForSomething(driver, 10, HelperConstants.WaitCondition_ElementToBeClickable, xpath, HelperConstants.IP_ADDRESS_INDEX);
+
+        //Get the elements that are related to the XPath
+        List<WebElement> valuesFromSearch = driver.findElements(By.xpath(xpath));
+
+        //Write on the search bar
+        valuesFromSearch.get(0).sendKeys(string);
+    }
+
+    @Then("^I should only see columns that are related to what I've just searched, related to \"([^\"]*)\" \\(\"([^\"]*)\"\\)$")
+    public void iShouldOnlySeeColumnsThatAreRelatedToWhatIVeJustSearchedRelatedTo(String column, String string) throws Throwable {
+
+        //Get the specific value, for the column...
+        int value = 0;
+        switch (column) {
+            case "GivenName":
+                value = ContactConstants.GIVEN_NAME;
+                break;
+            case "Surname":
+                value = ContactConstants.SURNAME;
+                break;
+            case "Phone":
+                value = ContactConstants.PHONE;
+                break;
+            case "City":
+                value = ContactConstants.CITY;
+                break;
+            default:
+                fail("No column Name should be named as : " + column);
+                break;
+        }
+
+        //Get the list of lines on the body of the table
+        List<WebElement> valuesFromTable = driver.findElements(By.xpath(".//table[@id='contactsTable']/tbody/tr"));
+
+        //Verify these values
+        Helper.getInstance().getFilteredRecordsAndVerifyThem(string, value, valuesFromTable, constantToVerify, contacts);
+    }
+
+    @Then("^I should be able to see the sorted table by \"([^\"]*)\", while only appearing what I searched for, related to \"([^\"]*)\"$")
+    public void iShouldBeAbleToSeeTheSortedTableByWhileOnlyAppearingWhatISearchedForRelatedTo(String column, String search) throws Throwable {
+        //Get the specific value, for the column...
+        int valueColumn = 0;
+        switch (column) {
+            case "GivenName":
+                valueColumn = ContactConstants.GIVEN_NAME;
+                break;
+            case "Surname":
+                valueColumn = ContactConstants.SURNAME;
+                break;
+            case "Phone":
+                valueColumn = ContactConstants.PHONE;
+                break;
+            case "City":
+                valueColumn = ContactConstants.CITY;
+                break;
+            case "ID":
+                valueColumn = ContactConstants.ID;
+                break;
+            default:
+                fail("No column Name should be named as : " + column);
+                break;
+        }
+
+        //Get the list of lines on the body of the table
+        List<WebElement> valuesFromTable = driver.findElements(By.xpath(".//table[@id='contactsTable']/tbody/tr"));
+
+        //Verify the filtered contacts. We will search for a GivenName.
+        Helper.getInstance().getFilteredOrderedRecordsAndVerifyThem(search, valueColumn, ContactConstants.GIVEN_NAME, valuesFromTable, constantToVerify, contacts);
+    }
 }

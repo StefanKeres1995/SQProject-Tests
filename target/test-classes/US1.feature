@@ -12,7 +12,7 @@ Feature: Access to the Contacts Orchestrator Solution's (COS) Landing Page
 
   Scenario: Landing page seems to have data that is coherent with the database
     Given I access the landing page of COS
-    Then I should see the same name as in the database position
+    Then I should see the contact as in the database position
 
   Scenario Outline: Landing page contains the table and columns are sortable
     Given I access the landing page of COS
@@ -20,14 +20,40 @@ Feature: Access to the Contacts Orchestrator Solution's (COS) Landing Page
     Then The first column should contain the most relevant contact regarded to the sorted "<column>"
 
     Examples:
-      | column    | column |
-      | ID        | -1  |
-      | GivenName | 4   |
-      | Surname   | 11  |
-      | Phone     | 7   |
-      | Source    | 9   |
-      | City      | 1   |
-  #The table's header columns are sortable
+      | column    |
+      | ID        |
+      | GivenName |
+      | Surname   |
+      | Phone     |
+      | Source    |
+      | City      |
+
+  Scenario Outline: Landing page contains the table and the search bar is operational
+    Given I access the landing page of COS
+    When I search for "<search>"
+    Then I should only see columns that are related to what I've just searched, related to "<type>" ("<search>")
+
+    Examples:
+      | search    | type       |
+      | Viseu     | City       |
+      | Joao      | GivenName  |
+      | 234216838 | Phone      |
+      | Almeida   | Surname    |
+      | Something | GivenName  |
+
+  Scenario Outline: Landing page contains the table and the search bar is operational, along with columns sortable
+    Given I access the landing page of COS
+    When I search for "<search>"
+    And I sort the column "<column>"
+    Then I should be able to see the sorted table by "<column>", while only appearing what I searched for, related to "<search>"
+
+    Examples:
+      | search  | column    |
+      | Joao    | ID        |
+      | Joao    | GivenName |
+      | Joao    | Surname   |
+      | Joao    | Phone     |
+      | Joao    | City      |
 
   #SELECTOR FOR SOURCES
   #Text label exists
