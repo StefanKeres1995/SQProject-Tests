@@ -1,6 +1,7 @@
 import Helper.*;
 import Model.Contact;
 import Model.ContactConstants;
+import cucumber.api.PendingException;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
@@ -11,6 +12,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.ui.Select;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -277,5 +279,69 @@ public class StepsDefUS1 {
 
         //Verify the filtered contacts. We will search for a GivenName.
         Helper.getInstance().getFilteredOrderedRecordsAndVerifyThem(search, valueColumn, ContactConstants.GIVEN_NAME, valuesFromTable, constantToVerify, contacts);
+    }
+
+    @Then("^I should be able to increase the pagination to \"([^\"]*)\"$")
+    public void iShouldBeAbleToIncreaseThePaginationTo(String pagination) throws Throwable {
+        //XPath to the correct position
+        String xpath = ".//div[@id='contactsTable_length']/label/select";
+
+        //Wait for the position related to the XPath is clickable (If it exists)
+        Helper.getInstance().waitForSomething(driver, 10, HelperConstants.WaitCondition_ElementToBeClickable, xpath, HelperConstants.IP_ADDRESS_INDEX);
+
+        //Get the elements that are related to the XPath
+        List<WebElement> select = driver.findElements(By.xpath(xpath));
+
+        //Did the select returned an empty List?
+        if(!select.isEmpty()) {
+
+            //Create the Select object, and select the value gotten from the test.
+            Select selectable = new Select(select.get(0));
+            selectable.selectByValue(pagination);
+
+            //Verify how many contacts are available, and see if they are bigger than the pagination
+
+            //XPath to the correct position
+            xpath = ".//div[@id='contactsTable_info']";
+
+            //Get the elements that are related to the XPath
+            List<WebElement> length = driver.findElements(By.xpath(xpath));
+
+            //Did the div returned an empty List?
+            if (!length.isEmpty()) {
+                //Split the gotten string into several sub-strings, were we only get the Integers from the string (And the first Letter, for some reason).
+                List<String> chunks = new LinkedList<String>();
+                Matcher matcher = Pattern.compile("[0-9]+|[A-Z]+").matcher(length.get(0).getText());
+                while (matcher.find()) {
+                    chunks.add(matcher.group());
+                }
+
+                if (chunks.isEmpty()) {
+                    //Error!
+                    fail("chunks came empty. Verify if the XPath is correct");
+                } else {
+                    //Get last position -- That's where the size is!
+                    assertEquals(contacts.length, Integer.parseInt(chunks.get(chunks.size() - 1)));
+
+                    //Finally, assert if the number of
+                    int numberToCount = 0;
+                    if(contacts.length > Integer.parseInt(pagination)){
+                        numberToCount = Integer.parseInt(pagination);
+                    }else{
+                        numberToCount = contacts.length;
+                    }
+
+                    //Now, check if there are the same amount of contacts in the Table, that is on the pagination.
+                    assertEquals(driver.findElements(By.xpath(".//table[@id='contactsTable']/tbody/tr")).size(), numberToCount);
+
+                }
+            } else {
+                //Error!
+                fail("XPath came empty. Verify if the XPath is correct");
+            }
+        } else {
+            //Error!
+            fail("XPath came empty. Verify if the XPath is correct");
+        }
     }
 }

@@ -55,6 +55,16 @@ Feature: Access to the Contacts Orchestrator Solution's (COS) Landing Page
       | Joao    | Phone     |
       | Joao    | City      |
 
+  Scenario Outline: Landing page contains the table and the pagination can be used
+    Given I access the landing page of COS
+    Then I should be able to increase the pagination to "<pagination>"
+    Examples:
+      | pagination |
+      | 10         |
+      | 25         |
+      | 50         |
+      | 100        |
+
   #SELECTOR FOR SOURCES
   #Text label exists
   #Text label says "Select your contacts source"
