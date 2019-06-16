@@ -281,8 +281,8 @@ public class StepsDefUS1 {
         Helper.getInstance().getFilteredOrderedRecordsAndVerifyThem(search, valueColumn, ContactConstants.GIVEN_NAME, valuesFromTable, constantToVerify, contacts);
     }
 
-    @Then("^I should be able to increase the pagination to \"([^\"]*)\"$")
-    public void iShouldBeAbleToIncreaseThePaginationTo(String pagination) throws Throwable {
+    @When("^I increase the pagination to \"([^\"]*)\"$")
+    public void iIncreaseThePaginationTo(String pagination) throws Throwable {
         //XPath to the correct position
         String xpath = ".//div[@id='contactsTable_length']/label/select";
 
@@ -299,49 +299,167 @@ public class StepsDefUS1 {
             Select selectable = new Select(select.get(0));
             selectable.selectByValue(pagination);
 
-            //Verify how many contacts are available, and see if they are bigger than the pagination
+            assertEquals(selectable.getFirstSelectedOption().getText(), pagination);
+        } else {
+            //Error!
+            fail("XPath came empty. Verify if the XPath is correct");
+        }
+    }
 
-            //XPath to the correct position
-            xpath = ".//div[@id='contactsTable_info']";
+    @Then("^I should be able to see the number of contacts related to \"([^\"]*)\"$")
+    public void iShouldBeAbleToSeeTheNumberOfContactsRelatedTo(String pagination) throws Throwable {
 
-            //Get the elements that are related to the XPath
-            List<WebElement> length = driver.findElements(By.xpath(xpath));
+        //XPath to the correct position
+        String xpath = ".//div[@id='contactsTable_info']";
 
-            //Did the div returned an empty List?
-            if (!length.isEmpty()) {
-                //Split the gotten string into several sub-strings, were we only get the Integers from the string (And the first Letter, for some reason).
-                List<String> chunks = new LinkedList<String>();
-                Matcher matcher = Pattern.compile("[0-9]+|[A-Z]+").matcher(length.get(0).getText());
-                while (matcher.find()) {
-                    chunks.add(matcher.group());
-                }
+        //Get the elements that are related to the XPath
+        List<WebElement> length = driver.findElements(By.xpath(xpath));
 
-                if (chunks.isEmpty()) {
-                    //Error!
-                    fail("chunks came empty. Verify if the XPath is correct");
-                } else {
-                    //Get last position -- That's where the size is!
-                    assertEquals(contacts.length, Integer.parseInt(chunks.get(chunks.size() - 1)));
+        //Did the div returned an empty List?
+        if (!length.isEmpty()) {
+            //Split the gotten string into several sub-strings, were we only get the Integers from the string (And the first Letter, for some reason).
+            List<String> chunks = new LinkedList<String>();
+            Matcher matcher = Pattern.compile("[0-9]+|[A-Z]+").matcher(length.get(0).getText());
+            while (matcher.find()) {
+                chunks.add(matcher.group());
+            }
 
-                    //Finally, assert if the number of
-                    int numberToCount = 0;
-                    if(contacts.length > Integer.parseInt(pagination)){
-                        numberToCount = Integer.parseInt(pagination);
-                    }else{
-                        numberToCount = contacts.length;
-                    }
-
-                    //Now, check if there are the same amount of contacts in the Table, that is on the pagination.
-                    assertEquals(driver.findElements(By.xpath(".//table[@id='contactsTable']/tbody/tr")).size(), numberToCount);
-
-                }
-            } else {
+            if (chunks.isEmpty()) {
                 //Error!
-                fail("XPath came empty. Verify if the XPath is correct");
+                fail("chunks came empty. Verify if the XPath is correct");
+            } else {
+                //Get last position -- That's where the size is!
+                assertEquals(contacts.length, Integer.parseInt(chunks.get(chunks.size() - 1)));
+
+                //Finally, assert if the number of
+                int numberToCount = 0;
+                if(contacts.length > Integer.parseInt(pagination)){
+                    numberToCount = Integer.parseInt(pagination);
+                }else{
+                    numberToCount = contacts.length;
+                }
+
+                //Now, check if there are the same amount of contacts in the Table, that is on the pagination.
+                assertEquals(driver.findElements(By.xpath(".//table[@id='contactsTable']/tbody/tr")).size(), numberToCount);
             }
         } else {
             //Error!
             fail("XPath came empty. Verify if the XPath is correct");
         }
+    }
+
+    @Then("^I should be able to see the possible sources$")
+    public void iShouldBeAbleToSeeThePossibleSources() {
+
+        //XPath to the table
+        String xpath = ".//table[@id='contactsTable']/tbody/tr[2]/td";
+
+        //Wait for the position related to the XPath is clickable (If it exists)
+        Helper.getInstance().waitForSomething(driver, 10, HelperConstants.WaitCondition_ElementToBeClickable, xpath, HelperConstants.IP_ADDRESS_INDEX);
+
+        //XPath to the Source
+        xpath = ".//select[@id='source']";
+
+        //Get the elements that are related to the XPath
+        List<WebElement> select = driver.findElements(By.xpath(xpath));
+
+        if(!select.isEmpty()){
+            //Get selectable, and get values from it
+            Select selectable = new Select(select.get(0));
+
+            ArrayList<String> sources = new ArrayList<>();
+            for(WebElement element : selectable.getOptions()){
+                sources.add(element.getText());
+            }
+
+            assertEquals(Helper.getInstance().getPossibleSources(contacts), sources);
+
+            //Click on button
+            xpath = ".//form[@id='sourceForm']/div/button";
+            List<WebElement> button = driver.findElements(By.xpath(xpath));
+            if(!button.isEmpty()){
+                button.get(0).click();
+            }else{
+                //Error!
+                fail("XPath came empty. Verify if the XPath is correct");
+            }
+        }else{
+            //Error!
+            fail("XPath came empty. Verify if the XPath is correct");
+        }
+    }
+
+    @When("^I want to filter for a \"([^\"]*)\"$")
+    public void iWantToFilterForA(String source) throws Throwable {
+
+        //XPath to the table
+        String xpath = ".//table[@id='contactsTable']/tbody/tr[2]/td";
+
+        //Wait for the position related to the XPath is clickable (If it exists)
+        Helper.getInstance().waitForSomething(driver, 10, HelperConstants.WaitCondition_ElementToBeClickable, xpath, HelperConstants.IP_ADDRESS_INDEX);
+
+        //XPath to the Source
+        xpath = ".//select[@id='source']";
+
+        //Get the elements that are related to the XPath
+        List<WebElement> select = driver.findElements(By.xpath(xpath));
+
+        if(!select.isEmpty()){
+            Select selectable = new Select(select.get(0));
+            selectable.selectByValue(source);
+
+            assertEquals(source, selectable.getFirstSelectedOption().getText());
+
+            //Click on button
+            xpath = ".//form[@id='sourceForm']/div/button";
+            List<WebElement> button = driver.findElements(By.xpath(xpath));
+            if(!button.isEmpty()){
+                button.get(0).click();
+            }else{
+                //Error!
+                fail("XPath came empty. Verify if the XPath is correct");
+            }
+        }else{
+            //Error!
+            fail("XPath came empty. Verify if the XPath is correct");
+        }
+
+    }
+
+    @Then("^I should only be able to see the contacts of that specific \"([^\"]*)\"$")
+    public void iShouldOnlyBeAbleToSeeTheContactsOfThatSpecific(String source) throws Throwable {
+
+        //XPath to the correct position
+        String xpath = ".//div[@id='contactsTable_info']";
+
+        //Wait for the position related to the XPath to be clickable (If it exists)
+        Helper.getInstance().waitForSomething(driver, 10, HelperConstants.WaitCondition_ElementToBeClickable, xpath, HelperConstants.IP_ADDRESS_INDEX);
+
+        //Get the elements that are related to the XPath
+        List<WebElement> valuesFromDiv = driver.findElements(By.xpath(xpath));
+
+        //Did the div returned an empty List?
+        if(!valuesFromDiv.isEmpty()){
+            //Split the gotten string into several sub-strings, were we only get the Integers from the string (And the first Letter, for some reason).
+            List<String> chunks = new LinkedList<String>();
+            Matcher matcher = Pattern.compile("[0-9]+|[A-Z]+").matcher(valuesFromDiv.get(0).getText());
+            while (matcher.find()) {
+                chunks.add( matcher.group() );
+            }
+
+            if(chunks.isEmpty()){
+                fail("chunks came empty. Verify if the XPath is correct");
+            }else{
+                //If it comes to here, we need to filter our database.
+                ArrayList<Contact> filtered = Helper.getInstance().filterDatabase(source, ContactConstants.SOURCE, contacts);
+
+                //Get last position -- That's where the size is!
+                assertEquals(filtered.size(), Integer.parseInt(chunks.get(chunks.size() - 1)));
+            }
+        }else{
+            //Error!
+            fail("XPath came empty. Verify if the XPath is correct");
+        }
+
     }
 }

@@ -14,6 +14,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.lang.reflect.Array;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.*;
@@ -226,9 +227,9 @@ public class Helper {
      * @param timeOutInSeconds - the timeout expected
      * @param typeOfCondition - Type of condition. Related to the created HelperConstants.
      * @param string - The string to compare it to.
-     * @param URL - The URL to be restarted to, in case of an error
+     * @param url - The url to be restarted to, in case of an error
      */
-    public void waitForSomething(WebDriver driver, int timeOutInSeconds, int typeOfCondition, String string, String URL){
+    public void waitForSomething(WebDriver driver, int timeOutInSeconds, int typeOfCondition, String string, String url){
 
         //This is to avoid and to help on the timeout that these Waits do Sometimes.
         int counter = 0;
@@ -242,7 +243,9 @@ public class Helper {
                         return;
                     } catch (TimeoutException ex) {
                         //Force a Reset
-                        driver.get(HelperConstants.IP_ADDRESS_INDEX);
+                        if(url != null){
+                            driver.get(url);
+                        }
                         counter++;
                     }
                 }while(counter <= 3);
@@ -256,6 +259,10 @@ public class Helper {
                         wait.until(ExpectedConditions.titleContains(string));
                         return;
                     } catch (TimeoutException ex) {
+                        //Force a Reset
+                        if(url != null) {
+                            driver.get(url);
+                        }
                         counter++;
                     }
                 }while(counter <= 3);
@@ -390,7 +397,7 @@ public class Helper {
      * @param contacts - List of Contacts
      * @return ArrayList<Contacts> Filtered Contacts
      */
-    private ArrayList<Contact> filterDatabase(String filteredField, int column, Contact[] contacts) {
+    public ArrayList<Contact> filterDatabase(String filteredField, int column, Contact[] contacts) {
         List<Contact> filteredContacts = null;
         switch (column){
             case ContactConstants.GIVEN_NAME:
@@ -408,6 +415,13 @@ public class Helper {
             case ContactConstants.CITY:
                 filteredContacts = Arrays.stream(contacts).filter(
                         contact -> contact.getCity().contains(filteredField)).collect(Collectors.toList());
+                break;
+            case ContactConstants.SOURCE:
+                if(filteredField.equals("All")){
+                    return new ArrayList<Contact>(Arrays.asList(contacts));
+                }
+                filteredContacts = Arrays.stream(contacts).filter(
+                        contact -> contact.getSource().contains(filteredField)).collect(Collectors.toList());
                 break;
             default:
                 fail("No column Name should be named as : " + column);
@@ -448,5 +462,20 @@ public class Helper {
                 checkIntegrityOfContact(valuesFromTable.get(position).findElements(By.xpath("td")), listFields, contactFiltered.get(position));
             }
         }
+    }
+
+    public ArrayList<String> getPossibleSources(Contact[] contacts) {
+        ArrayList<String> sources = new ArrayList<>();
+
+        //Add All
+        sources.add("All");
+
+        //Add all other existent
+        for (Contact contact: contacts) {
+            if (!sources.contains(contact.getSource())){
+                sources.add(contact.getSource());
+            }
+        }
+        return sources;
     }
 }

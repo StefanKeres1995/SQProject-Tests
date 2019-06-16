@@ -57,13 +57,33 @@ Feature: Access to the Contacts Orchestrator Solution's (COS) Landing Page
 
   Scenario Outline: Landing page contains the table and the pagination can be used
     Given I access the landing page of COS
-    Then I should be able to increase the pagination to "<pagination>"
+    When I increase the pagination to "<pagination>"
+    Then I should be able to see the number of contacts related to "<pagination>"
+
     Examples:
       | pagination |
       | 10         |
       | 25         |
       | 50         |
       | 100        |
+
+  Scenario: Landing page contains the possible sources
+    Given I access the landing page of COS
+    Then I should be able to see the possible sources
+
+  Scenario Outline: Landing page contains the selector related to the source
+    Given I access the landing page of COS
+    When I want to filter for a "<source>"
+    Then I should only be able to see the contacts of that specific "<source>"
+
+    Examples:
+      | source   |
+      | All      |
+      | Twitter  |
+      | Facebook |
+      | LinkedIn |
+      | Skype    |
+
 
   #SELECTOR FOR SOURCES
   #Text label exists
