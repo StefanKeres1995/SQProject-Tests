@@ -33,7 +33,7 @@ public class StepsDefUS1 {
     @Before
     public void setUp() {
         //Is the driver initializing for for first time?
-        if(!System.getProperty("user.dir").contains("jenkins") || driver == null) {
+        if(!System.getProperty("user.dir").contains("jenkins") && driver == null) {
             System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
         }
 
