@@ -14,7 +14,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.lang.reflect.Array;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.*;
@@ -62,34 +61,34 @@ public class Helper {
             for (int pos = 0; pos < contacts.length; pos++) {
                 contacts[pos].setID(pos+1);
                 if(contacts[pos].getBirthday() == null){
-                    contacts[pos].setBirthday(HelperConstants.NULL_STRING);
+                    contacts[pos].setBirthday(HelperConstants.Null_String);
                 }
                 if(contacts[pos].getCity() == null){
-                    contacts[pos].setCity(HelperConstants.NULL_STRING);
+                    contacts[pos].setCity(HelperConstants.Null_String);
                 }
                 if(contacts[pos].getCompany() == null){
-                    contacts[pos].setCompany(HelperConstants.NULL_STRING);
+                    contacts[pos].setCompany(HelperConstants.Null_String);
                 }
                 if(contacts[pos].getEmail() == null){
-                    contacts[pos].setEmail(HelperConstants.NULL_STRING);
+                    contacts[pos].setEmail(HelperConstants.Null_String);
                 }
                 if(contacts[pos].getGivenName() == null){
-                    contacts[pos].setGivenName(HelperConstants.NULL_STRING);
+                    contacts[pos].setGivenName(HelperConstants.Null_String);
                 }
                 if(contacts[pos].getOccupation() == null){
-                    contacts[pos].setOccupation(HelperConstants.NULL_STRING);
+                    contacts[pos].setOccupation(HelperConstants.Null_String);
                 }
                 if(contacts[pos].getPhotoUrl() == null){
                     contacts[pos].setPhotoUrl("https://upload.wikimedia.org/wikipedia/en/e/ee/Unknown-person.gif");
                 }
                 if(contacts[pos].getSource() == null){
-                    contacts[pos].setSource(HelperConstants.NULL_STRING);
+                    contacts[pos].setSource(HelperConstants.Null_String);
                 }
                 if(contacts[pos].getStreetAddress() == null){
-                    contacts[pos].setStreetAddress(HelperConstants.NULL_STRING);
+                    contacts[pos].setStreetAddress(HelperConstants.Null_String);
                 }
                 if(contacts[pos].getSurname() == null){
-                    contacts[pos].setSurname(HelperConstants.NULL_STRING);
+                    contacts[pos].setSurname(HelperConstants.Null_String);
                 }
             }
 
@@ -116,7 +115,7 @@ public class Helper {
 
                 case ContactConstants.BIRTHDAY:
                     if(contact.getBirthday() == null){
-                        assertEquals(HelperConstants.NULL_STRING, webElementList.get(position).getText());
+                        assertEquals(HelperConstants.Null_String, webElementList.get(position).getText());
                     }else{
                         assertEquals(contact.getBirthday(), webElementList.get(position).getText());
                     }
@@ -124,7 +123,7 @@ public class Helper {
 
                 case ContactConstants.CITY:
                     if(contact.getCity() == null){
-                        assertEquals(HelperConstants.NULL_STRING, webElementList.get(position).getText());
+                        assertEquals(HelperConstants.Null_String, webElementList.get(position).getText());
                     }else{
                         assertEquals(contact.getCity(), webElementList.get(position).getText());
                     }
@@ -132,7 +131,7 @@ public class Helper {
 
                 case ContactConstants.COMPANY:
                     if(contact.getCompany() == null){
-                        assertEquals(HelperConstants.NULL_STRING, webElementList.get(position).getText());
+                        assertEquals(HelperConstants.Null_String, webElementList.get(position).getText());
                     }else{
                         assertEquals(contact.getCompany(), webElementList.get(position).getText());
                     }
@@ -140,7 +139,7 @@ public class Helper {
 
                 case ContactConstants.EMAIL:
                     if(contact.getEmail() == null){
-                        assertEquals(HelperConstants.NULL_STRING, webElementList.get(position).getText());
+                        assertEquals(HelperConstants.Null_String, webElementList.get(position).getText());
                     }else{
                         assertEquals(contact.getEmail(), webElementList.get(position).getText());
                     }
@@ -148,7 +147,7 @@ public class Helper {
 
                 case ContactConstants.GIVEN_NAME:
                     if(contact.getGivenName() == null){
-                        assertEquals(HelperConstants.NULL_STRING, webElementList.get(position).getText());
+                        assertEquals(HelperConstants.Null_String, webElementList.get(position).getText());
                     }else{
                         assertEquals(contact.getGivenName(), webElementList.get(position).getText());
                     }
@@ -165,7 +164,7 @@ public class Helper {
 
                 case ContactConstants.OCCUPATION:
                     if(contact.getOccupation() == null){
-                        assertEquals(HelperConstants.NULL_STRING, webElementList.get(position).getText());
+                        assertEquals(HelperConstants.Null_String, webElementList.get(position).getText());
                     }else{
                         assertEquals(contact.getOccupation(), webElementList.get(position).getText());
                     }
@@ -173,7 +172,7 @@ public class Helper {
 
                 case ContactConstants.PHONE:
                     if(contact.getPhone() == null){
-                        assertEquals(HelperConstants.NULL_STRING, webElementList.get(position).getText());
+                        assertEquals(HelperConstants.Null_String, webElementList.get(position).getText());
                     }else{
                         assertEquals(contact.getPhone().toString(), webElementList.get(position).getText());
                     }
@@ -181,7 +180,7 @@ public class Helper {
 
                 case ContactConstants.PHOTO_URL:
                     if(contact.getPhotoUrl() == null){
-                        assertEquals(HelperConstants.NULL_STRING, webElementList.get(position).getText());
+                        assertEquals(HelperConstants.Null_String, webElementList.get(position).getText());
                     }else{
                         assertEquals(contact.getPhotoUrl(), webElementList.get(position).getText());
                     }
@@ -189,7 +188,7 @@ public class Helper {
 
                 case ContactConstants.SOURCE:
                     if(contact.getSource() == null){
-                        assertEquals(HelperConstants.NULL_STRING, webElementList.get(position).getText());
+                        assertEquals(HelperConstants.Null_String, webElementList.get(position).getText());
                     }else{
                         assertEquals(contact.getSource(), webElementList.get(position).getText());
                     }
@@ -197,7 +196,7 @@ public class Helper {
 
                 case ContactConstants.STREET_ADDRESS:
                     if(contact.getStreetAddress() == null){
-                        assertEquals(HelperConstants.NULL_STRING, webElementList.get(position).getText());
+                        assertEquals(HelperConstants.Null_String, webElementList.get(position).getText());
                     }else{
                         assertEquals(contact.getStreetAddress(), webElementList.get(position).getText());
                     }
@@ -205,7 +204,7 @@ public class Helper {
 
                 case ContactConstants.SURNAME:
                     if(contact.getSurname() == null){
-                        assertEquals(HelperConstants.NULL_STRING, webElementList.get(position).getText());
+                        assertEquals(HelperConstants.Null_String, webElementList.get(position).getText());
                     }else {
                         assertEquals(contact.getSurname(), webElementList.get(position).getText());
                     }
@@ -226,7 +225,7 @@ public class Helper {
      * @param driver - WebDriver used
      * @param timeOutInSeconds - the timeout expected
      * @param typeOfCondition - Type of condition. Related to the created HelperConstants.
-     * @param string - The string to compare it to.
+     * @param string - The string/XPath to compare it to.
      * @param url - The url to be restarted to, in case of an error
      */
     public void waitForSomething(WebDriver driver, int timeOutInSeconds, int typeOfCondition, String string, String url){
@@ -268,6 +267,24 @@ public class Helper {
                 }while(counter <= 3);
                 TestCase.fail("Timeout on waiting. - Title contains" + counter);
                 break;
+
+            case HelperConstants.WaitCondition_WaitForActive:
+                do {
+                    try {
+                        WebDriverWait wait = new WebDriverWait(driver, timeOutInSeconds);
+                        wait.until(ExpectedConditions.not(ExpectedConditions.attributeContains(By.xpath(string), "disabled", "disabled")));
+                        return;
+                    } catch (TimeoutException ex) {
+                        //Force a Reset
+                        if(url != null) {
+                            driver.get(url);
+                        }
+                        counter++;
+                    }
+                }while(counter <= 3);
+                TestCase.fail("Timeout on waiting. - Title contains" + counter);
+                break;
+
             default:
                 TestCase.fail("Error! You aren't supposed to be here.");
         }

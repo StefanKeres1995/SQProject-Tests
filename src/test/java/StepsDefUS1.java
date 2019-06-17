@@ -1,7 +1,6 @@
 import Helper.*;
 import Model.Contact;
 import Model.ContactConstants;
-import cucumber.api.PendingException;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
@@ -62,7 +61,7 @@ public class StepsDefUS1 {
 
         //Create the Chrome Process
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--headless");
+        //options.addArguments("--headless");
         driver = new ChromeDriver(options);
     }
 
@@ -75,14 +74,14 @@ public class StepsDefUS1 {
     @Given("^I access the landing page of COS$")
     public void iAccessTheLandingPageOfCOS() throws Throwable {
         //Access the COS, and then assert if we are on the correct page
-        driver.get(HelperConstants.IP_ADDRESS_INDEX);
+        driver.get(HelperConstants.IP.Address_Index);
         assertEquals ("Contacts Landing Page",driver.getTitle());
     }
 
     @Then("^the title of the page should be \"([^\"]*)\"$")
     public void theTitleOfThePageShouldBe(String title) throws Throwable {
         //Wait for the "title" to match the PageTitle
-        Helper.getInstance().waitForSomething(driver, 3, HelperConstants.WaitCondition_TitleContains, title, HelperConstants.IP_ADDRESS_INDEX);
+        Helper.getInstance().waitForSomething(driver, 3, HelperConstants.WaitCondition_TitleContains, title, HelperConstants.IP.Address_Index);
     }
 
     @Then("^I should see the contact as in the database position$")
@@ -91,7 +90,7 @@ public class StepsDefUS1 {
         String xpath = ".//table[@id='contactsTable']/tbody/tr[2]/td";
 
         //Wait for the position related to the XPath is clickable (If it exists)
-        Helper.getInstance().waitForSomething(driver, 10, HelperConstants.WaitCondition_ElementToBeClickable, xpath, HelperConstants.IP_ADDRESS_INDEX);
+        Helper.getInstance().waitForSomething(driver, 10, HelperConstants.WaitCondition_ElementToBeClickable, xpath, HelperConstants.IP.Address_Index);
 
         //Click on the "5" on the pagination.
         driver.findElements(By.xpath(".//div[@id='contactsTable_paginate']/span/a")).get(4).click();
@@ -113,7 +112,7 @@ public class StepsDefUS1 {
         String xpath = ".//div[@id='contactsTable_info']";
 
         //Wait for the position related to the XPath to be clickable (If it exists)
-        Helper.getInstance().waitForSomething(driver, 10, HelperConstants.WaitCondition_ElementToBeClickable, xpath, HelperConstants.IP_ADDRESS_INDEX);
+        Helper.getInstance().waitForSomething(driver, 10, HelperConstants.WaitCondition_ElementToBeClickable, xpath, HelperConstants.IP.Address_Index);
 
         //Get the elements that are related to the XPath
         List<WebElement> valuesFromDiv = driver.findElements(By.xpath(xpath));
@@ -146,7 +145,7 @@ public class StepsDefUS1 {
         String xpath = ".//table[@id='contactsTable']/thead/tr/th";
 
         //Wait for the position related to the XPath to be clickable (If it exists)
-        Helper.getInstance().waitForSomething(driver, 10, HelperConstants.WaitCondition_ElementToBeClickable, xpath, HelperConstants.IP_ADDRESS_INDEX);
+        Helper.getInstance().waitForSomething(driver, 10, HelperConstants.WaitCondition_ElementToBeClickable, xpath, HelperConstants.IP.Address_Index);
 
         List<WebElement> valuesFromTh = driver.findElements(By.xpath(xpath));
 
@@ -168,7 +167,7 @@ public class StepsDefUS1 {
         String xpath = ".//table[@id='contactsTable']/tbody/tr[1]/td";
 
         //Wait for the position related to the XPath is clickable (If it exists)
-        Helper.getInstance().waitForSomething(driver, 10, HelperConstants.WaitCondition_ElementToBeClickable, xpath, HelperConstants.IP_ADDRESS_INDEX);
+        Helper.getInstance().waitForSomething(driver, 10, HelperConstants.WaitCondition_ElementToBeClickable, xpath, HelperConstants.IP.Address_Index);
 
         //Get the elements that are related to the XPath
         List<WebElement> valuesFromTable = driver.findElements(By.xpath(xpath));
@@ -210,7 +209,7 @@ public class StepsDefUS1 {
         String xpath = ".//div[@id='contactsTable_filter']/label/input";
 
         //Wait for the position related to the XPath is clickable (If it exists)
-        Helper.getInstance().waitForSomething(driver, 10, HelperConstants.WaitCondition_ElementToBeClickable, xpath, HelperConstants.IP_ADDRESS_INDEX);
+        Helper.getInstance().waitForSomething(driver, 10, HelperConstants.WaitCondition_ElementToBeClickable, xpath, HelperConstants.IP.Address_Index);
 
         //Get the elements that are related to the XPath
         List<WebElement> valuesFromSearch = driver.findElements(By.xpath(xpath));
@@ -287,7 +286,7 @@ public class StepsDefUS1 {
         String xpath = ".//div[@id='contactsTable_length']/label/select";
 
         //Wait for the position related to the XPath is clickable (If it exists)
-        Helper.getInstance().waitForSomething(driver, 10, HelperConstants.WaitCondition_ElementToBeClickable, xpath, HelperConstants.IP_ADDRESS_INDEX);
+        Helper.getInstance().waitForSomething(driver, 10, HelperConstants.WaitCondition_ElementToBeClickable, xpath, HelperConstants.IP.Address_Index);
 
         //Get the elements that are related to the XPath
         List<WebElement> select = driver.findElements(By.xpath(xpath));
@@ -355,7 +354,7 @@ public class StepsDefUS1 {
         String xpath = ".//table[@id='contactsTable']/tbody/tr[2]/td";
 
         //Wait for the position related to the XPath is clickable (If it exists)
-        Helper.getInstance().waitForSomething(driver, 10, HelperConstants.WaitCondition_ElementToBeClickable, xpath, HelperConstants.IP_ADDRESS_INDEX);
+        Helper.getInstance().waitForSomething(driver, 10, HelperConstants.WaitCondition_ElementToBeClickable, xpath, HelperConstants.IP.Address_Index);
 
         //XPath to the Source
         xpath = ".//select[@id='source']";
@@ -396,7 +395,7 @@ public class StepsDefUS1 {
         String xpath = ".//table[@id='contactsTable']/tbody/tr[2]/td";
 
         //Wait for the position related to the XPath is clickable (If it exists)
-        Helper.getInstance().waitForSomething(driver, 10, HelperConstants.WaitCondition_ElementToBeClickable, xpath, HelperConstants.IP_ADDRESS_INDEX);
+        Helper.getInstance().waitForSomething(driver, 10, HelperConstants.WaitCondition_ElementToBeClickable, xpath, HelperConstants.IP.Address_Index);
 
         //XPath to the Source
         xpath = ".//select[@id='source']";
@@ -433,7 +432,7 @@ public class StepsDefUS1 {
         String xpath = ".//div[@id='contactsTable_info']";
 
         //Wait for the position related to the XPath to be clickable (If it exists)
-        Helper.getInstance().waitForSomething(driver, 10, HelperConstants.WaitCondition_ElementToBeClickable, xpath, HelperConstants.IP_ADDRESS_INDEX);
+        Helper.getInstance().waitForSomething(driver, 10, HelperConstants.WaitCondition_ElementToBeClickable, xpath, HelperConstants.IP.Address_Index);
 
         //Get the elements that are related to the XPath
         List<WebElement> valuesFromDiv = driver.findElements(By.xpath(xpath));
@@ -441,6 +440,7 @@ public class StepsDefUS1 {
         //Did the div returned an empty List?
         if(!valuesFromDiv.isEmpty()){
             //Split the gotten string into several sub-strings, were we only get the Integers from the string (And the first Letter, for some reason).
+
             List<String> chunks = new LinkedList<String>();
             Matcher matcher = Pattern.compile("[0-9]+|[A-Z]+").matcher(valuesFromDiv.get(0).getText());
             while (matcher.find()) {
@@ -453,6 +453,8 @@ public class StepsDefUS1 {
                 //If it comes to here, we need to filter our database.
                 ArrayList<Contact> filtered = Helper.getInstance().filterDatabase(source, ContactConstants.SOURCE, contacts);
 
+                Helper.getInstance().waitForSomething(driver, 10, HelperConstants.WaitCondition_WaitForActive, "//form[@id='sourceForm']/div/button", HelperConstants.IP.Address_Index);
+
                 //Get last position -- That's where the size is!
                 assertEquals(filtered.size(), Integer.parseInt(chunks.get(chunks.size() - 1)));
             }
@@ -461,5 +463,28 @@ public class StepsDefUS1 {
             fail("XPath came empty. Verify if the XPath is correct");
         }
 
+    }
+
+    @When("^I click on the Duplicates$")
+    public void iClickOnTheDuplicates() {
+
+        //XPath to the correct position
+        String xpath = ".//a[@id='backButton']";
+
+        //Wait for the position related to the XPath to be clickable (If it exists)
+        Helper.getInstance().waitForSomething(driver, 10, HelperConstants.WaitCondition_ElementToBeClickable, xpath, HelperConstants.IP.Address_Index);
+
+        //Get the elements that are related to the XPath
+        List<WebElement> button = driver.findElements(By.xpath(xpath));
+        if(!button.isEmpty()){
+            button.get(0).click();
+        }else{
+            fail("XPath came empty. Verify if the XPath is correct");
+        }
+    }
+
+    @Then("^I should be redirected to the duplicate pages$")
+    public void iShouldBeRedirectedToTheDuplicatePages() {
+        Helper.getInstance().waitForSomething(driver, 10, HelperConstants.WaitCondition_TitleContains, "Duplicates", HelperConstants.IP.Address_Duplicates);
     }
 }

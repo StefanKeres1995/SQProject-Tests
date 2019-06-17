@@ -2,18 +2,23 @@ Feature: Access to the Contacts Orchestrator Solution's (COS) Landing Page
   As a user
   I want to access to the URL address provided for the landing page
   So that I can see the list of the contacts available
+
+#  #Verify if is on correct site
 #  Scenario: Landing page's title and text contains "Contacts Landing Page"
 #    Given I access the landing page of COS
 #    Then the title of the page should be "Contacts Landing Page"
 #
+#  #Verify if all contacts were loaded
 #  Scenario: Landing page contains all contacts available in the
 #    Given I access the landing page of COS
 #    Then I should see exactly the same amount of contacts that exist in the database
 #
+#  #Verify if table data seems coherent with database
 #  Scenario: Landing page seems to have data that is coherent with the database
 #    Given I access the landing page of COS
 #    Then I should see the contact as in the database position
 #
+#  #Verify if table can be sortable
 #  Scenario Outline: Landing page contains the table and columns are sortable
 #    Given I access the landing page of COS
 #    When I sort the column "<column>"
@@ -28,6 +33,7 @@ Feature: Access to the Contacts Orchestrator Solution's (COS) Landing Page
 #      | Source    |
 #      | City      |
 #
+#  #Verify if search bar can be used to filter
 #  Scenario Outline: Landing page contains the table and the search bar is operational
 #    Given I access the landing page of COS
 #    When I search for "<search>"
@@ -41,6 +47,7 @@ Feature: Access to the Contacts Orchestrator Solution's (COS) Landing Page
 #      | Almeida   | Surname    |
 #      | Something | GivenName  |
 #
+#  #Verify if search bar and table can be sortable simultaneously
 #  Scenario Outline: Landing page contains the table and the search bar is operational, along with columns sortable
 #    Given I access the landing page of COS
 #    When I search for "<search>"
@@ -55,6 +62,7 @@ Feature: Access to the Contacts Orchestrator Solution's (COS) Landing Page
 #      | Joao    | Phone     |
 #      | Joao    | City      |
 
+  #Verify if pagination works
   Scenario Outline: Landing page contains the table and the pagination can be used
     Given I access the landing page of COS
     When I increase the pagination to "<pagination>"
@@ -67,10 +75,12 @@ Feature: Access to the Contacts Orchestrator Solution's (COS) Landing Page
       | 50         |
       | 100        |
 
+  #Verify if sources is filled
   Scenario: Landing page contains the possible sources
     Given I access the landing page of COS
     Then I should be able to see the possible sources
 
+  #Verify if sources are working
   Scenario Outline: Landing page contains the selector related to the source
     Given I access the landing page of COS
     When I want to filter for a "<source>"
@@ -83,6 +93,15 @@ Feature: Access to the Contacts Orchestrator Solution's (COS) Landing Page
       | Facebook |
       | LinkedIn |
       | Skype    |
+
+  #Verify if details button is working
+
+
+  #Verify if duplicates button is working
+  Scenario: Landing page contains the duplicate button and redirects to the correct page
+    Given I access the landing page of COS
+    When I click on the Duplicates
+    Then I should be redirected to the duplicate pages
 
 
   #SELECTOR FOR SOURCES
