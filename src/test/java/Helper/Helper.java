@@ -262,6 +262,11 @@ public class Helper {
                         //Force a Reset
                         if(url != null) {
                             driver.get(url);
+
+                            if(url.equals(HelperConstants.IP.Address_Duplicates)) {
+                                WebElement button = driver.findElement(By.xpath(".//a[@id='duplicateButton']"));
+                                button.click();
+                            }
                         }
                         counter++;
                     }
@@ -370,59 +375,59 @@ public class Helper {
      */
     private ArrayList<Contact> orderDatabase(int field, ArrayList<Contact> contacts) {
         //Convert this Contact[] to LinkedList
-        ArrayList<Contact> contactLinkedList = new ArrayList<Contact>(contacts);
+        ArrayList<Contact> contactLinkedList = new ArrayList<>(contacts);
 
         switch (field){
             case ContactConstants.BIRTHDAY:
-                contactLinkedList.sort((c1, c2) -> c1.getBirthday().compareTo(c2.getBirthday()));
+                contactLinkedList.sort(Comparator.comparing(Contact::getBirthday));
                 break;
 
             case ContactConstants.CITY:
-                contactLinkedList.sort((c1, c2) -> c1.getCity().compareTo(c2.getCity()));
+                contactLinkedList.sort(Comparator.comparing(Contact::getCity));
                 break;
 
             case ContactConstants.COMPANY:
-                contactLinkedList.sort((c1, c2) -> c1.getCompany().compareTo(c2.getCompany()));
+                contactLinkedList.sort(Comparator.comparing(Contact::getCompany));
                 break;
 
             case ContactConstants.EMAIL:
-                contactLinkedList.sort((c1, c2) -> c1.getEmail().compareTo(c2.getEmail()));
+                contactLinkedList.sort(Comparator.comparing(Contact::getEmail));
                 break;
 
             case ContactConstants.GIVEN_NAME:
-                contactLinkedList.sort((c1, c2) -> c1.getGivenName().compareTo(c2.getGivenName()));
+                contactLinkedList.sort(Comparator.comparing(Contact::getGivenName));
                 break;
 
             case ContactConstants.GUID:
-                contactLinkedList.sort((c1, c2) -> c1.getGuid().compareTo(c2.getGuid()));
+                contactLinkedList.sort(Comparator.comparing(Contact::getGuid));
                 break;
 
             case ContactConstants.OCCUPATION:
-                contactLinkedList.sort((c1, c2) -> c1.getOccupation().compareTo(c2.getOccupation()));
+                contactLinkedList.sort(Comparator.comparing(Contact::getOccupation));
                 break;
 
             case ContactConstants.PHOTO_URL:
-                contactLinkedList.sort((c1, c2) -> c1.getPhotoUrl().toString().compareTo(c2.getPhotoUrl().toString()));
+                contactLinkedList.sort(Comparator.comparing(Contact::getPhotoUrl));
                 break;
 
             case ContactConstants.SOURCE:
-                contactLinkedList.sort((c1, c2) -> c1.getSource().compareTo(c2.getSource()));
+                contactLinkedList.sort(Comparator.comparing(Contact::getSource));
                 break;
 
             case ContactConstants.STREET_ADDRESS:
-                contactLinkedList.sort((c1, c2) -> c1.getStreetAddress().compareTo(c2.getStreetAddress()));
+                contactLinkedList.sort(Comparator.comparing(Contact::getStreetAddress));
                 break;
 
             case ContactConstants.SURNAME:
-                contactLinkedList.sort((c1, c2) -> c1.getSurname().compareTo(c2.getSurname()));
+                contactLinkedList.sort(Comparator.comparing(Contact::getSurname));
                 break;
 
             case ContactConstants.PHONE:
-                contactLinkedList.sort((c1, c2) -> c1.getPhone().toString().compareTo(c2.getPhone().toString()));
+                contactLinkedList.sort(Comparator.comparing(c -> c.getPhone().toString()));
                 break;
 
             case ContactConstants.ID:
-                contactLinkedList.sort((c1, c2) -> Integer.compare(c1.getID(), c2.getID()));
+                contactLinkedList.sort(Comparator.comparingInt(Contact::getID));
                 break;
 
             default:
@@ -491,7 +496,7 @@ public class Helper {
                 break;
             case ContactConstants.SOURCE:
                 if(filteredField.equals("All")){
-                    return new ArrayList<Contact>(Arrays.asList(contacts));
+                    return new ArrayList<>(Arrays.asList(contacts));
                 }
                 filteredContacts = Arrays.stream(contacts).filter(
                         contact -> contact.getSource().contains(filteredField)).collect(Collectors.toList());
@@ -556,7 +561,7 @@ public class Helper {
         //Convert this into an LinkedList
         LinkedList<Contact> listOfContacts = new LinkedList<>(Arrays.asList(contacts));
 
-        HashMap<Integer, LinkedList<Contact>> differencesMap = new HashMap<Integer, LinkedList<Contact>>();
+        HashMap<Integer, LinkedList<Contact>> differencesMap = new HashMap<>();
 
         //Start doing the filter.
         for (int positionResults = 0; positionResults < listOfContacts.size(); positionResults++) {
@@ -590,7 +595,7 @@ public class Helper {
 
     private HashMap<Integer, LinkedList<Contact>> clearMapForDuplicates(HashMap<Integer, LinkedList<Contact>> hashMap){
 
-        HashMap<Integer, LinkedList<Contact>> newMap = new HashMap<Integer, LinkedList<Contact>>();
+        HashMap<Integer, LinkedList<Contact>> newMap = new HashMap<>();
         int counter = 1;
         for(int key = 1; key < hashMap.size(); key++) {
             //They don't have the size equal to 1? Add them to the map of duplicates.
@@ -646,30 +651,24 @@ public class Helper {
         return false;
     }
 
-    private HashMap<Integer, LinkedList<Contact>> addToMap(HashMap<Integer, LinkedList<Contact>> hashMap, Contact contact){
+    private void addToMap(HashMap<Integer, LinkedList<Contact>> hashMap, Contact contact){
         //Create key
-        hashMap.put(hashMap.size() + 1, new LinkedList<Contact>());
+        hashMap.put(hashMap.size() + 1, new LinkedList<>());
 
         //Push contact
         hashMap.get(hashMap.size()).push(contact);
-
-        //Return map
-        return hashMap;
     }
 
-    private HashMap<Integer, LinkedList<Contact>> addToArrayOnMap(HashMap<Integer, LinkedList<Contact>> hashMap, Contact contact, int position) {
+    private void addToArrayOnMap(HashMap<Integer, LinkedList<Contact>> hashMap, Contact contact, int position) {
 
         //push the contact
         hashMap.get(position).push(contact);
-
-        //Return map
-        return hashMap;
     }
 
     public ArrayList<Integer> retrieveColumns(List<WebElement> values){
         ArrayList<String> columns = new ArrayList<>();
-        for(int tr = 0; tr < values.size(); tr++){
-            columns.add(values.get(tr).getText());
+        for (WebElement value : values) {
+            columns.add(value.getText());
         }
 
         ArrayList<Integer> ints = new ArrayList<>();
