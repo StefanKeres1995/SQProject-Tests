@@ -269,12 +269,12 @@ public class Helper {
                 TestCase.fail("Timeout on waiting. - Title contains" + counter);
                 break;
 
-            case HelperConstants.WaitCondition_WaitForActive:
+            case HelperConstants.WaitCondition_SearchSourceComponentIndex:
                 do {
                     ArrayList<String> strings = new ArrayList<>();
                     try {
-                        if(string.contains("+")){
-                            strings.addAll(Arrays.asList(string.split("/+")));
+                        if(string.contains("--")){
+                            strings.addAll(Arrays.asList(string.split("--")));
                         }else{
                             strings.add(string);
                         }
@@ -302,6 +302,28 @@ public class Helper {
                 TestCase.fail("Timeout on waiting. - Title contains" + counter);
                 break;
 
+            case HelperConstants.WaitCondition_NumberOfElementsMoreThan:
+                do {
+                    ArrayList<String> strings = new ArrayList<>();
+                    try {
+                        if(string.contains("--")){
+                            strings.addAll(Arrays.asList(string.split("--")));
+                        }else{
+                            strings.add(string);
+                        }
+                        WebDriverWait wait = new WebDriverWait(driver, timeOutInSeconds);
+                        wait.until(ExpectedConditions.numberOfElementsToBeMoreThan(By.xpath(strings.get(0)), Integer.parseInt(strings.get(1))));
+                        return;
+                    } catch (TimeoutException ex) {
+                        //Force a Reset
+                        if(url != null) {
+                            driver.get(url);
+                        }
+                        counter++;
+                    }
+                }while(counter <= 3);
+                TestCase.fail("Timeout on waiting. - Title contains" + counter);
+                break;
             default:
                 TestCase.fail("Error! You aren't supposed to be here.");
         }
@@ -511,5 +533,177 @@ public class Helper {
             }
         }
         return sources;
+    }
+
+    public HashMap<Integer, LinkedList<Contact>> getPossibleDuplicates(Contact[] contacts) {
+        //Convert this into an LinkedList
+        LinkedList<Contact> listOfContacts = new LinkedList<>(Arrays.asList(contacts));
+
+        HashMap<Integer, LinkedList<Contact>> differencesMap = new HashMap<Integer, LinkedList<Contact>>();
+
+        //Start doing the filter.
+        for (int positionResults = 0; positionResults < listOfContacts.size(); positionResults++) {
+            if (!findInMap(differencesMap, listOfContacts.get(positionResults)))
+            {
+                //Aren't we on the first iteration?   [This was switched; More optimized this way.]
+                if (differencesMap.size() != 0) {
+                    //Is this contact already in any sort of way on our map?
+                    int response = verifyIfContainsOnMap(differencesMap, listOfContacts.get(positionResults));
+                    if (response != -1) {
+
+                        //Yes it is. Add it to the corresponding key.
+                        addToArrayOnMap(differencesMap, listOfContacts.get(positionResults), response);
+
+                        //We need to reset AFTER adding it to the map.
+                        positionResults = -1;
+                    } else {
+                        //No it isn't. Add it to a new key.
+                        addToMap(differencesMap, listOfContacts.get(positionResults));
+                    }
+                } else {
+                    //Lets add the position
+                    addToMap(differencesMap, listOfContacts.get(positionResults));
+                }
+            }
+        }
+
+        //Filter through those that have higher than 2
+        return clearMapForDuplicates(differencesMap);
+    }
+
+    private HashMap<Integer, LinkedList<Contact>> clearMapForDuplicates(HashMap<Integer, LinkedList<Contact>> hashMap){
+
+        HashMap<Integer, LinkedList<Contact>> newMap = new HashMap<Integer, LinkedList<Contact>>();
+        int counter = 1;
+        for(int key = 1; key < hashMap.size(); key++) {
+            //They don't have the size equal to 1? Add them to the map of duplicates.
+            if (hashMap.get(key).size() > 1) {
+                newMap.put(counter, hashMap.get(key));
+                counter++;
+            }
+        }
+
+        for(int key = 1; key < newMap.size(); key++){
+            newMap.get(key).sort(Comparator.comparingInt(Contact::getID));
+        }
+
+        return newMap;
+    }
+
+    private boolean findInMap(HashMap<Integer, LinkedList<Contact>> hashMap, Contact checkContact){
+        for(LinkedList<Contact> contacts : hashMap.values()) {
+            if(contacts.contains(checkContact)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private Integer verifyIfContainsOnMap(HashMap<Integer, LinkedList<Contact>> hashMap, Contact checkContact) {
+        for (int sizeOfMap = 1; sizeOfMap <= hashMap.size(); sizeOfMap++) {
+            //Does it exist in the array?
+            if (verifyIfContainsOnArray(hashMap.get(sizeOfMap), checkContact)) {
+                //Return the position
+                return sizeOfMap;
+            }
+        }
+        //Doesn't exist. Return -1
+        return -1;
+    }
+
+    private boolean verifyIfContainsOnArray(LinkedList<Contact> contacts, Contact checkContact){
+        for (Contact contact : contacts) {
+
+            if (contact.getEmail().equals(checkContact.getEmail())) {
+                return true;
+            }
+
+            if (contact.getPhone().equals(checkContact.getPhone())) {
+                return true;
+            }
+
+            if (contact.getGivenName().equals(checkContact.getGivenName()) && contact.getSurname().equals(checkContact.getSurname())) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private HashMap<Integer, LinkedList<Contact>> addToMap(HashMap<Integer, LinkedList<Contact>> hashMap, Contact contact){
+        //Create key
+        hashMap.put(hashMap.size() + 1, new LinkedList<Contact>());
+
+        //Push contact
+        hashMap.get(hashMap.size()).push(contact);
+
+        //Return map
+        return hashMap;
+    }
+
+    private HashMap<Integer, LinkedList<Contact>> addToArrayOnMap(HashMap<Integer, LinkedList<Contact>> hashMap, Contact contact, int position) {
+
+        //push the contact
+        hashMap.get(position).push(contact);
+
+        //Return map
+        return hashMap;
+    }
+
+    public ArrayList<Integer> retrieveColumns(List<WebElement> values){
+        ArrayList<String> columns = new ArrayList<>();
+        for(int tr = 1; tr < values.size(); tr++){
+            columns.add(values.get(tr).getText());
+        }
+
+        ArrayList<Integer> ints = new ArrayList<>();
+        for (String string : columns){
+            switch (string){
+
+                case "Birthday":
+                    ints.add(ContactConstants.BIRTHDAY);
+                    break;
+
+                case "City":
+                    ints.add(ContactConstants.CITY);
+                    break;
+
+                case "Company":
+                    ints.add(ContactConstants.COMPANY);
+                    break;
+
+                case "Email":
+                    ints.add(ContactConstants.EMAIL);
+                    break;
+
+                case "GivenName":
+                    ints.add(ContactConstants.GIVEN_NAME);
+                    break;
+
+                case "Occupation":
+                    ints.add(ContactConstants.OCCUPATION);
+                    break;
+
+                case "Phone":
+                    ints.add(ContactConstants.PHONE);
+                    break;
+
+                case "Source":
+                    ints.add(ContactConstants.SOURCE);
+                    break;
+
+                case "StreetAddress":
+                    ints.add(ContactConstants.STREET_ADDRESS);
+                    break;
+
+                case "Surname":
+                    ints.add(ContactConstants.SURNAME);
+                    break;
+
+                default:
+                    //Can't come here.
+                    TestCase.fail("Error! You aren't supposed to be here.");
+            }
+        }
+        return ints;
     }
 }

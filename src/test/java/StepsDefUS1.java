@@ -455,16 +455,16 @@ public class StepsDefUS1 {
                 chunks.add( matcher.group() );
             }
 
-            if(chunks.isEmpty()){
-                fail("chunks came empty. Verify if the XPath is correct");
-            }else{
+            if(!chunks.isEmpty()){
                 //If it comes to here, we need to filter our database.
                 ArrayList<Contact> filtered = Helper.getInstance().filterDatabase(source, ContactConstants.SOURCE, contacts);
 
-                Helper.getInstance().waitForSomething(driver, 10, HelperConstants.WaitCondition_WaitForActive, ".//form[@id='sourceForm']/div/button", HelperConstants.IP.Address_Index);
+                Helper.getInstance().waitForSomething(driver, 10, HelperConstants.WaitCondition_SearchSourceComponentIndex, ".//form[@id='sourceForm']/div/button--" + source, HelperConstants.IP.Address_Index);
 
                 //Get last position -- That's where the size is!
                 assertEquals(filtered.size(), Integer.parseInt(chunks.get(chunks.size() - 1)));
+            }else{
+                fail("chunks came empty. Verify if the XPath is correct");
             }
         }else{
             //Error!
