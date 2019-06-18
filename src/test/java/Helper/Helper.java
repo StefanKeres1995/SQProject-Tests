@@ -9,6 +9,7 @@ import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.BufferedReader;
@@ -270,14 +271,30 @@ public class Helper {
 
             case HelperConstants.WaitCondition_WaitForActive:
                 do {
+                    ArrayList<String> strings = new ArrayList<>();
                     try {
+                        if(string.contains("+")){
+                            strings.addAll(Arrays.asList(string.split("/+")));
+                        }else{
+                            strings.add(string);
+                        }
                         WebDriverWait wait = new WebDriverWait(driver, timeOutInSeconds);
-                        wait.until(ExpectedConditions.not(ExpectedConditions.attributeContains(By.xpath(string), "disabled", "disabled")));
+                        wait.until(ExpectedConditions.not(ExpectedConditions.attributeToBe(By.xpath(strings.get(0)), "disabled", "disabled")));
                         return;
                     } catch (TimeoutException ex) {
                         //Force a Reset
                         if(url != null) {
                             driver.get(url);
+                            waitForSomething(driver, 10, HelperConstants.WaitCondition_ElementToBeClickable, ".//div[@id='contactsTable_info']", url);
+
+                            //Select
+                            Select select = new Select(driver.findElement(By.xpath(".//select[@id='source']")));
+                            select.selectByValue(strings.get(1));
+
+                            //Button
+                            driver.findElement(By.xpath(".//form[@id='sourceForm']/div/button")).click();
+
+                            //Wait
                         }
                         counter++;
                     }

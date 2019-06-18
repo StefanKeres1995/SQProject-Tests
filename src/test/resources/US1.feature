@@ -81,18 +81,18 @@ Feature: Access to the Contacts Orchestrator Solution's (COS) Landing Page
     Then I should be able to see the possible sources
 
   #Verify if sources are working
-#  Scenario Outline: Landing page contains the selector related to the source
-#    Given I access the landing page of COS
-#    When I want to filter for a "<source>"
-#    Then I should only be able to see the contacts of that specific "<source>"
-#
-#    Examples:
-#      | source   |
-#      | All      |
-#      | Twitter  |
-#      | Facebook |
-#      | LinkedIn |
-#      | Skype    |
+  Scenario Outline: Landing page contains the selector related to the source
+    Given I access the landing page of COS
+    When I want to filter for a "<source>"
+    Then I should only be able to see the contacts of that specific "<source>"
+
+    Examples:
+      | source   |
+      | All      |
+      | Twitter  |
+      | Facebook |
+      | LinkedIn |
+      | Skype    |
 
   #Verify if details button is working
 

@@ -61,7 +61,7 @@ public class StepsDefUS1 {
 
         //Create the Chrome Process
         ChromeOptions options = new ChromeOptions();
-        //options.addArguments("--headless");
+        options.addArguments("--headless");
         driver = new ChromeDriver(options);
     }
 
@@ -441,6 +441,14 @@ public class StepsDefUS1 {
         if(!valuesFromDiv.isEmpty()){
             //Split the gotten string into several sub-strings, were we only get the Integers from the string (And the first Letter, for some reason).
 
+            //Wait for the position related to the XPath to be clickable (If it exists)
+            Helper.getInstance().waitForSomething(driver, 10, HelperConstants.WaitCondition_ElementToBeClickable, xpath, HelperConstants.IP.Address_Index);
+
+            Thread.sleep(100);
+
+            //Get the elements that are related to the XPath
+            valuesFromDiv = driver.findElements(By.xpath(xpath));
+
             List<String> chunks = new LinkedList<String>();
             Matcher matcher = Pattern.compile("[0-9]+|[A-Z]+").matcher(valuesFromDiv.get(0).getText());
             while (matcher.find()) {
@@ -453,7 +461,7 @@ public class StepsDefUS1 {
                 //If it comes to here, we need to filter our database.
                 ArrayList<Contact> filtered = Helper.getInstance().filterDatabase(source, ContactConstants.SOURCE, contacts);
 
-                Helper.getInstance().waitForSomething(driver, 10, HelperConstants.WaitCondition_WaitForActive, "//form[@id='sourceForm']/div/button", HelperConstants.IP.Address_Index);
+                Helper.getInstance().waitForSomething(driver, 10, HelperConstants.WaitCondition_WaitForActive, ".//form[@id='sourceForm']/div/button", HelperConstants.IP.Address_Index);
 
                 //Get last position -- That's where the size is!
                 assertEquals(filtered.size(), Integer.parseInt(chunks.get(chunks.size() - 1)));
@@ -468,13 +476,15 @@ public class StepsDefUS1 {
     @When("^I click on the Duplicates$")
     public void iClickOnTheDuplicates() {
 
-        //XPath to the correct position
-        String xpath = ".//a[@id='backButton']";
+        //XPath to the table
+        String xpath = ".//table[@id='contactsTable']/tbody/tr[2]/td";
 
         //Wait for the position related to the XPath to be clickable (If it exists)
         Helper.getInstance().waitForSomething(driver, 10, HelperConstants.WaitCondition_ElementToBeClickable, xpath, HelperConstants.IP.Address_Index);
 
-        //Get the elements that are related to the XPath
+        //Get the elements that are related to the XPath (related to the button)
+        xpath = ".//a[@id='duplicateButton']";
+
         List<WebElement> button = driver.findElements(By.xpath(xpath));
         if(!button.isEmpty()){
             button.get(0).click();
