@@ -98,10 +98,10 @@ Feature: Access to the Contacts Orchestrator Solution's (COS) Landing Page
 
 
   #Verify if duplicates button is working
-#  Scenario: Landing page contains the duplicate button and redirects to the correct page
-#    Given I access the landing page of COS
-#    When I click on the Duplicates
-#    Then I should be redirected to the duplicate pages
+  Scenario: Landing page contains the duplicate button and redirects to the correct page
+    Given I access the landing page of COS
+    When I click on the Duplicates
+    Then I should be redirected to the duplicate pages
 
 
   #SELECTOR FOR SOURCES

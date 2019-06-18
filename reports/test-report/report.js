@@ -7,15 +7,15 @@ formatter.feature({
   "keyword": "Feature"
 });
 formatter.before({
-  "duration": 9749874500,
+  "duration": 5557325100,
   "status": "passed"
 });
 formatter.before({
-  "duration": 13442737401,
+  "duration": 6569637900,
   "status": "passed"
 });
 formatter.before({
-  "duration": 11393313100,
+  "duration": 5707225400,
   "status": "passed"
 });
 formatter.scenario({
@@ -334,26 +334,26 @@ formatter.match({
   "location": "StepsDefUS1.iAccessTheLandingPageOfCOS()"
 });
 formatter.result({
-  "duration": 5013972799,
+  "duration": 2215405600,
   "status": "passed"
 });
 formatter.match({
   "location": "StepsDefUS1.iShouldBeAbleToSeeThePossibleSources()"
 });
 formatter.result({
-  "duration": 11356697000,
+  "duration": 858613400,
   "status": "passed"
 });
 formatter.after({
-  "duration": 33964899,
+  "duration": 32598001,
   "status": "passed"
 });
 formatter.after({
-  "duration": 47101700,
+  "duration": 107117599,
   "status": "passed"
 });
 formatter.after({
-  "duration": 46777799,
+  "duration": 143735200,
   "status": "passed"
 });
 formatter.scenarioOutline({
@@ -437,15 +437,15 @@ formatter.examples({
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 4053273400,
+  "duration": 4602011400,
   "status": "passed"
 });
 formatter.before({
-  "duration": 4153756300,
+  "duration": 4320027700,
   "status": "passed"
 });
 formatter.before({
-  "duration": 4478463000,
+  "duration": 5214490200,
   "status": "passed"
 });
 formatter.scenario({
@@ -481,7 +481,7 @@ formatter.match({
   "location": "StepsDefUS1.iAccessTheLandingPageOfCOS()"
 });
 formatter.result({
-  "duration": 4893510101,
+  "duration": 3487156299,
   "status": "passed"
 });
 formatter.match({
@@ -494,7 +494,7 @@ formatter.match({
   "location": "StepsDefUS1.iWantToFilterForA(String)"
 });
 formatter.result({
-  "duration": 11280692799,
+  "duration": 864022500,
   "status": "passed"
 });
 formatter.match({
@@ -507,31 +507,31 @@ formatter.match({
   "location": "StepsDefUS1.iShouldOnlyBeAbleToSeeTheContactsOfThatSpecific(String)"
 });
 formatter.result({
-  "duration": 1364531700,
+  "duration": 1123664700,
   "status": "passed"
 });
 formatter.after({
-  "duration": 65300500,
+  "duration": 32239700,
   "status": "passed"
 });
 formatter.after({
-  "duration": 109630700,
+  "duration": 67665600,
   "status": "passed"
 });
 formatter.after({
-  "duration": 260051900,
+  "duration": 97700800,
   "status": "passed"
 });
 formatter.before({
-  "duration": 5344513301,
+  "duration": 4877196301,
   "status": "passed"
 });
 formatter.before({
-  "duration": 6019615500,
+  "duration": 3851761700,
   "status": "passed"
 });
 formatter.before({
-  "duration": 5747735601,
+  "duration": 4055992699,
   "status": "passed"
 });
 formatter.scenario({
@@ -567,7 +567,7 @@ formatter.match({
   "location": "StepsDefUS1.iAccessTheLandingPageOfCOS()"
 });
 formatter.result({
-  "duration": 3284240400,
+  "duration": 998435000,
   "status": "passed"
 });
 formatter.match({
@@ -580,7 +580,7 @@ formatter.match({
   "location": "StepsDefUS1.iWantToFilterForA(String)"
 });
 formatter.result({
-  "duration": 1226951000,
+  "duration": 855465500,
   "status": "passed"
 });
 formatter.match({
@@ -593,31 +593,31 @@ formatter.match({
   "location": "StepsDefUS1.iShouldOnlyBeAbleToSeeTheContactsOfThatSpecific(String)"
 });
 formatter.result({
-  "duration": 224774301,
+  "duration": 1120547200,
   "status": "passed"
 });
 formatter.after({
-  "duration": 33883400,
+  "duration": 31597199,
   "status": "passed"
 });
 formatter.after({
-  "duration": 96396501,
+  "duration": 73155100,
   "status": "passed"
 });
 formatter.after({
-  "duration": 103380401,
+  "duration": 91842900,
   "status": "passed"
 });
 formatter.before({
-  "duration": 4801299401,
+  "duration": 4253171301,
   "status": "passed"
 });
 formatter.before({
-  "duration": 5129301101,
+  "duration": 3992162101,
   "status": "passed"
 });
 formatter.before({
-  "duration": 5026449600,
+  "duration": 4364929199,
   "status": "passed"
 });
 formatter.scenario({
@@ -653,7 +653,7 @@ formatter.match({
   "location": "StepsDefUS1.iAccessTheLandingPageOfCOS()"
 });
 formatter.result({
-  "duration": 4666423399,
+  "duration": 1452362199,
   "status": "passed"
 });
 formatter.match({
@@ -666,7 +666,7 @@ formatter.match({
   "location": "StepsDefUS1.iWantToFilterForA(String)"
 });
 formatter.result({
-  "duration": 1126480200,
+  "duration": 1192067101,
   "status": "passed"
 });
 formatter.match({
@@ -679,31 +679,31 @@ formatter.match({
   "location": "StepsDefUS1.iShouldOnlyBeAbleToSeeTheContactsOfThatSpecific(String)"
 });
 formatter.result({
-  "duration": 299901301,
+  "duration": 1790260400,
   "status": "passed"
 });
 formatter.after({
-  "duration": 30304501,
+  "duration": 31378199,
   "status": "passed"
 });
 formatter.after({
-  "duration": 74467800,
+  "duration": 69500801,
   "status": "passed"
 });
 formatter.after({
-  "duration": 90680500,
+  "duration": 97466399,
   "status": "passed"
 });
 formatter.before({
-  "duration": 6383492900,
+  "duration": 4210484799,
   "status": "passed"
 });
 formatter.before({
-  "duration": 6171326900,
+  "duration": 4524288800,
   "status": "passed"
 });
 formatter.before({
-  "duration": 6337021600,
+  "duration": 4627403500,
   "status": "passed"
 });
 formatter.scenario({
@@ -739,7 +739,7 @@ formatter.match({
   "location": "StepsDefUS1.iAccessTheLandingPageOfCOS()"
 });
 formatter.result({
-  "duration": 4546569899,
+  "duration": 1912023300,
   "status": "passed"
 });
 formatter.match({
@@ -752,7 +752,7 @@ formatter.match({
   "location": "StepsDefUS1.iWantToFilterForA(String)"
 });
 formatter.result({
-  "duration": 1515374699,
+  "duration": 11098192300,
   "status": "passed"
 });
 formatter.match({
@@ -765,32 +765,31 @@ formatter.match({
   "location": "StepsDefUS1.iShouldOnlyBeAbleToSeeTheContactsOfThatSpecific(String)"
 });
 formatter.result({
-  "duration": 525183101,
-  "error_message": "org.openqa.selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document\n  (Session info: headless chrome\u003d72.0.3626.121)\n  (Driver info: chromedriver\u003d2.46.628402 (536cd7adbad73a3783fdc2cab92ab2ba7ec361e1),platform\u003dWindows NT 10.0.17763 x86_64) (WARNING: The server did not provide any stacktrace information)\nCommand duration or timeout: 0 milliseconds\nFor documentation on this error, please visit: http://seleniumhq.org/exceptions/stale_element_reference.html\nBuild info: version: \u00273.11.0\u0027, revision: \u0027e59cfb3\u0027, time: \u00272018-03-11T20:26:55.152Z\u0027\nSystem info: host: \u0027LNACE\u0027, ip: \u002710.200.3.158\u0027, os.name: \u0027Windows 10\u0027, os.arch: \u0027amd64\u0027, os.version: \u002710.0\u0027, java.version: \u002711.0.2\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.46.628402 (536cd7adbad73a..., userDataDir: C:\\Users\\lnace\\AppData\\Loca...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:61887}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, strictFileInteractability: false, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 72.0.3626.121, webStorageEnabled: true}\nSession ID: 2033ca4026059c2f926f7728d155d8ef\r\n\tat java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\r\n\tat java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)\r\n\tat java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\r\n\tat java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)\r\n\tat org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)\r\n\tat org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)\r\n\tat org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)\r\n\tat org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)\r\n\tat org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)\r\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)\r\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)\r\n\tat org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:279)\r\n\tat org.openqa.selenium.remote.RemoteWebElement.getText(RemoteWebElement.java:160)\r\n\tat StepsDefUS1.iShouldOnlyBeAbleToSeeTheContactsOfThatSpecific(StepsDefUS1.java:454)\r\n\tat ✽.Then I should only be able to see the contacts of that specific \"LinkedIn\"(US1.feature:87)\r\n",
-  "status": "failed"
-});
-formatter.after({
-  "duration": 42506400,
+  "duration": 1114163200,
   "status": "passed"
 });
 formatter.after({
-  "duration": 607382400,
+  "duration": 31479100,
   "status": "passed"
 });
 formatter.after({
-  "duration": 614303301,
+  "duration": 72470301,
+  "status": "passed"
+});
+formatter.after({
+  "duration": 129579200,
   "status": "passed"
 });
 formatter.before({
-  "duration": 5694709599,
+  "duration": 4338916200,
   "status": "passed"
 });
 formatter.before({
-  "duration": 4954641000,
+  "duration": 4362757200,
   "status": "passed"
 });
 formatter.before({
-  "duration": 5724151701,
+  "duration": 6279950100,
   "status": "passed"
 });
 formatter.scenario({
@@ -824,4 +823,125 @@ formatter.step({
 });
 formatter.match({
   "location": "StepsDefUS1.iAccessTheLandingPageOfCOS()"
+});
+formatter.result({
+  "duration": 2172839999,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "Skype",
+      "offset": 24
+    }
+  ],
+  "location": "StepsDefUS1.iWantToFilterForA(String)"
+});
+formatter.result({
+  "duration": 843130199,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "Skype",
+      "offset": 60
+    }
+  ],
+  "location": "StepsDefUS1.iShouldOnlyBeAbleToSeeTheContactsOfThatSpecific(String)"
+});
+formatter.result({
+  "duration": 1685253199,
+  "status": "passed"
+});
+formatter.after({
+  "duration": 40911499,
+  "status": "passed"
+});
+formatter.after({
+  "duration": 236716301,
+  "status": "passed"
+});
+formatter.after({
+  "duration": 149391800,
+  "status": "passed"
+});
+formatter.before({
+  "duration": 4700384700,
+  "status": "passed"
+});
+formatter.before({
+  "duration": 4674469200,
+  "status": "passed"
+});
+formatter.before({
+  "duration": 4992517000,
+  "status": "passed"
+});
+formatter.scenario({
+  "comments": [
+    {
+      "line": 97,
+      "value": "#Verify if details button is working"
+    },
+    {
+      "line": 100,
+      "value": "#Verify if duplicates button is working"
+    }
+  ],
+  "line": 101,
+  "name": "Landing page contains the duplicate button and redirects to the correct page",
+  "description": "",
+  "id": "access-to-the-contacts-orchestrator-solution\u0027s-(cos)-landing-page;landing-page-contains-the-duplicate-button-and-redirects-to-the-correct-page",
+  "type": "scenario",
+  "keyword": "Scenario"
+});
+formatter.step({
+  "line": 102,
+  "name": "I access the landing page of COS",
+  "keyword": "Given "
+});
+formatter.step({
+  "line": 103,
+  "name": "I click on the Duplicates",
+  "keyword": "When "
+});
+formatter.step({
+  "line": 104,
+  "name": "I should be redirected to the duplicate pages",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "StepsDefUS1.iAccessTheLandingPageOfCOS()"
+});
+formatter.result({
+  "duration": 1903252201,
+  "status": "passed"
+});
+formatter.match({
+  "location": "StepsDefUS1.iClickOnTheDuplicates()"
+});
+formatter.result({
+  "duration": 838372700,
+  "status": "passed"
+});
+formatter.match({
+  "location": "StepsDefUS1.iShouldBeRedirectedToTheDuplicatePages()"
+});
+formatter.result({
+  "duration": 31137700,
+  "status": "passed"
+});
+formatter.after({
+  "duration": 33916299,
+  "status": "passed"
+});
+formatter.after({
+  "duration": 97175400,
+  "status": "passed"
+});
+formatter.after({
+  "duration": 94680399,
+  "status": "passed"
+});
 });

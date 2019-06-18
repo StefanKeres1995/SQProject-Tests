@@ -206,7 +206,7 @@ public class StepsDefDuplicatePage {
     }
 
     @Then("^I should be on the index page$")
-    public void iShouldBeOnTheIndexPage() {
+    public void iShouldBeOnTheIndexPage() throws InterruptedException {
         Helper.getInstance().waitForSomething(driver, HelperConstants.TimeToWait, HelperConstants.WaitCondition_TitleContains, "Contacts Landing Page", HelperConstants.IP.Address_Duplicates);
 
     }

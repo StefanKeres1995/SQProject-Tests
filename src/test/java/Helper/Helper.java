@@ -229,7 +229,7 @@ public class Helper {
      * @param string - The string/XPath to compare it to.
      * @param url - The url to be restarted to, in case of an error
      */
-    public void waitForSomething(WebDriver driver, int timeOutInSeconds, int typeOfCondition, String string, String url){
+    public void waitForSomething(WebDriver driver, int timeOutInSeconds, int typeOfCondition, String string, String url) throws InterruptedException {
 
         //This is to avoid and to help on the timeout that these Waits do Sometimes.
         int counter = 0;
@@ -247,6 +247,8 @@ public class Helper {
                             driver.get(url);
                         }
                         counter++;
+
+                        Thread.sleep(100);
                     }
                 }while(counter <= 3);
                 TestCase.fail("Timeout on waiting. - Element to be Clicked" + counter);

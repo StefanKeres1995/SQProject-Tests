@@ -86,7 +86,7 @@ public class StepsDefUS1 {
     }
 
     @Then("^I should see the contact as in the database position$")
-    public void iShouldSeeTheContactAsInTheDatabasePosition() {
+    public void iShouldSeeTheContactAsInTheDatabasePosition() throws InterruptedException {
         //XPath to the correct position
         String xpath = ".//table[@id='contactsTable']/tbody/tr[2]/td";
 
@@ -107,7 +107,7 @@ public class StepsDefUS1 {
     }
 
     @Then("^I should see exactly the same amount of contacts that exist in the database$")
-    public void iShouldSeeExactlyTheSameAmountOfContactsThatExistInTheDatabase() {
+    public void iShouldSeeExactlyTheSameAmountOfContactsThatExistInTheDatabase() throws InterruptedException {
 
         //XPath to the correct position
         String xpath = ".//div[@id='contactsTable_info']";
@@ -349,10 +349,10 @@ public class StepsDefUS1 {
     }
 
     @Then("^I should be able to see the possible sources$")
-    public void iShouldBeAbleToSeeThePossibleSources() {
+    public void iShouldBeAbleToSeeThePossibleSources() throws InterruptedException {
 
         //XPath to the table
-        String xpath = ".//table[@id='contactsTable']/tbody/tr[2]/";
+        String xpath = ".//table[@id='contactsTable']/tbody/tr[2]";
 
         //Wait for the position related to the XPath is clickable (If it exists)
         Helper.getInstance().waitForSomething(driver, HelperConstants.TimeToWait, HelperConstants.WaitCondition_ElementToBeClickable, xpath, HelperConstants.IP.Address_Index);
@@ -445,7 +445,7 @@ public class StepsDefUS1 {
             //Wait for the position related to the XPath to be clickable (If it exists)
             Helper.getInstance().waitForSomething(driver, HelperConstants.TimeToWait, HelperConstants.WaitCondition_ElementToBeClickable, xpath, HelperConstants.IP.Address_Index);
 
-            Thread.sleep(100);
+            Thread.sleep(1000);
 
             //Get the elements that are related to the XPath
             valuesFromDiv = driver.findElements(By.xpath(xpath));
@@ -475,7 +475,7 @@ public class StepsDefUS1 {
     }
 
     @When("^I click on the Duplicates$")
-    public void iClickOnTheDuplicates() {
+    public void iClickOnTheDuplicates() throws InterruptedException {
 
         //XPath to the table
         String xpath = ".//table[@id='contactsTable']/tbody/tr[2]/td";
@@ -495,7 +495,7 @@ public class StepsDefUS1 {
     }
 
     @Then("^I should be redirected to the duplicate pages$")
-    public void iShouldBeRedirectedToTheDuplicatePages() {
+    public void iShouldBeRedirectedToTheDuplicatePages() throws InterruptedException {
         Helper.getInstance().waitForSomething(driver, HelperConstants.TimeToWait, HelperConstants.WaitCondition_TitleContains, "Duplicates", HelperConstants.IP.Address_Duplicates);
     }
 
