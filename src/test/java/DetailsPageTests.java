@@ -14,6 +14,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.Select;
 
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
@@ -62,7 +63,7 @@ public class DetailsPageTests {
 
         //Create the Chrome Process
         ChromeOptions options = new ChromeOptions();
-        //options.addArguments("--headless");
+        options.addArguments("--headless");
         driver = new ChromeDriver(options);
     }
 
@@ -143,10 +144,10 @@ public class DetailsPageTests {
         Helper.getInstance().waitForSomething(driver, HelperConstants.TimeToWait, HelperConstants.WaitCondition_ElementToBeLoaded, tableXpath, detailURL);
 
         List<WebElement> detailsElements = driver.findElements(By.xpath(tableXpath));
-        Map<String, String> tableContacts = null;
+        HashMap<String, String> tableContacts = new HashMap<>();
         if (!detailsElements.isEmpty()){
             for (WebElement element : detailsElements ) {
-                tableContacts.put(element.findElements(By.xpath("td")).get().getText());
+                tableContacts.put(element.findElements(By.xpath("td")).get(0).getText(),element.findElements(By.xpath("td")).get(1).getText());
             }
 
         }else {

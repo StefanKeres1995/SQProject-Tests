@@ -5,7 +5,9 @@ public class HelperConstants {
     public static final int WaitCondition_ElementToBeClickable = 1;
     public static final int WaitCondition_SearchSourceComponentIndex = 2;
     public static final int WaitCondition_NumberOfElementsMoreThan = 3;
+    public static final int WaitCondition_ElementToBeLoaded = 4;
     public static final String Null_String = "--------------";
+    public static final int TimeToWait = 10;
 
     public class IP{
         public static final String Address_Index = "http://35.246.92.202/";

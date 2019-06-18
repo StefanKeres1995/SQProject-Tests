@@ -66,11 +66,15 @@ formatter.examples({
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 4835396500,
+  "duration": 6218533500,
   "status": "passed"
 });
 formatter.before({
-  "duration": 3615632400,
+  "duration": 3324649800,
+  "status": "passed"
+});
+formatter.before({
+  "duration": 4852647600,
   "status": "passed"
 });
 formatter.scenario({
@@ -106,7 +110,7 @@ formatter.match({
   "location": "StepsDefUS1.iAccessTheLandingPageOfCOS()"
 });
 formatter.result({
-  "duration": 6061597400,
+  "duration": 3148319200,
   "status": "passed"
 });
 formatter.match({
@@ -119,7 +123,7 @@ formatter.match({
   "location": "DetailsPageTests.iClickOnTheDetailsButtonOnRowWithId(String)"
 });
 formatter.result({
-  "duration": 12039081900,
+  "duration": 12885058900,
   "status": "passed"
 });
 formatter.match({
@@ -132,18 +136,18 @@ formatter.match({
   "location": "DetailsPageTests.iShouldBeRedirectedToTheDetailsPageOfTheUser(String)"
 });
 formatter.result({
-  "duration": 289003917600,
+  "duration": 1022439900,
   "status": "passed"
 });
 formatter.after({
-  "duration": 371049500,
+  "duration": 20437600,
   "status": "passed"
 });
 formatter.after({
-  "duration": 2374455600,
+  "duration": 42691000,
   "status": "passed"
 });
-formatter.before({
-  "duration": 2678476500,
+formatter.after({
+  "duration": 39611500,
   "status": "passed"
 });

@@ -14,13 +14,13 @@ Feature: Access to the Contacts Orchestrator Solution's (COS) Duplicates page
 #    Given I access the landing page of COS and want to go to duplicates
 #    Then I should be able to see the number of duplicate contacts possible
 
-  Scenario Outline: Duplicate page's is coherent in its data
-    Given I access the landing page of COS and want to go to duplicates
-    Then I should be able to see the contact as is in the database ("<position>")
-    Examples:
-      | position      |
-      | first         |
-      | half-middle1  |
-      | middle        |
-      | half-middle2  |
-      | last          |
+#  Scenario Outline: Duplicate page's is coherent in its data
+#    Given I access the landing page of COS and want to go to duplicates
+#    Then I should be able to see the contact as is in the database ("<position>")
+#    Examples:
+#      | position      |
+#      | first         |
+#      | half-middle1  |
+#      | middle        |
+#      | half-middle2  |
+#      | last          |
