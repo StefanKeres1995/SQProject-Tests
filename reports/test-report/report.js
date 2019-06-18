@@ -1,409 +1,149 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("DuplicatePage.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("DetailsPage.feature");
 formatter.feature({
   "line": 1,
-  "name": "Access to the Contacts Orchestrator Solution\u0027s (COS) Duplicates page",
-  "description": "As a user\r\nI want to access the duplicate page\r\nSo that I can see the list of the possible contacts duplicate available\r\nSo that I can delete and add those at my will",
-  "id": "access-to-the-contacts-orchestrator-solution\u0027s-(cos)-duplicates-page",
+  "name": "Access to the Contacts Orchestrator Solution\u0027s (COS) Landing Page",
+  "description": "As a user\r\nI want to access to the URL address provided for the details page\r\nSo that I can see the details of the searched user",
+  "id": "access-to-the-contacts-orchestrator-solution\u0027s-(cos)-landing-page",
   "keyword": "Feature"
 });
 formatter.scenarioOutline({
   "comments": [
     {
       "line": 7,
-      "value": "#  #Verify if is on correct site"
-    },
-    {
-      "line": 8,
-      "value": "#  Scenario: Duplicate page\u0027s title and text contains \"Duplicates\""
-    },
-    {
-      "line": 9,
-      "value": "#    Given I access the landing page of COS"
-    },
-    {
-      "line": 10,
-      "value": "#    When I click on the Duplicates"
-    },
-    {
-      "line": 11,
-      "value": "#    Then the title of the page should be \"Duplicates\""
-    },
-    {
-      "line": 12,
-      "value": "#"
-    },
-    {
-      "line": 13,
-      "value": "#  Scenario: Duplicate page\u0027s contain the appropriate number of identified duplicates"
-    },
-    {
-      "line": 14,
-      "value": "#    Given I access the landing page of COS and want to go to duplicates"
-    },
-    {
-      "line": 15,
-      "value": "#    Then I should be able to see the number of duplicate contacts possible"
+      "value": "#Verify if details button is working"
     }
   ],
-  "line": 17,
-  "name": "Duplicate page\u0027s is coherent in its data",
+  "line": 8,
+  "name": ": Contacts table contains the details button and redirects to the Details page",
   "description": "",
-  "id": "access-to-the-contacts-orchestrator-solution\u0027s-(cos)-duplicates-page;duplicate-page\u0027s-is-coherent-in-its-data",
+  "id": "access-to-the-contacts-orchestrator-solution\u0027s-(cos)-landing-page;:-contacts-table-contains-the-details-button-and-redirects-to-the-details-page",
   "type": "scenario_outline",
   "keyword": "Scenario Outline"
 });
 formatter.step({
-  "line": 18,
-  "name": "I access the landing page of COS and want to go to duplicates",
+  "line": 9,
+  "name": "I access the landing page of COS",
   "keyword": "Given "
 });
 formatter.step({
-  "line": 19,
-  "name": "I should be able to see the contact as is in the database (\"\u003cposition\u003e\")",
+  "line": 10,
+  "name": "I click on the Details button on row with id \"\u003cid\u003e\"",
+  "keyword": "When "
+});
+formatter.step({
+  "line": 11,
+  "name": "I should be redirected to the details page of the \"\u003cid\u003e\" user",
   "keyword": "Then "
 });
 formatter.examples({
-  "line": 20,
+  "line": 13,
   "name": "",
   "description": "",
-  "id": "access-to-the-contacts-orchestrator-solution\u0027s-(cos)-duplicates-page;duplicate-page\u0027s-is-coherent-in-its-data;",
+  "id": "access-to-the-contacts-orchestrator-solution\u0027s-(cos)-landing-page;:-contacts-table-contains-the-details-button-and-redirects-to-the-details-page;",
   "rows": [
     {
       "cells": [
-        "position"
+        "id"
       ],
-      "line": 21,
-      "id": "access-to-the-contacts-orchestrator-solution\u0027s-(cos)-duplicates-page;duplicate-page\u0027s-is-coherent-in-its-data;;1"
+      "line": 14,
+      "id": "access-to-the-contacts-orchestrator-solution\u0027s-(cos)-landing-page;:-contacts-table-contains-the-details-button-and-redirects-to-the-details-page;;1"
     },
     {
       "cells": [
-        "first"
+        "5"
       ],
-      "line": 22,
-      "id": "access-to-the-contacts-orchestrator-solution\u0027s-(cos)-duplicates-page;duplicate-page\u0027s-is-coherent-in-its-data;;2"
+      "line": 15,
+      "id": "access-to-the-contacts-orchestrator-solution\u0027s-(cos)-landing-page;:-contacts-table-contains-the-details-button-and-redirects-to-the-details-page;;2"
     },
     {
       "cells": [
-        "half-middle1"
+        "45"
       ],
-      "line": 23,
-      "id": "access-to-the-contacts-orchestrator-solution\u0027s-(cos)-duplicates-page;duplicate-page\u0027s-is-coherent-in-its-data;;3"
-    },
-    {
-      "cells": [
-        "middle"
-      ],
-      "line": 24,
-      "id": "access-to-the-contacts-orchestrator-solution\u0027s-(cos)-duplicates-page;duplicate-page\u0027s-is-coherent-in-its-data;;4"
-    },
-    {
-      "cells": [
-        "half-middle2"
-      ],
-      "line": 25,
-      "id": "access-to-the-contacts-orchestrator-solution\u0027s-(cos)-duplicates-page;duplicate-page\u0027s-is-coherent-in-its-data;;5"
-    },
-    {
-      "cells": [
-        "last"
-      ],
-      "line": 26,
-      "id": "access-to-the-contacts-orchestrator-solution\u0027s-(cos)-duplicates-page;duplicate-page\u0027s-is-coherent-in-its-data;;6"
+      "line": 16,
+      "id": "access-to-the-contacts-orchestrator-solution\u0027s-(cos)-landing-page;:-contacts-table-contains-the-details-button-and-redirects-to-the-details-page;;3"
     }
   ],
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 8726829400,
+  "duration": 4835396500,
   "status": "passed"
 });
 formatter.before({
-  "duration": 8710898000,
+  "duration": 3615632400,
   "status": "passed"
 });
 formatter.scenario({
-  "line": 22,
-  "name": "Duplicate page\u0027s is coherent in its data",
+  "line": 15,
+  "name": ": Contacts table contains the details button and redirects to the Details page",
   "description": "",
-  "id": "access-to-the-contacts-orchestrator-solution\u0027s-(cos)-duplicates-page;duplicate-page\u0027s-is-coherent-in-its-data;;2",
+  "id": "access-to-the-contacts-orchestrator-solution\u0027s-(cos)-landing-page;:-contacts-table-contains-the-details-button-and-redirects-to-the-details-page;;2",
   "type": "scenario",
   "keyword": "Scenario Outline"
 });
 formatter.step({
-  "line": 18,
-  "name": "I access the landing page of COS and want to go to duplicates",
+  "line": 9,
+  "name": "I access the landing page of COS",
   "keyword": "Given "
 });
 formatter.step({
-  "line": 19,
-  "name": "I should be able to see the contact as is in the database (\"first\")",
+  "line": 10,
+  "name": "I click on the Details button on row with id \"5\"",
+  "matchedColumns": [
+    0
+  ],
+  "keyword": "When "
+});
+formatter.step({
+  "line": 11,
+  "name": "I should be redirected to the details page of the \"5\" user",
   "matchedColumns": [
     0
   ],
   "keyword": "Then "
 });
 formatter.match({
-  "location": "StepsDefDuplicatePage.iAccessTheLandingPageOfCOSAndWantToGoToDuplicates()"
+  "location": "StepsDefUS1.iAccessTheLandingPageOfCOS()"
 });
 formatter.result({
-  "duration": 6554350200,
+  "duration": 6061597400,
   "status": "passed"
 });
 formatter.match({
   "arguments": [
     {
-      "val": "first",
-      "offset": 60
+      "val": "5",
+      "offset": 46
     }
   ],
-  "location": "StepsDefDuplicatePage.iShouldBeAbleToSeeTheContactAsIsInTheDatabase(String)"
+  "location": "DetailsPageTests.iClickOnTheDetailsButtonOnRowWithId(String)"
 });
 formatter.result({
-  "duration": 1612906300,
-  "status": "passed"
-});
-formatter.after({
-  "duration": 49831800,
-  "status": "passed"
-});
-formatter.after({
-  "duration": 3631666100,
-  "status": "passed"
-});
-formatter.before({
-  "duration": 4177586100,
-  "status": "passed"
-});
-formatter.before({
-  "duration": 4264883600,
-  "status": "passed"
-});
-formatter.scenario({
-  "line": 23,
-  "name": "Duplicate page\u0027s is coherent in its data",
-  "description": "",
-  "id": "access-to-the-contacts-orchestrator-solution\u0027s-(cos)-duplicates-page;duplicate-page\u0027s-is-coherent-in-its-data;;3",
-  "type": "scenario",
-  "keyword": "Scenario Outline"
-});
-formatter.step({
-  "line": 18,
-  "name": "I access the landing page of COS and want to go to duplicates",
-  "keyword": "Given "
-});
-formatter.step({
-  "line": 19,
-  "name": "I should be able to see the contact as is in the database (\"half-middle1\")",
-  "matchedColumns": [
-    0
-  ],
-  "keyword": "Then "
-});
-formatter.match({
-  "location": "StepsDefDuplicatePage.iAccessTheLandingPageOfCOSAndWantToGoToDuplicates()"
-});
-formatter.result({
-  "duration": 2786905000,
+  "duration": 12039081900,
   "status": "passed"
 });
 formatter.match({
   "arguments": [
     {
-      "val": "half-middle1",
-      "offset": 60
+      "val": "5",
+      "offset": 51
     }
   ],
-  "location": "StepsDefDuplicatePage.iShouldBeAbleToSeeTheContactAsIsInTheDatabase(String)"
+  "location": "DetailsPageTests.iShouldBeRedirectedToTheDetailsPageOfTheUser(String)"
 });
 formatter.result({
-  "duration": 1567353200,
+  "duration": 289003917600,
   "status": "passed"
 });
 formatter.after({
-  "duration": 50306700,
+  "duration": 371049500,
   "status": "passed"
 });
 formatter.after({
-  "duration": 370282200,
+  "duration": 2374455600,
   "status": "passed"
 });
 formatter.before({
-  "duration": 4722878800,
+  "duration": 2678476500,
   "status": "passed"
-});
-formatter.before({
-  "duration": 4420737500,
-  "status": "passed"
-});
-formatter.scenario({
-  "line": 24,
-  "name": "Duplicate page\u0027s is coherent in its data",
-  "description": "",
-  "id": "access-to-the-contacts-orchestrator-solution\u0027s-(cos)-duplicates-page;duplicate-page\u0027s-is-coherent-in-its-data;;4",
-  "type": "scenario",
-  "keyword": "Scenario Outline"
-});
-formatter.step({
-  "line": 18,
-  "name": "I access the landing page of COS and want to go to duplicates",
-  "keyword": "Given "
-});
-formatter.step({
-  "line": 19,
-  "name": "I should be able to see the contact as is in the database (\"middle\")",
-  "matchedColumns": [
-    0
-  ],
-  "keyword": "Then "
-});
-formatter.match({
-  "location": "StepsDefDuplicatePage.iAccessTheLandingPageOfCOSAndWantToGoToDuplicates()"
-});
-formatter.result({
-  "duration": 3064019200,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "middle",
-      "offset": 60
-    }
-  ],
-  "location": "StepsDefDuplicatePage.iShouldBeAbleToSeeTheContactAsIsInTheDatabase(String)"
-});
-formatter.result({
-  "duration": 1669924500,
-  "status": "passed"
-});
-formatter.after({
-  "duration": 68198300,
-  "status": "passed"
-});
-formatter.after({
-  "duration": 2093848800,
-  "status": "passed"
-});
-formatter.before({
-  "duration": 4079299500,
-  "status": "passed"
-});
-formatter.before({
-  "duration": 4044775200,
-  "status": "passed"
-});
-formatter.scenario({
-  "line": 25,
-  "name": "Duplicate page\u0027s is coherent in its data",
-  "description": "",
-  "id": "access-to-the-contacts-orchestrator-solution\u0027s-(cos)-duplicates-page;duplicate-page\u0027s-is-coherent-in-its-data;;5",
-  "type": "scenario",
-  "keyword": "Scenario Outline"
-});
-formatter.step({
-  "line": 18,
-  "name": "I access the landing page of COS and want to go to duplicates",
-  "keyword": "Given "
-});
-formatter.step({
-  "line": 19,
-  "name": "I should be able to see the contact as is in the database (\"half-middle2\")",
-  "matchedColumns": [
-    0
-  ],
-  "keyword": "Then "
-});
-formatter.match({
-  "location": "StepsDefDuplicatePage.iAccessTheLandingPageOfCOSAndWantToGoToDuplicates()"
-});
-formatter.result({
-  "duration": 2673505300,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "half-middle2",
-      "offset": 60
-    }
-  ],
-  "location": "StepsDefDuplicatePage.iShouldBeAbleToSeeTheContactAsIsInTheDatabase(String)"
-});
-formatter.result({
-  "duration": 1716860200,
-  "status": "passed"
-});
-formatter.after({
-  "duration": 51027900,
-  "status": "passed"
-});
-formatter.after({
-  "duration": 2135643700,
-  "status": "passed"
-});
-formatter.before({
-  "duration": 3994927500,
-  "status": "passed"
-});
-formatter.before({
-  "duration": 4394617400,
-  "status": "passed"
-});
-formatter.scenario({
-  "line": 26,
-  "name": "Duplicate page\u0027s is coherent in its data",
-  "description": "",
-  "id": "access-to-the-contacts-orchestrator-solution\u0027s-(cos)-duplicates-page;duplicate-page\u0027s-is-coherent-in-its-data;;6",
-  "type": "scenario",
-  "keyword": "Scenario Outline"
-});
-formatter.step({
-  "line": 18,
-  "name": "I access the landing page of COS and want to go to duplicates",
-  "keyword": "Given "
-});
-formatter.step({
-  "line": 19,
-  "name": "I should be able to see the contact as is in the database (\"last\")",
-  "matchedColumns": [
-    0
-  ],
-  "keyword": "Then "
-});
-formatter.match({
-  "location": "StepsDefDuplicatePage.iAccessTheLandingPageOfCOSAndWantToGoToDuplicates()"
-});
-formatter.result({
-  "duration": 2849438900,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "last",
-      "offset": 60
-    }
-  ],
-  "location": "StepsDefDuplicatePage.iShouldBeAbleToSeeTheContactAsIsInTheDatabase(String)"
-});
-formatter.result({
-  "duration": 1568075900,
-  "status": "passed"
-});
-formatter.after({
-  "duration": 82097300,
-  "status": "passed"
-});
-formatter.after({
-  "duration": 335120100,
-  "status": "passed"
-});
-formatter.uri("US1.feature");
-formatter.feature({
-  "line": 1,
-  "name": "Access to the Contacts Orchestrator Solution\u0027s (COS) Landing Page",
-  "description": "As a user\r\nI want to access to the URL address provided for the landing page\r\nSo that I can see the list of the contacts available",
-  "id": "access-to-the-contacts-orchestrator-solution\u0027s-(cos)-landing-page",
-  "keyword": "Feature"
-});
 });

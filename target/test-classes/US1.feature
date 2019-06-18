@@ -2,7 +2,7 @@ Feature: Access to the Contacts Orchestrator Solution's (COS) Landing Page
   As a user
   I want to access to the URL address provided for the landing page
   So that I can see the list of the contacts available
-
+#
 #  #Verify if is on correct site
 #  Scenario: Landing page's title and text contains "Contacts Landing Page"
 #    Given I access the landing page of COS
@@ -81,20 +81,19 @@ Feature: Access to the Contacts Orchestrator Solution's (COS) Landing Page
 #    Then I should be able to see the possible sources
 #
 #  #Verify if sources are working
-#  Scenario Outline: Landing page contains the selector related to the source
-#    Given I access the landing page of COS
-#    When I want to filter for a "<source>"
-#    Then I should only be able to see the contacts of that specific "<source>"
+##  Scenario Outline: Landing page contains the selector related to the source
+##    Given I access the landing page of COS
+##    When I want to filter for a "<source>"
+##    Then I should only be able to see the contacts of that specific "<source>"
+##
+##    Examples:
+##      | source   |
+##      | All      |
+##      | Twitter  |
+##      | Facebook |
+##      | LinkedIn |
+##      | Skype    |
 #
-#    Examples:
-#      | source   |
-#      | All      |
-#      | Twitter  |
-#      | Facebook |
-#      | LinkedIn |
-#      | Skype    |
-#
-#  #Verify if details button is working
 #
 #
 #  #Verify if duplicates button is working
@@ -102,7 +101,7 @@ Feature: Access to the Contacts Orchestrator Solution's (COS) Landing Page
 #    Given I access the landing page of COS
 #    When I click on the Duplicates
 #    Then I should be redirected to the duplicate pages
-
+#
 
   #SELECTOR FOR SOURCES
   #Text label exists
