@@ -66,15 +66,15 @@ formatter.examples({
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 6218533500,
+  "duration": 5504408100,
   "status": "passed"
 });
 formatter.before({
-  "duration": 3324649800,
+  "duration": 3139387800,
   "status": "passed"
 });
 formatter.before({
-  "duration": 4852647600,
+  "duration": 3759035700,
   "status": "passed"
 });
 formatter.scenario({
@@ -110,7 +110,7 @@ formatter.match({
   "location": "StepsDefUS1.iAccessTheLandingPageOfCOS()"
 });
 formatter.result({
-  "duration": 3148319200,
+  "duration": 1630949700,
   "status": "passed"
 });
 formatter.match({
@@ -123,7 +123,7 @@ formatter.match({
   "location": "DetailsPageTests.iClickOnTheDetailsButtonOnRowWithId(String)"
 });
 formatter.result({
-  "duration": 12885058900,
+  "duration": 13713084000,
   "status": "passed"
 });
 formatter.match({
@@ -136,18 +136,121 @@ formatter.match({
   "location": "DetailsPageTests.iShouldBeRedirectedToTheDetailsPageOfTheUser(String)"
 });
 formatter.result({
-  "duration": 1022439900,
+  "duration": 18471602800,
   "status": "passed"
 });
 formatter.after({
-  "duration": 20437600,
+  "duration": 24592400,
   "status": "passed"
 });
 formatter.after({
-  "duration": 42691000,
+  "duration": 33354300,
   "status": "passed"
 });
 formatter.after({
-  "duration": 39611500,
+  "duration": 32057800,
   "status": "passed"
+});
+formatter.before({
+  "duration": 3730272000,
+  "status": "passed"
+});
+formatter.before({
+  "duration": 3286598000,
+  "status": "passed"
+});
+formatter.before({
+  "duration": 4108955000,
+  "status": "passed"
+});
+formatter.scenario({
+  "line": 16,
+  "name": ": Contacts table contains the details button and redirects to the Details page",
+  "description": "",
+  "id": "access-to-the-contacts-orchestrator-solution\u0027s-(cos)-landing-page;:-contacts-table-contains-the-details-button-and-redirects-to-the-details-page;;3",
+  "type": "scenario",
+  "keyword": "Scenario Outline"
+});
+formatter.step({
+  "line": 9,
+  "name": "I access the landing page of COS",
+  "keyword": "Given "
+});
+formatter.step({
+  "line": 10,
+  "name": "I click on the Details button on row with id \"45\"",
+  "matchedColumns": [
+    0
+  ],
+  "keyword": "When "
+});
+formatter.step({
+  "line": 11,
+  "name": "I should be redirected to the details page of the \"45\" user",
+  "matchedColumns": [
+    0
+  ],
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "StepsDefUS1.iAccessTheLandingPageOfCOS()"
+});
+formatter.result({
+  "duration": 2145504500,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "45",
+      "offset": 46
+    }
+  ],
+  "location": "DetailsPageTests.iClickOnTheDetailsButtonOnRowWithId(String)"
+});
+formatter.result({
+  "duration": 25181007900,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "45",
+      "offset": 51
+    }
+  ],
+  "location": "DetailsPageTests.iShouldBeRedirectedToTheDetailsPageOfTheUser(String)"
+});
+formatter.result({
+  "duration": 982162200,
+  "status": "passed"
+});
+formatter.after({
+  "duration": 20463300,
+  "status": "passed"
+});
+formatter.after({
+  "duration": 37865000,
+  "status": "passed"
+});
+formatter.after({
+  "duration": 41245200,
+  "status": "passed"
+});
+formatter.uri("DuplicatePage.feature");
+formatter.feature({
+  "line": 1,
+  "name": "Access to the Contacts Orchestrator Solution\u0027s (COS) Duplicates page",
+  "description": "As a user\r\nI want to access the duplicate page\r\nSo that I can see the list of the possible contacts duplicate available\r\nSo that I can delete and add those at my will",
+  "id": "access-to-the-contacts-orchestrator-solution\u0027s-(cos)-duplicates-page",
+  "keyword": "Feature"
+});
+formatter.uri("US1.feature");
+formatter.feature({
+  "line": 1,
+  "name": "Access to the Contacts Orchestrator Solution\u0027s (COS) Landing Page",
+  "description": "As a user\r\nI want to access to the URL address provided for the landing page\r\nSo that I can see the list of the contacts available",
+  "id": "access-to-the-contacts-orchestrator-solution\u0027s-(cos)-landing-page",
+  "keyword": "Feature"
+});
 });
