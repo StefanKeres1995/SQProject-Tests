@@ -352,7 +352,7 @@ public class StepsDefUS1 {
     public void iShouldBeAbleToSeeThePossibleSources() {
 
         //XPath to the table
-        String xpath = ".//table[@id='contactsTable']/tbody/tr[2]/HelperConstants.TimeToWaittd";
+        String xpath = ".//table[@id='contactsTable']/tbody/tr[2]/";
 
         //Wait for the position related to the XPath is clickable (If it exists)
         Helper.getInstance().waitForSomething(driver, HelperConstants.TimeToWait, HelperConstants.WaitCondition_ElementToBeClickable, xpath, HelperConstants.IP.Address_Index);

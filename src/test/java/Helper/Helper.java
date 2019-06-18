@@ -477,14 +477,15 @@ public class Helper {
      */
     public ArrayList<Contact> filterDatabase(String filteredField, int column, Contact[] contacts) {
         List<Contact> filteredContacts = null;
+        //ToDo: Filter as Sy did ~
         switch (column){
             case ContactConstants.GIVEN_NAME:
                 filteredContacts = Arrays.stream(contacts).filter(
-                                contact -> contact.getGivenName().contains(filteredField)).collect(Collectors.toList());
+                                contact -> contact.getGivenName().toLowerCase().contains(filteredField.toLowerCase())).collect(Collectors.toList());
                 break;
             case ContactConstants.SURNAME:
                 filteredContacts = Arrays.stream(contacts).filter(
-                        contact -> contact.getSurname().contains(filteredField)).collect(Collectors.toList());
+                        contact -> contact.getSurname().toLowerCase().contains(filteredField.toLowerCase())).collect(Collectors.toList());
                 break;
             case ContactConstants.PHONE:
                 filteredContacts = Arrays.stream(contacts).filter(
@@ -492,14 +493,14 @@ public class Helper {
                 break;
             case ContactConstants.CITY:
                 filteredContacts = Arrays.stream(contacts).filter(
-                        contact -> contact.getCity().contains(filteredField)).collect(Collectors.toList());
+                        contact -> contact.getCity().toLowerCase().contains(filteredField.toLowerCase())).collect(Collectors.toList());
                 break;
             case ContactConstants.SOURCE:
                 if(filteredField.equals("All")){
                     return new ArrayList<>(Arrays.asList(contacts));
                 }
                 filteredContacts = Arrays.stream(contacts).filter(
-                        contact -> contact.getSource().contains(filteredField)).collect(Collectors.toList());
+                        contact -> contact.getSource().toLowerCase().contains(filteredField.toLowerCase())).collect(Collectors.toList());
                 break;
             default:
                 fail("No column Name should be named as : " + column);
