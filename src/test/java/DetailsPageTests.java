@@ -14,10 +14,8 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.Select;
 
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
+import java.lang.reflect.Array;
+import java.util.*;
 import java.util.regex.Pattern;
 
 import static junit.framework.TestCase.fail;
@@ -114,18 +112,20 @@ public class DetailsPageTests {
             //did it find any element
             if (!buttonElement.isEmpty()) {
                 //store data for next part of the test
-                String contactIDXpath = ".//table[@id='contactsTable']/tbody/tr[" + (Integer.parseInt(arg0) - 10 * page) + "]/td[0]";
+                String contactIDXpath = ".//table[@id='contactsTable']/tbody/tr[" + (Integer.parseInt(arg0) - 10 * page) + "]/td[1]";
                 List<WebElement> contactElement = driver.findElements(By.xpath(contactIDXpath));
                 if (!contactElement.isEmpty()) {
-                    for (Contact contact : contacts
-                    ) {
+                    for (Contact contact : contacts) {
                         if (contact.getID() == Integer.parseInt(contactElement.get(0).getText())) {
                             detailedContact = contact;
                             detailURL = HelperConstants.IP.Address_Details + Pattern.compile("[0-9]+|[A-Z]+").matcher(String.valueOf(detailedContact.getID()));
                             break;
                         }
                     }
-
+                }
+                else {
+                    //Error!
+                    fail("XPath came empty. Verify if the XPath is correct");
                 }
                 buttonElement.get(0).click();
             } else {
@@ -144,12 +144,15 @@ public class DetailsPageTests {
         Helper.getInstance().waitForSomething(driver, HelperConstants.TimeToWait, HelperConstants.WaitCondition_ElementToBeLoaded, tableXpath, detailURL);
 
         List<WebElement> detailsElements = driver.findElements(By.xpath(tableXpath));
-        HashMap<String, String> tableContacts = new HashMap<>();
+
+        ArrayList<WebElement> contactKeys = new ArrayList<WebElement>();
+        ArrayList<WebElement> contactvalues = new ArrayList<WebElement>();
         if (!detailsElements.isEmpty()){
             for (WebElement element : detailsElements ) {
-                tableContacts.put(element.findElements(By.xpath("td")).get(0).getText(),element.findElements(By.xpath("td")).get(1).getText());
+                contactKeys.add(element.findElements(By.xpath("td")).get(0));
+                contactvalues.add(element.findElements(By.xpath("td")).get(1));
             }
-
+            Helper.getInstance().checkIntegrityOfContact(contactvalues, Helper.getInstance().retrieveColumns(contactKeys), detailedContact);
         }else {
             //Error!
             fail("XPath came empty. Verify if the XPath is correct");
