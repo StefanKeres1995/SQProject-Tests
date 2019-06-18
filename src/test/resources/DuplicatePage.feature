@@ -24,3 +24,8 @@ Feature: Access to the Contacts Orchestrator Solution's (COS) Duplicates page
       | middle        |
       | half-middle2  |
       | last          |
+
+  Scenario: Duplicate page's Go back to index button
+    Given I access the landing page of COS and want to go to duplicates
+    When I click on the Back to index button
+    Then I should be on the index page

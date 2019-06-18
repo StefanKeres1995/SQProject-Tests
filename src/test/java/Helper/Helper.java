@@ -668,7 +668,7 @@ public class Helper {
 
     public ArrayList<Integer> retrieveColumns(List<WebElement> values){
         ArrayList<String> columns = new ArrayList<>();
-        for(int tr = 1; tr < values.size(); tr++){
+        for(int tr = 0; tr < values.size(); tr++){
             columns.add(values.get(tr).getText());
         }
 
