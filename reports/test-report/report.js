@@ -80,15 +80,15 @@ formatter.examples({
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 8474194600,
+  "duration": 4175957100,
   "status": "passed"
 });
 formatter.before({
-  "duration": 3437390300,
+  "duration": 3019094600,
   "status": "passed"
 });
 formatter.before({
-  "duration": 4270134600,
+  "duration": 3149288600,
   "status": "passed"
 });
 formatter.scenario({
@@ -121,7 +121,7 @@ formatter.match({
   "location": "StepsDefUS1.iAccessTheLandingPageOfCOS()"
 });
 formatter.result({
-  "duration": 2911326400,
+  "duration": 2992328500,
   "status": "passed"
 });
 formatter.match({
@@ -134,38 +134,38 @@ formatter.match({
   "location": "DetailsPageTests.iClickOnTheDetailsButtonOnRowWithId(String)"
 });
 formatter.result({
-  "duration": 13056718400,
+  "duration": 13366011100,
   "status": "passed"
 });
 formatter.match({
   "location": "DetailsPageTests.iShouldBeRedirectedToTheDetailsPageOfTheUser()"
 });
 formatter.result({
-  "duration": 962583600,
+  "duration": 1071494600,
   "status": "passed"
 });
 formatter.after({
-  "duration": 83256400,
+  "duration": 28540700,
   "status": "passed"
 });
 formatter.after({
-  "duration": 39631200,
+  "duration": 50675200,
   "status": "passed"
 });
 formatter.after({
-  "duration": 79123700,
+  "duration": 104942000,
   "status": "passed"
 });
 formatter.before({
-  "duration": 2971116400,
+  "duration": 3473241600,
   "status": "passed"
 });
 formatter.before({
-  "duration": 2979118800,
+  "duration": 2904046100,
   "status": "passed"
 });
 formatter.before({
-  "duration": 2973947100,
+  "duration": 3243203200,
   "status": "passed"
 });
 formatter.scenario({
@@ -198,7 +198,7 @@ formatter.match({
   "location": "StepsDefUS1.iAccessTheLandingPageOfCOS()"
 });
 formatter.result({
-  "duration": 4175232900,
+  "duration": 4103439800,
   "status": "passed"
 });
 formatter.match({
@@ -211,38 +211,38 @@ formatter.match({
   "location": "DetailsPageTests.iClickOnTheDetailsButtonOnRowWithId(String)"
 });
 formatter.result({
-  "duration": 13143553500,
+  "duration": 12893003500,
   "status": "passed"
 });
 formatter.match({
   "location": "DetailsPageTests.iShouldBeRedirectedToTheDetailsPageOfTheUser()"
 });
 formatter.result({
-  "duration": 1038873200,
+  "duration": 977198800,
   "status": "passed"
 });
 formatter.after({
-  "duration": 31009000,
+  "duration": 29280000,
   "status": "passed"
 });
 formatter.after({
-  "duration": 60634000,
+  "duration": 50591600,
   "status": "passed"
 });
 formatter.after({
-  "duration": 74432400,
+  "duration": 113367200,
   "status": "passed"
 });
 formatter.before({
-  "duration": 2971156400,
+  "duration": 3299430800,
   "status": "passed"
 });
 formatter.before({
-  "duration": 2961950600,
+  "duration": 3162645400,
   "status": "passed"
 });
 formatter.before({
-  "duration": 2978077800,
+  "duration": 3532986400,
   "status": "passed"
 });
 formatter.scenario({
@@ -275,7 +275,7 @@ formatter.match({
   "location": "StepsDefUS1.iAccessTheLandingPageOfCOS()"
 });
 formatter.result({
-  "duration": 1549496400,
+  "duration": 2975992600,
   "status": "passed"
 });
 formatter.match({
@@ -288,38 +288,38 @@ formatter.match({
   "location": "DetailsPageTests.iClickOnTheDetailsButtonOnRowWithId(String)"
 });
 formatter.result({
-  "duration": 13322063100,
+  "duration": 12846728600,
   "status": "passed"
 });
 formatter.match({
   "location": "DetailsPageTests.iShouldBeRedirectedToTheDetailsPageOfTheUser()"
 });
 formatter.result({
-  "duration": 979057600,
+  "duration": 973833500,
   "status": "passed"
 });
 formatter.after({
-  "duration": 26394100,
+  "duration": 26145700,
   "status": "passed"
 });
 formatter.after({
-  "duration": 62362300,
+  "duration": 49550800,
   "status": "passed"
 });
 formatter.after({
-  "duration": 63062500,
+  "duration": 80887900,
   "status": "passed"
 });
 formatter.before({
-  "duration": 3113086600,
+  "duration": 3147225300,
   "status": "passed"
 });
 formatter.before({
-  "duration": 2803291900,
+  "duration": 2829585300,
   "status": "passed"
 });
 formatter.before({
-  "duration": 2973448900,
+  "duration": 3118902000,
   "status": "passed"
 });
 formatter.scenario({
@@ -352,7 +352,7 @@ formatter.match({
   "location": "StepsDefUS1.iAccessTheLandingPageOfCOS()"
 });
 formatter.result({
-  "duration": 1703771200,
+  "duration": 1414260100,
   "status": "passed"
 });
 formatter.match({
@@ -365,26 +365,26 @@ formatter.match({
   "location": "DetailsPageTests.iClickOnTheDetailsButtonOnRowWithId(String)"
 });
 formatter.result({
-  "duration": 15634711700,
+  "duration": 15683903400,
   "status": "passed"
 });
 formatter.match({
   "location": "DetailsPageTests.iShouldBeRedirectedToTheDetailsPageOfTheUser()"
 });
 formatter.result({
-  "duration": 973046100,
+  "duration": 957081600,
   "status": "passed"
 });
 formatter.after({
-  "duration": 80300400,
+  "duration": 83550100,
   "status": "passed"
 });
 formatter.after({
-  "duration": 67029300,
+  "duration": 67349100,
   "status": "passed"
 });
 formatter.after({
-  "duration": 78418900,
+  "duration": 92392500,
   "status": "passed"
 });
 formatter.scenarioOutline({
@@ -461,15 +461,15 @@ formatter.examples({
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 3068324400,
+  "duration": 3295195200,
   "status": "passed"
 });
 formatter.before({
-  "duration": 2807680800,
+  "duration": 2830231400,
   "status": "passed"
 });
 formatter.before({
-  "duration": 2867619300,
+  "duration": 3106544800,
   "status": "passed"
 });
 formatter.scenario({
@@ -508,45 +508,45 @@ formatter.match({
   "location": "DetailsPageTests.iEnterTheDetailsPageWithTheFollowingLink(String)"
 });
 formatter.result({
-  "duration": 1232680500,
+  "duration": 1564840400,
   "status": "passed"
 });
 formatter.match({
   "location": "DetailsPageTests.iShouldBePresentedWithAnAlarmBox()"
 });
 formatter.result({
-  "duration": 10401436000,
+  "duration": 10471366000,
   "status": "passed"
 });
 formatter.match({
   "location": "DetailsPageTests.clickingTheAlarmBoxShouldRedirectMeToHomePage()"
 });
 formatter.result({
-  "duration": 718510000,
+  "duration": 523444500,
   "status": "passed"
 });
 formatter.after({
-  "duration": 35059400,
+  "duration": 33131500,
   "status": "passed"
 });
 formatter.after({
-  "duration": 39442900,
+  "duration": 51190600,
   "status": "passed"
 });
 formatter.after({
-  "duration": 85665600,
+  "duration": 103371300,
   "status": "passed"
 });
 formatter.before({
-  "duration": 3077797000,
+  "duration": 3318909900,
   "status": "passed"
 });
 formatter.before({
-  "duration": 3052967300,
+  "duration": 3070574600,
   "status": "passed"
 });
 formatter.before({
-  "duration": 3107173200,
+  "duration": 3336661100,
   "status": "passed"
 });
 formatter.scenario({
@@ -585,45 +585,45 @@ formatter.match({
   "location": "DetailsPageTests.iEnterTheDetailsPageWithTheFollowingLink(String)"
 });
 formatter.result({
-  "duration": 1737850200,
+  "duration": 2188498300,
   "status": "passed"
 });
 formatter.match({
   "location": "DetailsPageTests.iShouldBePresentedWithAnAlarmBox()"
 });
 formatter.result({
-  "duration": 10271097700,
+  "duration": 10424560200,
   "status": "passed"
 });
 formatter.match({
   "location": "DetailsPageTests.clickingTheAlarmBoxShouldRedirectMeToHomePage()"
 });
 formatter.result({
-  "duration": 547745300,
+  "duration": 559160900,
   "status": "passed"
 });
 formatter.after({
-  "duration": 34857400,
+  "duration": 39521500,
   "status": "passed"
 });
 formatter.after({
-  "duration": 42665600,
+  "duration": 46872800,
   "status": "passed"
 });
 formatter.after({
-  "duration": 78550700,
+  "duration": 100924800,
   "status": "passed"
 });
 formatter.before({
-  "duration": 3245713700,
+  "duration": 3295964600,
   "status": "passed"
 });
 formatter.before({
-  "duration": 3116603400,
+  "duration": 3302768700,
   "status": "passed"
 });
 formatter.before({
-  "duration": 3590122400,
+  "duration": 3226669100,
   "status": "passed"
 });
 formatter.scenario({
@@ -662,45 +662,45 @@ formatter.match({
   "location": "DetailsPageTests.iEnterTheDetailsPageWithTheFollowingLink(String)"
 });
 formatter.result({
-  "duration": 2938404700,
+  "duration": 3144511500,
   "status": "passed"
 });
 formatter.match({
   "location": "DetailsPageTests.iShouldBePresentedWithAnAlarmBox()"
 });
 formatter.result({
-  "duration": 10303178700,
+  "duration": 10841215800,
   "status": "passed"
 });
 formatter.match({
   "location": "DetailsPageTests.clickingTheAlarmBoxShouldRedirectMeToHomePage()"
 });
 formatter.result({
-  "duration": 698297300,
+  "duration": 918047600,
   "status": "passed"
 });
 formatter.after({
-  "duration": 41981600,
+  "duration": 40760000,
   "status": "passed"
 });
 formatter.after({
-  "duration": 44288600,
+  "duration": 108909700,
   "status": "passed"
 });
 formatter.after({
-  "duration": 78794700,
+  "duration": 96833900,
   "status": "passed"
 });
 formatter.before({
-  "duration": 3879962700,
+  "duration": 3260758500,
   "status": "passed"
 });
 formatter.before({
-  "duration": 4047332300,
+  "duration": 2802022800,
   "status": "passed"
 });
 formatter.before({
-  "duration": 8155434000,
+  "duration": 2898406500,
   "status": "passed"
 });
 formatter.scenario({
@@ -739,33 +739,33 @@ formatter.match({
   "location": "DetailsPageTests.iEnterTheDetailsPageWithTheFollowingLink(String)"
 });
 formatter.result({
-  "duration": 9553590500,
+  "duration": 1208909000,
   "status": "passed"
 });
 formatter.match({
   "location": "DetailsPageTests.iShouldBePresentedWithAnAlarmBox()"
 });
 formatter.result({
-  "duration": 11188534500,
+  "duration": 10414907200,
   "status": "passed"
 });
 formatter.match({
   "location": "DetailsPageTests.clickingTheAlarmBoxShouldRedirectMeToHomePage()"
 });
 formatter.result({
-  "duration": 579969900,
+  "duration": 738158500,
   "status": "passed"
 });
 formatter.after({
-  "duration": 28632600,
+  "duration": 32950300,
   "status": "passed"
 });
 formatter.after({
-  "duration": 43496600,
+  "duration": 92533400,
   "status": "passed"
 });
 formatter.after({
-  "duration": 78163000,
+  "duration": 429341600,
   "status": "passed"
 });
 formatter.scenarioOutline({
@@ -778,7 +778,7 @@ formatter.scenarioOutline({
 });
 formatter.step({
   "line": 34,
-  "name": "I navigate on Details page of contact \"\u003cid\u003e\"",
+  "name": "I access the landing page of COS and want to see the details of contact \"\u003cid\u003e\"",
   "keyword": "Given "
 });
 formatter.step({
@@ -815,15 +815,15 @@ formatter.examples({
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 3638201500,
+  "duration": 3788160000,
   "status": "passed"
 });
 formatter.before({
-  "duration": 3709377300,
+  "duration": 3197855000,
   "status": "passed"
 });
 formatter.before({
-  "duration": 3691574900,
+  "duration": 2960793500,
   "status": "passed"
 });
 formatter.scenario({
@@ -836,7 +836,7 @@ formatter.scenario({
 });
 formatter.step({
   "line": 34,
-  "name": "I navigate on Details page of contact \"5\"",
+  "name": "I access the landing page of COS and want to see the details of contact \"5\"",
   "matchedColumns": [
     0
   ],
@@ -856,47 +856,39 @@ formatter.match({
   "arguments": [
     {
       "val": "5",
-      "offset": 39
+      "offset": 73
     }
   ],
-  "location": "DetailsPageTests.iNavigateOnDetailsPageOfContact(String)"
+  "location": "DetailsPageTests.iAccessTheLandingPageOfCOSAndWantToSeeTheDetailsOfContact(String)"
 });
 formatter.result({
-  "duration": 15000421300,
+  "duration": 3358522900,
   "status": "passed"
 });
 formatter.match({
   "location": "DetailsPageTests.iPressTheBackButton()"
 });
 formatter.result({
-  "duration": 272709400,
+  "duration": 144659500,
   "status": "passed"
 });
 formatter.match({
   "location": "DetailsPageTests.iReturnToTheLandingPage()"
 });
 formatter.result({
-  "duration": 3750200,
+  "duration": 3431800,
   "status": "passed"
 });
 formatter.after({
-  "duration": 42034200,
+  "duration": 37846600,
   "status": "passed"
 });
 formatter.after({
-  "duration": 118364500,
+  "duration": 65936100,
   "status": "passed"
 });
 formatter.after({
-  "duration": 558182800,
+  "duration": 87706000,
   "status": "passed"
-});
-formatter.uri("US1.feature");
-formatter.feature({
-  "line": 1,
-  "name": "Access to the Contacts Orchestrator Solution\u0027s (COS) Landing Page",
-  "description": "As a user\r\nI want to access to the URL address provided for the landing page\r\nSo that I can see the list of the contacts available",
-  "id": "access-to-the-contacts-orchestrator-solution\u0027s-(cos)-landing-page",
-  "keyword": "Feature"
 });
 });

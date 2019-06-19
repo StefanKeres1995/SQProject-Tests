@@ -31,7 +31,7 @@ Feature: Access to the Contacts Orchestrator Solution's (COS) Landing Page
       | incorrectId  |
 
   Scenario Outline: Get back to Landing page from the Details page
-    Given I navigate on Details page of contact "<id>"
+    Given I access the landing page of COS and want to see the details of contact "<id>"
     When I press the back button
     Then I return to the Landing Page
 

@@ -2,6 +2,7 @@ import Helper.Helper;
 import Helper.HelperConstants;
 import Model.Contact;
 import Model.ContactConstants;
+import cucumber.api.PendingException;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.And;
@@ -130,7 +131,7 @@ public class DetailsPageTests {
                             detailedContact = contact;
 
                             //Store URL for next test
-                            detailURL = HelperConstants.IP.Address_Details + Pattern.compile("[0-9]+|[A-Z]+").matcher(String.valueOf(detailedContact.getID()));
+                            detailURL = HelperConstants.IP.Address_Details + detailedContact.getGuid();
 
                             //Click the button gotten
                             buttonElement.get(0).click();
@@ -210,13 +211,33 @@ public class DetailsPageTests {
         }
     }
 
-    @Given("^I navigate on Details page of contact \"([^\"]*)\"$")
-    public void iNavigateOnDetailsPageOfContact(String contactId) throws Throwable {
-        //Prepare url for the details page with the contact with the contactId id
-        detailURL = HelperConstants.IP.Address_Details + Pattern.compile("[0-9]+|[A-Z]+").matcher(contactId);
+    @Given("^I access the landing page of COS and want to see the details of contact \"([^\"]*)\"$")
+    public void iAccessTheLandingPageOfCOSAndWantToSeeTheDetailsOfContact(String contactId) throws Throwable {
 
-        //Go to the details page of the contact with the contactId id
-        Helper.getInstance().waitForSomething(driver, HelperConstants.TimeToWait, HelperConstants.WaitCondition_TitleContains , "Details", detailURL);
+        //Go to landing page
+        driver.get(HelperConstants.IP.Address_Index);
+
+        String xpath = ".//table[@id='contactsTable']/tbody/tr[1]/td";
+
+        //Wait for the position related to the XPath is clickable (If it exists)
+        Helper.getInstance().waitForSomething(driver, HelperConstants.TimeToWait, HelperConstants.WaitCondition_ElementToBeClickable, xpath, HelperConstants.IP.Address_Index);
+
+        //Prepare url for the details page with the contact with the contactId id
+        xpath = ".//table[@id='contactsTable']/tbody/tr[" + Integer.parseInt(contactId) + "]/td[7]/a";
+
+        List<WebElement> button = driver.findElements(By.xpath(xpath));
+        if(!button.isEmpty()){
+            detailURL = button.get(0).getAttribute("href");
+
+            detailedContact = contacts[Integer.parseInt(contactId) - 1];
+
+            button.get(0).click();
+
+            //Go to the details page of the contact with the contactId id
+            Helper.getInstance().waitForSomething(driver, HelperConstants.TimeToWait, HelperConstants.WaitCondition_TitleContains , "Details--"+ contactId, HelperConstants.IP.Address_Index);
+        }else{
+            fail("XPath came empty. Verify if the XPath is correct");
+        }
     }
 
     @When("^I press the back button$")

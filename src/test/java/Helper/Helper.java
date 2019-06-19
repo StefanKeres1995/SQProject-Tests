@@ -255,8 +255,15 @@ public class Helper {
             case HelperConstants.WaitCondition_TitleContains:
                 do {
                     try {
+                        String myUrlTitle;
+                        if(string.contains("Details--")) {
+                            myUrlTitle = string.split("--")[0];
+                        }else{
+                            myUrlTitle = string;
+                        }
+
                         WebDriverWait wait = new WebDriverWait(driver, timeOutInSeconds);
-                        wait.until(ExpectedConditions.titleContains(string));
+                        wait.until(ExpectedConditions.titleContains(myUrlTitle));
                         return;
                     } catch (TimeoutException ex) {
                         //Force a Reset
@@ -271,6 +278,14 @@ public class Helper {
                                 Alert alert = Helper.getInstance().waitForAlert(driver, url);
 
                                 alert.accept();
+                            }else if(url.contains("details.html") && string.contains("Details--")){
+                                Integer contactId = Integer.valueOf(string.split("--")[1]);
+
+                                //Redo steps
+                                Helper.getInstance().waitForSomething(driver, HelperConstants.TimeToWait, HelperConstants.WaitCondition_TitleContains, "Contacts Landing Page", HelperConstants.IP.Address_Index);
+
+                                //Prepare url for the details page with the contact with the contactId id
+                                driver.findElement(By.xpath(".//table[@id='contactsTable']/tbody/tr[" + contactId + "]/td[7]/a")).click();
                             }
                         }
                         counter++;
@@ -751,6 +766,9 @@ public class Helper {
 
             case "Surname":
                 return ContactConstants.SURNAME;
+
+            case "ID":
+                return ContactConstants.ID;
 
             default:
                 //Can't come here.
