@@ -5,12 +5,25 @@ Feature: Access to the Contacts Orchestrator Solution's (COS) Landing Page
 
 
   #Verify if details button is working
-  Scenario Outline: : Contacts table contains the details button and redirects to the Details page
+  Scenario Outline: Contacts table contains the details button and redirects to the Details page
     Given I access the landing page of COS
     When I click on the Details button on row with id "<id>"
     Then I should be redirected to the details page of the "<id>" user
 
     Examples:
       | id  |
+      | 1   |
       | 5   |
       | 45  |
+      | 219 |
+
+#  #Verify wrong link on details page
+#  Scenario Outline: Badly formatted contact link on Details page
+#    Given I
+#    When I enter the details page
+#    Then I should be presented with an alarm box
+#    And Clicking the alarm box should redirect me to home page
+#
+#    Examples:
+#      | id  |
+#      | 5   |

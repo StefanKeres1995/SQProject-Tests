@@ -2,8 +2,10 @@ import Helper.Helper;
 import Helper.HelperConstants;
 import Model.Contact;
 import Model.ContactConstants;
+import cucumber.api.PendingException;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
+import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.openqa.selenium.By;
@@ -146,13 +148,13 @@ public class DetailsPageTests {
         List<WebElement> detailsElements = driver.findElements(By.xpath(tableXpath));
 
         ArrayList<WebElement> contactKeys = new ArrayList<WebElement>();
-        ArrayList<WebElement> contactvalues = new ArrayList<WebElement>();
+        ArrayList<WebElement> contactValues = new ArrayList<WebElement>();
         if (!detailsElements.isEmpty()){
             for (WebElement element : detailsElements ) {
                 contactKeys.add(element.findElements(By.xpath("td")).get(0));
-                contactvalues.add(element.findElements(By.xpath("td")).get(1));
+                contactValues.add(element.findElements(By.xpath("td")).get(1));
             }
-            Helper.getInstance().checkIntegrityOfContact(contactvalues, Helper.getInstance().retrieveColumns(contactKeys), detailedContact);
+            Helper.getInstance().checkIntegrityOfContact(contactValues, Helper.getInstance().retrieveColumns(contactKeys), detailedContact);
         }else {
             //Error!
             fail("XPath came empty. Verify if the XPath is correct");
@@ -160,7 +162,6 @@ public class DetailsPageTests {
         //check if guid of the person received matches the guid from the person from index.html
 
     }
-
 
 
 }
