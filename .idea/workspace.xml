@@ -3,16 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="3ec137f0-b6f3-4072-af66-e892def0a1f7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reports/test-report/report.js" beforeDir="false" afterPath="$PROJECT_DIR$/reports/test-report/report.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/DetailsPageTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/DetailsPageTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Helper/Helper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Helper/Helper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/DetailsPage.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/DetailsPage.feature" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/resources/DuplicatePage.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/DuplicatePage.feature" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/resources/US1.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/US1.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/DetailsPage.feature" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/DetailsPage.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/DetailsPageTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/DetailsPageTests.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/Helper/Helper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Helper/Helper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/US1.feature" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/US1.feature" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -57,13 +49,31 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/resources/DetailsPage.feature">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="267">
-              <caret line="25" column="13" selection-start-line="6" selection-start-column="20" selection-end-line="30" selection-end-column="22" />
+            <state relative-caret-position="374">
+              <caret line="22" column="18" selection-start-line="6" selection-start-column="20" selection-end-line="30" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/resources/DuplicatePage.feature">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="425">
+              <caret line="25" column="16" selection-end-line="31" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/resources/US1.feature">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="391">
+              <caret line="29" column="19" lean-forward="true" selection-end-line="139" selection-end-column="57" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/DetailsPageTests.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="425">
@@ -264,12 +274,12 @@
         <option value="$PROJECT_DIR$/src/test/java/Model/ContactConstants.java" />
         <option value="$PROJECT_DIR$/src/test/java/StepsDefDuplicatePage.java" />
         <option value="$PROJECT_DIR$/src/test/java/Helper/HelperConstants.java" />
-        <option value="$PROJECT_DIR$/src/test/resources/US1.feature" />
-        <option value="$PROJECT_DIR$/src/test/resources/DuplicatePage.feature" />
         <option value="$PROJECT_DIR$/src/test/java/StepsDefUS1.java" />
         <option value="$PROJECT_DIR$/src/test/java/Helper/Helper.java" />
         <option value="$PROJECT_DIR$/src/test/resources/DetailsPage.feature" />
         <option value="$PROJECT_DIR$/src/test/java/DetailsPageTests.java" />
+        <option value="$PROJECT_DIR$/src/test/resources/DuplicatePage.feature" />
+        <option value="$PROJECT_DIR$/src/test/resources/US1.feature" />
       </list>
     </option>
   </component>
@@ -420,7 +430,7 @@
       <workItem from="1560852721487" duration="10977000" />
       <workItem from="1560873380217" duration="2393000" />
       <workItem from="1560886693591" duration="3793000" />
-      <workItem from="1560947059379" duration="6639000" />
+      <workItem from="1560947059379" duration="6927000" />
     </task>
     <task id="LOCAL-00001" summary="Staging new link">
       <created>1560938413045</created>
@@ -433,9 +443,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="CucumberRunner - 2019.06.19 at 14h 48m 02s.xml">
-      <configuration name="CucumberRunner" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="CucumberRunner - 2019.06.19 at 15h 02m 56s.xml">
       <configuration name="CucumberRunner" configurationId="JUnit" />
     </history-entry>
@@ -463,9 +470,12 @@
     <history-entry file="CucumberRunner - 2019.06.19 at 15h 11m 43s.xml">
       <configuration name="CucumberRunner" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="CucumberRunner - 2019.06.19 at 15h 15m 29s.xml">
+      <configuration name="CucumberRunner" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="129940000" />
+    <option name="totallyTimeSpent" value="130228000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -480,7 +490,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.124200426" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.124200426" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -489,7 +499,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.8080537" visible="true" weight="0.31527627" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.8080537" visible="true" weight="0.31527627" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.80671144" weight="0.39328277" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -871,20 +881,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/resources/US1.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-544">
-          <caret line="7" column="43" lean-forward="true" selection-start-column="1" selection-end-line="139" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/resources/DuplicatePage.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="24" lean-forward="true" selection-end-line="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/StepsDefDuplicatePage.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="172">
@@ -1100,17 +1096,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/resources/DetailsPage.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="25" column="13" selection-start-line="6" selection-start-column="20" selection-end-line="30" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/DetailsPageTests.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
           <caret line="74" column="8" selection-start-line="74" selection-start-column="8" selection-end-line="74" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resources/DetailsPage.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="18" selection-start-line="6" selection-start-column="20" selection-end-line="30" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resources/DuplicatePage.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" column="16" selection-end-line="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resources/US1.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="29" column="19" lean-forward="true" selection-end-line="139" selection-end-column="57" />
         </state>
       </provider>
     </entry>
