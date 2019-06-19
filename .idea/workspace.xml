@@ -1,15 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="30f41c5b-6552-404b-9355-101023761eb9" name="Default Changelist" comment="">
+    <list default="true" id="3ec137f0-b6f3-4072-af66-e892def0a1f7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reports/test-report/report.js" beforeDir="false" afterPath="$PROJECT_DIR$/reports/test-report/report.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/DetailsPageTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/DetailsPageTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/Helper/Helper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Helper/Helper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/StepsDefDuplicatePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/StepsDefDuplicatePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/StepsDefUS1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/StepsDefUS1.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/resources/DetailsPage.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/DetailsPage.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/DuplicatePage.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/DuplicatePage.feature" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/resources/US1.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/US1.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/DetailsPage.feature" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/DetailsPage.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/DetailsPageTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/DetailsPageTests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/Helper/Helper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Helper/Helper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/Helper/HelperConstants$IP.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Helper/HelperConstants$IP.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/StepsDefDuplicatePage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/StepsDefDuplicatePage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/StepsDefUS1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/StepsDefUS1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/US1.feature" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/US1.feature" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -24,31 +29,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/StepsDefUS1.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1083">
-              <caret line="357" column="40" selection-start-line="357" selection-start-column="40" selection-end-line="357" selection-end-column="40" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#setUp#0;class#StepsDefUS1#0" />
-                <element signature="method#tearDown#0;class#StepsDefUS1#0" />
-                <element signature="method#theTitleOfThePageShouldBe#0;class#StepsDefUS1#0" />
-                <element signature="method#theFirstColumnShouldContainTheMostRelevantContactRegardedToTheSorted#0;class#StepsDefUS1#0" />
-                <element signature="method#iSearchFor#0;class#StepsDefUS1#0" />
-                <element signature="method#iShouldBeAbleToSeeTheSortedTableByWhileOnlyAppearingWhatISearchedForRelatedTo#0;class#StepsDefUS1#0" />
-                <element signature="method#iIncreaseThePaginationTo#0;class#StepsDefUS1#0" />
-                <element signature="method#iShouldBeAbleToSeeTheNumberOfContactsRelatedTo#0;class#StepsDefUS1#0" />
-              </folding>
+            <state relative-caret-position="134">
+              <caret line="93" column="36" selection-start-line="93" selection-start-column="29" selection-end-line="93" selection-end-column="36" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/resources/DetailsPage.feature">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="329">
+              <caret line="36" selection-start-line="36" selection-end-line="36" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/StepsDefDuplicatePage.java">
+        <entry file="file://$PROJECT_DIR$/src/test/java/DetailsPageTests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="209" column="41" selection-start-line="209" selection-start-column="41" selection-end-line="209" selection-end-column="41" />
+            <state relative-caret-position="299">
+              <caret line="243" column="8" selection-start-line="243" selection-start-column="8" selection-end-line="243" selection-end-column="8" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -59,40 +62,34 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/Helper/Helper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="352">
-              <caret line="244" column="39" selection-start-line="244" selection-start-column="39" selection-end-line="244" selection-end-column="39" />
+            <state relative-caret-position="134">
+              <caret line="229" column="16" selection-start-line="229" selection-start-column="16" selection-end-line="229" selection-end-column="16" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#getInstance#0;class#Helper#0" />
+                <element signature="method#getHTML#0;class#Helper#0" />
+                <element signature="method#checkIntegrityOfContact#0;class#Helper#0" />
+                <element signature="method#orderDatabaseAndVerifyFirstContact#0;class#Helper#0" />
+                <element signature="method#orderDatabase#0;class#Helper#0" />
                 <element signature="method#getFilteredRecordsAndVerifyThem#0;class#Helper#0" />
+                <element signature="method#filterDatabase#0;class#Helper#0" />
+                <element signature="method#getFilteredOrderedRecordsAndVerifyThem#0;class#Helper#0" />
+                <element signature="method#getPossibleSources#0;class#Helper#0" />
+                <element signature="method#getPossibleDuplicates#0;class#Helper#0" />
+                <element signature="method#clearMapForDuplicates#0;class#Helper#0" />
+                <element signature="method#findInMap#0;class#Helper#0" />
+                <element signature="method#verifyIfContainsOnMap#0;class#Helper#0" />
+                <element signature="method#verifyIfContainsOnArray#0;class#Helper#0" />
+                <element signature="method#addToMap#0;class#Helper#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/resources/DuplicatePage.feature">
+        <entry file="file://$PROJECT_DIR$/src/test/java/Helper/HelperConstants.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" column="58" selection-end-line="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/resources/US1.feature">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="265">
-              <caret line="86" column="64" selection-start-line="86" selection-start-column="64" selection-end-line="86" selection-end-column="64" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/resources/DetailsPage.feature">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="61" selection-start-column="1" selection-end-line="15" selection-end-column="14" />
+            <state relative-caret-position="51">
+              <caret line="3" column="55" selection-start-line="3" selection-start-column="28" selection-end-line="3" selection-end-column="55" />
             </state>
           </provider>
         </entry>
@@ -123,6 +120,7 @@
       <find>wait</find>
       <find>position</find>
       <find>position =</find>
+      <find>waitfor</find>
     </findStrings>
     <replaceStrings>
       <replace>HelperConstants.IP.IP_ADDRESS_INDEX</replace>
@@ -138,14 +136,14 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/test/java/Model/Contact.java" />
         <option value="$PROJECT_DIR$/src/test/java/Model/ContactConstants.java" />
-        <option value="$PROJECT_DIR$/src/test/java/Helper/HelperConstants.java" />
-        <option value="$PROJECT_DIR$/src/test/java/DetailsPageTests.java" />
         <option value="$PROJECT_DIR$/src/test/resources/DuplicatePage.feature" />
-        <option value="$PROJECT_DIR$/src/test/resources/DetailsPage.feature" />
-        <option value="$PROJECT_DIR$/src/test/resources/US1.feature" />
-        <option value="$PROJECT_DIR$/src/test/java/Helper/Helper.java" />
         <option value="$PROJECT_DIR$/src/test/java/StepsDefDuplicatePage.java" />
         <option value="$PROJECT_DIR$/src/test/java/StepsDefUS1.java" />
+        <option value="$PROJECT_DIR$/src/test/java/Helper/HelperConstants.java" />
+        <option value="$PROJECT_DIR$/src/test/resources/US1.feature" />
+        <option value="$PROJECT_DIR$/src/test/java/Helper/Helper.java" />
+        <option value="$PROJECT_DIR$/src/test/java/DetailsPageTests.java" />
+        <option value="$PROJECT_DIR$/src/test/resources/DetailsPage.feature" />
       </list>
     </option>
   </component>
@@ -157,9 +155,9 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="506" />
-    <option name="width" value="1421" />
-    <option name="height" value="1047" />
+    <option name="x" value="-10" />
+    <option name="width" value="975" />
+    <option name="height" value="1050" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="false" id="Update" />
@@ -171,51 +169,50 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="Repo-Tests" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Repo-Tests" type="462c0819:PsiDirectoryNode" />
+              <item name="ContactsTest" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ContactsTest" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Repo-Tests" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Repo-Tests" type="462c0819:PsiDirectoryNode" />
+              <item name="ContactsTest" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ContactsTest" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Repo-Tests" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Repo-Tests" type="462c0819:PsiDirectoryNode" />
+              <item name="ContactsTest" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ContactsTest" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Repo-Tests" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Repo-Tests" type="462c0819:PsiDirectoryNode" />
+              <item name="ContactsTest" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ContactsTest" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Repo-Tests" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Repo-Tests" type="462c0819:PsiDirectoryNode" />
+              <item name="ContactsTest" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ContactsTest" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="Helper" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Repo-Tests" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Repo-Tests" type="462c0819:PsiDirectoryNode" />
+              <item name="ContactsTest" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ContactsTest" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="Model" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Repo-Tests" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Repo-Tests" type="462c0819:PsiDirectoryNode" />
+              <item name="ContactsTest" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ContactsTest" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
@@ -224,6 +221,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -297,42 +295,50 @@
       <workItem from="1560873380217" duration="2393000" />
       <workItem from="1560886693591" duration="3793000" />
     </task>
+    <task id="LOCAL-00001" summary="Staging new link">
+      <created>1560938413045</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1560938413045</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="CucumberRunner - 2019.06.18 at 19h 50m 27s.xml">
+    <history-entry file="CucumberRunner - 2019.06.19 at 11h 56m 01s.xml">
       <configuration name="CucumberRunner" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CucumberRunner - 2019.06.18 at 20h 31m 40s.xml">
+    <history-entry file="CucumberRunner - 2019.06.19 at 11h 58m 32s.xml">
       <configuration name="CucumberRunner" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CucumberRunner - 2019.06.18 at 20h 49m 15s.xml">
+    <history-entry file="CucumberRunner - 2019.06.19 at 11h 59m 21s.xml">
       <configuration name="CucumberRunner" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CucumberRunner - 2019.06.18 at 21h 06m 19s.xml">
+    <history-entry file="CucumberRunner - 2019.06.19 at 12h 04m 46s.xml">
       <configuration name="CucumberRunner" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CucumberRunner - 2019.06.18 at 21h 29m 56s.xml">
+    <history-entry file="CucumberRunner - 2019.06.19 at 12h 06m 17s.xml">
       <configuration name="CucumberRunner" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CucumberRunner - 2019.06.18 at 21h 32m 14s.xml">
+    <history-entry file="CucumberRunner - 2019.06.19 at 12h 08m 33s.xml">
       <configuration name="CucumberRunner" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CucumberRunner - 2019.06.18 at 21h 38m 35s.xml">
+    <history-entry file="CucumberRunner - 2019.06.19 at 12h 20m 28s.xml">
       <configuration name="CucumberRunner" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CucumberRunner - 2019.06.18 at 21h 42m 18s.xml">
+    <history-entry file="CucumberRunner - 2019.06.19 at 12h 33m 32s.xml">
       <configuration name="CucumberRunner" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CucumberRunner - 2019.06.18 at 21h 46m 21s.xml">
+    <history-entry file="CucumberRunner - 2019.06.19 at 12h 36m 14s.xml">
       <configuration name="CucumberRunner" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CucumberRunner - 2019.06.18 at 21h 47m 37s.xml">
+    <history-entry file="CucumberRunner - 2019.06.19 at 13h 00m 17s.xml">
       <configuration name="CucumberRunner" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="115654000" />
+    <option name="totallyTimeSpent" value="123301000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -344,10 +350,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24626866" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24630873" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -356,8 +362,8 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4989059" visible="true" weight="0.24377032" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.3943662" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.8080537" visible="true" weight="0.31586403" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.80671144" weight="0.3937677" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32932165" />
@@ -365,8 +371,8 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Terminal" order="10" weight="0.32936078" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5010941" side_tool="true" weight="0.32932165" />
-      <window_info anchor="bottom" id="Messages" order="12" weight="0.3206934" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.19194631" side_tool="true" weight="0.31586403" />
+      <window_info anchor="bottom" id="Messages" order="12" sideWeight="0.4986577" weight="0.3186969" />
       <window_info anchor="bottom" id="REST Client" order="13" show_stripe_button="false" weight="0.44617563" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -379,7 +385,7 @@
       <window_info anchor="right" id="Palette&#9;" order="8" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24360341" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24630873" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -388,8 +394,8 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4989059" visible="true" weight="0.24377032" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39518413" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4966443" weight="0.31728044" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.80671144" visible="true" weight="0.3937677" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32932165" />
@@ -397,8 +403,8 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Terminal" order="10" weight="0.32936078" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5010941" side_tool="true" weight="0.32932165" />
-      <window_info anchor="bottom" id="Messages" order="12" weight="0.32152975" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.1932886" side_tool="true" weight="0.3937677" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.3206934" />
       <window_info anchor="bottom" id="REST Client" order="13" show_stripe_button="false" weight="0.44617563" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -414,6 +420,10 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Staging new link" />
+    <option name="LAST_COMMIT_MESSAGE" value="Staging new link" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
@@ -422,18 +432,6 @@
           <line>295</line>
           <properties />
           <option name="timeStamp" value="15" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/Helper/Helper.java</url>
-          <line>245</line>
-          <properties />
-          <option name="timeStamp" value="17" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/Helper/Helper.java</url>
-          <line>253</line>
-          <properties />
-          <option name="timeStamp" value="18" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/StepsDefUS1.java</url>
@@ -450,11 +448,17 @@
         <watch expression="driver.findElements(By.xpath(string + &quot;/tbody/tr&quot;))" language="JAVA" />
         <watch expression="detailsElements.get(1).findElements(By.xpath(&quot;td&quot;)).get(1).getText()" language="JAVA" />
         <watch expression="driver.findElements(By.xpath(&quot;.//table[@id='contactTable']/tbody/tr[2]&quot;))" language="JAVA" />
+        <watch expression="driver.getTitle()" language="JAVA" />
       </configuration>
     </watches-manager>
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="watch">
+      <expression>
+        <expression-string>driver.getTitle()</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
       <expression>
         <expression-string>detailsElements.get(1).findElements(By.xpath(&quot;td&quot;)).get(1).getText()</expression-string>
         <language-id>JAVA</language-id>
@@ -497,11 +501,6 @@
       </expression>
       <expression>
         <expression-string>driver.findElements(By.xpath(string + &quot;/tbody/tr&quot;))</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>driver.findElements(By.xpath(string + &quot;/tbody&quot;))</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
@@ -787,16 +786,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/DetailsPageTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="148" column="88" selection-end-line="162" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk-11.0.2/lib/src.zip!/java.base/java/util/ArrayList.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="309">
@@ -804,71 +793,79 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/resources/DuplicatePage.feature">
+    <entry file="file://$PROJECT_DIR$/src/test/java/StepsDefDuplicatePage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="58" selection-end-line="31" />
+        <state relative-caret-position="867">
+          <caret line="74" column="5" selection-start-line="74" selection-start-column="5" selection-end-line="74" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/resources/DetailsPage.feature">
+    <entry file="file://$PROJECT_DIR$/src/test/resources/DuplicatePage.feature">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="61" selection-start-column="1" selection-end-line="15" selection-end-column="14" />
+        <state relative-caret-position="444">
+          <caret line="31" selection-start-line="30" selection-start-column="39" selection-end-line="31" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/resources/US1.feature">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="265">
-          <caret line="86" column="64" selection-start-line="86" selection-start-column="64" selection-end-line="86" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/Helper/HelperConstants.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="28" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/StepsDefDuplicatePage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="209" column="41" selection-start-line="209" selection-start-column="41" selection-end-line="209" selection-end-column="41" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/Helper/Helper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="244" column="39" selection-start-line="244" selection-start-column="39" selection-end-line="244" selection-end-column="39" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#getInstance#0;class#Helper#0" />
-            <element signature="method#getFilteredRecordsAndVerifyThem#0;class#Helper#0" />
-          </folding>
+        <state relative-caret-position="566">
+          <caret line="92" column="19" lean-forward="true" selection-start-line="92" selection-start-column="19" selection-end-line="92" selection-end-column="19" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/StepsDefUS1.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1083">
-          <caret line="357" column="40" selection-start-line="357" selection-start-column="40" selection-end-line="357" selection-end-column="40" />
+        <state relative-caret-position="134">
+          <caret line="93" column="36" selection-start-line="93" selection-start-column="29" selection-end-line="93" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/Helper/HelperConstants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="55" selection-start-line="3" selection-start-column="28" selection-end-line="3" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/Helper/Helper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="134">
+          <caret line="229" column="16" selection-start-line="229" selection-start-column="16" selection-end-line="229" selection-end-column="16" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#setUp#0;class#StepsDefUS1#0" />
-            <element signature="method#tearDown#0;class#StepsDefUS1#0" />
-            <element signature="method#theTitleOfThePageShouldBe#0;class#StepsDefUS1#0" />
-            <element signature="method#theFirstColumnShouldContainTheMostRelevantContactRegardedToTheSorted#0;class#StepsDefUS1#0" />
-            <element signature="method#iSearchFor#0;class#StepsDefUS1#0" />
-            <element signature="method#iShouldBeAbleToSeeTheSortedTableByWhileOnlyAppearingWhatISearchedForRelatedTo#0;class#StepsDefUS1#0" />
-            <element signature="method#iIncreaseThePaginationTo#0;class#StepsDefUS1#0" />
-            <element signature="method#iShouldBeAbleToSeeTheNumberOfContactsRelatedTo#0;class#StepsDefUS1#0" />
+            <element signature="method#getHTML#0;class#Helper#0" />
+            <element signature="method#checkIntegrityOfContact#0;class#Helper#0" />
+            <element signature="method#orderDatabaseAndVerifyFirstContact#0;class#Helper#0" />
+            <element signature="method#orderDatabase#0;class#Helper#0" />
+            <element signature="method#getFilteredRecordsAndVerifyThem#0;class#Helper#0" />
+            <element signature="method#filterDatabase#0;class#Helper#0" />
+            <element signature="method#getFilteredOrderedRecordsAndVerifyThem#0;class#Helper#0" />
+            <element signature="method#getPossibleSources#0;class#Helper#0" />
+            <element signature="method#getPossibleDuplicates#0;class#Helper#0" />
+            <element signature="method#clearMapForDuplicates#0;class#Helper#0" />
+            <element signature="method#findInMap#0;class#Helper#0" />
+            <element signature="method#verifyIfContainsOnMap#0;class#Helper#0" />
+            <element signature="method#verifyIfContainsOnArray#0;class#Helper#0" />
+            <element signature="method#addToMap#0;class#Helper#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/DetailsPageTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="243" column="8" selection-start-line="243" selection-start-column="8" selection-end-line="243" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resources/DetailsPage.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="329">
+          <caret line="36" selection-start-line="36" selection-end-line="36" />
         </state>
       </provider>
     </entry>

@@ -4,10 +4,8 @@ import Model.Contact;
 import Model.ContactConstants;
 import com.google.gson.Gson;
 import junit.framework.TestCase;
-import org.openqa.selenium.By;
-import org.openqa.selenium.TimeoutException;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
+import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -725,4 +723,37 @@ public class Helper {
         }
         return ints;
     }
+
+    public Alert waitForAlert(WebDriver driver, String url) throws  InterruptedException{
+
+        //Counter created to avoid timeouts
+        int counter = 0;
+        do {
+            try {
+                WebDriverWait wait = new WebDriverWait(driver, HelperConstants.TimeToWait);
+                if(wait.until(ExpectedConditions.alertIsPresent())==null){
+                    TestCase.fail("alert was not present");
+                }
+                else
+                {
+                    Alert alert = driver.switchTo().alert();
+                    //alert.accept();
+                    System.out.println("alert was present");
+                    return alert;
+                }
+            } catch (TimeoutException ex) {
+                //Force a Reset
+                if(url != null){
+                    driver.get(url);
+                }
+                counter++;
+                Thread.sleep(100);
+            }
+        }while(counter <= 3);
+        TestCase.fail("Timeout on waiting. - Alert didn't appear" + counter);
+
+        return null;
+
+    }
+
 }

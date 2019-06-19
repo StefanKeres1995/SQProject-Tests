@@ -5,9 +5,14 @@ import Model.ContactConstants;
 import cucumber.api.PendingException;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
+import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import gherkin.lexer.He;
+import junit.framework.TestCase;
+import org.junit.Test;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -20,7 +25,9 @@ import java.lang.reflect.Array;
 import java.util.*;
 import java.util.regex.Pattern;
 
+import static junit.framework.TestCase.assertEquals;
 import static junit.framework.TestCase.fail;
+import static org.junit.Assert.assertNotEquals;
 
 public class DetailsPageTests {
     private static WebDriver driver;
@@ -29,6 +36,8 @@ public class DetailsPageTests {
 
     private Contact detailedContact = null;
     private String detailURL = "";
+
+    private Alert alert = null;
 
     //Get list of Constants to Verify
     private static LinkedList<Integer> constantToVerify = new LinkedList<>();
@@ -164,4 +173,74 @@ public class DetailsPageTests {
     }
 
 
+    @Given("^I enter the details page with the following case \"([^\"]*)\"$")
+    public void iEnterTheDetailsPageWithTheFollowingLink(String arg0) throws Throwable {
+        //prepare each case
+        switch (arg0){
+            case "justDetails": detailURL = HelperConstants.IP.Address_Index + "details.html";
+                break;
+            case "emptyId": detailURL = HelperConstants.IP.Address_Index + "details.html?id=";
+                break;
+            case "unfilteredId": detailURL = HelperConstants.IP.Address_Index + "details.html?id=1";
+                break;
+            case "incorrectId": detailURL = HelperConstants.IP.Address_Index + "details.html?id=asdf00fdsa";
+                break;
+            default:
+                TestCase.fail("Invalid case format");
+                break;
+        }
+
+    }
+
+    @Then("^I should be presented with an alarm box$")
+    public void iShouldBePresentedWithAnAlarmBox() throws InterruptedException{
+        //store alert for next test
+        alert = Helper.getInstance().waitForAlert(driver, detailURL);
+    }
+
+    @And("^Clicking the alarm box should redirect me to home page$")
+    public void clickingTheAlarmBoxShouldRedirectMeToHomePage() throws InterruptedException {
+        //check if alert exists
+        if (alert != null){
+            //check the alert
+            alert.accept();
+            //once checked the user should be redirected to the landing page
+            Helper.getInstance().waitForSomething(driver, HelperConstants.TimeToWait, HelperConstants.WaitCondition_TitleContains, "Contacts Landing Page", HelperConstants.IP.Address_Index);
+        }else {
+            TestCase.fail("Alert doesn't exist");
+        }
+    }
+
+    @Given("^I navigate on Details page of contact \"([^\"]*)\"$")
+    public void iNavigateOnDetailsPageOfContact(String arg0) throws Throwable {
+        //prepare url for the details page with the contact with the arg0 id
+        detailURL = HelperConstants.IP.Address_Details + Pattern.compile("[0-9]+|[A-Z]+").matcher(arg0);
+
+        //go to the details page of the contact with the arg0 id
+        Helper.getInstance().waitForSomething(driver, HelperConstants.TimeToWait, HelperConstants.WaitCondition_TitleContains , "Details", detailURL);
+    }
+
+
+    @When("^I press the back button$")
+    public void iPressTheBackButton() {
+        //find button xpath
+        List<WebElement> backButton = driver.findElements(By.xpath("/html/body/div[1]/a"));
+        //check if found
+        if (!backButton.isEmpty()){
+            //click button
+            backButton.get(0).click();
+        }
+        else {
+            TestCase.fail("Back Button doesn't exist");
+        }
+
+
+    }
+
+    @Then("^I return to the Landing Page$")
+    public void iReturnToTheLandingPage() throws InterruptedException {
+
+        //once checked the user should be redirected to the landing page
+        Helper.getInstance().waitForSomething(driver, HelperConstants.TimeToWait, HelperConstants.WaitCondition_TitleContains, "Contacts Landing Page", HelperConstants.IP.Address_Index);
+    }
 }
