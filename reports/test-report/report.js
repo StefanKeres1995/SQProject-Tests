@@ -10,52 +10,385 @@ formatter.scenarioOutline({
   "comments": [
     {
       "line": 7,
-      "value": "#  #Verify if details button is working"
-    },
+      "value": "#Verify if details button is working"
+    }
+  ],
+  "line": 8,
+  "name": "Contacts table contains the details button and redirects to the Details page",
+  "description": "",
+  "id": "access-to-the-contacts-orchestrator-solution\u0027s-(cos)-landing-page;contacts-table-contains-the-details-button-and-redirects-to-the-details-page",
+  "type": "scenario_outline",
+  "keyword": "Scenario Outline"
+});
+formatter.step({
+  "line": 9,
+  "name": "I access the landing page of COS",
+  "keyword": "Given "
+});
+formatter.step({
+  "line": 10,
+  "name": "I click on the Details button on row with id \"\u003cid\u003e\"",
+  "keyword": "When "
+});
+formatter.step({
+  "line": 11,
+  "name": "I should be redirected to the details page of the user",
+  "keyword": "Then "
+});
+formatter.examples({
+  "line": 13,
+  "name": "",
+  "description": "",
+  "id": "access-to-the-contacts-orchestrator-solution\u0027s-(cos)-landing-page;contacts-table-contains-the-details-button-and-redirects-to-the-details-page;",
+  "rows": [
     {
-      "line": 8,
-      "value": "#  Scenario Outline: Contacts table contains the details button and redirects to the Details page"
-    },
-    {
-      "line": 9,
-      "value": "#    Given I access the landing page of COS"
-    },
-    {
-      "line": 10,
-      "value": "#    When I click on the Details button on row with id \"\u003cid\u003e\""
-    },
-    {
-      "line": 11,
-      "value": "#    Then I should be redirected to the details page of the \"\u003cid\u003e\" user"
-    },
-    {
-      "line": 12,
-      "value": "#"
-    },
-    {
-      "line": 13,
-      "value": "#    Examples:"
-    },
-    {
+      "cells": [
+        "id"
+      ],
       "line": 14,
-      "value": "#      | id  |"
+      "id": "access-to-the-contacts-orchestrator-solution\u0027s-(cos)-landing-page;contacts-table-contains-the-details-button-and-redirects-to-the-details-page;;1"
     },
     {
+      "cells": [
+        "1"
+      ],
       "line": 15,
-      "value": "#      | 1   |"
+      "id": "access-to-the-contacts-orchestrator-solution\u0027s-(cos)-landing-page;contacts-table-contains-the-details-button-and-redirects-to-the-details-page;;2"
     },
     {
+      "cells": [
+        "5"
+      ],
       "line": 16,
-      "value": "#      | 5   |"
+      "id": "access-to-the-contacts-orchestrator-solution\u0027s-(cos)-landing-page;contacts-table-contains-the-details-button-and-redirects-to-the-details-page;;3"
     },
     {
+      "cells": [
+        "45"
+      ],
       "line": 17,
-      "value": "#      | 45  |"
+      "id": "access-to-the-contacts-orchestrator-solution\u0027s-(cos)-landing-page;contacts-table-contains-the-details-button-and-redirects-to-the-details-page;;4"
     },
     {
+      "cells": [
+        "219"
+      ],
       "line": 18,
-      "value": "#      | 219 |"
-    },
+      "id": "access-to-the-contacts-orchestrator-solution\u0027s-(cos)-landing-page;contacts-table-contains-the-details-button-and-redirects-to-the-details-page;;5"
+    }
+  ],
+  "keyword": "Examples"
+});
+formatter.before({
+  "duration": 8474194600,
+  "status": "passed"
+});
+formatter.before({
+  "duration": 3437390300,
+  "status": "passed"
+});
+formatter.before({
+  "duration": 4270134600,
+  "status": "passed"
+});
+formatter.scenario({
+  "line": 15,
+  "name": "Contacts table contains the details button and redirects to the Details page",
+  "description": "",
+  "id": "access-to-the-contacts-orchestrator-solution\u0027s-(cos)-landing-page;contacts-table-contains-the-details-button-and-redirects-to-the-details-page;;2",
+  "type": "scenario",
+  "keyword": "Scenario Outline"
+});
+formatter.step({
+  "line": 9,
+  "name": "I access the landing page of COS",
+  "keyword": "Given "
+});
+formatter.step({
+  "line": 10,
+  "name": "I click on the Details button on row with id \"1\"",
+  "matchedColumns": [
+    0
+  ],
+  "keyword": "When "
+});
+formatter.step({
+  "line": 11,
+  "name": "I should be redirected to the details page of the user",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "StepsDefUS1.iAccessTheLandingPageOfCOS()"
+});
+formatter.result({
+  "duration": 2911326400,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "1",
+      "offset": 46
+    }
+  ],
+  "location": "DetailsPageTests.iClickOnTheDetailsButtonOnRowWithId(String)"
+});
+formatter.result({
+  "duration": 13056718400,
+  "status": "passed"
+});
+formatter.match({
+  "location": "DetailsPageTests.iShouldBeRedirectedToTheDetailsPageOfTheUser()"
+});
+formatter.result({
+  "duration": 962583600,
+  "status": "passed"
+});
+formatter.after({
+  "duration": 83256400,
+  "status": "passed"
+});
+formatter.after({
+  "duration": 39631200,
+  "status": "passed"
+});
+formatter.after({
+  "duration": 79123700,
+  "status": "passed"
+});
+formatter.before({
+  "duration": 2971116400,
+  "status": "passed"
+});
+formatter.before({
+  "duration": 2979118800,
+  "status": "passed"
+});
+formatter.before({
+  "duration": 2973947100,
+  "status": "passed"
+});
+formatter.scenario({
+  "line": 16,
+  "name": "Contacts table contains the details button and redirects to the Details page",
+  "description": "",
+  "id": "access-to-the-contacts-orchestrator-solution\u0027s-(cos)-landing-page;contacts-table-contains-the-details-button-and-redirects-to-the-details-page;;3",
+  "type": "scenario",
+  "keyword": "Scenario Outline"
+});
+formatter.step({
+  "line": 9,
+  "name": "I access the landing page of COS",
+  "keyword": "Given "
+});
+formatter.step({
+  "line": 10,
+  "name": "I click on the Details button on row with id \"5\"",
+  "matchedColumns": [
+    0
+  ],
+  "keyword": "When "
+});
+formatter.step({
+  "line": 11,
+  "name": "I should be redirected to the details page of the user",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "StepsDefUS1.iAccessTheLandingPageOfCOS()"
+});
+formatter.result({
+  "duration": 4175232900,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "5",
+      "offset": 46
+    }
+  ],
+  "location": "DetailsPageTests.iClickOnTheDetailsButtonOnRowWithId(String)"
+});
+formatter.result({
+  "duration": 13143553500,
+  "status": "passed"
+});
+formatter.match({
+  "location": "DetailsPageTests.iShouldBeRedirectedToTheDetailsPageOfTheUser()"
+});
+formatter.result({
+  "duration": 1038873200,
+  "status": "passed"
+});
+formatter.after({
+  "duration": 31009000,
+  "status": "passed"
+});
+formatter.after({
+  "duration": 60634000,
+  "status": "passed"
+});
+formatter.after({
+  "duration": 74432400,
+  "status": "passed"
+});
+formatter.before({
+  "duration": 2971156400,
+  "status": "passed"
+});
+formatter.before({
+  "duration": 2961950600,
+  "status": "passed"
+});
+formatter.before({
+  "duration": 2978077800,
+  "status": "passed"
+});
+formatter.scenario({
+  "line": 17,
+  "name": "Contacts table contains the details button and redirects to the Details page",
+  "description": "",
+  "id": "access-to-the-contacts-orchestrator-solution\u0027s-(cos)-landing-page;contacts-table-contains-the-details-button-and-redirects-to-the-details-page;;4",
+  "type": "scenario",
+  "keyword": "Scenario Outline"
+});
+formatter.step({
+  "line": 9,
+  "name": "I access the landing page of COS",
+  "keyword": "Given "
+});
+formatter.step({
+  "line": 10,
+  "name": "I click on the Details button on row with id \"45\"",
+  "matchedColumns": [
+    0
+  ],
+  "keyword": "When "
+});
+formatter.step({
+  "line": 11,
+  "name": "I should be redirected to the details page of the user",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "StepsDefUS1.iAccessTheLandingPageOfCOS()"
+});
+formatter.result({
+  "duration": 1549496400,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "45",
+      "offset": 46
+    }
+  ],
+  "location": "DetailsPageTests.iClickOnTheDetailsButtonOnRowWithId(String)"
+});
+formatter.result({
+  "duration": 13322063100,
+  "status": "passed"
+});
+formatter.match({
+  "location": "DetailsPageTests.iShouldBeRedirectedToTheDetailsPageOfTheUser()"
+});
+formatter.result({
+  "duration": 979057600,
+  "status": "passed"
+});
+formatter.after({
+  "duration": 26394100,
+  "status": "passed"
+});
+formatter.after({
+  "duration": 62362300,
+  "status": "passed"
+});
+formatter.after({
+  "duration": 63062500,
+  "status": "passed"
+});
+formatter.before({
+  "duration": 3113086600,
+  "status": "passed"
+});
+formatter.before({
+  "duration": 2803291900,
+  "status": "passed"
+});
+formatter.before({
+  "duration": 2973448900,
+  "status": "passed"
+});
+formatter.scenario({
+  "line": 18,
+  "name": "Contacts table contains the details button and redirects to the Details page",
+  "description": "",
+  "id": "access-to-the-contacts-orchestrator-solution\u0027s-(cos)-landing-page;contacts-table-contains-the-details-button-and-redirects-to-the-details-page;;5",
+  "type": "scenario",
+  "keyword": "Scenario Outline"
+});
+formatter.step({
+  "line": 9,
+  "name": "I access the landing page of COS",
+  "keyword": "Given "
+});
+formatter.step({
+  "line": 10,
+  "name": "I click on the Details button on row with id \"219\"",
+  "matchedColumns": [
+    0
+  ],
+  "keyword": "When "
+});
+formatter.step({
+  "line": 11,
+  "name": "I should be redirected to the details page of the user",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "StepsDefUS1.iAccessTheLandingPageOfCOS()"
+});
+formatter.result({
+  "duration": 1703771200,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "219",
+      "offset": 46
+    }
+  ],
+  "location": "DetailsPageTests.iClickOnTheDetailsButtonOnRowWithId(String)"
+});
+formatter.result({
+  "duration": 15634711700,
+  "status": "passed"
+});
+formatter.match({
+  "location": "DetailsPageTests.iShouldBeRedirectedToTheDetailsPageOfTheUser()"
+});
+formatter.result({
+  "duration": 973046100,
+  "status": "passed"
+});
+formatter.after({
+  "duration": 80300400,
+  "status": "passed"
+});
+formatter.after({
+  "duration": 67029300,
+  "status": "passed"
+});
+formatter.after({
+  "duration": 78418900,
+  "status": "passed"
+});
+formatter.scenarioOutline({
+  "comments": [
     {
       "line": 20,
       "value": "#Verify wrong link on details page"
@@ -128,15 +461,15 @@ formatter.examples({
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 5761892200,
+  "duration": 3068324400,
   "status": "passed"
 });
 formatter.before({
-  "duration": 3127341200,
+  "duration": 2807680800,
   "status": "passed"
 });
 formatter.before({
-  "duration": 2986410300,
+  "duration": 2867619300,
   "status": "passed"
 });
 formatter.scenario({
@@ -175,45 +508,45 @@ formatter.match({
   "location": "DetailsPageTests.iEnterTheDetailsPageWithTheFollowingLink(String)"
 });
 formatter.result({
-  "duration": 107511800,
+  "duration": 1232680500,
   "status": "passed"
 });
 formatter.match({
   "location": "DetailsPageTests.iShouldBePresentedWithAnAlarmBox()"
 });
 formatter.result({
-  "duration": 11637454100,
+  "duration": 10401436000,
   "status": "passed"
 });
 formatter.match({
   "location": "DetailsPageTests.clickingTheAlarmBoxShouldRedirectMeToHomePage()"
 });
 formatter.result({
-  "duration": 10646532100,
+  "duration": 718510000,
   "status": "passed"
 });
 formatter.after({
-  "duration": 21502200,
+  "duration": 35059400,
   "status": "passed"
 });
 formatter.after({
-  "duration": 36811200,
+  "duration": 39442900,
   "status": "passed"
 });
 formatter.after({
-  "duration": 47951700,
+  "duration": 85665600,
   "status": "passed"
 });
 formatter.before({
-  "duration": 2868620600,
+  "duration": 3077797000,
   "status": "passed"
 });
 formatter.before({
-  "duration": 2971272600,
+  "duration": 3052967300,
   "status": "passed"
 });
 formatter.before({
-  "duration": 2933717100,
+  "duration": 3107173200,
   "status": "passed"
 });
 formatter.scenario({
@@ -252,45 +585,45 @@ formatter.match({
   "location": "DetailsPageTests.iEnterTheDetailsPageWithTheFollowingLink(String)"
 });
 formatter.result({
-  "duration": 152100,
+  "duration": 1737850200,
   "status": "passed"
 });
 formatter.match({
   "location": "DetailsPageTests.iShouldBePresentedWithAnAlarmBox()"
 });
 formatter.result({
-  "duration": 11080923200,
+  "duration": 10271097700,
   "status": "passed"
 });
 formatter.match({
   "location": "DetailsPageTests.clickingTheAlarmBoxShouldRedirectMeToHomePage()"
 });
 formatter.result({
-  "duration": 10560710900,
+  "duration": 547745300,
   "status": "passed"
 });
 formatter.after({
-  "duration": 21284200,
+  "duration": 34857400,
   "status": "passed"
 });
 formatter.after({
-  "duration": 45968100,
+  "duration": 42665600,
   "status": "passed"
 });
 formatter.after({
-  "duration": 535704000,
+  "duration": 78550700,
   "status": "passed"
 });
 formatter.before({
-  "duration": 2896929700,
+  "duration": 3245713700,
   "status": "passed"
 });
 formatter.before({
-  "duration": 2819627800,
+  "duration": 3116603400,
   "status": "passed"
 });
 formatter.before({
-  "duration": 2886244600,
+  "duration": 3590122400,
   "status": "passed"
 });
 formatter.scenario({
@@ -329,45 +662,45 @@ formatter.match({
   "location": "DetailsPageTests.iEnterTheDetailsPageWithTheFollowingLink(String)"
 });
 formatter.result({
-  "duration": 91100,
+  "duration": 2938404700,
   "status": "passed"
 });
 formatter.match({
   "location": "DetailsPageTests.iShouldBePresentedWithAnAlarmBox()"
 });
 formatter.result({
-  "duration": 11399243400,
+  "duration": 10303178700,
   "status": "passed"
 });
 formatter.match({
   "location": "DetailsPageTests.clickingTheAlarmBoxShouldRedirectMeToHomePage()"
 });
 formatter.result({
-  "duration": 10873980000,
+  "duration": 698297300,
   "status": "passed"
 });
 formatter.after({
-  "duration": 27443800,
+  "duration": 41981600,
   "status": "passed"
 });
 formatter.after({
-  "duration": 46552700,
+  "duration": 44288600,
   "status": "passed"
 });
 formatter.after({
-  "duration": 477937300,
+  "duration": 78794700,
   "status": "passed"
 });
 formatter.before({
-  "duration": 3015285400,
+  "duration": 3879962700,
   "status": "passed"
 });
 formatter.before({
-  "duration": 3014671000,
+  "duration": 4047332300,
   "status": "passed"
 });
 formatter.before({
-  "duration": 2919528400,
+  "duration": 8155434000,
   "status": "passed"
 });
 formatter.scenario({
@@ -406,33 +739,33 @@ formatter.match({
   "location": "DetailsPageTests.iEnterTheDetailsPageWithTheFollowingLink(String)"
 });
 formatter.result({
-  "duration": 132200,
+  "duration": 9553590500,
   "status": "passed"
 });
 formatter.match({
   "location": "DetailsPageTests.iShouldBePresentedWithAnAlarmBox()"
 });
 formatter.result({
-  "duration": 11002329800,
+  "duration": 11188534500,
   "status": "passed"
 });
 formatter.match({
   "location": "DetailsPageTests.clickingTheAlarmBoxShouldRedirectMeToHomePage()"
 });
 formatter.result({
-  "duration": 10564658200,
+  "duration": 579969900,
   "status": "passed"
 });
 formatter.after({
-  "duration": 17569100,
+  "duration": 28632600,
   "status": "passed"
 });
 formatter.after({
-  "duration": 30354500,
+  "duration": 43496600,
   "status": "passed"
 });
 formatter.after({
-  "duration": 56103900,
+  "duration": 78163000,
   "status": "passed"
 });
 formatter.scenarioOutline({
@@ -482,15 +815,15 @@ formatter.examples({
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 2990803600,
+  "duration": 3638201500,
   "status": "passed"
 });
 formatter.before({
-  "duration": 3113540000,
+  "duration": 3709377300,
   "status": "passed"
 });
 formatter.before({
-  "duration": 2987390700,
+  "duration": 3691574900,
   "status": "passed"
 });
 formatter.scenario({
@@ -529,36 +862,34 @@ formatter.match({
   "location": "DetailsPageTests.iNavigateOnDetailsPageOfContact(String)"
 });
 formatter.result({
-  "duration": 11680416700,
+  "duration": 15000421300,
   "status": "passed"
 });
 formatter.match({
   "location": "DetailsPageTests.iPressTheBackButton()"
 });
 formatter.result({
-  "duration": 154520100,
+  "duration": 272709400,
   "status": "passed"
 });
 formatter.match({
   "location": "DetailsPageTests.iReturnToTheLandingPage()"
 });
 formatter.result({
-  "duration": 2696400,
-  "error_message": "org.openqa.selenium.UnhandledAlertException: unexpected alert open: {Alert text : Some error occurred. Going back}\n  (Session info: headless chrome\u003d74.0.3729.169)\n  (Driver info: chromedriver\u003d2.46.628402 (536cd7adbad73a3783fdc2cab92ab2ba7ec361e1),platform\u003dWindows NT 10.0.17763 x86_64) (WARNING: The server did not provide any stacktrace information)\nCommand duration or timeout: 0 milliseconds: null\nBuild info: version: \u00273.11.0\u0027, revision: \u0027e59cfb3\u0027, time: \u00272018-03-11T20:26:55.152Z\u0027\nSystem info: host: \u0027DESKTOP-P41PC6K\u0027, ip: \u0027172.17.118.17\u0027, os.name: \u0027Windows 10\u0027, os.arch: \u0027amd64\u0027, os.version: \u002710.0\u0027, java.version: \u002711.0.2\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.46.628402 (536cd7adbad73a..., userDataDir: C:\\Users\\Stefan\\AppData\\Loc...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:63682}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, strictFileInteractability: false, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 74.0.3729.169, webStorageEnabled: true}\nSession ID: 2c5be3031776a5c38e9cbed630cc72d7\r\n\tat java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\r\n\tat java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)\r\n\tat java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\r\n\tat java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)\r\n\tat org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)\r\n\tat org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:172)\r\n\tat org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)\r\n\tat org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)\r\n\tat org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)\r\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)\r\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:602)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.getTitle(RemoteWebDriver.java:277)\r\n\tat org.openqa.selenium.support.ui.ExpectedConditions$2.apply(ExpectedConditions.java:87)\r\n\tat org.openqa.selenium.support.ui.ExpectedConditions$2.apply(ExpectedConditions.java:82)\r\n\tat org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:248)\r\n\tat Helper.Helper.waitForSomething(Helper.java:259)\r\n\tat DetailsPageTests.iReturnToTheLandingPage(DetailsPageTests.java:244)\r\n\tat ✽.Then I return to the Landing Page(DetailsPage.feature:36)\r\n",
-  "status": "failed"
-});
-formatter.after({
-  "duration": 19147200,
+  "duration": 3750200,
   "status": "passed"
 });
 formatter.after({
-  "duration": 48699500,
+  "duration": 42034200,
   "status": "passed"
 });
 formatter.after({
-  "duration": 11609500,
-  "error_message": "org.openqa.selenium.UnhandledAlertException: unexpected alert open: {Alert text : Some error occurred. Going back}\n  (Session info: headless chrome\u003d74.0.3729.169)\n  (Driver info: chromedriver\u003d2.46.628402 (536cd7adbad73a3783fdc2cab92ab2ba7ec361e1),platform\u003dWindows NT 10.0.17763 x86_64) (WARNING: The server did not provide any stacktrace information)\nCommand duration or timeout: 0 milliseconds: null\nBuild info: version: \u00273.11.0\u0027, revision: \u0027e59cfb3\u0027, time: \u00272018-03-11T20:26:55.152Z\u0027\nSystem info: host: \u0027DESKTOP-P41PC6K\u0027, ip: \u0027172.17.118.17\u0027, os.name: \u0027Windows 10\u0027, os.arch: \u0027amd64\u0027, os.version: \u002710.0\u0027, java.version: \u002711.0.2\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.46.628402 (536cd7adbad73a..., userDataDir: C:\\Users\\Stefan\\AppData\\Loc...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:63682}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, strictFileInteractability: false, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 74.0.3729.169, webStorageEnabled: true}\nSession ID: 2c5be3031776a5c38e9cbed630cc72d7\r\n\tat java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\r\n\tat java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)\r\n\tat java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\r\n\tat java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)\r\n\tat org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)\r\n\tat org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:172)\r\n\tat org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)\r\n\tat org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)\r\n\tat org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)\r\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)\r\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:602)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.close(RemoteWebDriver.java:435)\r\n\tat DetailsPageTests.tearDown(DetailsPageTests.java:82)\r\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\r\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)\r\n\tat java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\r\n\tat java.base/java.lang.reflect.Method.invoke(Method.java:566)\r\n\tat cucumber.runtime.Utils$1.call(Utils.java:40)\r\n\tat cucumber.runtime.Timeout.timeout(Timeout.java:16)\r\n\tat cucumber.runtime.Utils.invoke(Utils.java:34)\r\n\tat cucumber.runtime.java.JavaHookDefinition.execute(JavaHookDefinition.java:60)\r\n\tat cucumber.runtime.Runtime.runHookIfTagsMatch(Runtime.java:224)\r\n\tat cucumber.runtime.Runtime.runHooks(Runtime.java:212)\r\n\tat cucumber.runtime.Runtime.runAfterHooks(Runtime.java:206)\r\n\tat cucumber.runtime.model.CucumberScenario.run(CucumberScenario.java:46)\r\n\tat cucumber.runtime.junit.ExecutionUnitRunner.run(ExecutionUnitRunner.java:102)\r\n\tat org.junit.runners.Suite.runChild(Suite.java:128)\r\n\tat org.junit.runners.Suite.runChild(Suite.java:27)\r\n\tat org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)\r\n\tat org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)\r\n\tat org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)\r\n\tat org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)\r\n\tat org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)\r\n\tat org.junit.runners.ParentRunner.run(ParentRunner.java:363)\r\n\tat cucumber.runtime.junit.ExamplesRunner.run(ExamplesRunner.java:59)\r\n\tat org.junit.runners.Suite.runChild(Suite.java:128)\r\n\tat org.junit.runners.Suite.runChild(Suite.java:27)\r\n\tat org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)\r\n\tat org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)\r\n\tat org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)\r\n\tat org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)\r\n\tat org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)\r\n\tat org.junit.runners.ParentRunner.run(ParentRunner.java:363)\r\n\tat cucumber.runtime.junit.ScenarioOutlineRunner.run(ScenarioOutlineRunner.java:53)\r\n\tat cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:63)\r\n\tat cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:18)\r\n\tat org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)\r\n\tat org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)\r\n\tat org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)\r\n\tat org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)\r\n\tat org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)\r\n\tat org.junit.runners.ParentRunner.run(ParentRunner.java:363)\r\n\tat cucumber.runtime.junit.FeatureRunner.run(FeatureRunner.java:70)\r\n\tat cucumber.api.junit.Cucumber.runChild(Cucumber.java:95)\r\n\tat cucumber.api.junit.Cucumber.runChild(Cucumber.java:38)\r\n\tat org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)\r\n\tat org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)\r\n\tat org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)\r\n\tat org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)\r\n\tat org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)\r\n\tat org.junit.runners.ParentRunner.run(ParentRunner.java:363)\r\n\tat cucumber.api.junit.Cucumber.run(Cucumber.java:100)\r\n\tat org.junit.runner.JUnitCore.run(JUnitCore.java:137)\r\n\tat com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:68)\r\n\tat com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:47)\r\n\tat com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:242)\r\n\tat com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:70)\r\n",
-  "status": "failed"
+  "duration": 118364500,
+  "status": "passed"
+});
+formatter.after({
+  "duration": 558182800,
+  "status": "passed"
 });
 formatter.uri("US1.feature");
 formatter.feature({

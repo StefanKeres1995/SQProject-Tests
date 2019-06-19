@@ -1,7 +1,7 @@
-import Helper.*;
+import Helper.Helper;
+import Helper.HelperConstants;
 import Model.Contact;
 import Model.ContactConstants;
-import cucumber.api.PendingException;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
@@ -67,13 +67,13 @@ public class StepsDefUS1 {
     }
 
     @After
-    public void tearDown() throws Exception {
+    public void tearDown() {
         //Destroy the Chrome Process after the test is done
         driver.close();
     }
 
     @Given("^I access the landing page of COS$")
-    public void iAccessTheLandingPageOfCOS() throws Throwable {
+    public void iAccessTheLandingPageOfCOS() {
         //Access the COS, and then assert if we are on the correct page
         driver.get(HelperConstants.IP.Address_Index);
         assertEquals ("Contacts Landing Page",driver.getTitle());
@@ -94,16 +94,30 @@ public class StepsDefUS1 {
         Helper.getInstance().waitForSomething(driver, HelperConstants.TimeToWait, HelperConstants.WaitCondition_ElementToBeClickable, xpath, HelperConstants.IP.Address_Index);
 
         //Click on the "5" on the pagination.
-        driver.findElements(By.xpath(".//div[@id='contactsTable_paginate']/span/a")).get(4).click();
+        List<WebElement> valuesFromDiv = driver.findElements(By.xpath(".//div[@id='contactsTable_paginate']/span/a"));
 
-        //Get the elements that are related to the XPath
-        List<WebElement> valuesFromTable = driver.findElements(By.xpath(xpath));
+        if(!valuesFromDiv.isEmpty()){
+            if(valuesFromDiv.size() >= 5){
+                valuesFromDiv.get(4).click();
 
-        //Get ID
-        int id = Integer.parseInt(valuesFromTable.get(0).getText());
+                //Get the elements that are related to the XPath
+                List<WebElement> valuesFromTable = driver.findElements(By.xpath(xpath));
 
-        //Is this value correct?
-        Helper.getInstance().checkIntegrityOfContact(valuesFromTable, constantToVerify, contacts[id-1]);
+                if(!valuesFromTable.isEmpty()){
+                    //Get ID (-1 due to we needing the relative position in the database)
+                    int id = Integer.parseInt(valuesFromTable.get(0).getText()) - 1;
+
+                    //Is this value correct?
+                    Helper.getInstance().checkIntegrityOfContact(valuesFromTable, constantToVerify, contacts[id]);
+                }else{
+                    fail("XPath came empty. Verify if the XPath is correct");
+                }
+            }else{
+                fail("XPath came without the normal size. Verify if the XPath is correct");
+            }
+        }else{
+            fail("XPath came empty. Verify if the XPath is correct");
+        }
     }
 
     @Then("^I should see exactly the same amount of contacts that exist in the database$")
@@ -121,20 +135,19 @@ public class StepsDefUS1 {
         //Did the div returned an empty List?
         if(!valuesFromDiv.isEmpty()){
             //Split the gotten string into several sub-strings, were we only get the Integers from the string (And the first Letter, for some reason).
-            List<String> chunks = new LinkedList<String>();
+            List<String> chunks = new LinkedList<>();
             Matcher matcher = Pattern.compile("[0-9]+|[A-Z]+").matcher(valuesFromDiv.get(0).getText());
             while (matcher.find()) {
                 chunks.add( matcher.group() );
             }
 
-            if(chunks.isEmpty()){
-                fail("chunks came empty. Verify if the XPath is correct");
-            }else{
+            if(!chunks.isEmpty()){
                 //Get last position -- That's where the size is!
                 assertEquals(contacts.length, Integer.parseInt(chunks.get(chunks.size() - 1)));
+            }else{
+                fail("chunks came empty. Verify if the XPath is correct");
             }
         }else{
-            //Error!
             fail("XPath came empty. Verify if the XPath is correct");
         }
     }
@@ -173,34 +186,16 @@ public class StepsDefUS1 {
         //Get the elements that are related to the XPath
         List<WebElement> valuesFromTable = driver.findElements(By.xpath(xpath));
 
-        //Get the specific value, for the column...
-        int value = 0;
-        switch (columnName) {
-            case "ID":
-                value = ContactConstants.ID;
-                break;
-            case "GivenName":
-                value = ContactConstants.GIVEN_NAME;
-                break;
-            case "Surname":
-                value = ContactConstants.SURNAME;
-                break;
-            case "Phone":
-                value = ContactConstants.PHONE;
-                break;
-            case "Source":
-                value = ContactConstants.SOURCE;
-                break;
-            case "City":
-                value = ContactConstants.CITY;
-                break;
-            default:
-                fail("No column Name should be named as : " + columnName);
-                break;
-        }
+        if(!valuesFromTable.isEmpty()){
 
-        //Order database and check the integrity
-        Helper.getInstance().orderDatabaseAndVerifyFirstContact(value, valuesFromTable, constantToVerify, new ArrayList<Contact>(Arrays.asList(contacts)));
+            //Get the specific value, for the column...
+            int value = Helper.getInstance().getColumn(columnName);
+
+            //Order database and check the integrity
+            Helper.getInstance().orderDatabaseAndVerifyFirstContact(value, valuesFromTable, constantToVerify, new ArrayList<>(Arrays.asList(contacts)));
+        }else{
+            fail("XPath came empty. Verify if the XPath is correct");
+        }
     }
 
     @When("^I search for \"([^\"]*)\"$")
@@ -215,70 +210,45 @@ public class StepsDefUS1 {
         //Get the elements that are related to the XPath
         List<WebElement> valuesFromSearch = driver.findElements(By.xpath(xpath));
 
-        //Write on the search bar
-        valuesFromSearch.get(0).sendKeys(string);
+        if (!valuesFromSearch.isEmpty()){
+            //Write on the search bar
+            valuesFromSearch.get(0).sendKeys(string);
+        }else{
+            fail("XPath came empty. Verify if the XPath is correct");
+        }
     }
 
     @Then("^I should only see columns that are related to what I've just searched, related to \"([^\"]*)\" \\(\"([^\"]*)\"\\)$")
-    public void iShouldOnlySeeColumnsThatAreRelatedToWhatIVeJustSearchedRelatedTo(String column, String string) throws Throwable {
+    public void iShouldOnlySeeColumnsThatAreRelatedToWhatIVeJustSearchedRelatedTo(String column, String string) {
 
         //Get the specific value, for the column...
-        int value = 0;
-        switch (column) {
-            case "GivenName":
-                value = ContactConstants.GIVEN_NAME;
-                break;
-            case "Surname":
-                value = ContactConstants.SURNAME;
-                break;
-            case "Phone":
-                value = ContactConstants.PHONE;
-                break;
-            case "City":
-                value = ContactConstants.CITY;
-                break;
-            default:
-                fail("No column Name should be named as : " + column);
-                break;
-        }
+        int value = Helper.getInstance().getColumn(column);
 
         //Get the list of lines on the body of the table
         List<WebElement> valuesFromTable = driver.findElements(By.xpath(".//table[@id='contactsTable']/tbody/tr"));
 
-        //Verify these values
-        Helper.getInstance().getFilteredRecordsAndVerifyThem(string, value, valuesFromTable, constantToVerify, contacts);
+        if(!valuesFromTable.isEmpty()){
+            //Verify these values
+            Helper.getInstance().getFilteredRecordsAndVerifyThem(string, value, valuesFromTable, constantToVerify, contacts);
+        }else{
+            fail("XPath came empty. Verify if the XPath is correct");
+        }
     }
 
     @Then("^I should be able to see the sorted table by \"([^\"]*)\", while only appearing what I searched for, related to \"([^\"]*)\"$")
-    public void iShouldBeAbleToSeeTheSortedTableByWhileOnlyAppearingWhatISearchedForRelatedTo(String column, String search) throws Throwable {
+    public void iShouldBeAbleToSeeTheSortedTableByWhileOnlyAppearingWhatISearchedForRelatedTo(String column, String search) {
         //Get the specific value, for the column...
-        int valueColumn = 0;
-        switch (column) {
-            case "GivenName":
-                valueColumn = ContactConstants.GIVEN_NAME;
-                break;
-            case "Surname":
-                valueColumn = ContactConstants.SURNAME;
-                break;
-            case "Phone":
-                valueColumn = ContactConstants.PHONE;
-                break;
-            case "City":
-                valueColumn = ContactConstants.CITY;
-                break;
-            case "ID":
-                valueColumn = ContactConstants.ID;
-                break;
-            default:
-                fail("No column Name should be named as : " + column);
-                break;
-        }
+        int valueColumn = Helper.getInstance().getColumn(column);
 
         //Get the list of lines on the body of the table
         List<WebElement> valuesFromTable = driver.findElements(By.xpath(".//table[@id='contactsTable']/tbody/tr"));
 
-        //Verify the filtered contacts. We will search for a GivenName.
-        Helper.getInstance().getFilteredOrderedRecordsAndVerifyThem(search, valueColumn, ContactConstants.GIVEN_NAME, valuesFromTable, constantToVerify, contacts);
+        if(!valuesFromTable.isEmpty()){
+            //Verify the filtered contacts. We will search for a GivenName.
+            Helper.getInstance().getFilteredOrderedRecordsAndVerifyThem(search, valueColumn, ContactConstants.GIVEN_NAME, valuesFromTable, constantToVerify, contacts);
+        }else{
+            fail("XPath came empty. Verify if the XPath is correct");
+        }
     }
 
     @When("^I increase the pagination to \"([^\"]*)\"$")
@@ -307,7 +277,7 @@ public class StepsDefUS1 {
     }
 
     @Then("^I should be able to see the number of contacts related to \"([^\"]*)\"$")
-    public void iShouldBeAbleToSeeTheNumberOfContactsRelatedTo(String pagination) throws Throwable {
+    public void iShouldBeAbleToSeeTheNumberOfContactsRelatedTo(String pagination) {
 
         //XPath to the correct position
         String xpath = ".//div[@id='contactsTable_info']";
@@ -318,21 +288,18 @@ public class StepsDefUS1 {
         //Did the div returned an empty List?
         if (!length.isEmpty()) {
             //Split the gotten string into several sub-strings, were we only get the Integers from the string (And the first Letter, for some reason).
-            List<String> chunks = new LinkedList<String>();
+            List<String> chunks = new LinkedList<>();
             Matcher matcher = Pattern.compile("[0-9]+|[A-Z]+").matcher(length.get(0).getText());
             while (matcher.find()) {
                 chunks.add(matcher.group());
             }
 
-            if (chunks.isEmpty()) {
-                //Error!
-                fail("chunks came empty. Verify if the XPath is correct");
-            } else {
+            if (!chunks.isEmpty()) {
                 //Get last position -- That's where the size is!
                 assertEquals(contacts.length, Integer.parseInt(chunks.get(chunks.size() - 1)));
 
                 //Finally, assert if the number of
-                int numberToCount = 0;
+                int numberToCount;
                 if(contacts.length > Integer.parseInt(pagination)){
                     numberToCount = Integer.parseInt(pagination);
                 }else{
@@ -341,9 +308,10 @@ public class StepsDefUS1 {
 
                 //Now, check if there are the same amount of contacts in the Table, that is on the pagination.
                 assertEquals(driver.findElements(By.xpath(".//table[@id='contactsTable']/tbody/tr")).size(), numberToCount);
+            } else {
+                fail("chunks came empty. Verify if the XPath is correct");
             }
         } else {
-            //Error!
             fail("XPath came empty. Verify if the XPath is correct");
         }
     }
@@ -380,11 +348,9 @@ public class StepsDefUS1 {
             if(!button.isEmpty()){
                 button.get(0).click();
             }else{
-                //Error!
                 fail("XPath came empty. Verify if the XPath is correct");
             }
         }else{
-            //Error!
             fail("XPath came empty. Verify if the XPath is correct");
         }
     }
@@ -416,11 +382,9 @@ public class StepsDefUS1 {
             if(!button.isEmpty()){
                 button.get(0).click();
             }else{
-                //Error!
                 fail("XPath came empty. Verify if the XPath is correct");
             }
         }else{
-            //Error!
             fail("XPath came empty. Verify if the XPath is correct");
         }
 
@@ -450,25 +414,28 @@ public class StepsDefUS1 {
             //Get the elements that are related to the XPath
             valuesFromDiv = driver.findElements(By.xpath(xpath));
 
-            List<String> chunks = new LinkedList<String>();
-            Matcher matcher = Pattern.compile("[0-9]+|[A-Z]+").matcher(valuesFromDiv.get(0).getText());
-            while (matcher.find()) {
-                chunks.add( matcher.group() );
-            }
+            if(!valuesFromDiv.isEmpty()){
+                List<String> chunks = new LinkedList<>();
+                Matcher matcher = Pattern.compile("[0-9]+|[A-Z]+").matcher(valuesFromDiv.get(0).getText());
+                while (matcher.find()) {
+                    chunks.add( matcher.group() );
+                }
 
-            if(!chunks.isEmpty()){
-                //If it comes to here, we need to filter our database.
-                ArrayList<Contact> filtered = Helper.getInstance().filterDatabase(source, ContactConstants.SOURCE, contacts);
+                if(!chunks.isEmpty()){
+                    //If it comes to here, we need to filter our database.
+                    ArrayList<Contact> filtered = Helper.getInstance().filterDatabase(source, ContactConstants.SOURCE, contacts);
 
-                Helper.getInstance().waitForSomething(driver, HelperConstants.TimeToWait, HelperConstants.WaitCondition_SearchSourceComponentIndex, ".//form[@id='sourceForm']/div/button--" + source, HelperConstants.IP.Address_Index);
+                    Helper.getInstance().waitForSomething(driver, HelperConstants.TimeToWait, HelperConstants.WaitCondition_SearchSourceComponentIndex, ".//form[@id='sourceForm']/div/button--" + source, HelperConstants.IP.Address_Index);
 
-                //Get last position -- That's where the size is!
-                assertEquals(filtered.size(), Integer.parseInt(chunks.get(chunks.size() - 1)));
+                    //Get last position -- That's where the size is!
+                    assertEquals(filtered.size(), Integer.parseInt(chunks.get(chunks.size() - 1)));
+                }else{
+                    fail("Chunks came empty. Verify if the XPath is correct");
+                }
             }else{
-                fail("chunks came empty. Verify if the XPath is correct");
+                fail("XPath came empty. Verify if the XPath is correct");
             }
         }else{
-            //Error!
             fail("XPath came empty. Verify if the XPath is correct");
         }
 
@@ -486,6 +453,7 @@ public class StepsDefUS1 {
         //Get the elements that are related to the XPath (related to the button)
         xpath = ".//a[@id='duplicateButton']";
 
+        //Get Button
         List<WebElement> button = driver.findElements(By.xpath(xpath));
         if(!button.isEmpty()){
             button.get(0).click();
@@ -498,6 +466,4 @@ public class StepsDefUS1 {
     public void iShouldBeRedirectedToTheDuplicatePages() throws InterruptedException {
         Helper.getInstance().waitForSomething(driver, HelperConstants.TimeToWait, HelperConstants.WaitCondition_TitleContains, "Duplicates", HelperConstants.IP.Address_Duplicates);
     }
-
-
 }

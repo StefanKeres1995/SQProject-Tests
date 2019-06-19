@@ -266,6 +266,11 @@ public class Helper {
                             if(url.equals(HelperConstants.IP.Address_Duplicates)) {
                                 WebElement button = driver.findElement(By.xpath(".//a[@id='duplicateButton']"));
                                 button.click();
+                            }else if(url.contains("details.html") && string.contains("Contacts Landing Page")){
+                                //Alarm part
+                                Alert alert = Helper.getInstance().waitForAlert(driver, url);
+
+                                alert.accept();
                             }
                         }
                         counter++;
@@ -349,6 +354,38 @@ public class Helper {
             default:
                 TestCase.fail("Error! You aren't supposed to be here.");
         }
+    }
+
+    public Alert waitForAlert(WebDriver driver, String url) throws  InterruptedException{
+
+        //Counter created to avoid timeouts
+        int counter = 0;
+        do {
+            try {
+                WebDriverWait wait = new WebDriverWait(driver, HelperConstants.TimeToWait);
+                if(wait.until(ExpectedConditions.alertIsPresent())==null){
+                    TestCase.fail("alert was not present");
+                }
+                else
+                {
+                    Alert alert = driver.switchTo().alert();
+                    //alert.accept();
+                    System.out.println("alert was present");
+                    return alert;
+                }
+            } catch (TimeoutException ex) {
+                //Force a Reset
+                if(url != null){
+                    driver.get(url);
+                }
+                counter++;
+                Thread.sleep(100);
+            }
+        }while(counter <= 3);
+        TestCase.fail("Timeout on waiting. - Alert didn't appear" + counter);
+
+        return null;
+
     }
 
     /*
@@ -674,86 +711,51 @@ public class Helper {
 
         ArrayList<Integer> ints = new ArrayList<>();
         for (String string : columns){
-            switch (string){
+            ints.add(getColumn(string));
+        }
 
-                case "Birthday":
-                    ints.add(ContactConstants.BIRTHDAY);
-                    break;
-
-                case "City":
-                    ints.add(ContactConstants.CITY);
-                    break;
-
-                case "Company":
-                    ints.add(ContactConstants.COMPANY);
-                    break;
-
-                case "Email":
-                    ints.add(ContactConstants.EMAIL);
-                    break;
-
-                case "GivenName":
-                    ints.add(ContactConstants.GIVEN_NAME);
-                    break;
-
-                case "Occupation":
-                    ints.add(ContactConstants.OCCUPATION);
-                    break;
-
-                case "Phone":
-                    ints.add(ContactConstants.PHONE);
-                    break;
-
-                case "Source":
-                    ints.add(ContactConstants.SOURCE);
-                    break;
-
-                case "StreetAddress":
-                    ints.add(ContactConstants.STREET_ADDRESS);
-                    break;
-
-                case "Surname":
-                    ints.add(ContactConstants.SURNAME);
-                    break;
-
-                default:
-                    //Can't come here.
-                    TestCase.fail("Error! You aren't supposed to be here.");
-            }
+        if(ints.contains(-1)){
+            TestCase.fail("Error! You aren't supposed to be here.");
         }
         return ints;
     }
 
-    public Alert waitForAlert(WebDriver driver, String url) throws  InterruptedException{
+    public int getColumn(String string){
+        switch (string){
+            case "Birthday":
+                return ContactConstants.BIRTHDAY;
 
-        //Counter created to avoid timeouts
-        int counter = 0;
-        do {
-            try {
-                WebDriverWait wait = new WebDriverWait(driver, HelperConstants.TimeToWait);
-                if(wait.until(ExpectedConditions.alertIsPresent())==null){
-                    TestCase.fail("alert was not present");
-                }
-                else
-                {
-                    Alert alert = driver.switchTo().alert();
-                    //alert.accept();
-                    System.out.println("alert was present");
-                    return alert;
-                }
-            } catch (TimeoutException ex) {
-                //Force a Reset
-                if(url != null){
-                    driver.get(url);
-                }
-                counter++;
-                Thread.sleep(100);
-            }
-        }while(counter <= 3);
-        TestCase.fail("Timeout on waiting. - Alert didn't appear" + counter);
+            case "City":
+                return ContactConstants.CITY;
 
-        return null;
+            case "Company":
+                return ContactConstants.COMPANY;
 
+            case "Email":
+                return ContactConstants.EMAIL;
+
+            case "GivenName":
+                return ContactConstants.GIVEN_NAME;
+
+            case "Occupation":
+                return ContactConstants.OCCUPATION;
+
+            case "Phone":
+                return ContactConstants.PHONE;
+
+            case "Source":
+                return ContactConstants.SOURCE;
+
+            case "StreetAddress":
+                return ContactConstants.STREET_ADDRESS;
+
+            case "Surname":
+                return ContactConstants.SURNAME;
+
+            default:
+                //Can't come here.
+                TestCase.fail("Error! You aren't supposed to be here.");
+                return -1;
+        }
     }
-
 }

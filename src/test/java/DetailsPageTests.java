@@ -2,39 +2,38 @@ import Helper.Helper;
 import Helper.HelperConstants;
 import Model.Contact;
 import Model.ContactConstants;
-import cucumber.api.PendingException;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import gherkin.lexer.He;
 import junit.framework.TestCase;
-import org.junit.Test;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.Select;
 
-import java.lang.reflect.Array;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.regex.Pattern;
 
-import static junit.framework.TestCase.assertEquals;
 import static junit.framework.TestCase.fail;
-import static org.junit.Assert.assertNotEquals;
 
 public class DetailsPageTests {
     private static WebDriver driver;
 
+    //List of contacts
     private static Contact[] contacts = null;
 
+    //Details of the specific contact
     private Contact detailedContact = null;
+
+    //correct link to the contact
     private String detailURL = "";
 
     private Alert alert = null;
@@ -77,15 +76,13 @@ public class DetailsPageTests {
     }
 
     @After
-    public void tearDown() throws Exception {
+    public void tearDown() {
         //Destroy the Chrome Process after the test is done
         driver.close();
     }
 
-
-
     @When("^I click on the Details button on row with id \"([^\"]*)\"$")
-    public void iClickOnTheDetailsButtonOnRowWithId(String arg0) throws Throwable {
+    public void iClickOnTheDetailsButtonOnRowWithId(String contactId) throws Throwable {
 
         //wait for data for the table, check if select of pagination appeared
         String xpath = ".//div[@id='contactsTable_length']/label/select";
@@ -98,149 +95,145 @@ public class DetailsPageTests {
 
         //Did the select returned an empty List?
         if(!select.isEmpty()) {
-            //check if id is from a larger pagination
+            //Check if id is from a larger pagination
             Select selectable = new Select(select.get(0));
             WebElement selectableValue = selectable.getFirstSelectedOption();
-            int page = Integer.parseInt(arg0) / Integer.parseInt(selectableValue.getAttribute("value"));
+            int page = Integer.parseInt(contactId) / Integer.parseInt(selectableValue.getAttribute("value"));
 
-            //jump to the correct page
-            //get pagination button
+            //Jump to the correct page & Get pagination button
             String paginationXpath = "//a[@id='contactsTable_next']";
+
+            List<WebElement> paginationButtonElement;
             for (int i = 0; i < page; i++) {
                 //being in the for, the element of the button is refreshed
-                List<WebElement> paginationButtonElement = driver.findElements(By.xpath(paginationXpath));
-                //did it find any element
+                paginationButtonElement = driver.findElements(By.xpath(paginationXpath));
                 if (!paginationButtonElement.isEmpty()) {
                     paginationButtonElement.get(0).click();
                 } else {
-                    //Error!
                     fail("XPath came empty. Verify if the XPath is correct");
                 }
             }
-            //now that we're in the correct page find the details button
-            String detailsButtonXpath = ".//table[@id='contactsTable']/tbody/tr[" + (Integer.parseInt(arg0) - 10 * page) + "]/td[7]/a";
+
+            //Now that we're in the correct page find the details button
+            String detailsButtonXpath = ".//table[@id='contactsTable']/tbody/tr[" + (Integer.parseInt(contactId) - (10 * page)) + "]/td[7]/a";
             List<WebElement> buttonElement = driver.findElements(By.xpath(detailsButtonXpath));
-            //did it find any element
+
             if (!buttonElement.isEmpty()) {
                 //store data for next part of the test
-                String contactIDXpath = ".//table[@id='contactsTable']/tbody/tr[" + (Integer.parseInt(arg0) - 10 * page) + "]/td[1]";
+                String contactIDXpath = ".//table[@id='contactsTable']/tbody/tr[" + (Integer.parseInt(contactId) - (10 * page)) + "]/td[1]";
                 List<WebElement> contactElement = driver.findElements(By.xpath(contactIDXpath));
                 if (!contactElement.isEmpty()) {
                     for (Contact contact : contacts) {
                         if (contact.getID() == Integer.parseInt(contactElement.get(0).getText())) {
+
+                            //Store contact for next test
                             detailedContact = contact;
+
+                            //Store URL for next test
                             detailURL = HelperConstants.IP.Address_Details + Pattern.compile("[0-9]+|[A-Z]+").matcher(String.valueOf(detailedContact.getID()));
-                            break;
+
+                            //Click the button gotten
+                            buttonElement.get(0).click();
+                            return;
                         }
                     }
-                }
-                else {
-                    //Error!
+                } else {
                     fail("XPath came empty. Verify if the XPath is correct");
                 }
-                buttonElement.get(0).click();
             } else {
-                //Error!
                 fail("XPath came empty. Verify if the XPath is correct");
             }
+        }else{
+            fail("XPath came empty. Verify if the XPath is correct");
         }
     }
 
-    @Then("^I should be redirected to the details page of the \"([^\"]*)\" user$")
-    public void iShouldBeRedirectedToTheDetailsPageOfTheUser(String arg0) throws Throwable {
-
-        //need to get guid of the person from the wanted arg0
+    @Then("^I should be redirected to the details page of the user$")
+    public void iShouldBeRedirectedToTheDetailsPageOfTheUser() throws InterruptedException {
+        //Need to get guid of the person from the wanted ContactId
         String tableXpath = "//table[@id='detailsTable']/tbody/tr";
 
         Helper.getInstance().waitForSomething(driver, HelperConstants.TimeToWait, HelperConstants.WaitCondition_ElementToBeLoaded, tableXpath, detailURL);
 
         List<WebElement> detailsElements = driver.findElements(By.xpath(tableXpath));
 
-        ArrayList<WebElement> contactKeys = new ArrayList<WebElement>();
-        ArrayList<WebElement> contactValues = new ArrayList<WebElement>();
         if (!detailsElements.isEmpty()){
+            ArrayList<WebElement> contactKeys = new ArrayList<>();
+            ArrayList<WebElement> contactValues = new ArrayList<>();
             for (WebElement element : detailsElements ) {
                 contactKeys.add(element.findElements(By.xpath("td")).get(0));
                 contactValues.add(element.findElements(By.xpath("td")).get(1));
             }
+
             Helper.getInstance().checkIntegrityOfContact(contactValues, Helper.getInstance().retrieveColumns(contactKeys), detailedContact);
         }else {
-            //Error!
             fail("XPath came empty. Verify if the XPath is correct");
         }
-        //check if guid of the person received matches the guid from the person from index.html
-
     }
 
-
     @Given("^I enter the details page with the following case \"([^\"]*)\"$")
-    public void iEnterTheDetailsPageWithTheFollowingLink(String arg0) throws Throwable {
-        //prepare each case
-        switch (arg0){
+    public void iEnterTheDetailsPageWithTheFollowingLink(String caseReceived) throws Throwable {
+        driver.get(HelperConstants.IP.Address_Index);
+
+        //Prepare each case
+        switch (caseReceived){
             case "justDetails": detailURL = HelperConstants.IP.Address_Index + "details.html";
                 break;
             case "emptyId": detailURL = HelperConstants.IP.Address_Index + "details.html?id=";
                 break;
             case "unfilteredId": detailURL = HelperConstants.IP.Address_Index + "details.html?id=1";
                 break;
-            case "incorrectId": detailURL = HelperConstants.IP.Address_Index + "details.html?id=asdf00fdsa";
+            case "incorrectId": detailURL = HelperConstants.IP.Address_Index + "details.html?id=" + caseReceived;
                 break;
             default:
                 TestCase.fail("Invalid case format");
-                break;
         }
 
     }
 
     @Then("^I should be presented with an alarm box$")
     public void iShouldBePresentedWithAnAlarmBox() throws InterruptedException{
-        //store alert for next test
+        //Store alert for next test
         alert = Helper.getInstance().waitForAlert(driver, detailURL);
     }
 
     @And("^Clicking the alarm box should redirect me to home page$")
     public void clickingTheAlarmBoxShouldRedirectMeToHomePage() throws InterruptedException {
-        //check if alert exists
+        //Check if alert exists
         if (alert != null){
-            //check the alert
+
             alert.accept();
-            //once checked the user should be redirected to the landing page
-            Helper.getInstance().waitForSomething(driver, HelperConstants.TimeToWait, HelperConstants.WaitCondition_TitleContains, "Contacts Landing Page", HelperConstants.IP.Address_Index);
+
+            Helper.getInstance().waitForSomething(driver, HelperConstants.TimeToWait, HelperConstants.WaitCondition_TitleContains, "Contacts Landing Page", detailURL);
         }else {
             TestCase.fail("Alert doesn't exist");
         }
     }
 
     @Given("^I navigate on Details page of contact \"([^\"]*)\"$")
-    public void iNavigateOnDetailsPageOfContact(String arg0) throws Throwable {
-        //prepare url for the details page with the contact with the arg0 id
-        detailURL = HelperConstants.IP.Address_Details + Pattern.compile("[0-9]+|[A-Z]+").matcher(arg0);
+    public void iNavigateOnDetailsPageOfContact(String contactId) throws Throwable {
+        //Prepare url for the details page with the contact with the contactId id
+        detailURL = HelperConstants.IP.Address_Details + Pattern.compile("[0-9]+|[A-Z]+").matcher(contactId);
 
-        //go to the details page of the contact with the arg0 id
+        //Go to the details page of the contact with the contactId id
         Helper.getInstance().waitForSomething(driver, HelperConstants.TimeToWait, HelperConstants.WaitCondition_TitleContains , "Details", detailURL);
     }
 
-
     @When("^I press the back button$")
     public void iPressTheBackButton() {
-        //find button xpath
-        List<WebElement> backButton = driver.findElements(By.xpath("/html/body/div[1]/a"));
-        //check if found
+        //Find button xpath
+        List<WebElement> backButton = driver.findElements(By.xpath(".//a[@id='backButton']"));
+
         if (!backButton.isEmpty()){
-            //click button
             backButton.get(0).click();
-        }
-        else {
+        } else {
             TestCase.fail("Back Button doesn't exist");
         }
-
-
     }
 
     @Then("^I return to the Landing Page$")
     public void iReturnToTheLandingPage() throws InterruptedException {
-
-        //once checked the user should be redirected to the landing page
+        //Once checked the user should be redirected to the landing page
         Helper.getInstance().waitForSomething(driver, HelperConstants.TimeToWait, HelperConstants.WaitCondition_TitleContains, "Contacts Landing Page", HelperConstants.IP.Address_Index);
     }
 }
