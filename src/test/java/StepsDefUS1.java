@@ -82,16 +82,16 @@ public class StepsDefUS1 {
     @Then("^the title of the page should be \"([^\"]*)\"$")
     public void theTitleOfThePageShouldBe(String title) throws Throwable {
         //Wait for the "title" to match the PageTitle
-        Helper.getInstance().waitForSomething(driver, 3, HelperConstants.WaitCondition_TitleContains, title, HelperConstants.IP.Address_Index);
+        Helper.getInstance().waitForSomething(driver, HelperConstants.TimeToWait, HelperConstants.WaitCondition_TitleContains, title, HelperConstants.IP.Address_Index);
     }
 
     @Then("^I should see the contact as in the database position$")
-    public void iShouldSeeTheContactAsInTheDatabasePosition() {
+    public void iShouldSeeTheContactAsInTheDatabasePosition() throws InterruptedException {
         //XPath to the correct position
         String xpath = ".//table[@id='contactsTable']/tbody/tr[2]/td";
 
         //Wait for the position related to the XPath is clickable (If it exists)
-        Helper.getInstance().waitForSomething(driver, 10, HelperConstants.WaitCondition_ElementToBeClickable, xpath, HelperConstants.IP.Address_Index);
+        Helper.getInstance().waitForSomething(driver, HelperConstants.TimeToWait, HelperConstants.WaitCondition_ElementToBeClickable, xpath, HelperConstants.IP.Address_Index);
 
         //Click on the "5" on the pagination.
         driver.findElements(By.xpath(".//div[@id='contactsTable_paginate']/span/a")).get(4).click();
@@ -107,13 +107,13 @@ public class StepsDefUS1 {
     }
 
     @Then("^I should see exactly the same amount of contacts that exist in the database$")
-    public void iShouldSeeExactlyTheSameAmountOfContactsThatExistInTheDatabase() {
+    public void iShouldSeeExactlyTheSameAmountOfContactsThatExistInTheDatabase() throws InterruptedException {
 
         //XPath to the correct position
         String xpath = ".//div[@id='contactsTable_info']";
 
         //Wait for the position related to the XPath to be clickable (If it exists)
-        Helper.getInstance().waitForSomething(driver, 10, HelperConstants.WaitCondition_ElementToBeClickable, xpath, HelperConstants.IP.Address_Index);
+        Helper.getInstance().waitForSomething(driver, HelperConstants.TimeToWait, HelperConstants.WaitCondition_ElementToBeClickable, xpath, HelperConstants.IP.Address_Index);
 
         //Get the elements that are related to the XPath
         List<WebElement> valuesFromDiv = driver.findElements(By.xpath(xpath));
@@ -146,7 +146,7 @@ public class StepsDefUS1 {
         String xpath = ".//table[@id='contactsTable']/thead/tr/th";
 
         //Wait for the position related to the XPath to be clickable (If it exists)
-        Helper.getInstance().waitForSomething(driver, 10, HelperConstants.WaitCondition_ElementToBeClickable, xpath, HelperConstants.IP.Address_Index);
+        Helper.getInstance().waitForSomething(driver, HelperConstants.TimeToWait, HelperConstants.WaitCondition_ElementToBeClickable, xpath, HelperConstants.IP.Address_Index);
 
         List<WebElement> valuesFromTh = driver.findElements(By.xpath(xpath));
 
@@ -168,7 +168,7 @@ public class StepsDefUS1 {
         String xpath = ".//table[@id='contactsTable']/tbody/tr[1]/td";
 
         //Wait for the position related to the XPath is clickable (If it exists)
-        Helper.getInstance().waitForSomething(driver, 10, HelperConstants.WaitCondition_ElementToBeClickable, xpath, HelperConstants.IP.Address_Index);
+        Helper.getInstance().waitForSomething(driver, HelperConstants.TimeToWait, HelperConstants.WaitCondition_ElementToBeClickable, xpath, HelperConstants.IP.Address_Index);
 
         //Get the elements that are related to the XPath
         List<WebElement> valuesFromTable = driver.findElements(By.xpath(xpath));
@@ -210,7 +210,7 @@ public class StepsDefUS1 {
         String xpath = ".//div[@id='contactsTable_filter']/label/input";
 
         //Wait for the position related to the XPath is clickable (If it exists)
-        Helper.getInstance().waitForSomething(driver, 10, HelperConstants.WaitCondition_ElementToBeClickable, xpath, HelperConstants.IP.Address_Index);
+        Helper.getInstance().waitForSomething(driver, HelperConstants.TimeToWait, HelperConstants.WaitCondition_ElementToBeClickable, xpath, HelperConstants.IP.Address_Index);
 
         //Get the elements that are related to the XPath
         List<WebElement> valuesFromSearch = driver.findElements(By.xpath(xpath));
@@ -287,7 +287,7 @@ public class StepsDefUS1 {
         String xpath = ".//div[@id='contactsTable_length']/label/select";
 
         //Wait for the position related to the XPath is clickable (If it exists)
-        Helper.getInstance().waitForSomething(driver, 10, HelperConstants.WaitCondition_ElementToBeClickable, xpath, HelperConstants.IP.Address_Index);
+        Helper.getInstance().waitForSomething(driver, HelperConstants.TimeToWait, HelperConstants.WaitCondition_ElementToBeClickable, xpath, HelperConstants.IP.Address_Index);
 
         //Get the elements that are related to the XPath
         List<WebElement> select = driver.findElements(By.xpath(xpath));
@@ -349,13 +349,13 @@ public class StepsDefUS1 {
     }
 
     @Then("^I should be able to see the possible sources$")
-    public void iShouldBeAbleToSeeThePossibleSources() {
+    public void iShouldBeAbleToSeeThePossibleSources() throws InterruptedException {
 
         //XPath to the table
-        String xpath = ".//table[@id='contactsTable']/tbody/tr[2]/td";
+        String xpath = ".//table[@id='contactsTable']/tbody/tr[2]";
 
         //Wait for the position related to the XPath is clickable (If it exists)
-        Helper.getInstance().waitForSomething(driver, 10, HelperConstants.WaitCondition_ElementToBeClickable, xpath, HelperConstants.IP.Address_Index);
+        Helper.getInstance().waitForSomething(driver, HelperConstants.TimeToWait, HelperConstants.WaitCondition_ElementToBeClickable, xpath, HelperConstants.IP.Address_Index);
 
         //XPath to the Source
         xpath = ".//select[@id='source']";
@@ -396,7 +396,7 @@ public class StepsDefUS1 {
         String xpath = ".//table[@id='contactsTable']/tbody/tr[2]/td";
 
         //Wait for the position related to the XPath is clickable (If it exists)
-        Helper.getInstance().waitForSomething(driver, 10, HelperConstants.WaitCondition_ElementToBeClickable, xpath, HelperConstants.IP.Address_Index);
+        Helper.getInstance().waitForSomething(driver, HelperConstants.TimeToWait, HelperConstants.WaitCondition_ElementToBeClickable, xpath, HelperConstants.IP.Address_Index);
 
         //XPath to the Source
         xpath = ".//select[@id='source']";
@@ -433,7 +433,7 @@ public class StepsDefUS1 {
         String xpath = ".//div[@id='contactsTable_info']";
 
         //Wait for the position related to the XPath to be clickable (If it exists)
-        Helper.getInstance().waitForSomething(driver, 10, HelperConstants.WaitCondition_ElementToBeClickable, xpath, HelperConstants.IP.Address_Index);
+        Helper.getInstance().waitForSomething(driver, HelperConstants.TimeToWait, HelperConstants.WaitCondition_ElementToBeClickable, xpath, HelperConstants.IP.Address_Index);
 
         //Get the elements that are related to the XPath
         List<WebElement> valuesFromDiv = driver.findElements(By.xpath(xpath));
@@ -443,9 +443,9 @@ public class StepsDefUS1 {
             //Split the gotten string into several sub-strings, were we only get the Integers from the string (And the first Letter, for some reason).
 
             //Wait for the position related to the XPath to be clickable (If it exists)
-            Helper.getInstance().waitForSomething(driver, 10, HelperConstants.WaitCondition_ElementToBeClickable, xpath, HelperConstants.IP.Address_Index);
+            Helper.getInstance().waitForSomething(driver, HelperConstants.TimeToWait, HelperConstants.WaitCondition_ElementToBeClickable, xpath, HelperConstants.IP.Address_Index);
 
-            Thread.sleep(100);
+            Thread.sleep(1000);
 
             //Get the elements that are related to the XPath
             valuesFromDiv = driver.findElements(By.xpath(xpath));
@@ -460,7 +460,7 @@ public class StepsDefUS1 {
                 //If it comes to here, we need to filter our database.
                 ArrayList<Contact> filtered = Helper.getInstance().filterDatabase(source, ContactConstants.SOURCE, contacts);
 
-                Helper.getInstance().waitForSomething(driver, 10, HelperConstants.WaitCondition_SearchSourceComponentIndex, ".//form[@id='sourceForm']/div/button--" + source, HelperConstants.IP.Address_Index);
+                Helper.getInstance().waitForSomething(driver, HelperConstants.TimeToWait, HelperConstants.WaitCondition_SearchSourceComponentIndex, ".//form[@id='sourceForm']/div/button--" + source, HelperConstants.IP.Address_Index);
 
                 //Get last position -- That's where the size is!
                 assertEquals(filtered.size(), Integer.parseInt(chunks.get(chunks.size() - 1)));
@@ -475,13 +475,13 @@ public class StepsDefUS1 {
     }
 
     @When("^I click on the Duplicates$")
-    public void iClickOnTheDuplicates() {
+    public void iClickOnTheDuplicates() throws InterruptedException {
 
         //XPath to the table
         String xpath = ".//table[@id='contactsTable']/tbody/tr[2]/td";
 
         //Wait for the position related to the XPath to be clickable (If it exists)
-        Helper.getInstance().waitForSomething(driver, 10, HelperConstants.WaitCondition_ElementToBeClickable, xpath, HelperConstants.IP.Address_Index);
+        Helper.getInstance().waitForSomething(driver, HelperConstants.TimeToWait, HelperConstants.WaitCondition_ElementToBeClickable, xpath, HelperConstants.IP.Address_Index);
 
         //Get the elements that are related to the XPath (related to the button)
         xpath = ".//a[@id='duplicateButton']";
@@ -495,8 +495,8 @@ public class StepsDefUS1 {
     }
 
     @Then("^I should be redirected to the duplicate pages$")
-    public void iShouldBeRedirectedToTheDuplicatePages() {
-        Helper.getInstance().waitForSomething(driver, 10, HelperConstants.WaitCondition_TitleContains, "Duplicates", HelperConstants.IP.Address_Duplicates);
+    public void iShouldBeRedirectedToTheDuplicatePages() throws InterruptedException {
+        Helper.getInstance().waitForSomething(driver, HelperConstants.TimeToWait, HelperConstants.WaitCondition_TitleContains, "Duplicates", HelperConstants.IP.Address_Duplicates);
     }
 
 

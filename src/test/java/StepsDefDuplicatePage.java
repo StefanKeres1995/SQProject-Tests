@@ -90,7 +90,7 @@ public class StepsDefDuplicatePage {
         String xpath = ".//table[@id='contactsTable']/tbody/tr[2]/td";
 
         //Wait for the position related to the XPath to be clickable (If it exists)
-        Helper.getInstance().waitForSomething(driver, 10, HelperConstants.WaitCondition_ElementToBeClickable, xpath, HelperConstants.IP.Address_Index);
+        Helper.getInstance().waitForSomething(driver, HelperConstants.TimeToWait, HelperConstants.WaitCondition_ElementToBeClickable, xpath, HelperConstants.IP.Address_Index);
 
         //Get the elements that are related to the XPath (related to the button)
         xpath = ".//a[@id='duplicateButton']";
@@ -111,7 +111,7 @@ public class StepsDefDuplicatePage {
 
         String string = xpath + "--0";
 
-        Helper.getInstance().waitForSomething(driver, 10, HelperConstants.WaitCondition_NumberOfElementsMoreThan, string, HelperConstants.IP.Address_Duplicates);
+        Helper.getInstance().waitForSomething(driver, HelperConstants.TimeToWait, HelperConstants.WaitCondition_NumberOfElementsMoreThan, string, HelperConstants.IP.Address_Duplicates);
 
         Thread.sleep(1000);
 
@@ -132,7 +132,7 @@ public class StepsDefDuplicatePage {
         String xpath = ".//form[@id='FormTableArea']";
         String string = xpath + "--0";
 
-        Helper.getInstance().waitForSomething(driver, 10, HelperConstants.WaitCondition_NumberOfElementsMoreThan, string, HelperConstants.IP.Address_Duplicates);
+        Helper.getInstance().waitForSomething(driver, HelperConstants.TimeToWait, HelperConstants.WaitCondition_NumberOfElementsMoreThan, string, HelperConstants.IP.Address_Duplicates);
 
         Thread.sleep(1000);
 
@@ -173,6 +173,7 @@ public class StepsDefDuplicatePage {
                     List<WebElement> valuesFromTHead = driver.findElements(By.xpath(xpath));
 
                     if(!valuesFromTHead.isEmpty()){
+                        valuesFromTHead.remove(0);
                         ArrayList<Integer> columns = Helper.getInstance().retrieveColumns(valuesFromTHead);
                         for(int contact = 0; contact < valuesFromTBody.size(); contact++){
                             Helper.getInstance().checkIntegrityOfContact(valuesFromTBody.get(contact).findElements(By.xpath("td")), columns, listOfDuplicates.get(position).get(contact));
@@ -189,5 +190,24 @@ public class StepsDefDuplicatePage {
         } else {
             fail("Wrong XPath");
         }
+    }
+
+    @When("^I click on the Back to index button$")
+    public void iClickOnTheBackToIndexButton() {
+        //XPath to the table
+        String xpath = ".//a[@id='backButton']";
+
+        List<WebElement> listOfElements = driver.findElements(By.xpath(xpath));
+        if( !listOfElements.isEmpty() ){
+            listOfElements.get(0).click();
+        }else{
+            fail("Wrong XPath");
+        }
+    }
+
+    @Then("^I should be on the index page$")
+    public void iShouldBeOnTheIndexPage() throws InterruptedException {
+        Helper.getInstance().waitForSomething(driver, HelperConstants.TimeToWait, HelperConstants.WaitCondition_TitleContains, "Contacts Landing Page", HelperConstants.IP.Address_Duplicates);
+
     }
 }

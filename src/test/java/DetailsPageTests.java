@@ -82,7 +82,7 @@ public class DetailsPageTests {
         String xpath = ".//div[@id='contactsTable_length']/label/select";
 
         //Wait for the position related to the XPath is clickable (If it exists)
-        Helper.getInstance().waitForSomething(driver, 10, HelperConstants.WaitCondition_ElementToBeClickable, xpath, HelperConstants.IP.Address_Index);
+        Helper.getInstance().waitForSomething(driver, HelperConstants.TimeToWait, HelperConstants.WaitCondition_ElementToBeClickable, xpath, HelperConstants.IP.Address_Index);
 
         //Get the elements that are related to the XPath
         List<WebElement> select = driver.findElements(By.xpath(xpath));

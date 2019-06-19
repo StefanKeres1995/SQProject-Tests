@@ -1,9 +1,9 @@
-Feature: Access to the Contacts Orchestrator Solution's (COS) Duplicates page
-  As a user
-  I want to access the duplicate page
-  So that I can see the list of the possible contacts duplicate available
-  So that I can delete and add those at my will
-
+#Feature: Access to the Contacts Orchestrator Solution's (COS) Duplicates page
+#  As a user
+#  I want to access the duplicate page
+#  So that I can see the list of the possible contacts duplicate available
+#  So that I can delete and add those at my will
+#
 #  #Verify if is on correct site
 #  Scenario: Duplicate page's title and text contains "Duplicates"
 #    Given I access the landing page of COS
@@ -13,7 +13,7 @@ Feature: Access to the Contacts Orchestrator Solution's (COS) Duplicates page
 #  Scenario: Duplicate page's contain the appropriate number of identified duplicates
 #    Given I access the landing page of COS and want to go to duplicates
 #    Then I should be able to see the number of duplicate contacts possible
-
+#
 #  Scenario Outline: Duplicate page's is coherent in its data
 #    Given I access the landing page of COS and want to go to duplicates
 #    Then I should be able to see the contact as is in the database ("<position>")
@@ -24,3 +24,8 @@ Feature: Access to the Contacts Orchestrator Solution's (COS) Duplicates page
 #      | middle        |
 #      | half-middle2  |
 #      | last          |
+#
+#  Scenario: Duplicate page's Go back to index button
+#    Given I access the landing page of COS and want to go to duplicates
+#    When I click on the Back to index button
+#    Then I should be on the index page
