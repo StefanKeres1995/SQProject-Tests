@@ -10,7 +10,7 @@ public class HelperConstants {
     public static final int TimeToWait = 10;
 
     public class IP{
-        public static final String Address_Index = "http://35.246.50.214/";
+        public static final String Address_Index = "http://34.77.167.124/";
         public static final String Address_Details = Address_Index + "details.html?id=";
         public static final String Address_Duplicates = Address_Index + "duplicates.html";
     }

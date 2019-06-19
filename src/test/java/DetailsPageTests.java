@@ -83,7 +83,7 @@ public class DetailsPageTests {
     }
 
     @When("^I click on the Details button on row with id \"([^\"]*)\"$")
-    public void iClickOnTheDetailsButtonOnRowWithId(String contactId) throws Throwable {
+    public void iClickOnTheDetailsButtonOnRowWithId(String positionString) throws Throwable {
 
         //wait for data for the table, check if select of pagination appeared
         String xpath = ".//div[@id='contactsTable_length']/label/select";
@@ -99,47 +99,83 @@ public class DetailsPageTests {
             //Check if id is from a larger pagination
             Select selectable = new Select(select.get(0));
             WebElement selectableValue = selectable.getFirstSelectedOption();
-            int page = Integer.parseInt(contactId) / Integer.parseInt(selectableValue.getAttribute("value"));
+
+            //Get Position
+            int position = 0;
+            switch (positionString){
+                case "first":
+                    position = 1;
+                    break;
+                case "half-middle1":
+                    position = (int) Math.floor(contacts.length / 4);
+                    break;
+                case "middle":
+                    position = (int) Math.floor(contacts.length / 2);
+                    break;
+                case "half-middle2":
+                    position = (int) Math.floor(3 * contacts.length / 4);
+                    break;
+                case "last":
+                    position = contacts.length;
+                    break;
+                default:
+                    fail("String is not recognized");
+            }
+
+            int numberOfClicks;
+            int positionOnTable;
+            int paginationNumber = Integer.parseInt(selectableValue.getAttribute("value"));
+            if(position <= paginationNumber){
+                //We are between 1 and 9. We can't split
+                numberOfClicks = 0;
+                positionOnTable = position;
+            }else{
+                numberOfClicks = (int) Math.floor(position / paginationNumber);
+                positionOnTable = Integer.parseInt(String.valueOf(position).substring(String.valueOf(position).length() - 1)) % paginationNumber;
+            }
+
+            //If rest is 0
+            if(position % paginationNumber == 0){
+                numberOfClicks--;
+                positionOnTable = position % paginationNumber;
+            }
 
             //Jump to the correct page & Get pagination button
             String paginationXpath = "//a[@id='contactsTable_next']";
 
-            List<WebElement> paginationButtonElement;
-            for (int i = 0; i < page; i++) {
+            WebElement paginationButtonElement;
+            for (int i = 0; i < numberOfClicks; i++) {
+
                 //being in the for, the element of the button is refreshed
-                paginationButtonElement = driver.findElements(By.xpath(paginationXpath));
-                if (!paginationButtonElement.isEmpty()) {
-                    paginationButtonElement.get(0).click();
+                paginationButtonElement = driver.findElement(By.xpath(paginationXpath));
+                if (paginationButtonElement != null) {
+                    paginationButtonElement.click();
                 } else {
                     fail("XPath came empty. Verify if the XPath is correct");
                 }
             }
 
             //Now that we're in the correct page find the details button
-            String detailsButtonXpath = ".//table[@id='contactsTable']/tbody/tr[" + (Integer.parseInt(contactId) - (10 * page)) + "]/td[7]/a";
+            String detailsButtonXpath = ".//table[@id='contactsTable']/tbody/tr[" + positionOnTable + "]/td[7]/a";
+
+            Thread.sleep(100);
+
             List<WebElement> buttonElement = driver.findElements(By.xpath(detailsButtonXpath));
 
             if (!buttonElement.isEmpty()) {
                 //store data for next part of the test
-                String contactIDXpath = ".//table[@id='contactsTable']/tbody/tr[" + (Integer.parseInt(contactId) - (10 * page)) + "]/td[1]";
+                String contactIDXpath = ".//table[@id='contactsTable']/tbody/tr[" + positionOnTable + "]/td[1]";
                 List<WebElement> contactElement = driver.findElements(By.xpath(contactIDXpath));
                 if (!contactElement.isEmpty()) {
-                    for (Contact contact : contacts) {
-                        if (contact.getID() == Integer.parseInt(contactElement.get(0).getText())) {
 
-                            //Store contact for next test
-                            detailedContact = contact;
+                    //Store contact for next test
+                    detailedContact = contacts[position - 1];
 
-                            //Store URL for next test
-                            detailURL = HelperConstants.IP.Address_Details + detailedContact.getGuid();
+                    //Store URL for next test
+                    detailURL = HelperConstants.IP.Address_Details + detailedContact.getGuid();
 
-                            //Click the button gotten
-                            buttonElement.get(0).click();
-                            return;
-                        }
-                    }
-                } else {
-                    fail("XPath came empty. Verify if the XPath is correct");
+                    //Click the button gotten
+                    buttonElement.get(0).click();
                 }
             } else {
                 fail("XPath came empty. Verify if the XPath is correct");

@@ -7,15 +7,16 @@ Feature: Access to the Contacts Orchestrator Solution's (COS) Landing Page
   #Verify if details button is working
   Scenario Outline: Contacts table contains the details button and redirects to the Details page
     Given I access the landing page of COS
-    When I click on the Details button on row with id "<id>"
+    When I click on the Details button on row with id "<position>"
     Then I should be redirected to the details page of the user
 
     Examples:
-      | id  |
-      | 1   |
-      | 5   |
-      | 45  |
-      | 219 |
+      | position      |
+      | first         |
+      | half-middle1  |
+      | middle        |
+      | half-middle2  |
+      | last          |
 
   #Verify wrong link on details page
   Scenario Outline: Badly formatted contact link on Details page

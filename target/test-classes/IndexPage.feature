@@ -14,9 +14,18 @@ Feature: Access to the Contacts Orchestrator Solution's (COS) Landing Page
     Then I should see exactly the same amount of contacts that exist in the database
 
   #Verify if table data seems coherent with database
-  Scenario: Landing page seems to have data that is coherent with the database
+  Scenario Outline: Landing page seems to have data that is coherent with the database
     Given I access the landing page of COS
-    Then I should see the contact as in the database position
+    Then I should see the contact as in the database position, "<position>"
+
+    Examples:
+      | position      |
+      | first         |
+      | half-middle1  |
+      | middle        |
+      | half-middle2  |
+      | last          |
+
 
   #Verify if table can be sortable
   Scenario Outline: Landing page contains the table and columns are sortable
@@ -37,15 +46,15 @@ Feature: Access to the Contacts Orchestrator Solution's (COS) Landing Page
   Scenario Outline: Landing page contains the table and the search bar is operational
     Given I access the landing page of COS
     When I search for "<search>"
-    Then I should only see columns that are related to what I've just searched, related to "<type>" ("<search>")
+    Then I should only see columns that are related to what I've just searched ("<search>")
 
     Examples:
-      | search    | type       |
-      | Viseu     | City       |
-      | Joao      | GivenName  |
-      | 234216838 | Phone      |
-      | Almeida   | Surname    |
-      | Something | GivenName  |
+      | search    |
+      | Viseu     |
+      | Joao      |
+      | 234216838 |
+      | Almeida   |
+      | Something |
 
   #Verify if search bar and table can be sortable simultaneously
   Scenario Outline: Landing page contains the table and the search bar is operational, along with columns sortable

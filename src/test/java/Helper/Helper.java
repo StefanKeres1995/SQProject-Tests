@@ -497,9 +497,9 @@ public class Helper {
      * @param listFields - List of fields that are in the contact
      * @param contacts - List of contacts
      */
-    public void getFilteredRecordsAndVerifyThem(String filteredField, int column, List<WebElement> valuesFromTable, LinkedList<Integer> listFields, Contact[] contacts) {
+    public void getFilteredRecordsAndVerifyThem(String filteredField, List<WebElement> valuesFromTable, LinkedList<Integer> listFields, Contact[] contacts) {
 
-        ArrayList<Contact> contactFiltered = filterDatabase(filteredField, column, contacts);
+        ArrayList<Contact> contactFiltered = filterDatabase(filteredField, contacts);
 
         //This is due, if no records are found, there is a record saying "No records found".
         if(contactFiltered.size() == 0){
@@ -527,38 +527,21 @@ public class Helper {
      * @param contacts - List of Contacts
      * @return ArrayList<Contacts> Filtered Contacts
      */
-    public ArrayList<Contact> filterDatabase(String filteredField, int column, Contact[] contacts) {
-        List<Contact> filteredContacts = null;
-        //ToDo: Filter as Sy did ~
-        switch (column){
-            case ContactConstants.GIVEN_NAME:
-                filteredContacts = Arrays.stream(contacts).filter(
-                                contact -> contact.getGivenName().toLowerCase().contains(filteredField.toLowerCase())).collect(Collectors.toList());
-                break;
-            case ContactConstants.SURNAME:
-                filteredContacts = Arrays.stream(contacts).filter(
-                        contact -> contact.getSurname().toLowerCase().contains(filteredField.toLowerCase())).collect(Collectors.toList());
-                break;
-            case ContactConstants.PHONE:
-                filteredContacts = Arrays.stream(contacts).filter(
-                        contact -> contact.getPhone().toString().contains(filteredField)).collect(Collectors.toList());
-                break;
-            case ContactConstants.CITY:
-                filteredContacts = Arrays.stream(contacts).filter(
-                        contact -> contact.getCity().toLowerCase().contains(filteredField.toLowerCase())).collect(Collectors.toList());
-                break;
-            case ContactConstants.SOURCE:
-                if(filteredField.equals("All")){
-                    return new ArrayList<>(Arrays.asList(contacts));
-                }
-                filteredContacts = Arrays.stream(contacts).filter(
-                        contact -> contact.getSource().toLowerCase().contains(filteredField.toLowerCase())).collect(Collectors.toList());
-                break;
-            default:
-                fail("No column Name should be named as : " + column);
-                break;
+    public ArrayList<Contact> filterDatabase(String filteredField, Contact[] contacts) {
+        if(filteredField.equals("All")){
+            return new ArrayList<>(Arrays.asList(contacts));
+        } else {
+            return Arrays.stream(contacts).filter(
+                    contact -> (
+                            (
+                                    contact.getGivenName().toLowerCase().contains(filteredField.toLowerCase()) ||
+                                    contact.getSurname().toLowerCase().contains(filteredField.toLowerCase()) ||
+                                    contact.getPhone().toString().toLowerCase().contains(filteredField.toLowerCase()) ||
+                                    contact.getCity().toLowerCase().equals(filteredField.toLowerCase()) ||
+                                    contact.getSource().toLowerCase().contains(filteredField.toLowerCase())
+                            )
+                    )).collect(Collectors.toCollection(ArrayList::new));
         }
-        return new ArrayList<>(filteredContacts);
     }
 
     /*
@@ -570,9 +553,9 @@ public class Helper {
      * @param listFields - List of fields that are in the contact
      * @param contacts - List of contacts
      */
-    public void getFilteredOrderedRecordsAndVerifyThem(String filteredField, int orderableColumn, int column, List<WebElement> valuesFromTable, LinkedList<Integer> listFields, Contact[] contacts) {
+    public void getFilteredOrderedRecordsAndVerifyThem(String filteredField, int orderableColumn, List<WebElement> valuesFromTable, LinkedList<Integer> listFields, Contact[] contacts) {
 
-        ArrayList<Contact> contactFiltered = filterDatabase(filteredField, column, contacts);
+        ArrayList<Contact> contactFiltered = filterDatabase(filteredField, contacts);
 
         contactFiltered = orderDatabase(orderableColumn, contactFiltered);
 

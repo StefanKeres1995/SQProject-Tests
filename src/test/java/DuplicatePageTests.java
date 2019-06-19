@@ -23,7 +23,7 @@ import java.util.regex.Pattern;
 import static junit.framework.TestCase.assertEquals;
 import static junit.framework.TestCase.fail;
 
-public class StepsDefDuplicatePage {
+public class DuplicatePageTests {
     private static WebDriver driver;
 
     private static Contact[] contacts = null;

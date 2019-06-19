@@ -2,6 +2,7 @@ import Helper.Helper;
 import Helper.HelperConstants;
 import Model.Contact;
 import Model.ContactConstants;
+import cucumber.api.PendingException;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
@@ -24,7 +25,7 @@ import java.util.regex.Pattern;
 import static junit.framework.TestCase.assertEquals;
 import static junit.framework.TestCase.fail;
 
-public class StepsDefUS1 {
+public class IndexPageTests {
     private static WebDriver driver;
 
     private static Contact[] contacts = null;
@@ -76,7 +77,7 @@ public class StepsDefUS1 {
     public void iAccessTheLandingPageOfCOS() {
         //Access the COS, and then assert if we are on the correct page
         driver.get(HelperConstants.IP.Address_Index);
-        assertEquals ("Contacts Landing Page",driver.getTitle());
+        assertEquals ("Contactos",driver.getTitle());
     }
 
     @Then("^the title of the page should be \"([^\"]*)\"$")
@@ -85,35 +86,73 @@ public class StepsDefUS1 {
         Helper.getInstance().waitForSomething(driver, HelperConstants.TimeToWait, HelperConstants.WaitCondition_TitleContains, title, HelperConstants.IP.Address_Index);
     }
 
-    @Then("^I should see the contact as in the database position$")
-    public void iShouldSeeTheContactAsInTheDatabasePosition() throws InterruptedException {
-        //XPath to the correct position
+    @Then("^I should see the contact as in the database position, \"([^\"]*)\"$")
+    public void iShouldSeeTheContactAsInTheDatabasePosition(String positionString) throws Throwable {
         String xpath = ".//table[@id='contactsTable']/tbody/tr[2]/td";
 
         //Wait for the position related to the XPath is clickable (If it exists)
         Helper.getInstance().waitForSomething(driver, HelperConstants.TimeToWait, HelperConstants.WaitCondition_ElementToBeClickable, xpath, HelperConstants.IP.Address_Index);
 
-        //Click on the "5" on the pagination.
-        List<WebElement> valuesFromDiv = driver.findElements(By.xpath(".//div[@id='contactsTable_paginate']/span/a"));
+        //XPath to the correct position
+        List<WebElement> valuesFromDiv = driver.findElements(By.xpath(".//a[@id='contactsTable_next']"));
 
         if(!valuesFromDiv.isEmpty()){
-            if(valuesFromDiv.size() >= 5){
-                valuesFromDiv.get(4).click();
+            int position = 0;
+            switch (positionString){
+                case "first":
+                    position = 1;
+                    break;
+                case "half-middle1":
+                    position = (int) Math.floor(contacts.length / 4);
+                    break;
+                case "middle":
+                    position = (int) Math.floor(contacts.length / 2);
+                    break;
+                case "half-middle2":
+                    position = (int) Math.floor(3 * contacts.length / 4);
+                    break;
+                case "last":
+                    position = contacts.length;
+                    break;
+                default:
+                    fail("String is not recognized");
+            }
 
-                //Get the elements that are related to the XPath
-                List<WebElement> valuesFromTable = driver.findElements(By.xpath(xpath));
+            //Split this value into two positions Example -- 216 -- 21 clicks, and search on the 6th position of the table.
+            int numberOfClicks;
+            int positionOnTable;
+            if(String.valueOf(position).length() == 1){
+                //We are between 1 and 9. We can't split
+                numberOfClicks = 0;
+                positionOnTable = position;
+            }else{
+                numberOfClicks = Integer.parseInt(String.valueOf(position).substring(0, String.valueOf(position).length() - 1));
+                positionOnTable = Integer.parseInt(String.valueOf(position).substring(String.valueOf(position).length() - 1));
+            }
 
-                if(!valuesFromTable.isEmpty()){
-                    //Get ID (-1 due to we needing the relative position in the database)
-                    int id = Integer.parseInt(valuesFromTable.get(0).getText()) - 1;
+            //Click the number of appropriate times on the Next button
+            WebElement nextButtonPagination;
+            for (int i = 0; i < numberOfClicks; i++) {
 
-                    //Is this value correct?
-                    Helper.getInstance().checkIntegrityOfContact(valuesFromTable, constantToVerify, contacts[id]);
-                }else{
+                nextButtonPagination = driver.findElement(By.xpath(".//a[@id='contactsTable_next']"));
+                if (nextButtonPagination != null) {
+                    nextButtonPagination.click();
+                    Thread.sleep(100);
+                } else {
                     fail("XPath came empty. Verify if the XPath is correct");
                 }
+            }
+
+            //Get the elements that are related to the XPath
+            xpath = ".//table[@id='contactsTable']/tbody/tr[" + positionOnTable + "]/td";
+            List<WebElement> valuesFromTable = driver.findElements(By.xpath(xpath));
+
+            if(!valuesFromTable.isEmpty()){
+
+                //Is this value correct?
+                Helper.getInstance().checkIntegrityOfContact(valuesFromTable, constantToVerify, contacts[position - 1]);
             }else{
-                fail("XPath came without the normal size. Verify if the XPath is correct");
+                fail("XPath came empty. Verify if the XPath is correct");
             }
         }else{
             fail("XPath came empty. Verify if the XPath is correct");
@@ -218,18 +257,15 @@ public class StepsDefUS1 {
         }
     }
 
-    @Then("^I should only see columns that are related to what I've just searched, related to \"([^\"]*)\" \\(\"([^\"]*)\"\\)$")
-    public void iShouldOnlySeeColumnsThatAreRelatedToWhatIVeJustSearchedRelatedTo(String column, String string) {
-
-        //Get the specific value, for the column...
-        int value = Helper.getInstance().getColumn(column);
+    @Then("^I should only see columns that are related to what I've just searched \\(\"([^\"]*)\"\\)$")
+    public void iShouldOnlySeeColumnsThatAreRelatedToWhatIVeJustSearched(String string) {
 
         //Get the list of lines on the body of the table
         List<WebElement> valuesFromTable = driver.findElements(By.xpath(".//table[@id='contactsTable']/tbody/tr"));
 
         if(!valuesFromTable.isEmpty()){
             //Verify these values
-            Helper.getInstance().getFilteredRecordsAndVerifyThem(string, value, valuesFromTable, constantToVerify, contacts);
+            Helper.getInstance().getFilteredRecordsAndVerifyThem(string, valuesFromTable, constantToVerify, contacts);
         }else{
             fail("XPath came empty. Verify if the XPath is correct");
         }
@@ -245,7 +281,7 @@ public class StepsDefUS1 {
 
         if(!valuesFromTable.isEmpty()){
             //Verify the filtered contacts. We will search for a GivenName.
-            Helper.getInstance().getFilteredOrderedRecordsAndVerifyThem(search, valueColumn, ContactConstants.GIVEN_NAME, valuesFromTable, constantToVerify, contacts);
+            Helper.getInstance().getFilteredOrderedRecordsAndVerifyThem(search, valueColumn, valuesFromTable, constantToVerify, contacts);
         }else{
             fail("XPath came empty. Verify if the XPath is correct");
         }
@@ -423,7 +459,7 @@ public class StepsDefUS1 {
 
                 if(!chunks.isEmpty()){
                     //If it comes to here, we need to filter our database.
-                    ArrayList<Contact> filtered = Helper.getInstance().filterDatabase(source, ContactConstants.SOURCE, contacts);
+                    ArrayList<Contact> filtered = Helper.getInstance().filterDatabase(source, contacts);
 
                     Helper.getInstance().waitForSomething(driver, HelperConstants.TimeToWait, HelperConstants.WaitCondition_SearchSourceComponentIndex, ".//form[@id='sourceForm']/div/button--" + source, HelperConstants.IP.Address_Index);
 
