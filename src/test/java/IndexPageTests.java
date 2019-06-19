@@ -77,7 +77,7 @@ public class IndexPageTests {
     public void iAccessTheLandingPageOfCOS() {
         //Access the COS, and then assert if we are on the correct page
         driver.get(HelperConstants.IP.Address_Index);
-        assertEquals ("Contactos",driver.getTitle());
+        assertEquals ("Contacts Landing page",driver.getTitle());
     }
 
     @Then("^the title of the page should be \"([^\"]*)\"$")
