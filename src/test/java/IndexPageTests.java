@@ -2,7 +2,6 @@ import Helper.Helper;
 import Helper.HelperConstants;
 import Model.Contact;
 import Model.ContactConstants;
-import cucumber.api.PendingException;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
@@ -64,6 +63,7 @@ public class IndexPageTests {
         //Create the Chrome Process
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--headless");
+        options.addArguments("--window-size=1920,1080");
         driver = new ChromeDriver(options);
     }
 

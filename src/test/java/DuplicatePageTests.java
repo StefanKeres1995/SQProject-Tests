@@ -1,24 +1,23 @@
-import Helper.*;
+import Helper.Helper;
+import Helper.HelperConstants;
 import Model.Contact;
 import Model.ContactConstants;
-import cucumber.api.PendingException;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
+import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import net.bytebuddy.implementation.bytecode.Throw;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.support.ui.Select;
 
-import java.lang.reflect.Array;
-import java.util.*;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
 
 import static junit.framework.TestCase.assertEquals;
 import static junit.framework.TestCase.fail;
@@ -32,7 +31,7 @@ public class DuplicatePageTests {
     private static LinkedList<Integer> constantToVerify = new LinkedList<>();
 
     //List Of Duplicates
-    private HashMap<Integer, LinkedList<Contact>> listOfDuplicates = new HashMap<Integer, LinkedList<Contact>>();
+    private HashMap<Integer, LinkedList<Contact>> listOfDuplicates = new HashMap<>();
 
     @Before
     public void setUp() {
@@ -71,11 +70,12 @@ public class DuplicatePageTests {
         //Create the Chrome Process
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--headless");
+        options.addArguments("--window-size=1920,1080");
         driver = new ChromeDriver(options);
     }
 
     @After
-    public void tearDown() throws Exception {
+    public void tearDown() {
         //Destroy the Chrome Process after the test is done
         driver.close();
     }
@@ -109,9 +109,7 @@ public class DuplicatePageTests {
         //XPath to the correct position
         String xpath = ".//form[@id='FormTableArea']";
 
-        String string = xpath + "--0";
-
-        Helper.getInstance().waitForSomething(driver, HelperConstants.TimeToWait, HelperConstants.WaitCondition_NumberOfElementsMoreThan, string, HelperConstants.IP.Address_Duplicates);
+        Helper.getInstance().waitForSomething(driver, HelperConstants.TimeToWait, HelperConstants.WaitCondition_NumberOfElementsMoreThan, xpath, HelperConstants.IP.Address_Duplicates);
 
         Thread.sleep(1000);
 
@@ -130,9 +128,8 @@ public class DuplicatePageTests {
 
         //XPath to the correct position
         String xpath = ".//form[@id='FormTableArea']";
-        String string = xpath + "--0";
 
-        Helper.getInstance().waitForSomething(driver, HelperConstants.TimeToWait, HelperConstants.WaitCondition_NumberOfElementsMoreThan, string, HelperConstants.IP.Address_Duplicates);
+        Helper.getInstance().waitForSomething(driver, HelperConstants.TimeToWait, HelperConstants.WaitCondition_NumberOfElementsMoreThan, xpath, HelperConstants.IP.Address_Duplicates);
 
         Thread.sleep(1000);
 
@@ -174,6 +171,11 @@ public class DuplicatePageTests {
 
                     if(!valuesFromTHead.isEmpty()){
                         valuesFromTHead.remove(0);
+
+                        //Remove last two positions as well, the Accept and Decline
+                        valuesFromTHead.remove(valuesFromTHead.size() - 1);
+                        valuesFromTHead.remove(valuesFromTHead.size() - 1);
+
                         ArrayList<Integer> columns = Helper.getInstance().retrieveColumns(valuesFromTHead);
                         for(int contact = 0; contact < valuesFromTBody.size(); contact++){
                             Helper.getInstance().checkIntegrityOfContact(valuesFromTBody.get(contact).findElements(By.xpath("td")), columns, listOfDuplicates.get(position).get(contact));
@@ -209,5 +211,108 @@ public class DuplicatePageTests {
     public void iShouldBeOnTheIndexPage() throws InterruptedException {
         Helper.getInstance().waitForSomething(driver, HelperConstants.TimeToWait, HelperConstants.WaitCondition_TitleContains, "Contacts Landing Page", HelperConstants.IP.Address_Duplicates);
 
+    }
+
+    @When("^I click on the Accept Automatically button$")
+    public void iClickOnTheAcceptAutomaticallyButton() throws InterruptedException {
+        //XPath to the correct position
+        String xpath = ".//form[@id='FormTableArea']/section";
+
+        Helper.getInstance().waitForSomething(driver, HelperConstants.TimeToWait, HelperConstants.WaitCondition_NumberOfElementsMoreThan, xpath, HelperConstants.IP.Address_Duplicates);
+
+        xpath = ".//label[@id='labelOption2']";
+
+        WebElement labelToClick = driver.findElement(By.xpath(xpath));
+
+        if(labelToClick != null){
+            labelToClick.click();
+        }else{
+            fail("Wrong XPath");
+        }
+
+    }
+
+    @And("^I click on the Confirm button$")
+    public void iClickOnTheConfirmButton() {
+
+        //XPath to the correct position
+        String xpath = ".//button[@id='confirmButton']";
+
+        WebElement button = driver.findElement(By.xpath(xpath));
+
+        if(button != null){
+            button.click();
+        }else{
+            fail("Wrong XPath");
+        }
+    }
+
+    @When("^I click on each position, randomly$")
+    public void iClickOnEachPositionRandomly() throws InterruptedException {
+
+        //XPath to the correct position
+        String xpath = ".//form[@id='FormTableArea']/section";
+
+        Helper.getInstance().waitForSomething(driver, HelperConstants.TimeToWait, HelperConstants.WaitCondition_NumberOfElementsMoreThan, xpath, HelperConstants.IP.Address_Duplicates);
+
+        List<WebElement> listOfSections = driver.findElements(By.xpath(xpath));
+
+        if(!listOfSections.isEmpty()){
+            //We found all sections. Lets go to each section and select all accepts (this is a random test!)
+            List<WebElement> tableRows, rows;
+            int position;
+            for (WebElement listOfSection : listOfSections) {
+                tableRows = listOfSection.findElements(By.xpath("table/tbody/tr"));
+                if (!tableRows.isEmpty()) {
+                    for (WebElement tableRow : tableRows) {
+                        rows = tableRow.findElements(By.xpath("td"));
+                        if (!rows.isEmpty()) {
+                            position = (Math.random() <= 0.5) ? 1 : 2;
+                            rows.get(rows.size() - position).findElement(By.xpath("div")).click();
+                        } else {
+                            fail("Wrong XPath");
+                        }
+                    }
+                } else {
+                    fail("Wrong XPath");
+                }
+            }
+        }else{
+            fail("Wrong XPath");
+        }
+
+    }
+
+    @And("^I click on the Accept Manually button$")
+    public void iClickOnTheAcceptManuallyButton() throws InterruptedException {
+        //XPath to the correct position
+        String xpath = ".//form[@id='FormTableArea']/section";
+
+        Helper.getInstance().waitForSomething(driver, HelperConstants.TimeToWait, HelperConstants.WaitCondition_NumberOfElementsMoreThan, xpath, HelperConstants.IP.Address_Duplicates);
+
+        xpath = ".//label[@id='labelOption1']";
+
+        WebElement labelToClick = driver.findElement(By.xpath(xpath));
+
+        if(labelToClick != null){
+            labelToClick.click();
+        }else{
+            fail("Wrong XPath");
+        }
+    }
+
+    @Then("^I should be redirected to the duplicate Free page \\(Auto\\)$")
+    public void iShouldBeRedirectedToTheDuplicateFreePageAuto() throws InterruptedException {
+        Helper.getInstance().waitForSomething(driver, HelperConstants.TimeToWait, HelperConstants.WaitCondition_TitleContains, "Duplicate Free--Auto", HelperConstants.IP.Address_Duplicates);
+    }
+
+    @Then("^I should be redirected to the duplicate Free page \\(Manual\\)$")
+    public void iShouldBeRedirectedToTheDuplicateFreePageManual() throws InterruptedException {
+        Helper.getInstance().waitForSomething(driver, HelperConstants.TimeToWait, HelperConstants.WaitCondition_TitleContains, "Duplicate Free--Manual", HelperConstants.IP.Address_Duplicates);
+    }
+
+    @Then("^An Alarm should appear stating that I need to fill everything$")
+    public void anAlarmShouldAppearStatingThatINeedToFillEverything() throws InterruptedException {
+        Helper.getInstance().waitForAlert(driver, HelperConstants.IP.Address_Duplicates).accept();
     }
 }

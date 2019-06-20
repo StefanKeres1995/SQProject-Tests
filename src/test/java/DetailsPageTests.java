@@ -2,7 +2,6 @@ import Helper.Helper;
 import Helper.HelperConstants;
 import Model.Contact;
 import Model.ContactConstants;
-import cucumber.api.PendingException;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.And;
@@ -21,7 +20,6 @@ import org.openqa.selenium.support.ui.Select;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.regex.Pattern;
 
 import static junit.framework.TestCase.fail;
 
@@ -73,6 +71,7 @@ public class DetailsPageTests {
         //Create the Chrome Process
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--headless");
+        options.addArguments("--window-size=1920,1080");
         driver = new ChromeDriver(options);
     }
 
@@ -209,7 +208,7 @@ public class DetailsPageTests {
     }
 
     @Given("^I enter the details page with the following case \"([^\"]*)\"$")
-    public void iEnterTheDetailsPageWithTheFollowingLink(String caseReceived) throws Throwable {
+    public void iEnterTheDetailsPageWithTheFollowingLink(String caseReceived) {
         driver.get(HelperConstants.IP.Address_Index);
 
         //Prepare each case

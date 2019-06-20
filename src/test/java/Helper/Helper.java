@@ -256,7 +256,7 @@ public class Helper {
                 do {
                     try {
                         String myUrlTitle;
-                        if(string.contains("Details--")) {
+                        if(string.contains("--")) {
                             myUrlTitle = string.split("--")[0];
                         }else{
                             myUrlTitle = string;
@@ -273,6 +273,47 @@ public class Helper {
                             if(url.equals(HelperConstants.IP.Address_Duplicates)) {
                                 WebElement button = driver.findElement(By.xpath(".//a[@id='duplicateButton']"));
                                 button.click();
+                                if(string.contains("Auto")){
+                                    //Click on Automatic
+                                    driver.findElement(By.xpath(".//label[@id='labelOption2']")).click();
+
+                                    //Click on confirm
+                                    driver.findElement(By.xpath(".//button[@id='confirmButton']")).click();
+
+                                }else if(string.contains("Manual")){
+                                    //Click on Manual
+                                    driver.findElement(By.xpath(".//label[@id='labelOption1']")).click();
+
+                                    //Click on each thingy...
+                                    //XPath to the correct position
+                                    String xpath = ".//form[@id='FormTableArea']/section";
+
+                                    Helper.getInstance().waitForSomething(driver, HelperConstants.TimeToWait, HelperConstants.WaitCondition_NumberOfElementsMoreThan, xpath, HelperConstants.IP.Address_Duplicates);
+
+                                    List<WebElement> listOfSections = driver.findElements(By.xpath(xpath));
+
+                                    if(!listOfSections.isEmpty()) {
+                                        //We found all sections. Lets go to each section and select all accepts (this is a random test!)
+                                        List<WebElement> tableRows, rows;
+                                        int position;
+                                        for (WebElement listOfSection : listOfSections) {
+                                            tableRows = listOfSection.findElements(By.xpath("table/tbody/tr"));
+                                            if (!tableRows.isEmpty()) {
+                                                for (WebElement tableRow : tableRows) {
+                                                    rows = tableRow.findElements(By.xpath("td"));
+                                                    if (!rows.isEmpty()) {
+                                                        position = (Math.random() <= 0.5) ? 1 : 2;
+                                                        rows.get(rows.size() - position).findElement(By.xpath("div")).click();
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    //Click on confirm
+                                    driver.findElement(By.xpath(".//button[@id='confirmButton']")).click();
+
+                                }
                             }else if(url.contains("details.html") && string.contains("Contacts Landing Page")){
                                 //Alarm part
                                 Alert alert = Helper.getInstance().waitForAlert(driver, url);
@@ -335,6 +376,7 @@ public class Helper {
                             strings.addAll(Arrays.asList(string.split("--")));
                         }else{
                             strings.add(string);
+                            strings.add("0");
                         }
                         WebDriverWait wait = new WebDriverWait(driver, timeOutInSeconds);
                         wait.until(ExpectedConditions.numberOfElementsToBeMoreThan(By.xpath(strings.get(0)), Integer.parseInt(strings.get(1))));
@@ -391,7 +433,25 @@ public class Helper {
             } catch (TimeoutException ex) {
                 //Force a Reset
                 if(url != null){
-                    driver.get(url);
+                    if(url.equals(HelperConstants.IP.Address_Duplicates)){
+                        //Click on Manual and then on Accept, after waiting
+                        String xpath = ".//form[@id='FormTableArea']/section";
+                        Helper.getInstance().waitForSomething(driver, HelperConstants.TimeToWait, HelperConstants.WaitCondition_NumberOfElementsMoreThan, xpath, HelperConstants.IP.Address_Duplicates);
+                        xpath = ".//label[@id='labelOption1']";
+                        WebElement labelToClick = driver.findElement(By.xpath(xpath));
+                        if(labelToClick != null){
+                            labelToClick.click();
+                            //XPath to the correct position
+                            xpath = ".//button[@id='confirmButton']";
+                            WebElement button = driver.findElement(By.xpath(xpath));
+                            if(button != null){
+                                button.click();
+                            }
+                        }
+                    }else{
+                        driver.get(url);
+                    }
+
                 }
                 counter++;
                 Thread.sleep(100);

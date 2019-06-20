@@ -29,3 +29,22 @@ Feature: Access to the Contacts Orchestrator Solution's (COS) Duplicates page
     Given I access the landing page of COS and want to go to duplicates
     When I click on the Back to index button
     Then I should be on the index page
+
+  Scenario: Duplicate page's Confirm button Automatic
+    Given I access the landing page of COS and want to go to duplicates
+    When I click on the Accept Automatically button
+    And I click on the Confirm button
+    Then I should be redirected to the duplicate Free page (Auto)
+
+  Scenario: Duplicate page's Confirm button Manual -- Correct
+    Given I access the landing page of COS and want to go to duplicates
+    When I click on each position, randomly
+    And I click on the Accept Manually button
+    And I click on the Confirm button
+    Then I should be redirected to the duplicate Free page (Manual)
+
+  Scenario: Duplicate page's Confirm button Manual -- Wrong
+    Given I access the landing page of COS and want to go to duplicates
+    And I click on the Accept Manually button
+    And I click on the Confirm button
+    Then An Alarm should appear stating that I need to fill everything
