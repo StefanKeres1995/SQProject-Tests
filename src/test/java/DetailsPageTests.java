@@ -2,6 +2,7 @@ import Helper.Helper;
 import Helper.HelperConstants;
 import Model.Contact;
 import Model.ContactConstants;
+import cucumber.api.PendingException;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.And;
@@ -9,26 +10,21 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import junit.framework.TestCase;
-import org.openqa.selenium.*;
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import javax.imageio.ImageIO;
-import java.awt.*;
-import java.awt.image.BufferedImage;
-import java.io.BufferedInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
-import static junit.framework.Assert.assertEquals;
+import static junit.framework.TestCase.assertEquals;
 import static junit.framework.TestCase.fail;
 
 public class DetailsPageTests {
@@ -301,24 +297,14 @@ public class DetailsPageTests {
         Helper.getInstance().waitForSomething(driver, HelperConstants.TimeToWait, HelperConstants.WaitCondition_TitleContains, "Contacts Landing Page", HelperConstants.IP.Address_Index);
     }
 
-    @Then("^I can see the contact image$")
-    public void iCanSeeTheContactImage() throws InterruptedException{
+    @Then("^I should see the image with the specific size \"([^\"]*)\", \"([^\"]*)\"$")
+    public void iShouldSeeTheImageWithTheSpecificSize(String height, String width) throws Throwable {
 
-        //get image from contact stored
-        String kubernetesURL = "http://34.90.129.208/resize?width=180&height=180&type=jpeg&force=true&url=" + detailedContact.getPhotoUrl();
-        //get page image
-        String xpath = "//img[@id='photoHolder']";
+        String xpath = ".//img[@id='photoHolder']";
 
-        //wait until image arrives?
-        //Helper.getInstance().waitForSomething(driver, HelperConstants.TimeToWait, HelperConstants.WaitCondition_ElementToBeLoaded, xpath, detailURL);
-        Thread.sleep(1000);
-        List<WebElement> pageImageWebElements = driver.findElements(By.xpath(xpath));
-        if (!pageImageWebElements.isEmpty()){
-            String pageImageSource = pageImageWebElements.get(0).getAttribute("src");
-            TestCase.assertEquals(kubernetesURL, pageImageSource);
-        } else {
-            TestCase.fail("Page Image doesn't exist");
-        }
+        Helper.getInstance().waitForSomething(driver, HelperConstants.TimeToWait, HelperConstants.WaitCondition_AttributeNotToBeEmpty, xpath + "--src", driver.getCurrentUrl());
+
+        assertEquals(driver.findElement(By.tagName("img")).getSize().getWidth(), Integer.parseInt(width));
+        assertEquals(driver.findElement(By.tagName("img")).getSize().getHeight(), Integer.parseInt(height));
     }
-
 }

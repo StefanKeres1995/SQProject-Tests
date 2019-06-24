@@ -14,10 +14,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import static junit.framework.TestCase.assertEquals;
 import static junit.framework.TestCase.fail;
@@ -26,6 +25,8 @@ public class DuplicatePageTests {
     private static WebDriver driver;
 
     private static Contact[] contacts = null;
+
+    private static LinkedList<Contact> avoidContacts = null;
 
     //Get possible list of Constants to Verify
     private static LinkedList<Integer> constantToVerify = new LinkedList<>();
@@ -58,6 +59,7 @@ public class DuplicatePageTests {
             //Get the list of Contacts
             try {
                 contacts = Helper.getInstance().getHTML("http://contactsqs2.apphb.com/Service.svc/rest/contacts");
+                avoidContacts = new LinkedList<>();
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -280,7 +282,6 @@ public class DuplicatePageTests {
         }else{
             fail("Wrong XPath");
         }
-
     }
 
     @And("^I click on the Accept Manually button$")
@@ -314,5 +315,76 @@ public class DuplicatePageTests {
     @Then("^An Alarm should appear stating that I need to fill everything$")
     public void anAlarmShouldAppearStatingThatINeedToFillEverything() throws InterruptedException {
         Helper.getInstance().waitForAlert(driver, HelperConstants.IP.Address_Duplicates).accept();
+    }
+
+    @And("^I click on each position, randomly while saving each Decline/Accept$")
+    public void iClickOnEachPositionRandomlyWhileSavingEachDeclineAccept() throws InterruptedException {
+        //XPath to the correct position
+        String xpath = ".//form[@id='FormTableArea']/section";
+
+        Helper.getInstance().waitForSomething(driver, HelperConstants.TimeToWait, HelperConstants.WaitCondition_NumberOfElementsMoreThan, xpath, HelperConstants.IP.Address_Duplicates);
+
+        List<WebElement> listOfSections = driver.findElements(By.xpath(xpath));
+
+        if(!listOfSections.isEmpty()){
+            //We found all sections. Lets go to each section and select all accepts (this is a random test!)
+            List<WebElement> tableRows, rows;
+            int position;
+            for (WebElement listOfSection : listOfSections) {
+                tableRows = listOfSection.findElements(By.xpath("table/tbody/tr"));
+                if (!tableRows.isEmpty()) {
+                    for (WebElement tableRow : tableRows) {
+                        rows = tableRow.findElements(By.xpath("td"));
+                        if (!rows.isEmpty()) {
+                            position = (Math.random() <= 0.5) ? 1 : 2;
+                            rows.get(rows.size() - position).findElement(By.xpath("div")).click();
+
+                            //This means we are declining a contact. Add it to the contact List.
+                            if(position == 1){
+                                //Get possible positions of this contact
+                                avoidContacts.add(contacts[Integer.parseInt(tableRow.findElement(By.xpath("th")).getText())]);
+                            }
+                        } else {
+                            fail("Wrong XPath");
+                        }
+                    }
+                } else {
+                    fail("Wrong XPath");
+                }
+            }
+        }else{
+            fail("Wrong XPath");
+        }
+    }
+
+    @Then("^I should be able to see the number of contacts related to the number that were filtered out$")
+    public void iShouldBeAbleToSeeTheNumberOfContactsRelatedToTheNumberThatWereFilteredOut() throws InterruptedException {
+        //XPath to the table
+        String xpath = ".//table[@id='contactsTable']/tbody/tr[2]/td";
+
+        //Wait for the position related to the XPath to be clickable (If it exists)
+        Helper.getInstance().waitForSomething(driver, HelperConstants.TimeToWait, HelperConstants.WaitCondition_ElementToBeClickable, xpath, HelperConstants.IP.Address_Duplicates_Free);
+
+        xpath = ".//div[@id='contactsTable_info']";
+
+        WebElement infoTable = driver.findElement(By.xpath(xpath));
+
+        if(infoTable != null){
+            List<String> chunks = new LinkedList<>();
+            Matcher matcher = Pattern.compile("[0-9]+|[A-Z]+").matcher(infoTable.getText());
+            while (matcher.find()) {
+                chunks.add( matcher.group() );
+            }
+
+            if(!chunks.isEmpty()){
+                //Get last position -- That's where the size is!
+                assertEquals(contacts.length - avoidContacts.size(), Integer.parseInt(chunks.get(chunks.size() - 1)));
+            }else{
+                fail("chunks came empty. Verify if the XPath is correct");
+            }
+        }else{
+            fail("Wrong XPath");
+        }
+
     }
 }

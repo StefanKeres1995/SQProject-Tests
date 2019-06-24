@@ -410,6 +410,23 @@ public class Helper {
                 }while(counter <= 3);
                 TestCase.fail("Timeout on waiting. - Element to be loaded" + counter);
                 break;
+
+            case HelperConstants.WaitCondition_AttributeNotToBeEmpty:
+                do {
+                    try {
+                        WebDriverWait wait = new WebDriverWait(driver, timeOutInSeconds);
+                        wait.until(ExpectedConditions.attributeToBeNotEmpty(driver.findElement(By.xpath(string.split("--")[0])), string.split("--")[1]));
+                        return;
+                    } catch (TimeoutException ex) {
+                        //Force a Reset
+                        if(url != null) {
+                            driver.get(url);
+                        }
+                        counter++;
+                    }
+                }while(counter <= 3);
+                TestCase.fail("Timeout on waiting. - Title contains" + counter);
+                break;
             default:
                 TestCase.fail("Error! You aren't supposed to be here.");
         }
