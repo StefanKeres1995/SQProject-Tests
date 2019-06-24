@@ -2,14 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3ec137f0-b6f3-4072-af66-e892def0a1f7" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reports/test-report/report.js" beforeDir="false" afterPath="$PROJECT_DIR$/reports/test-report/report.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/DetailsPageTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/DetailsPageTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/DuplicatePageTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/DuplicatePageTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Helper/Helper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Helper/Helper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Helper/HelperConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Helper/HelperConstants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/DetailsPage.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/DetailsPage.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/DuplicatePage.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/DuplicatePage.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/IndexPage.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/IndexPage.feature" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -24,6 +19,39 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/IndexPageTests.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3975">
+              <caret line="502" column="180" selection-start-line="502" selection-start-column="180" selection-end-line="502" selection-end-column="180" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/java/DuplicatePageTests.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="391">
+              <caret line="73" column="8" lean-forward="true" selection-start-line="73" selection-start-column="8" selection-end-line="73" selection-end-column="8" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/DuplicateFreePageTests.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-272">
+              <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/resources/DuplicateFreePage.feature">
           <provider selected="true" editor-type-id="text-editor">
@@ -42,11 +70,23 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/resources/IndexPage.feature">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-884">
+            <state relative-caret-position="340">
               <caret line="20" column="23" lean-forward="true" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/DetailsPageTests.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="884">
+              <caret line="107" column="19" selection-start-line="107" selection-start-column="19" selection-end-line="107" selection-end-column="19" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -99,7 +139,6 @@
         <option value="$PROJECT_DIR$/src/test/java/StepsDefUS1.java" />
         <option value="$PROJECT_DIR$/src/test/resources/US1.feature" />
         <option value="$PROJECT_DIR$/src/test/java/DuplicateFreePageTests.java" />
-        <option value="$PROJECT_DIR$/src/test/java/DuplicatePageTests.java" />
         <option value="$PROJECT_DIR$/../RepoCode/js/details.js" />
         <option value="$PROJECT_DIR$/src/test/resources/DuplicateFreePage.feature" />
         <option value="$PROJECT_DIR$/src/test/java/IndexPageTests.java" />
@@ -109,6 +148,7 @@
         <option value="$PROJECT_DIR$/src/test/resources/DetailsPage.feature" />
         <option value="$PROJECT_DIR$/src/test/resources/DuplicatePage.feature" />
         <option value="$PROJECT_DIR$/src/test/resources/IndexPage.feature" />
+        <option value="$PROJECT_DIR$/src/test/java/DuplicatePageTests.java" />
       </list>
     </option>
   </component>
@@ -265,7 +305,7 @@
       <workItem from="1560886693591" duration="3793000" />
       <workItem from="1560947059379" duration="7527000" />
       <workItem from="1560957382238" duration="10637000" />
-      <workItem from="1561377104260" duration="14112000" />
+      <workItem from="1561377104260" duration="14649000" />
     </task>
     <task id="LOCAL-00001" summary="Staging new link">
       <created>1560938413045</created>
@@ -278,9 +318,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="CucumberRunner - 2019.06.24 at 20h 23m 19s.xml">
-      <configuration name="CucumberRunner" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="CucumberRunner - 2019.06.24 at 20h 24m 24s.xml">
       <configuration name="CucumberRunner" configurationId="JUnit" />
     </history-entry>
@@ -308,9 +345,12 @@
     <history-entry file="CucumberRunner - 2019.06.24 at 21h 16m 28s.xml">
       <configuration name="CucumberRunner" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="CucumberRunner - 2019.06.24 at 21h 22m 10s.xml">
+      <configuration name="CucumberRunner" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="167446000" />
+    <option name="totallyTimeSpent" value="167983000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -721,16 +761,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/DuplicateFreePageTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
-          <folding>
-            <element signature="method#tearDown#0;class#IndexPageTests#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/CucumberRunner.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -738,27 +768,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/DuplicatePageTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-397">
-          <caret line="342" column="44" selection-start-line="342" selection-start-column="44" selection-end-line="342" selection-end-column="44" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../RepoCode/js/details.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
           <caret line="46" column="88" selection-start-line="46" selection-start-column="88" selection-end-line="46" selection-end-column="88" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/IndexPageTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="507">
-          <caret line="502" column="180" selection-start-line="502" selection-start-column="180" selection-end-line="502" selection-end-column="180" />
         </state>
       </provider>
     </entry>
@@ -834,16 +847,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/DetailsPageTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="725">
-          <caret line="283" column="19" lean-forward="true" selection-start-line="283" selection-start-column="19" selection-end-line="283" selection-end-column="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/resources/DetailsPage.feature">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -867,8 +870,45 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/resources/IndexPage.feature">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-884">
+        <state relative-caret-position="340">
           <caret line="20" column="23" lean-forward="true" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/IndexPageTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3975">
+          <caret line="502" column="180" selection-start-line="502" selection-start-column="180" selection-end-line="502" selection-end-column="180" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/DetailsPageTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="884">
+          <caret line="107" column="19" selection-start-line="107" selection-start-column="19" selection-end-line="107" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/DuplicateFreePageTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-272">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/DuplicatePageTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="73" column="8" lean-forward="true" selection-start-line="73" selection-start-column="8" selection-end-line="73" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
