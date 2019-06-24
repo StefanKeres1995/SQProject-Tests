@@ -4,7 +4,6 @@ Feature: Access to the Contacts Orchestrator Solution's (COS) Duplicates page
   So that I can see the list of the possible contacts duplicate available
   So that I can delete and add those at my will
 
-  #Verify if is on correct site
   Scenario: Duplicate page's title and text contains "Duplicates"
     Given I access the landing page of COS
     When I click on the Duplicates
@@ -48,3 +47,10 @@ Feature: Access to the Contacts Orchestrator Solution's (COS) Duplicates page
     And I click on the Accept Manually button
     And I click on the Confirm button
     Then An Alarm should appear stating that I need to fill everything
+
+  Scenario: Duplicate page's After filtering, go to DuplicateFree with all duplicatefree contacts
+    Given I access the landing page of COS and want to go to duplicates
+    And I click on each position, randomly while saving each Decline/Accept
+    And I click on the Accept Manually button
+    And I click on the Confirm button
+    Then I should be able to see the number of contacts related to the number that were filtered out

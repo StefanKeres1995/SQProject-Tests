@@ -2,6 +2,7 @@ import Helper.Helper;
 import Helper.HelperConstants;
 import Model.Contact;
 import Model.ContactConstants;
+import cucumber.api.PendingException;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.And;
@@ -15,12 +16,15 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
+import static junit.framework.TestCase.assertEquals;
 import static junit.framework.TestCase.fail;
 
 public class DetailsPageTests {
@@ -291,5 +295,16 @@ public class DetailsPageTests {
     public void iReturnToTheLandingPage() throws InterruptedException {
         //Once checked the user should be redirected to the landing page
         Helper.getInstance().waitForSomething(driver, HelperConstants.TimeToWait, HelperConstants.WaitCondition_TitleContains, "Contacts Landing Page", HelperConstants.IP.Address_Index);
+    }
+
+    @Then("^I should see the image with the specific size \"([^\"]*)\", \"([^\"]*)\"$")
+    public void iShouldSeeTheImageWithTheSpecificSize(String height, String width) throws Throwable {
+
+        String xpath = ".//img[@id='photoHolder']";
+
+        Helper.getInstance().waitForSomething(driver, HelperConstants.TimeToWait, HelperConstants.WaitCondition_AttributeNotToBeEmpty, xpath + "--src", driver.getCurrentUrl());
+
+        assertEquals(driver.findElement(By.tagName("img")).getSize().getWidth(), Integer.parseInt(width));
+        assertEquals(driver.findElement(By.tagName("img")).getSize().getHeight(), Integer.parseInt(height));
     }
 }
