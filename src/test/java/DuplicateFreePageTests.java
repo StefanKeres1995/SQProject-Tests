@@ -88,9 +88,9 @@ public class DuplicateFreePageTests {
         Helper.getInstance().waitForSomething(driver, HelperConstants.TimeToWait, HelperConstants.WaitCondition_ElementToBeClickable, xpath, HelperConstants.IP.Address_Index);
 
         //Get Button
-        List<WebElement> button = driver.findElements(By.xpath(xpath));
-        if(!button.isEmpty()){
-            button.get(0).click();
+        WebElement button = driver.findElement(By.xpath(xpath));
+        if(button != null){
+            button.click();
 
             //Wait for the page to load (Title)
             Helper.getInstance().waitForSomething(driver, HelperConstants.TimeToWait, HelperConstants.WaitCondition_TitleContains, "Duplicates", HelperConstants.IP.Address_Duplicates);
@@ -98,7 +98,6 @@ public class DuplicateFreePageTests {
             //Form
             xpath = ".//form[@id='FormTableArea']/section";
             Helper.getInstance().waitForSomething(driver, HelperConstants.TimeToWait, HelperConstants.WaitCondition_NumberOfElementsMoreThan, xpath, HelperConstants.IP.Address_Duplicates);
-
         }else{
             fail(HelperConstants.Fail.XPath_Empty);
         }
@@ -494,7 +493,7 @@ public class DuplicateFreePageTests {
     }
 
     @And("^I want to filter for one \"([^\"]*)\"$")
-    public void iWantToFilterForOne(String source) throws Throwable {
+    public void iWantToFilterForOne(String source) {
         //XPath to the table
         String xpath = ".//select[@id='source']";
 
