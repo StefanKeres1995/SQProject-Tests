@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="3ec137f0-b6f3-4072-af66-e892def0a1f7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/DuplicateFreePageTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/DuplicateFreePageTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/resources/2DetailsPage.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/2DetailsPage.feature" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
@@ -28,20 +27,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/resources/2DetailsPage.feature">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="48" lean-forward="true" selection-start-line="48" selection-end-line="48" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/resources/3DuplicatePage.feature">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="850">
-              <caret line="50" column="44" selection-start-line="50" selection-start-column="35" selection-end-line="50" selection-end-column="44" />
+            <state relative-caret-position="456">
+              <caret line="38" column="10" selection-start-line="38" selection-start-column="10" selection-end-line="38" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -49,8 +39,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/DetailsPageTests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="806">
-              <caret line="329" column="16" selection-start-line="329" selection-start-column="16" selection-end-line="329" selection-end-column="16" />
+            <state relative-caret-position="237">
+              <caret line="85" column="16" selection-start-line="85" selection-start-column="16" selection-end-line="85" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/resources/3DuplicatePage.feature">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="935">
+              <caret line="55" column="100" lean-forward="true" selection-start-line="55" selection-start-column="100" selection-end-line="55" selection-end-column="100" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/resources/4DuplicateFreePage.feature">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="935">
+              <caret line="55" column="30" selection-start-line="53" selection-start-column="4" selection-end-line="55" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -66,7 +74,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>asdasd</find>
       <find>e</find>
       <find>NULL_STRING</find>
       <find>LinkedList&lt;Integer&gt;</find>
@@ -96,6 +103,7 @@
       <find>Chunks came empty. Verify if the XPath is correct</find>
       <find>driver.findElement</find>
       <find>&quot;Wrong XPath&quot;</find>
+      <find>switch</find>
     </findStrings>
     <replaceStrings>
       <replace>HelperConstants.IP.IP_ADDRESS_INDEX</replace>
@@ -152,9 +160,9 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="492" />
-    <option name="width" value="1435" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="953" />
+    <option name="width" value="974" />
     <option name="height" value="1047" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -301,7 +309,7 @@
       <workItem from="1560947059379" duration="7527000" />
       <workItem from="1560957382238" duration="10637000" />
       <workItem from="1561377104260" duration="14649000" />
-      <workItem from="1561467058005" duration="17901000" />
+      <workItem from="1561467058005" duration="19049000" />
     </task>
     <task id="LOCAL-00001" summary="Staging new link">
       <created>1560938413045</created>
@@ -346,7 +354,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="199962000" />
+    <option name="totallyTimeSpent" value="201110000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -358,10 +366,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="492" y="0" width="1435" height="1047" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14472727" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.10607676" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -773,13 +781,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/resources/4DuplicateFreePage.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="55" column="30" selection-start-line="53" selection-start-column="4" selection-end-line="55" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/IndexPageTests.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="7990">
@@ -981,22 +982,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/DetailsPageTests.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="806">
-          <caret line="329" column="16" selection-start-line="329" selection-start-column="16" selection-end-line="329" selection-end-column="16" />
+        <state relative-caret-position="237">
+          <caret line="85" column="16" selection-start-line="85" selection-start-column="16" selection-end-line="85" selection-end-column="16" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/resources/2DetailsPage.feature">
+    <entry file="file://$PROJECT_DIR$/src/test/resources/4DuplicateFreePage.feature">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="48" lean-forward="true" selection-start-line="48" selection-end-line="48" />
+        <state relative-caret-position="935">
+          <caret line="55" column="30" selection-start-line="53" selection-start-column="4" selection-end-line="55" selection-end-column="30" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/resources/3DuplicatePage.feature">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="850">
-          <caret line="50" column="44" selection-start-line="50" selection-start-column="35" selection-end-line="50" selection-end-column="44" />
+        <state relative-caret-position="935">
+          <caret line="55" column="100" lean-forward="true" selection-start-line="55" selection-start-column="100" selection-end-line="55" selection-end-column="100" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resources/2DetailsPage.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="38" column="10" selection-start-line="38" selection-start-column="10" selection-end-line="38" selection-end-column="10" />
         </state>
       </provider>
     </entry>

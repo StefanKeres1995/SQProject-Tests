@@ -38,22 +38,6 @@ Feature: Access to the Contacts Orchestrator Solution's (COS) Landing Page
     | 5  |
     | 15 |
 
-  Scenario Outline: Get back to Duplicate Free from the details page
-    Given I access the landing page of COS and want to go to duplicates
-    When I select random values
-    And I click on the Accept Manually
-    And I click on the Confirm
-    And I click on the Details button on row with id "<position>"
-    And I press the back button
-    Then I return to the Duplicate Free Page
-
-    Examples:
-      | case         |
-      | justDetails  |
-      | emptyId      |
-      | unfilteredId |
-      | incorrectId  |
-
   Scenario Outline: Image being correctly loaded from K8
     Given I access the landing page of COS and want to see the details of contact "<id>"
     Then I should see the image with the specific size "<height>", "<width>"
