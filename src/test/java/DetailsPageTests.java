@@ -253,27 +253,66 @@ public class DetailsPageTests {
     @Given("^I access the landing page of COS and want to see the details of contact \"([^\"]*)\"$")
     public void iAccessTheLandingPageOfCOSAndWantToSeeTheDetailsOfContact(String contactId) throws Throwable {
 
-        //Go to landing page
-        driver.get(HelperConstants.IP.Address_Index);
-
-        String xpath = ".//table[@id='contactsTable']/tbody/tr[1]/td";
+        //wait for data for the table, check if select of pagination appeared
+        String xpath = ".//div[@id='contactsTable_length']/label/select";
 
         //Wait for the position related to the XPath is clickable (If it exists)
         Helper.getInstance().waitForSomething(driver, HelperConstants.TimeToWait, HelperConstants.WaitCondition_ElementToBeClickable, xpath, HelperConstants.IP.Address_Index);
 
-        //Prepare url for the details page with the contact with the contactId id
-        xpath = ".//table[@id='contactsTable']/tbody/tr[" + Integer.parseInt(contactId) + "]/td[7]/a";
+        //Get the elements that are related to the XPath
+        List<WebElement> select = driver.findElements(By.xpath(xpath));
 
-        List<WebElement> button = driver.findElements(By.xpath(xpath));
-        if(!button.isEmpty()){
-            detailURL = button.get(0).getAttribute("href");
+        //Did the select returned an empty List?
+        if(!select.isEmpty()) {
+            //Check if id is from a larger pagination
+            Select selectable = new Select(select.get(0));
+            WebElement selectableValue = selectable.getFirstSelectedOption();
 
-            detailedContact = contacts[Integer.parseInt(contactId) - 1];
+            //Get Position
+            int paginationSize = Integer.parseInt(selectableValue.getAttribute("value"));
+            int numberOfClicks = (Integer.parseInt(contactId) - 1) / paginationSize;
 
-            button.get(0).click();
+            //Jump to the correct page & Get pagination button
+            String paginationXpath = "//a[@id='contactsTable_next']";
 
-            //Go to the details page of the contact with the contactId id
-            Helper.getInstance().waitForSomething(driver, HelperConstants.TimeToWait, HelperConstants.WaitCondition_TitleContains , "Details--"+ contactId, HelperConstants.IP.Address_Index);
+            WebElement paginationButtonElement;
+            for (int i = 0; i < numberOfClicks; i++) {
+
+                //being in the for, the element of the button is refreshed
+                paginationButtonElement = driver.findElement(By.xpath(paginationXpath));
+                if (paginationButtonElement != null) {
+                    paginationButtonElement.click();
+                } else {
+                    fail("XPath came empty. Verify if the XPath is correct");
+                }
+            }
+
+            int positionOnTable = Integer.parseInt(contactId) - (numberOfClicks * paginationSize);
+            //Now that we're in the correct page find the details button
+            String detailsButtonXpath = ".//table[@id='contactsTable']/tbody/tr[" + positionOnTable + "]/td[7]/a";
+
+            Thread.sleep(100);
+
+            List<WebElement> buttonElement = driver.findElements(By.xpath(detailsButtonXpath));
+
+            if (!buttonElement.isEmpty()) {
+                //store data for next part of the test
+                String contactIDXpath = ".//table[@id='contactsTable']/tbody/tr[" + positionOnTable + "]/td[1]";
+                List<WebElement> contactElement = driver.findElements(By.xpath(contactIDXpath));
+                if (!contactElement.isEmpty()) {
+
+                    //Store contact for next test
+                    detailedContact = contacts[Integer.parseInt(contactElement.get(0).getText()) - 1];
+
+                    //Store URL for next test
+                    detailURL = HelperConstants.IP.Address_Details + detailedContact.getGuid();
+
+                    //Click the button gotten
+                    buttonElement.get(0).click();
+                }
+            } else {
+                fail("XPath came empty. Verify if the XPath is correct");
+            }
         }else{
             fail("XPath came empty. Verify if the XPath is correct");
         }
@@ -306,5 +345,25 @@ public class DetailsPageTests {
 
         assertEquals(driver.findElement(By.tagName("img")).getSize().getWidth(), Integer.parseInt(width));
         assertEquals(driver.findElement(By.tagName("img")).getSize().getHeight(), Integer.parseInt(height));
+    }
+
+    @Then("^I can see the contact image$")
+    public void iCanSeeTheContactImage() throws InterruptedException{
+
+        //get image from contact stored
+        String kubernetesURL = "http://34.90.129.208/resize?width=180&height=180&type=jpeg&force=true&url=" + detailedContact.getPhotoUrl();
+        //get page image
+        String xpath = "//img[@id='photoHolder']";
+
+        //wait until image arrives?
+        Helper.getInstance().waitForSomething(driver, HelperConstants.TimeToWait, HelperConstants.WaitCondition_AttributeNotToBeEmpty, xpath + "--src", driver.getCurrentUrl());
+
+        List<WebElement> pageImageWebElements = driver.findElements(By.xpath(xpath));
+        if (!pageImageWebElements.isEmpty()){
+            String pageImageSource = pageImageWebElements.get(0).getAttribute("src");
+            TestCase.assertEquals(kubernetesURL, pageImageSource);
+        } else {
+            TestCase.fail("Page Image doesn't exist");
+        }
     }
 }

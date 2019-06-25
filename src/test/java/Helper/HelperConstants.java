@@ -8,7 +8,7 @@ public class HelperConstants {
     public static final int WaitCondition_ElementToBeLoaded = 4;
     public static final int WaitCondition_AttributeNotToBeEmpty = 5;
     public static final String Null_String = "--------------";
-    public static final int TimeToWait = 10;
+    public static final int TimeToWait = 3;
 
     public class IP{
         public static final String Address_Index = "http://35.246.60.249/";
