@@ -341,7 +341,7 @@ public class DetailsPageTests {
 
         String xpath = ".//img[@id='photoHolder']";
 
-        Helper.getInstance().waitForSomething(driver, HelperConstants.TimeToWait, HelperConstants.WaitCondition_AttributeNotToBeEmpty, xpath + "--src", driver.getCurrentUrl());
+        Helper.getInstance().waitForSomething(driver, HelperConstants.TimeToWaitImage, HelperConstants.WaitCondition_AttributeNotToBeEmpty, xpath + "--src", driver.getCurrentUrl());
 
         assertEquals(driver.findElement(By.tagName("img")).getSize().getWidth(), Integer.parseInt(width));
         assertEquals(driver.findElement(By.tagName("img")).getSize().getHeight(), Integer.parseInt(height));
@@ -356,7 +356,7 @@ public class DetailsPageTests {
         String xpath = "//img[@id='photoHolder']";
 
         //wait until image arrives?
-        Helper.getInstance().waitForSomething(driver, HelperConstants.TimeToWait, HelperConstants.WaitCondition_AttributeNotToBeEmpty, xpath + "--src", driver.getCurrentUrl());
+        Helper.getInstance().waitForSomething(driver, HelperConstants.TimeToWaitImage, HelperConstants.WaitCondition_AttributeNotToBeEmpty, xpath + "--src", driver.getCurrentUrl());
 
         List<WebElement> pageImageWebElements = driver.findElements(By.xpath(xpath));
         if (!pageImageWebElements.isEmpty()){
