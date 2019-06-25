@@ -2,7 +2,6 @@ import Helper.Helper;
 import Helper.HelperConstants;
 import Model.Contact;
 import Model.ContactConstants;
-import cucumber.api.PendingException;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.And;
@@ -16,9 +15,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -95,12 +92,12 @@ public class DetailsPageTests {
         Helper.getInstance().waitForSomething(driver, HelperConstants.TimeToWait, HelperConstants.WaitCondition_ElementToBeClickable, xpath, HelperConstants.IP.Address_Index);
 
         //Get the elements that are related to the XPath
-        List<WebElement> select = driver.findElements(By.xpath(xpath));
+        WebElement select = driver.findElement(By.xpath(xpath));
 
         //Did the select returned an empty List?
-        if(!select.isEmpty()) {
+        if(select != null) {
             //Check if id is from a larger pagination
-            Select selectable = new Select(select.get(0));
+            Select selectable = new Select(select);
             WebElement selectableValue = selectable.getFirstSelectedOption();
 
             //Get Position
@@ -122,7 +119,7 @@ public class DetailsPageTests {
                     position = contacts.length;
                     break;
                 default:
-                    fail("String is not recognized");
+                    fail(HelperConstants.Fail.String_Not_Recognized);
             }
 
             int numberOfClicks;
@@ -148,13 +145,12 @@ public class DetailsPageTests {
 
             WebElement paginationButtonElement;
             for (int i = 0; i < numberOfClicks; i++) {
-
                 //being in the for, the element of the button is refreshed
                 paginationButtonElement = driver.findElement(By.xpath(paginationXpath));
                 if (paginationButtonElement != null) {
                     paginationButtonElement.click();
                 } else {
-                    fail("XPath came empty. Verify if the XPath is correct");
+                    fail(HelperConstants.Fail.XPath_Empty);
                 }
             }
 
@@ -163,13 +159,13 @@ public class DetailsPageTests {
 
             Thread.sleep(100);
 
-            List<WebElement> buttonElement = driver.findElements(By.xpath(detailsButtonXpath));
+            WebElement buttonElement = driver.findElement(By.xpath(detailsButtonXpath));
 
-            if (!buttonElement.isEmpty()) {
+            if (buttonElement != null) {
                 //store data for next part of the test
                 String contactIDXpath = ".//table[@id='contactsTable']/tbody/tr[" + positionOnTable + "]/td[1]";
-                List<WebElement> contactElement = driver.findElements(By.xpath(contactIDXpath));
-                if (!contactElement.isEmpty()) {
+                WebElement contactElement = driver.findElement(By.xpath(contactIDXpath));
+                if (contactElement != null) {
 
                     //Store contact for next test
                     detailedContact = contacts[position - 1];
@@ -178,13 +174,13 @@ public class DetailsPageTests {
                     detailURL = HelperConstants.IP.Address_Details + detailedContact.getGuid();
 
                     //Click the button gotten
-                    buttonElement.get(0).click();
+                    buttonElement.click();
                 }
             } else {
-                fail("XPath came empty. Verify if the XPath is correct");
+                fail(HelperConstants.Fail.XPath_Empty);
             }
         }else{
-            fail("XPath came empty. Verify if the XPath is correct");
+            fail(HelperConstants.Fail.XPath_Empty);
         }
     }
 
@@ -207,7 +203,7 @@ public class DetailsPageTests {
 
             Helper.getInstance().checkIntegrityOfContact(contactValues, Helper.getInstance().retrieveColumns(contactKeys), detailedContact);
         }else {
-            fail("XPath came empty. Verify if the XPath is correct");
+            fail(HelperConstants.Fail.XPath_Empty);
         }
     }
 
@@ -226,7 +222,7 @@ public class DetailsPageTests {
             case "incorrectId": detailURL = HelperConstants.IP.Address_Index + "details.html?id=" + caseReceived;
                 break;
             default:
-                TestCase.fail("Invalid case format");
+                TestCase.fail(HelperConstants.Fail.String_Not_Recognized);
         }
 
     }
@@ -246,7 +242,7 @@ public class DetailsPageTests {
 
             Helper.getInstance().waitForSomething(driver, HelperConstants.TimeToWait, HelperConstants.WaitCondition_TitleContains, "Contacts Landing Page", detailURL);
         }else {
-            TestCase.fail("Alert doesn't exist");
+            TestCase.fail(HelperConstants.Fail.Alarm_Not_Exist);
         }
     }
 
@@ -260,12 +256,12 @@ public class DetailsPageTests {
         Helper.getInstance().waitForSomething(driver, HelperConstants.TimeToWait, HelperConstants.WaitCondition_ElementToBeClickable, xpath, HelperConstants.IP.Address_Index);
 
         //Get the elements that are related to the XPath
-        List<WebElement> select = driver.findElements(By.xpath(xpath));
+        WebElement select = driver.findElement(By.xpath(xpath));
 
         //Did the select returned an empty List?
-        if(!select.isEmpty()) {
+        if(select != null) {
             //Check if id is from a larger pagination
-            Select selectable = new Select(select.get(0));
+            Select selectable = new Select(select);
             WebElement selectableValue = selectable.getFirstSelectedOption();
 
             //Get Position
@@ -283,7 +279,7 @@ public class DetailsPageTests {
                 if (paginationButtonElement != null) {
                     paginationButtonElement.click();
                 } else {
-                    fail("XPath came empty. Verify if the XPath is correct");
+                    fail(HelperConstants.Fail.XPath_Empty);
                 }
             }
 
@@ -311,10 +307,10 @@ public class DetailsPageTests {
                     buttonElement.get(0).click();
                 }
             } else {
-                fail("XPath came empty. Verify if the XPath is correct");
+                fail(HelperConstants.Fail.XPath_Empty);
             }
         }else{
-            fail("XPath came empty. Verify if the XPath is correct");
+            fail(HelperConstants.Fail.XPath_Empty);
         }
     }
 
@@ -326,7 +322,7 @@ public class DetailsPageTests {
         if (!backButton.isEmpty()){
             backButton.get(0).click();
         } else {
-            TestCase.fail("Back Button doesn't exist");
+            TestCase.fail(HelperConstants.Fail.Back_Button_Not_Exist);
         }
     }
 
@@ -363,7 +359,18 @@ public class DetailsPageTests {
             String pageImageSource = pageImageWebElements.get(0).getAttribute("src");
             TestCase.assertEquals(kubernetesURL, pageImageSource);
         } else {
-            TestCase.fail("Page Image doesn't exist");
+            TestCase.fail(HelperConstants.Fail.Image_Not_Exist);
         }
+    }
+
+    @Then("^I return to the Duplicate Free Page$")
+    public void iReturnToTheDuplicateFreePage() throws InterruptedException {
+        //Wait for the table to be present
+        String xpath = ".//table[@id='contactsTable']/tbody/tr[2]/td";
+
+        //Wait for the position related to the XPath is clickable (If it exists)
+        Helper.getInstance().waitForSomething(driver, HelperConstants.TimeToWait, HelperConstants.WaitCondition_ElementToBeClickable, xpath, HelperConstants.IP.Address_Duplicates_Free);
+
+        assertEquals(driver.getTitle(), "Duplicate Free");
     }
 }

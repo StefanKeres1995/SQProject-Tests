@@ -43,6 +43,7 @@ public class IndexPageTests {
         if(contacts == null) {
             //Is the list of what is on the table empty?
             if(constantToVerify.isEmpty()){
+                //Positions on table;
                 constantToVerify.add(ContactConstants.ID);
                 constantToVerify.add(ContactConstants.GIVEN_NAME);
                 constantToVerify.add(ContactConstants.SURNAME);
@@ -115,7 +116,7 @@ public class IndexPageTests {
                     position = contacts.length;
                     break;
                 default:
-                    fail("String is not recognized");
+                    fail(HelperConstants.Fail.String_Not_Recognized);
             }
 
             //Split this value into two positions Example -- 216 -- 21 clicks, and search on the 6th position of the table.
@@ -139,7 +140,7 @@ public class IndexPageTests {
                     nextButtonPagination.click();
                     Thread.sleep(100);
                 } else {
-                    fail("XPath came empty. Verify if the XPath is correct");
+                    fail(HelperConstants.Fail.XPath_Empty);
                 }
             }
 
@@ -152,10 +153,10 @@ public class IndexPageTests {
                 //Is this value correct?
                 Helper.getInstance().checkIntegrityOfContact(valuesFromTable, constantToVerify, contacts[position - 1]);
             }else{
-                fail("XPath came empty. Verify if the XPath is correct");
+                fail(HelperConstants.Fail.XPath_Empty);
             }
         }else{
-            fail("XPath came empty. Verify if the XPath is correct");
+            fail(HelperConstants.Fail.XPath_Empty);
         }
     }
 
@@ -169,13 +170,13 @@ public class IndexPageTests {
         Helper.getInstance().waitForSomething(driver, HelperConstants.TimeToWait, HelperConstants.WaitCondition_ElementToBeClickable, xpath, HelperConstants.IP.Address_Index);
 
         //Get the elements that are related to the XPath
-        List<WebElement> valuesFromDiv = driver.findElements(By.xpath(xpath));
+        WebElement valuesFromDiv = driver.findElement(By.xpath(xpath));
 
         //Did the div returned an empty List?
-        if(!valuesFromDiv.isEmpty()){
+        if(valuesFromDiv != null){
             //Split the gotten string into several sub-strings, were we only get the Integers from the string (And the first Letter, for some reason).
             List<String> chunks = new LinkedList<>();
-            Matcher matcher = Pattern.compile("[0-9]+|[A-Z]+").matcher(valuesFromDiv.get(0).getText());
+            Matcher matcher = Pattern.compile("[0-9]+|[A-Z]+").matcher(valuesFromDiv.getText());
             while (matcher.find()) {
                 chunks.add( matcher.group() );
             }
@@ -184,10 +185,10 @@ public class IndexPageTests {
                 //Get last position -- That's where the size is!
                 assertEquals(contacts.length, Integer.parseInt(chunks.get(chunks.size() - 1)));
             }else{
-                fail("chunks came empty. Verify if the XPath is correct");
+                fail(HelperConstants.Fail.Chunks_Empty);
             }
         }else{
-            fail("XPath came empty. Verify if the XPath is correct");
+            fail(HelperConstants.Fail.XPath_Empty);
         }
     }
 
@@ -233,7 +234,7 @@ public class IndexPageTests {
             //Order database and check the integrity
             Helper.getInstance().orderDatabaseAndVerifyFirstContact(value, valuesFromTable, constantToVerify, new ArrayList<>(Arrays.asList(contacts)));
         }else{
-            fail("XPath came empty. Verify if the XPath is correct");
+            fail(HelperConstants.Fail.XPath_Empty);
         }
     }
 
@@ -247,13 +248,13 @@ public class IndexPageTests {
         Helper.getInstance().waitForSomething(driver, HelperConstants.TimeToWait, HelperConstants.WaitCondition_ElementToBeClickable, xpath, HelperConstants.IP.Address_Index);
 
         //Get the elements that are related to the XPath
-        List<WebElement> valuesFromSearch = driver.findElements(By.xpath(xpath));
+        WebElement valuesFromSearch = driver.findElement(By.xpath(xpath));
 
-        if (!valuesFromSearch.isEmpty()){
+        if (valuesFromSearch != null){
             //Write on the search bar
-            valuesFromSearch.get(0).sendKeys(string);
+            valuesFromSearch.sendKeys(string);
         }else{
-            fail("XPath came empty. Verify if the XPath is correct");
+            fail(HelperConstants.Fail.XPath_Empty);
         }
     }
 
@@ -267,7 +268,7 @@ public class IndexPageTests {
             //Verify these values
             Helper.getInstance().getFilteredRecordsAndVerifyThem(string, valuesFromTable, constantToVerify, contacts);
         }else{
-            fail("XPath came empty. Verify if the XPath is correct");
+            fail(HelperConstants.Fail.XPath_Empty);
         }
     }
 
@@ -283,7 +284,7 @@ public class IndexPageTests {
             //Verify the filtered contacts. We will search for a GivenName.
             Helper.getInstance().getFilteredOrderedRecordsAndVerifyThem(search, valueColumn, valuesFromTable, constantToVerify, contacts);
         }else{
-            fail("XPath came empty. Verify if the XPath is correct");
+            fail(HelperConstants.Fail.XPath_Empty);
         }
     }
 
@@ -296,19 +297,18 @@ public class IndexPageTests {
         Helper.getInstance().waitForSomething(driver, HelperConstants.TimeToWait, HelperConstants.WaitCondition_ElementToBeClickable, xpath, HelperConstants.IP.Address_Index);
 
         //Get the elements that are related to the XPath
-        List<WebElement> select = driver.findElements(By.xpath(xpath));
+        WebElement select = driver.findElement(By.xpath(xpath));
 
         //Did the select returned an empty List?
-        if(!select.isEmpty()) {
+        if(select != null) {
 
             //Create the Select object, and select the value gotten from the test.
-            Select selectable = new Select(select.get(0));
+            Select selectable = new Select(select);
             selectable.selectByValue(pagination);
 
             assertEquals(selectable.getFirstSelectedOption().getText(), pagination);
         } else {
-            //Error!
-            fail("XPath came empty. Verify if the XPath is correct");
+            fail(HelperConstants.Fail.XPath_Empty);
         }
     }
 
@@ -319,13 +319,13 @@ public class IndexPageTests {
         String xpath = ".//div[@id='contactsTable_info']";
 
         //Get the elements that are related to the XPath
-        List<WebElement> length = driver.findElements(By.xpath(xpath));
+        WebElement length = driver.findElement(By.xpath(xpath));
 
         //Did the div returned an empty List?
-        if (!length.isEmpty()) {
+        if (length != null) {
             //Split the gotten string into several sub-strings, were we only get the Integers from the string (And the first Letter, for some reason).
             List<String> chunks = new LinkedList<>();
-            Matcher matcher = Pattern.compile("[0-9]+|[A-Z]+").matcher(length.get(0).getText());
+            Matcher matcher = Pattern.compile("[0-9]+|[A-Z]+").matcher(length.getText());
             while (matcher.find()) {
                 chunks.add(matcher.group());
             }
@@ -345,10 +345,10 @@ public class IndexPageTests {
                 //Now, check if there are the same amount of contacts in the Table, that is on the pagination.
                 assertEquals(driver.findElements(By.xpath(".//table[@id='contactsTable']/tbody/tr")).size(), numberToCount);
             } else {
-                fail("chunks came empty. Verify if the XPath is correct");
+                fail(HelperConstants.Fail.Chunks_Empty);
             }
         } else {
-            fail("XPath came empty. Verify if the XPath is correct");
+            fail(HelperConstants.Fail.XPath_Empty);
         }
     }
 
@@ -365,11 +365,11 @@ public class IndexPageTests {
         xpath = ".//select[@id='source']";
 
         //Get the elements that are related to the XPath
-        List<WebElement> select = driver.findElements(By.xpath(xpath));
+        WebElement select = driver.findElement(By.xpath(xpath));
 
-        if(!select.isEmpty()){
+        if(select != null){
             //Get selectable, and get values from it
-            Select selectable = new Select(select.get(0));
+            Select selectable = new Select(select);
 
             ArrayList<String> sources = new ArrayList<>();
             for(WebElement element : selectable.getOptions()){
@@ -380,14 +380,14 @@ public class IndexPageTests {
 
             //Click on button
             xpath = ".//form[@id='sourceForm']/div/button";
-            List<WebElement> button = driver.findElements(By.xpath(xpath));
-            if(!button.isEmpty()){
-                button.get(0).click();
+            WebElement button = driver.findElement(By.xpath(xpath));
+            if(button != null){
+                button.click();
             }else{
-                fail("XPath came empty. Verify if the XPath is correct");
+                fail(HelperConstants.Fail.XPath_Empty);
             }
         }else{
-            fail("XPath came empty. Verify if the XPath is correct");
+            fail(HelperConstants.Fail.XPath_Empty);
         }
     }
 
@@ -404,24 +404,24 @@ public class IndexPageTests {
         xpath = ".//select[@id='source']";
 
         //Get the elements that are related to the XPath
-        List<WebElement> select = driver.findElements(By.xpath(xpath));
+        WebElement select = driver.findElement(By.xpath(xpath));
 
-        if(!select.isEmpty()){
-            Select selectable = new Select(select.get(0));
+        if(select != null){
+            Select selectable = new Select(select);
             selectable.selectByValue(source);
 
             assertEquals(source, selectable.getFirstSelectedOption().getText());
 
             //Click on button
             xpath = ".//form[@id='sourceForm']/div/button";
-            List<WebElement> button = driver.findElements(By.xpath(xpath));
-            if(!button.isEmpty()){
-                button.get(0).click();
+            WebElement button = driver.findElement(By.xpath(xpath));
+            if(button != null){
+                button.click();
             }else{
-                fail("XPath came empty. Verify if the XPath is correct");
+                fail(HelperConstants.Fail.XPath_Empty);
             }
         }else{
-            fail("XPath came empty. Verify if the XPath is correct");
+            fail(HelperConstants.Fail.XPath_Empty);
         }
 
     }
@@ -466,13 +466,13 @@ public class IndexPageTests {
                     //Get last position -- That's where the size is!
                     assertEquals(filtered.size(), Integer.parseInt(chunks.get(chunks.size() - 1)));
                 }else{
-                    fail("Chunks came empty. Verify if the XPath is correct");
+                    fail(HelperConstants.Fail.Chunks_Empty);
                 }
             }else{
-                fail("XPath came empty. Verify if the XPath is correct");
+                fail(HelperConstants.Fail.XPath_Empty);
             }
         }else{
-            fail("XPath came empty. Verify if the XPath is correct");
+            fail(HelperConstants.Fail.XPath_Empty);
         }
 
     }
@@ -490,11 +490,11 @@ public class IndexPageTests {
         xpath = ".//a[@id='duplicateButton']";
 
         //Get Button
-        List<WebElement> button = driver.findElements(By.xpath(xpath));
-        if(!button.isEmpty()){
-            button.get(0).click();
+        WebElement button = driver.findElement(By.xpath(xpath));
+        if(button != null){
+            button.click();
         }else{
-            fail("XPath came empty. Verify if the XPath is correct");
+            fail(HelperConstants.Fail.XPath_Empty);
         }
     }
 

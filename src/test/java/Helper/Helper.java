@@ -317,7 +317,7 @@ public class Helper {
 
                                 }
                             }else if(url.contains("details.html") && string.contains("Contacts Landing Page")){
-                                //Alarm part
+                                //Alarm_Not_Exist part
                                 Alert alert = Helper.getInstance().waitForAlert(driver, url);
 
                                 alert.accept();
