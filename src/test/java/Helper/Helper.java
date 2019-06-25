@@ -606,7 +606,7 @@ public class Helper {
      * @param contacts - List of Contacts
      * @return ArrayList<Contacts> Filtered Contacts
      */
-    public ArrayList<Contact> filterDatabase(String filteredField, Contact[] contacts) {
+    public ArrayList<Contact> filterDatabase(String filteredField, Contact[] contacts)  {
         if(filteredField.equals("All")){
             return new ArrayList<>(Arrays.asList(contacts));
         } else {
@@ -838,6 +838,4 @@ public class Helper {
                 return -1;
         }
     }
-
-
 }

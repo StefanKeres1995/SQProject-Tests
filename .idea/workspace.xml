@@ -2,17 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3ec137f0-b6f3-4072-af66-e892def0a1f7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/DetailsPageTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/DetailsPageTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/DuplicateFreePageTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/DuplicateFreePageTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/DuplicatePageTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/DuplicatePageTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/Helper/Helper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Helper/Helper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Helper/HelperConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Helper/HelperConstants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/IndexPageTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/IndexPageTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/DetailsPage.feature" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/DuplicateFreePage.feature" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/DuplicatePage.feature" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/IndexPage.feature" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -28,24 +18,6 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/resources/4DuplicateFreePage.feature">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="55" column="30" selection-start-line="53" selection-start-column="4" selection-end-line="55" selection-end-column="30" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/resources/3DuplicatePage.feature">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="575">
-              <caret line="38" column="22" lean-forward="true" selection-start-line="38" selection-start-column="22" selection-end-line="38" selection-end-column="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/resources/2DetailsPage.feature">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="37">
@@ -54,11 +26,195 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/resources/1IndexPage.feature">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="238">
               <caret line="14" column="30" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/DuplicatePageTests.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="623">
+              <caret line="382" column="21" lean-forward="true" selection-start-line="382" selection-start-column="21" selection-end-line="382" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/java/DuplicateFreePageTests.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="178">
+              <caret line="542" column="57" selection-start-line="542" selection-start-column="56" selection-end-line="542" selection-end-column="57" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/Helper/Helper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="742">
+              <caret line="839" column="5" selection-start-line="839" selection-start-column="5" selection-end-line="839" selection-end-column="5" />
+              <folding>
+                <element signature="method#getInstance#0;class#Helper#0" />
+                <element signature="e#844#892#1" />
+                <element signature="n#!!doc;n#getHTML#0;n#Helper#0" />
+                <element signature="method#getHTML#0;class#Helper#0" />
+                <element signature="e#1145#3678#0" />
+                <element signature="e#1680#1732#1" />
+                <element signature="e#2034#3637#1" />
+                <element signature="e#2135#2230#1" />
+                <element signature="e#2282#2373#1" />
+                <element signature="e#2428#2522#1" />
+                <element signature="e#2575#2667#1" />
+                <element signature="e#2724#2820#1" />
+                <element signature="e#2878#2975#1" />
+                <element signature="e#3031#3166#1" />
+                <element signature="e#3220#3313#1" />
+                <element signature="e#3374#3474#1" />
+                <element signature="e#3529#3623#1" />
+                <element signature="e#3701#3745#0" />
+                <element signature="n#!!doc;n#checkIntegrityOfContact#0;n#Helper#0" />
+                <element signature="method#checkIntegrityOfContact#0;class#Helper#0" />
+                <element signature="e#4432#9548#1" />
+                <element signature="e#4514#9538#0" />
+                <element signature="e#4618#4748#1" />
+                <element signature="e#4752#4876#1" />
+                <element signature="e#4998#5128#1" />
+                <element signature="e#5132#5252#1" />
+                <element signature="e#5380#5510#1" />
+                <element signature="e#5514#5637#1" />
+                <element signature="e#5761#5891#1" />
+                <element signature="e#5895#6016#1" />
+                <element signature="e#6149#6279#1" />
+                <element signature="e#6283#6408#1" />
+                <element signature="e#6547#6733#0" />
+                <element signature="e#6752#6841#0" />
+                <element signature="e#6975#7105#1" />
+                <element signature="e#7109#7235#1" />
+                <element signature="e#7359#7489#1" />
+                <element signature="e#7493#7625#1" />
+                <element signature="e#7756#7886#1" />
+                <element signature="e#7890#8014#1" />
+                <element signature="e#8140#8270#1" />
+                <element signature="e#8274#8396#1" />
+                <element signature="e#8537#8667#1" />
+                <element signature="e#8671#8800#1" />
+                <element signature="e#8928#9058#1" />
+                <element signature="e#9063#9186#1" />
+                <element signature="n#!!doc;n#waitForSomething#0;n#Helper#0" />
+                <element signature="method#waitForSomething#0;class#Helper#0" />
+                <element signature="e#10251#20462#0" />
+                <element signature="e#10342#10911#1" />
+                <element signature="e#10368#10610#0" />
+                <element signature="e#10639#10893#0" />
+                <element signature="e#10720#10792#1" />
+                <element signature="e#11125#15870#1" />
+                <element signature="e#11151#11644#0" />
+                <element signature="e#11246#11337#1" />
+                <element signature="e#11341#11417#1" />
+                <element signature="e#11673#15852#0" />
+                <element signature="e#11755#15795#1" />
+                <element signature="e#11885#14764#1" />
+                <element signature="e#12107#12470#1" />
+                <element signature="e#12504#14734#1" />
+                <element signature="e#12703#12728#0" />
+                <element signature="e#13278#14535#1" />
+                <element signature="e#13633#14497#1" />
+                <element signature="e#13817#14455#1" />
+                <element signature="e#13905#14409#1" />
+                <element signature="e#14078#14359#1" />
+                <element signature="e#14845#15074#1" />
+                <element signature="e#15143#15769#1" />
+                <element signature="e#16090#17514#1" />
+                <element signature="e#16183#16708#0" />
+                <element signature="e#16234#16340#1" />
+                <element signature="e#16344#16420#1" />
+                <element signature="e#16737#17496#0" />
+                <element signature="e#16819#17439#1" />
+                <element signature="e#17747#18670#1" />
+                <element signature="e#17840#18412#0" />
+                <element signature="e#17891#17997#1" />
+                <element signature="e#18001#18123#1" />
+                <element signature="e#18441#18652#0" />
+                <element signature="e#18523#18595#1" />
+                <element signature="e#18895#19430#1" />
+                <element signature="e#18921#19172#0" />
+                <element signature="e#19201#19412#0" />
+                <element signature="e#19283#19355#1" />
+                <element signature="e#19651#20234#1" />
+                <element signature="e#19677#19976#0" />
+                <element signature="e#20005#20216#0" />
+                <element signature="e#20087#20159#1" />
+                <element signature="method#waitForAlert#0;class#Helper#0" />
+                <element signature="e#20641#22509#1" />
+                <element signature="e#20659#21170#0" />
+                <element signature="e#20826#20905#1" />
+                <element signature="e#20943#21156#1" />
+                <element signature="e#21199#22499#0" />
+                <element signature="e#21264#22423#1" />
+                <element signature="e#21339#22336#1" />
+                <element signature="e#21896#22314#1" />
+                <element signature="e#22209#22288#1" />
+                <element signature="e#22340#22404#1" />
+                <element signature="n#!!doc;n#orderDatabaseAndVerifyFirstContact#0;n#Helper#0" />
+                <element signature="method#orderDatabaseAndVerifyFirstContact#0;class#Helper#0" />
+                <element signature="n#!!doc;n#orderDatabase#0;n#Helper#0" />
+                <element signature="method#orderDatabase#0;class#Helper#0" />
+                <element signature="e#23840#25932#0" />
+                <element signature="n#!!doc;n#getFilteredRecordsAndVerifyThem#0;n#Helper#0" />
+                <element signature="method#getFilteredRecordsAndVerifyThem#0;class#Helper#0" />
+                <element signature="e#26754#26843#1" />
+                <element signature="e#26848#27468#1" />
+                <element signature="e#27140#27182#1" />
+                <element signature="e#27299#27458#1" />
+                <element signature="n#!!doc;n#filterDatabase#0;n#Helper#0" />
+                <element signature="method#filterDatabase#0;class#Helper#0" />
+                <element signature="e#27935#28007#1" />
+                <element signature="e#28013#28803#1" />
+                <element signature="n#!!doc;n#getFilteredOrderedRecordsAndVerifyThem#0;n#Helper#0" />
+                <element signature="method#getFilteredOrderedRecordsAndVerifyThem#0;class#Helper#0" />
+                <element signature="e#29857#29946#1" />
+                <element signature="e#29951#30571#1" />
+                <element signature="e#30243#30285#1" />
+                <element signature="e#30402#30561#1" />
+                <element signature="method#getPossibleSources#0;class#Helper#0" />
+                <element signature="e#30825#30957#1" />
+                <element signature="e#30882#30947#1" />
+                <element signature="method#getPossibleDuplicates#0;class#Helper#0" />
+                <element signature="e#31426#32587#1" />
+                <element signature="e#31521#32577#1" />
+                <element signature="e#31671#32411#1" />
+                <element signature="e#31901#32217#1" />
+                <element signature="e#32223#32393#1" />
+                <element signature="e#32417#32563#1" />
+                <element signature="method#clearMapForDuplicates#0;class#Helper#0" />
+                <element signature="e#32977#33217#1" />
+                <element signature="e#33110#33207#1" />
+                <element signature="e#33271#33357#1" />
+                <element signature="method#findInMap#0;class#Helper#0" />
+                <element signature="e#33550#33654#1" />
+                <element signature="e#33600#33644#1" />
+                <element signature="method#verifyIfContainsOnMap#0;class#Helper#0" />
+                <element signature="e#33871#34091#1" />
+                <element signature="e#33994#34081#1" />
+                <element signature="method#verifyIfContainsOnArray#0;class#Helper#0" />
+                <element signature="e#34291#34710#1" />
+                <element signature="e#34362#34406#1" />
+                <element signature="e#34476#34520#1" />
+                <element signature="e#34656#34700#1" />
+                <element signature="method#addToMap#0;class#Helper#0" />
+                <element signature="method#addToArrayOnMap#0;class#Helper#0" />
+                <element signature="method#retrieveColumns#0;class#Helper#0" />
+                <element signature="e#35355#35408#1" />
+                <element signature="e#35500#35552#1" />
+                <element signature="e#35583#35663#1" />
+                <element signature="method#getColumn#0;class#Helper#0" />
+                <element signature="e#35756#36781#0" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -112,13 +268,14 @@
       <find>XPath_Empty</find>
       <find>Chunks came empty. Verify if the XPath is correct</find>
       <find>driver.findElement</find>
+      <find>&quot;Wrong XPath&quot;</find>
     </findStrings>
     <replaceStrings>
       <replace>HelperConstants.IP.IP_ADDRESS_INDEX</replace>
       <replace>Given I access that landing page of COS and want to go to the list of possible duplicates</replace>
       <replace>I click on the Accept Manually</replace>
-      <replace>HelperConstants.Fail.XPath_Empty</replace>
       <replace>HelperConstants.Fail.Chunks_Empty</replace>
+      <replace>HelperConstants.Fail.XPath_Empty</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -135,18 +292,18 @@
         <option value="$PROJECT_DIR$/src/test/java/StepsDefUS1.java" />
         <option value="$PROJECT_DIR$/src/test/resources/US1.feature" />
         <option value="$PROJECT_DIR$/../RepoCode/js/details.js" />
-        <option value="$PROJECT_DIR$/src/test/java/Helper/Helper.java" />
-        <option value="$PROJECT_DIR$/src/test/java/DuplicatePageTests.java" />
         <option value="$PROJECT_DIR$/src/test/resources/DuplicateFreePage.feature" />
         <option value="$PROJECT_DIR$/src/test/resources/DuplicatePage.feature" />
         <option value="$PROJECT_DIR$/src/test/resources/IndexPage.feature" />
         <option value="$PROJECT_DIR$/src/test/resources/DetailsPage.feature" />
         <option value="$PROJECT_DIR$/src/test/resources/2DetailsPage.feature" />
         <option value="$PROJECT_DIR$/src/test/resources/1IndexPage.feature" />
-        <option value="$PROJECT_DIR$/src/test/java/DuplicateFreePageTests.java" />
         <option value="$PROJECT_DIR$/src/test/java/IndexPageTests.java" />
         <option value="$PROJECT_DIR$/src/test/java/Helper/HelperConstants.java" />
         <option value="$PROJECT_DIR$/src/test/java/DetailsPageTests.java" />
+        <option value="$PROJECT_DIR$/src/test/java/DuplicatePageTests.java" />
+        <option value="$PROJECT_DIR$/src/test/java/DuplicateFreePageTests.java" />
+        <option value="$PROJECT_DIR$/src/test/java/Helper/Helper.java" />
       </list>
     </option>
   </component>
@@ -168,7 +325,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="953" />
     <option name="width" value="974" />
     <option name="height" value="1047" />
@@ -250,6 +407,10 @@
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\lnace\Desktop\IPL\Mestrado\2nd\Software Quality\Project\Repo-Tests\src\test\java" />
+      <recent name="C:\Users\lnace\Desktop\IPL\Mestrado\2nd\Software Quality\Project\Repo-Tests\src\test\resources" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -313,7 +474,7 @@
       <workItem from="1560947059379" duration="7527000" />
       <workItem from="1560957382238" duration="10637000" />
       <workItem from="1561377104260" duration="14649000" />
-      <workItem from="1561467058005" duration="15349000" />
+      <workItem from="1561467058005" duration="16191000" />
     </task>
     <task id="LOCAL-00001" summary="Staging new link">
       <created>1560938413045</created>
@@ -358,7 +519,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="197410000" />
+    <option name="totallyTimeSpent" value="198252000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -373,7 +534,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.30383795" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.30383795" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -418,21 +579,9 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/Helper/Helper.java</url>
-          <line>580</line>
-          <properties />
-          <option name="timeStamp" value="23" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/Helper/Helper.java</url>
           <line>112</line>
           <properties />
           <option name="timeStamp" value="25" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/Helper/Helper.java</url>
-          <line>595</line>
-          <properties />
-          <option name="timeStamp" value="27" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -811,79 +960,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/DuplicateFreePageTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="386" column="43" lean-forward="true" selection-start-line="386" selection-start-column="43" selection-end-line="386" selection-end-column="43" />
-          <folding>
-            <element signature="e#1260#1358#1" />
-            <element signature="e#1433#2256#1" />
-            <element signature="e#1534#1986#1" />
-            <element signature="e#2043#2173#0" />
-            <element signature="e#2194#2246#0" />
-            <element signature="method#tearDown#0;class#DuplicateFreePageTests#0" />
-            <element signature="method#iAccessThatLandingPageOfCOSAndWantToGoToTheListOfPossibleDuplicates#0;class#DuplicateFreePageTests#0" />
-            <element signature="method#iSelectRandomValues#0;class#DuplicateFreePageTests#0" />
-            <element signature="method#iClickOnTheAcceptManually#0;class#DuplicateFreePageTests#0" />
-            <element signature="method#iShouldSeeTheSameNumberOfContactsRelatedToTheNonDuplicateComponent#0;class#DuplicateFreePageTests#0" />
-            <element signature="method#iShouldSeeTheContactAsInTheDuplicateFreeDatabasePosition#0;class#DuplicateFreePageTests#0" />
-            <element signature="method#iSortColumn#0;class#DuplicateFreePageTests#0" />
-            <element signature="method#theFirstColumnShouldContainTheMostRelevantContactRegardedTheSorted#0;class#DuplicateFreePageTests#0" />
-            <element signature="method#iSearchInTheSearchBarFor#0;class#DuplicateFreePageTests#0" />
-            <element signature="method#iShouldOnlySeeColumnsThatAreRelatedToWhatISearchedFor#0;class#DuplicateFreePageTests#0" />
-            <element signature="method#iIncreaseThePaginationToValue#0;class#DuplicateFreePageTests#0" />
-            <element signature="method#iShouldBeAbleToSeeTheNumberOfContactsRelatedToThe#0;class#DuplicateFreePageTests#0" />
-            <element signature="method#iShouldBeAbleToSeeThePossibleSourcesRelatedToTheExistingDuplicates#0;class#DuplicateFreePageTests#0" />
-            <element signature="method#iWantToFilterForOne#0;class#DuplicateFreePageTests#0" />
-            <element signature="method#iShouldOnlyBeAbleToSeeTheContactsInThatSpecific#0;class#DuplicateFreePageTests#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/DuplicatePageTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="37" column="24" lean-forward="true" selection-start-line="37" selection-start-column="24" selection-end-line="37" selection-end-column="24" />
-          <folding>
-            <element signature="e#1293#1391#1" />
-            <element signature="e#1466#2484#1" />
-            <element signature="e#1567#2162#1" />
-            <element signature="e#2219#2401#0" />
-            <element signature="e#2422#2474#0" />
-            <element signature="e#2545#2641#1" />
-            <element signature="method#tearDown#0;class#DuplicatePageTests#0" />
-            <element signature="method#iAccessTheLandingPageOfCOSAndWantToGoToDuplicates#0;class#DuplicatePageTests#0" />
-            <element signature="e#3965#4011#1" />
-            <element signature="method#iShouldBeAbleToSeeTheNumberOfDuplicateContactsPossible#0;class#DuplicatePageTests#0" />
-            <element signature="method#iShouldBeAbleToSeeTheContactAsIsInTheDatabase#0;class#DuplicatePageTests#0" />
-            <element signature="method#iClickOnTheBackToIndexButton#0;class#DuplicatePageTests#0" />
-            <element signature="method#iShouldBeOnTheIndexPage#0;class#DuplicatePageTests#0" />
-            <element signature="method#iClickOnTheAcceptAutomaticallyButton#0;class#DuplicatePageTests#0" />
-            <element signature="method#iClickOnTheConfirmButton#0;class#DuplicatePageTests#0" />
-            <element signature="method#iClickOnEachPositionRandomly#0;class#DuplicatePageTests#0" />
-            <element signature="method#iClickOnTheAcceptManuallyButton#0;class#DuplicatePageTests#0" />
-            <element signature="method#iShouldBeRedirectedToTheDuplicateFreePageAuto#0;class#DuplicatePageTests#0" />
-            <element signature="method#iShouldBeRedirectedToTheDuplicateFreePageManual#0;class#DuplicatePageTests#0" />
-            <element signature="method#anAlarmShouldAppearStatingThatINeedToFillEverything#0;class#DuplicatePageTests#0" />
-            <element signature="method#iClickOnEachPositionRandomlyWhileSavingEachDeclineAccept#0;class#DuplicatePageTests#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/IndexPageTests.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="7990">
           <caret line="494" column="18" selection-start-line="494" selection-start-column="18" selection-end-line="494" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/Helper/Helper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="612" column="35" selection-start-line="612" selection-start-column="35" selection-end-line="612" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -912,6 +992,184 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="14" column="30" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/DuplicatePageTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="623">
+          <caret line="382" column="21" lean-forward="true" selection-start-line="382" selection-start-column="21" selection-end-line="382" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/Helper/Helper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="742">
+          <caret line="839" column="5" selection-start-line="839" selection-start-column="5" selection-end-line="839" selection-end-column="5" />
+          <folding>
+            <element signature="method#getInstance#0;class#Helper#0" />
+            <element signature="e#844#892#1" />
+            <element signature="n#!!doc;n#getHTML#0;n#Helper#0" />
+            <element signature="method#getHTML#0;class#Helper#0" />
+            <element signature="e#1145#3678#0" />
+            <element signature="e#1680#1732#1" />
+            <element signature="e#2034#3637#1" />
+            <element signature="e#2135#2230#1" />
+            <element signature="e#2282#2373#1" />
+            <element signature="e#2428#2522#1" />
+            <element signature="e#2575#2667#1" />
+            <element signature="e#2724#2820#1" />
+            <element signature="e#2878#2975#1" />
+            <element signature="e#3031#3166#1" />
+            <element signature="e#3220#3313#1" />
+            <element signature="e#3374#3474#1" />
+            <element signature="e#3529#3623#1" />
+            <element signature="e#3701#3745#0" />
+            <element signature="n#!!doc;n#checkIntegrityOfContact#0;n#Helper#0" />
+            <element signature="method#checkIntegrityOfContact#0;class#Helper#0" />
+            <element signature="e#4432#9548#1" />
+            <element signature="e#4514#9538#0" />
+            <element signature="e#4618#4748#1" />
+            <element signature="e#4752#4876#1" />
+            <element signature="e#4998#5128#1" />
+            <element signature="e#5132#5252#1" />
+            <element signature="e#5380#5510#1" />
+            <element signature="e#5514#5637#1" />
+            <element signature="e#5761#5891#1" />
+            <element signature="e#5895#6016#1" />
+            <element signature="e#6149#6279#1" />
+            <element signature="e#6283#6408#1" />
+            <element signature="e#6547#6733#0" />
+            <element signature="e#6752#6841#0" />
+            <element signature="e#6975#7105#1" />
+            <element signature="e#7109#7235#1" />
+            <element signature="e#7359#7489#1" />
+            <element signature="e#7493#7625#1" />
+            <element signature="e#7756#7886#1" />
+            <element signature="e#7890#8014#1" />
+            <element signature="e#8140#8270#1" />
+            <element signature="e#8274#8396#1" />
+            <element signature="e#8537#8667#1" />
+            <element signature="e#8671#8800#1" />
+            <element signature="e#8928#9058#1" />
+            <element signature="e#9063#9186#1" />
+            <element signature="n#!!doc;n#waitForSomething#0;n#Helper#0" />
+            <element signature="method#waitForSomething#0;class#Helper#0" />
+            <element signature="e#10251#20462#0" />
+            <element signature="e#10342#10911#1" />
+            <element signature="e#10368#10610#0" />
+            <element signature="e#10639#10893#0" />
+            <element signature="e#10720#10792#1" />
+            <element signature="e#11125#15870#1" />
+            <element signature="e#11151#11644#0" />
+            <element signature="e#11246#11337#1" />
+            <element signature="e#11341#11417#1" />
+            <element signature="e#11673#15852#0" />
+            <element signature="e#11755#15795#1" />
+            <element signature="e#11885#14764#1" />
+            <element signature="e#12107#12470#1" />
+            <element signature="e#12504#14734#1" />
+            <element signature="e#12703#12728#0" />
+            <element signature="e#13278#14535#1" />
+            <element signature="e#13633#14497#1" />
+            <element signature="e#13817#14455#1" />
+            <element signature="e#13905#14409#1" />
+            <element signature="e#14078#14359#1" />
+            <element signature="e#14845#15074#1" />
+            <element signature="e#15143#15769#1" />
+            <element signature="e#16090#17514#1" />
+            <element signature="e#16183#16708#0" />
+            <element signature="e#16234#16340#1" />
+            <element signature="e#16344#16420#1" />
+            <element signature="e#16737#17496#0" />
+            <element signature="e#16819#17439#1" />
+            <element signature="e#17747#18670#1" />
+            <element signature="e#17840#18412#0" />
+            <element signature="e#17891#17997#1" />
+            <element signature="e#18001#18123#1" />
+            <element signature="e#18441#18652#0" />
+            <element signature="e#18523#18595#1" />
+            <element signature="e#18895#19430#1" />
+            <element signature="e#18921#19172#0" />
+            <element signature="e#19201#19412#0" />
+            <element signature="e#19283#19355#1" />
+            <element signature="e#19651#20234#1" />
+            <element signature="e#19677#19976#0" />
+            <element signature="e#20005#20216#0" />
+            <element signature="e#20087#20159#1" />
+            <element signature="method#waitForAlert#0;class#Helper#0" />
+            <element signature="e#20641#22509#1" />
+            <element signature="e#20659#21170#0" />
+            <element signature="e#20826#20905#1" />
+            <element signature="e#20943#21156#1" />
+            <element signature="e#21199#22499#0" />
+            <element signature="e#21264#22423#1" />
+            <element signature="e#21339#22336#1" />
+            <element signature="e#21896#22314#1" />
+            <element signature="e#22209#22288#1" />
+            <element signature="e#22340#22404#1" />
+            <element signature="n#!!doc;n#orderDatabaseAndVerifyFirstContact#0;n#Helper#0" />
+            <element signature="method#orderDatabaseAndVerifyFirstContact#0;class#Helper#0" />
+            <element signature="n#!!doc;n#orderDatabase#0;n#Helper#0" />
+            <element signature="method#orderDatabase#0;class#Helper#0" />
+            <element signature="e#23840#25932#0" />
+            <element signature="n#!!doc;n#getFilteredRecordsAndVerifyThem#0;n#Helper#0" />
+            <element signature="method#getFilteredRecordsAndVerifyThem#0;class#Helper#0" />
+            <element signature="e#26754#26843#1" />
+            <element signature="e#26848#27468#1" />
+            <element signature="e#27140#27182#1" />
+            <element signature="e#27299#27458#1" />
+            <element signature="n#!!doc;n#filterDatabase#0;n#Helper#0" />
+            <element signature="method#filterDatabase#0;class#Helper#0" />
+            <element signature="e#27935#28007#1" />
+            <element signature="e#28013#28803#1" />
+            <element signature="n#!!doc;n#getFilteredOrderedRecordsAndVerifyThem#0;n#Helper#0" />
+            <element signature="method#getFilteredOrderedRecordsAndVerifyThem#0;class#Helper#0" />
+            <element signature="e#29857#29946#1" />
+            <element signature="e#29951#30571#1" />
+            <element signature="e#30243#30285#1" />
+            <element signature="e#30402#30561#1" />
+            <element signature="method#getPossibleSources#0;class#Helper#0" />
+            <element signature="e#30825#30957#1" />
+            <element signature="e#30882#30947#1" />
+            <element signature="method#getPossibleDuplicates#0;class#Helper#0" />
+            <element signature="e#31426#32587#1" />
+            <element signature="e#31521#32577#1" />
+            <element signature="e#31671#32411#1" />
+            <element signature="e#31901#32217#1" />
+            <element signature="e#32223#32393#1" />
+            <element signature="e#32417#32563#1" />
+            <element signature="method#clearMapForDuplicates#0;class#Helper#0" />
+            <element signature="e#32977#33217#1" />
+            <element signature="e#33110#33207#1" />
+            <element signature="e#33271#33357#1" />
+            <element signature="method#findInMap#0;class#Helper#0" />
+            <element signature="e#33550#33654#1" />
+            <element signature="e#33600#33644#1" />
+            <element signature="method#verifyIfContainsOnMap#0;class#Helper#0" />
+            <element signature="e#33871#34091#1" />
+            <element signature="e#33994#34081#1" />
+            <element signature="method#verifyIfContainsOnArray#0;class#Helper#0" />
+            <element signature="e#34291#34710#1" />
+            <element signature="e#34362#34406#1" />
+            <element signature="e#34476#34520#1" />
+            <element signature="e#34656#34700#1" />
+            <element signature="method#addToMap#0;class#Helper#0" />
+            <element signature="method#addToArrayOnMap#0;class#Helper#0" />
+            <element signature="method#retrieveColumns#0;class#Helper#0" />
+            <element signature="e#35355#35408#1" />
+            <element signature="e#35500#35552#1" />
+            <element signature="e#35583#35663#1" />
+            <element signature="method#getColumn#0;class#Helper#0" />
+            <element signature="e#35756#36781#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/DuplicateFreePageTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="178">
+          <caret line="542" column="57" selection-start-line="542" selection-start-column="56" selection-end-line="542" selection-end-column="57" />
         </state>
       </provider>
     </entry>
