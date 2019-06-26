@@ -1,4 +1,4 @@
-Feature: Access to the Contacts Orchestrator Solution's (COS) Landing Page
+Feature: 1 - Access to the Contacts Orchestrator Solution's (COS) Landing Page
   As a user
   I want to access to the URL address provided for the landing page
   So that I can see the list of the contacts available

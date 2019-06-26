@@ -404,8 +404,13 @@ public class Helper {
                         //Force a Reset
                         if(url != null) {
                             driver.get(url);
+                            if(url.equals(HelperConstants.IP.Address_Duplicates)){
+                                String xpath = ".//a[@id='backButton']";
+                                WebElement element = driver.findElement(By.xpath(xpath));
+                                element.click();
+                            }
+                            counter++;
                         }
-                        counter++;
                     }
                 }while(counter <= 3);
                 TestCase.fail("Timeout on waiting. - Element to be loaded" + counter);

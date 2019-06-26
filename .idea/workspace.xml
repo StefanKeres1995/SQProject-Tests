@@ -3,7 +3,20 @@
   <component name="ChangeListManager">
     <list default="true" id="3ec137f0-b6f3-4072-af66-e892def0a1f7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/2DetailsPage.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/2DetailsPage.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/test-report/report.js" beforeDir="false" afterPath="$PROJECT_DIR$/reports/test-report/report.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/DuplicateFreePageTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/DuplicateFreePageTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Helper/Helper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Helper/Helper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/3DuplicatePage.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/3DuplicatePage.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/4DuplicateFreePage.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/4DuplicateFreePage.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/DetailsPage.feature" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/DetailsPageTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/DetailsPageTests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/DuplicateFreePage.feature" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/DuplicateFreePageTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/DuplicateFreePageTests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/DuplicatePage.feature" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/DuplicatePageTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/DuplicatePageTests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/Helper/HelperConstants.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Helper/HelperConstants.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/IndexPage.feature" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/IndexPageTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/IndexPageTests.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -21,26 +34,155 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/DuplicateFreePageTests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="110">
-              <caret line="124" column="51" selection-start-line="124" selection-start-column="45" selection-end-line="124" selection-end-column="51" />
+            <state relative-caret-position="211">
+              <caret line="837" column="46" lean-forward="true" selection-start-line="837" selection-start-column="46" selection-end-line="837" selection-end-column="46" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/resources/2DetailsPage.feature">
+        <entry file="file://$PROJECT_DIR$/src/test/resources/4DuplicateFreePage.feature">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="456">
-              <caret line="38" column="10" selection-start-line="38" selection-start-column="10" selection-end-line="38" selection-end-column="10" />
+            <state relative-caret-position="170">
+              <caret line="10" column="48" selection-start-line="10" selection-start-column="48" selection-end-line="10" selection-end-column="48" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/DetailsPageTests.java">
+        <entry file="file://$PROJECT_DIR$/src/test/resources/2DetailsPage.feature">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="237">
-              <caret line="85" column="16" selection-start-line="85" selection-start-column="16" selection-end-line="85" selection-end-column="16" />
+            <state relative-caret-position="357">
+              <caret line="21" column="21" lean-forward="true" selection-end-line="58" selection-end-column="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/resources/1IndexPage.feature">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="22" column="23" lean-forward="true" selection-end-line="98" selection-end-column="54" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/Helper/Helper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="426">
+              <caret line="412" column="25" selection-start-line="412" selection-start-column="25" selection-end-line="412" selection-end-column="25" />
+              <folding>
+                <element signature="method#getInstance#0;class#Helper#0" />
+                <element signature="e#844#892#1" />
+                <element signature="n#!!doc;n#getHTML#0;n#Helper#0" />
+                <element signature="method#getHTML#0;class#Helper#0" />
+                <element signature="e#1145#3678#0" />
+                <element signature="e#1680#1732#1" />
+                <element signature="e#2034#3637#1" />
+                <element signature="e#2135#2230#1" />
+                <element signature="e#2282#2373#1" />
+                <element signature="e#2428#2522#1" />
+                <element signature="e#2575#2667#1" />
+                <element signature="e#2724#2820#1" />
+                <element signature="e#2878#2975#1" />
+                <element signature="e#3031#3166#1" />
+                <element signature="e#3220#3313#1" />
+                <element signature="e#3374#3474#1" />
+                <element signature="e#3529#3623#1" />
+                <element signature="e#3701#3745#0" />
+                <element signature="n#!!doc;n#checkIntegrityOfContact#0;n#Helper#0" />
+                <element signature="method#checkIntegrityOfContact#0;class#Helper#0" />
+                <element signature="e#4432#9548#1" />
+                <element signature="e#4514#9538#0" />
+                <element signature="e#4618#4748#1" />
+                <element signature="e#4752#4876#1" />
+                <element signature="e#4998#5128#1" />
+                <element signature="e#5132#5252#1" />
+                <element signature="e#5380#5510#1" />
+                <element signature="e#5514#5637#1" />
+                <element signature="e#5761#5891#1" />
+                <element signature="e#5895#6016#1" />
+                <element signature="e#6149#6279#1" />
+                <element signature="e#6283#6408#1" />
+                <element signature="e#6547#6733#0" />
+                <element signature="e#6752#6841#0" />
+                <element signature="e#6975#7105#1" />
+                <element signature="e#7109#7235#1" />
+                <element signature="e#7359#7489#1" />
+                <element signature="e#7493#7625#1" />
+                <element signature="e#7756#7886#1" />
+                <element signature="e#7890#8014#1" />
+                <element signature="e#8140#8270#1" />
+                <element signature="e#8274#8396#1" />
+                <element signature="e#8537#8667#1" />
+                <element signature="e#8671#8800#1" />
+                <element signature="e#8928#9058#1" />
+                <element signature="e#9063#9186#1" />
+                <element signature="n#!!doc;n#waitForSomething#0;n#Helper#0" />
+                <element signature="e#10342#10911#1" />
+                <element signature="e#10368#10610#0" />
+                <element signature="e#10639#10893#0" />
+                <element signature="e#10720#10792#1" />
+                <element signature="e#11125#15870#1" />
+                <element signature="e#11151#11644#0" />
+                <element signature="e#11246#11337#1" />
+                <element signature="e#11341#11417#1" />
+                <element signature="e#11673#15852#0" />
+                <element signature="e#11755#15795#1" />
+                <element signature="e#11885#14764#1" />
+                <element signature="e#12107#12470#1" />
+                <element signature="e#12504#14734#1" />
+                <element signature="e#12703#12728#0" />
+                <element signature="e#13278#14535#1" />
+                <element signature="e#13633#14497#1" />
+                <element signature="e#13817#14455#1" />
+                <element signature="e#13905#14409#1" />
+                <element signature="e#14078#14359#1" />
+                <element signature="e#14845#15074#1" />
+                <element signature="e#15143#15769#1" />
+                <element signature="e#16090#17514#1" />
+                <element signature="e#16183#16708#0" />
+                <element signature="e#16234#16340#1" />
+                <element signature="e#16344#16420#1" />
+                <element signature="e#16737#17496#0" />
+                <element signature="e#16819#17439#1" />
+                <element signature="e#17747#18670#1" />
+                <element signature="e#17840#18412#0" />
+                <element signature="e#17891#17997#1" />
+                <element signature="e#18001#18123#1" />
+                <element signature="e#18441#18652#0" />
+                <element signature="e#18523#18595#1" />
+                <element signature="e#19651#20234#1" />
+                <element signature="e#19677#19976#0" />
+                <element signature="e#20005#20216#0" />
+                <element signature="e#20087#20159#1" />
+                <element signature="e#20826#20905#1" />
+                <element signature="n#!!doc;n#orderDatabaseAndVerifyFirstContact#0;n#Helper#0" />
+                <element signature="method#orderDatabaseAndVerifyFirstContact#0;class#Helper#0" />
+                <element signature="n#!!doc;n#orderDatabase#0;n#Helper#0" />
+                <element signature="method#orderDatabase#0;class#Helper#0" />
+                <element signature="e#23840#25932#0" />
+                <element signature="n#!!doc;n#getFilteredRecordsAndVerifyThem#0;n#Helper#0" />
+                <element signature="e#27299#27458#1" />
+                <element signature="n#!!doc;n#filterDatabase#0;n#Helper#0" />
+                <element signature="method#filterDatabase#0;class#Helper#0" />
+                <element signature="n#!!doc;n#getFilteredOrderedRecordsAndVerifyThem#0;n#Helper#0" />
+                <element signature="method#getFilteredOrderedRecordsAndVerifyThem#0;class#Helper#0" />
+                <element signature="method#getPossibleSources#0;class#Helper#0" />
+                <element signature="method#getPossibleDuplicates#0;class#Helper#0" />
+                <element signature="method#clearMapForDuplicates#0;class#Helper#0" />
+                <element signature="method#findInMap#0;class#Helper#0" />
+                <element signature="method#verifyIfContainsOnMap#0;class#Helper#0" />
+                <element signature="method#verifyIfContainsOnArray#0;class#Helper#0" />
+                <element signature="method#addToMap#0;class#Helper#0" />
+                <element signature="method#addToArrayOnMap#0;class#Helper#0" />
+                <element signature="method#retrieveColumns#0;class#Helper#0" />
+                <element signature="method#getColumn#0;class#Helper#0" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -48,17 +190,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/resources/3DuplicatePage.feature">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="935">
-              <caret line="55" column="100" lean-forward="true" selection-start-line="55" selection-start-column="100" selection-end-line="55" selection-end-column="100" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/resources/4DuplicateFreePage.feature">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="935">
-              <caret line="55" column="30" selection-start-line="53" selection-start-column="4" selection-end-line="55" selection-end-column="30" />
+            <state relative-caret-position="343">
+              <caret line="49" lean-forward="true" selection-end-line="55" selection-end-column="100" />
             </state>
           </provider>
         </entry>
@@ -74,12 +207,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>e</find>
-      <find>NULL_STRING</find>
-      <find>LinkedList&lt;Integer&gt;</find>
-      <find>checkIntegrityOfContact</find>
-      <find>constantToVerify</find>
-      <find>getFilteredRecordsAndVerifyThem</find>
       <find>HelperConstants.IP_ADDRESS_INDEX</find>
       <find>regex</find>
       <find>pagina</find>
@@ -94,7 +221,6 @@
       <find>WaitCondition_AttributeNotToBeEmpty</find>
       <find>Given I access the landing page of COS</find>
       <find>I click on the Accept Automatically</find>
-      <find>avoidContacts</find>
       <find>valuesFromDiv</find>
       <find>HelperConstants.Fail.XPath_Empty</find>
       <find>&quot;XPath came empty. Verify if the XPath is correct&quot;</find>
@@ -104,6 +230,13 @@
       <find>driver.findElement</find>
       <find>&quot;Wrong XPath&quot;</find>
       <find>switch</find>
+      <find>click</find>
+      <find>.click()</find>
+      <find>search</find>
+      <find>Matcher</find>
+      <find>contactsTable_info</find>
+      <find>contactsToEvaluate</find>
+      <find>avoidContacts</find>
     </findStrings>
     <replaceStrings>
       <replace>HelperConstants.IP.IP_ADDRESS_INDEX</replace>
@@ -131,14 +264,16 @@
         <option value="$PROJECT_DIR$/src/test/resources/DuplicatePage.feature" />
         <option value="$PROJECT_DIR$/src/test/resources/IndexPage.feature" />
         <option value="$PROJECT_DIR$/src/test/resources/DetailsPage.feature" />
-        <option value="$PROJECT_DIR$/src/test/resources/1IndexPage.feature" />
-        <option value="$PROJECT_DIR$/src/test/java/IndexPageTests.java" />
         <option value="$PROJECT_DIR$/src/test/java/Helper/HelperConstants.java" />
         <option value="$PROJECT_DIR$/src/test/java/DetailsPageTests.java" />
         <option value="$PROJECT_DIR$/src/test/java/DuplicatePageTests.java" />
+        <option value="$PROJECT_DIR$/src/test/java/IndexPageTests.java" />
         <option value="$PROJECT_DIR$/src/test/java/Helper/Helper.java" />
         <option value="$PROJECT_DIR$/src/test/java/DuplicateFreePageTests.java" />
+        <option value="$PROJECT_DIR$/src/test/resources/1IndexPage.feature" />
         <option value="$PROJECT_DIR$/src/test/resources/2DetailsPage.feature" />
+        <option value="$PROJECT_DIR$/src/test/resources/3DuplicatePage.feature" />
+        <option value="$PROJECT_DIR$/src/test/resources/4DuplicateFreePage.feature" />
       </list>
     </option>
   </component>
@@ -174,7 +309,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -225,6 +359,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -309,7 +444,8 @@
       <workItem from="1560947059379" duration="7527000" />
       <workItem from="1560957382238" duration="10637000" />
       <workItem from="1561377104260" duration="14649000" />
-      <workItem from="1561467058005" duration="19049000" />
+      <workItem from="1561467058005" duration="22590000" />
+      <workItem from="1561504934284" duration="6491000" />
     </task>
     <task id="LOCAL-00001" summary="Staging new link">
       <created>1560938413045</created>
@@ -322,39 +458,39 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="CucumberRunner - 2019.06.25 at 14h 42m 40s.xml">
+    <history-entry file="CucumberRunner - 2019.06.26 at 01h 41m 10s.xml">
       <configuration name="CucumberRunner" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CucumberRunner - 2019.06.25 at 14h 42m 51s.xml">
+    <history-entry file="CucumberRunner - 2019.06.26 at 01h 44m 52s.xml">
       <configuration name="CucumberRunner" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CucumberRunner - 2019.06.25 at 14h 45m 51s.xml">
+    <history-entry file="CucumberRunner - 2019.06.26 at 01h 45m 36s.xml">
       <configuration name="CucumberRunner" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CucumberRunner - 2019.06.25 at 15h 01m 21s.xml">
+    <history-entry file="CucumberRunner - 2019.06.26 at 01h 47m 01s.xml">
       <configuration name="CucumberRunner" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CucumberRunner - 2019.06.25 at 15h 02m 28s.xml">
+    <history-entry file="CucumberRunner - 2019.06.26 at 01h 48m 05s.xml">
       <configuration name="CucumberRunner" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CucumberRunner - 2019.06.25 at 15h 03m 40s.xml">
+    <history-entry file="CucumberRunner - 2019.06.26 at 01h 54m 13s.xml">
       <configuration name="CucumberRunner" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CucumberRunner - 2019.06.25 at 15h 07m 07s.xml">
+    <history-entry file="CucumberRunner - 2019.06.26 at 01h 58m 51s.xml">
       <configuration name="CucumberRunner" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CucumberRunner - 2019.06.25 at 15h 13m 03s.xml">
+    <history-entry file="CucumberRunner - 2019.06.26 at 02h 03m 58s.xml">
       <configuration name="CucumberRunner" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CucumberRunner - 2019.06.25 at 15h 13m 54s.xml">
+    <history-entry file="CucumberRunner - 2019.06.26 at 02h 06m 54s.xml">
       <configuration name="CucumberRunner" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CucumberRunner - 2019.06.25 at 15h 57m 18s.xml">
+    <history-entry file="CucumberRunner - 2019.06.26 at 02h 09m 45s.xml">
       <configuration name="CucumberRunner" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="201110000" />
+    <option name="totallyTimeSpent" value="211142000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -369,7 +505,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.10607676" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15298508" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -378,7 +514,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.8080537" weight="0.3802817" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.8080537" visible="true" weight="0.3802817" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.80671144" weight="0.39219934" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -422,19 +558,44 @@
     </breakpoint-manager>
     <watches-manager>
       <configuration name="JUnit">
-        <watch expression="contactsToEvaluate.get(1).getGuid()" language="JAVA" />
-        <watch expression="contacts[1].getGuid()" language="JAVA" />
-        <watch expression="driver.findElements(By.xpath(xpath))" language="JAVA" />
-        <watch expression="driver.findElements(By.xpath(&quot;.//table[@id='contactsTable']/tbody/tr[9]/td&quot;))" language="JAVA" />
-        <watch expression="Helper.getInstance().filterDatabase(&quot;Viseu&quot;, contactsToEvaluateArr)" language="JAVA" />
-        <watch expression="contact.Guid" language="JAVA" />
-        <watch expression="webElementList.get(position).findElement(By.xpath(&quot;a&quot;)).getAttribute(&quot;href&quot;).split(&quot;id&quot;)[1].substring(1)" language="JAVA" />
-        <watch expression="webElementList.get(position).getText()" language="JAVA" />
+        <watch expression="searchedStringOriginalSize" language="JAVA" />
+        <watch expression="Integer.parseInt(chunks.get(chunks.size() - 2))" language="JAVA" />
+        <watch expression="Helper.getInstance().filterDatabase(searchedString, contactsToEvaluateArr)" language="JAVA" />
       </configuration>
     </watches-manager>
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="watch">
+      <expression>
+        <expression-string>Helper.getInstance().filterDatabase(searchedString, contactsToEvaluateArr)</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>Integer.parseInt(chunks.get(chunks.size() - 2))</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>searchedStringOriginalSize</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>driver.getCurrentUrl().substring(driver.getCurrentUrl().indexOf(&quot;=&quot;) + 1)</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>driver.getCurrentUrl().substring(driver.getCurrentUrl().indexOf(&quot;=&quot;)) + 2</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>driver.getCurrentUrl().substring(driver.getCurrentUrl().indexOf(&quot;=&quot;)) + 2)</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
       <expression>
         <expression-string>contact.Guid</expression-string>
         <language-id>JAVA</language-id>
@@ -452,36 +613,6 @@
       </expression>
       <expression>
         <expression-string>webElementList.get(position).findElement(By.xpath(&quot;a&quot;)).getAttribute(&quot;href&quot;).split(&quot;id&quot;)[i]</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>webElementList.get(position).findElement(By.xpath(&quot;a&quot;)).getAttribute(&quot;href&quot;).split(&quot;id&quot;)</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>contact.getCity()</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>contact</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>webElementList.get(position).getText()</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>contact.getSource()</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>Helper.getInstance().filterDatabase(&quot;Viseu&quot;, contactsToEvaluateArr)</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
@@ -747,13 +878,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/info/cukes/cucumber-core/1.2.5/cucumber-core-1.2.5.jar!/cucumber/runtime/Utils.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="56" selection-start-line="56" selection-end-line="56" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/com/google/guava/guava/23.6-jre/guava-23.6-jre.jar!/com/google/common/collect/ImmutableBiMap.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
@@ -781,13 +905,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/IndexPageTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7990">
-          <caret line="494" column="18" selection-start-line="494" selection-start-column="18" selection-end-line="494" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/Helper/HelperConstants.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -795,10 +912,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/DetailsPageTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="305">
+          <caret line="89" selection-start-line="89" selection-end-line="89" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/IndexPageTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="502" column="180" selection-start-line="502" selection-start-column="8" selection-end-line="502" selection-end-column="180" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/DuplicatePageTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="419">
+          <caret line="283" column="9" lean-forward="true" selection-start-line="254" selection-start-column="8" selection-end-line="283" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/Helper/Helper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="742">
-          <caret line="839" column="5" selection-start-line="839" selection-start-column="5" selection-end-line="839" selection-end-column="5" />
+        <state relative-caret-position="426">
+          <caret line="412" column="25" selection-start-line="412" selection-start-column="25" selection-end-line="412" selection-end-column="25" />
           <folding>
             <element signature="method#getInstance#0;class#Helper#0" />
             <element signature="e#844#892#1" />
@@ -847,8 +985,6 @@
             <element signature="e#8928#9058#1" />
             <element signature="e#9063#9186#1" />
             <element signature="n#!!doc;n#waitForSomething#0;n#Helper#0" />
-            <element signature="method#waitForSomething#0;class#Helper#0" />
-            <element signature="e#10251#20462#0" />
             <element signature="e#10342#10911#1" />
             <element signature="e#10368#10610#0" />
             <element signature="e#10639#10893#0" />
@@ -882,129 +1018,78 @@
             <element signature="e#18001#18123#1" />
             <element signature="e#18441#18652#0" />
             <element signature="e#18523#18595#1" />
-            <element signature="e#18895#19430#1" />
-            <element signature="e#18921#19172#0" />
-            <element signature="e#19201#19412#0" />
-            <element signature="e#19283#19355#1" />
             <element signature="e#19651#20234#1" />
             <element signature="e#19677#19976#0" />
             <element signature="e#20005#20216#0" />
             <element signature="e#20087#20159#1" />
-            <element signature="method#waitForAlert#0;class#Helper#0" />
-            <element signature="e#20641#22509#1" />
-            <element signature="e#20659#21170#0" />
             <element signature="e#20826#20905#1" />
-            <element signature="e#20943#21156#1" />
-            <element signature="e#21199#22499#0" />
-            <element signature="e#21264#22423#1" />
-            <element signature="e#21339#22336#1" />
-            <element signature="e#21896#22314#1" />
-            <element signature="e#22209#22288#1" />
-            <element signature="e#22340#22404#1" />
             <element signature="n#!!doc;n#orderDatabaseAndVerifyFirstContact#0;n#Helper#0" />
             <element signature="method#orderDatabaseAndVerifyFirstContact#0;class#Helper#0" />
             <element signature="n#!!doc;n#orderDatabase#0;n#Helper#0" />
             <element signature="method#orderDatabase#0;class#Helper#0" />
             <element signature="e#23840#25932#0" />
             <element signature="n#!!doc;n#getFilteredRecordsAndVerifyThem#0;n#Helper#0" />
-            <element signature="method#getFilteredRecordsAndVerifyThem#0;class#Helper#0" />
-            <element signature="e#26754#26843#1" />
-            <element signature="e#26848#27468#1" />
-            <element signature="e#27140#27182#1" />
             <element signature="e#27299#27458#1" />
             <element signature="n#!!doc;n#filterDatabase#0;n#Helper#0" />
             <element signature="method#filterDatabase#0;class#Helper#0" />
-            <element signature="e#27935#28007#1" />
-            <element signature="e#28013#28803#1" />
             <element signature="n#!!doc;n#getFilteredOrderedRecordsAndVerifyThem#0;n#Helper#0" />
             <element signature="method#getFilteredOrderedRecordsAndVerifyThem#0;class#Helper#0" />
-            <element signature="e#29857#29946#1" />
-            <element signature="e#29951#30571#1" />
-            <element signature="e#30243#30285#1" />
-            <element signature="e#30402#30561#1" />
             <element signature="method#getPossibleSources#0;class#Helper#0" />
-            <element signature="e#30825#30957#1" />
-            <element signature="e#30882#30947#1" />
             <element signature="method#getPossibleDuplicates#0;class#Helper#0" />
-            <element signature="e#31426#32587#1" />
-            <element signature="e#31521#32577#1" />
-            <element signature="e#31671#32411#1" />
-            <element signature="e#31901#32217#1" />
-            <element signature="e#32223#32393#1" />
-            <element signature="e#32417#32563#1" />
             <element signature="method#clearMapForDuplicates#0;class#Helper#0" />
-            <element signature="e#32977#33217#1" />
-            <element signature="e#33110#33207#1" />
-            <element signature="e#33271#33357#1" />
             <element signature="method#findInMap#0;class#Helper#0" />
-            <element signature="e#33550#33654#1" />
-            <element signature="e#33600#33644#1" />
             <element signature="method#verifyIfContainsOnMap#0;class#Helper#0" />
-            <element signature="e#33871#34091#1" />
-            <element signature="e#33994#34081#1" />
             <element signature="method#verifyIfContainsOnArray#0;class#Helper#0" />
-            <element signature="e#34291#34710#1" />
-            <element signature="e#34362#34406#1" />
-            <element signature="e#34476#34520#1" />
-            <element signature="e#34656#34700#1" />
             <element signature="method#addToMap#0;class#Helper#0" />
             <element signature="method#addToArrayOnMap#0;class#Helper#0" />
             <element signature="method#retrieveColumns#0;class#Helper#0" />
-            <element signature="e#35355#35408#1" />
-            <element signature="e#35500#35552#1" />
-            <element signature="e#35583#35663#1" />
             <element signature="method#getColumn#0;class#Helper#0" />
-            <element signature="e#35756#36781#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/DuplicatePageTests.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/info/cukes/cucumber-core/1.2.5/cucumber-core-1.2.5.jar!/cucumber/runtime/Utils.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="637">
-          <caret line="382" column="21" lean-forward="true" selection-start-line="382" selection-start-column="21" selection-end-line="382" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/resources/1IndexPage.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="30" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
+        <state relative-caret-position="-85">
+          <caret line="39" selection-start-line="39" selection-end-line="39" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/DuplicateFreePageTests.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="124" column="51" selection-start-line="124" selection-start-column="45" selection-end-line="124" selection-end-column="51" />
+        <state relative-caret-position="211">
+          <caret line="837" column="46" lean-forward="true" selection-start-line="837" selection-start-column="46" selection-end-line="837" selection-end-column="46" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/DetailsPageTests.java">
+    <entry file="file://$PROJECT_DIR$/src/test/resources/1IndexPage.feature">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="85" column="16" selection-start-line="85" selection-start-column="16" selection-end-line="85" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/resources/4DuplicateFreePage.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="935">
-          <caret line="55" column="30" selection-start-line="53" selection-start-column="4" selection-end-line="55" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/resources/3DuplicatePage.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="935">
-          <caret line="55" column="100" lean-forward="true" selection-start-line="55" selection-start-column="100" selection-end-line="55" selection-end-column="100" />
+        <state relative-caret-position="323">
+          <caret line="22" column="23" lean-forward="true" selection-end-line="98" selection-end-column="54" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/resources/2DetailsPage.feature">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="38" column="10" selection-start-line="38" selection-start-column="10" selection-end-line="38" selection-end-column="10" />
+        <state relative-caret-position="357">
+          <caret line="21" column="21" lean-forward="true" selection-end-line="58" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resources/3DuplicatePage.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="343">
+          <caret line="49" lean-forward="true" selection-end-line="55" selection-end-column="100" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resources/4DuplicateFreePage.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="48" selection-start-line="10" selection-start-column="48" selection-end-line="10" selection-end-column="48" />
         </state>
       </provider>
     </entry>

@@ -48,7 +48,7 @@ Feature: Access to the Contacts Orchestrator Solution's (COS) Duplicates page
     And I click on the Confirm button
     Then An Alarm should appear stating that I need to fill everything
 
-  Scenario: Duplicate page's After filtering, go to DuplicateFree with all duplicatefree contacts
+  Scenario: Duplicate page's After filtering, go to DuplicateFree with all duplicate free contacts
     Given I access the landing page of COS and want to go to duplicates
     And I click on each position, randomly while saving each Decline/Accept
     And I click on the Accept Manually button

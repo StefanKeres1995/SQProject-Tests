@@ -2,7 +2,6 @@ import Helper.Helper;
 import Helper.HelperConstants;
 import Model.Contact;
 import Model.ContactConstants;
-import cucumber.api.PendingException;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.And;
@@ -14,14 +13,18 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import static junit.framework.TestCase.assertEquals;
-import static junit.framework.TestCase.fail;
+import static junit.framework.TestCase.*;
 
 public class DuplicateFreePageTests {
     private static WebDriver driver;
@@ -32,6 +35,9 @@ public class DuplicateFreePageTests {
     private static LinkedList<Integer> constantToVerify = new LinkedList<>();
 
     private static LinkedList<Contact> avoidContacts = null;
+
+    private static String searchedString = "";
+    private static int searchedStringOriginalSize = 0;
 
     @Before
     public void setUp() {
@@ -563,6 +569,353 @@ public class DuplicateFreePageTests {
 
                     //Get last position -- That's where the size is!
                     assertEquals(filtered.size(), Integer.parseInt(chunks.get(chunks.size() - 1)));
+                }else{
+                    fail(HelperConstants.Fail.Chunks_Empty);
+                }
+            }else{
+                fail(HelperConstants.Fail.XPath_Empty);
+            }
+        }else{
+            fail(HelperConstants.Fail.XPath_Empty);
+        }
+    }
+
+    @And("^I click on the \"([^\"]*)\" of a contact, related to details$")
+    public void iClickOnTheOfAContactRelatedToDetails(String positionString) throws InterruptedException {
+        //Remove all contacts related to the avoid
+        LinkedList<Contact> contactsToEvaluate = new LinkedList<>(Arrays.asList(contacts));
+        contactsToEvaluate.removeAll(avoidContacts);
+
+        int position = 0;
+        switch (positionString){
+            case "first":
+                position = 1;
+                break;
+            case "half-middle1":
+                position = (int) Math.floor(contactsToEvaluate.size() / 4);
+                break;
+            case "middle":
+                position = (int) Math.floor(contactsToEvaluate.size() / 2);
+                break;
+            case "half-middle2":
+                position = (int) Math.floor(3 * contactsToEvaluate.size() / 4);
+                break;
+            case "last":
+                position = contactsToEvaluate.size() - 1;
+                break;
+            default:
+                fail("String is not recognized");
+        }
+
+        //Split this value into two positions Example -- 216 -- 21 clicks, and search on the 6th position of the table.
+        int numberOfClicks;
+        int positionOnTable;
+        if(String.valueOf(position).length() == 1){
+            //We are between 1 and 9. We can't split
+            numberOfClicks = 0;
+            positionOnTable = position;
+        }else{
+            numberOfClicks = Integer.parseInt(String.valueOf(position).substring(0, String.valueOf(position).length() - 1));
+            positionOnTable = Integer.parseInt(String.valueOf(position).substring(String.valueOf(position).length() - 1));
+        }
+
+        //Click the number of appropriate times on the Next button
+        WebElement nextButtonPagination;
+        for (int i = 0; i < numberOfClicks; i++) {
+
+            nextButtonPagination = driver.findElement(By.xpath(".//a[@id='contactsTable_next']"));
+            if (nextButtonPagination != null) {
+                nextButtonPagination.click();
+                Thread.sleep(100);
+            } else {
+                fail(HelperConstants.Fail.XPath_Empty);
+            }
+        }
+
+        //Get the elements that are related to the XPath
+        String xpath = ".//table[@id='contactsTable']/tbody/tr[" + positionOnTable + "]/td";
+        List<WebElement> valuesFromTable = driver.findElements(By.xpath(xpath));
+
+        if(!valuesFromTable.isEmpty()){
+
+            //Click
+            valuesFromTable.get(valuesFromTable.size() - 1).click();
+
+            WebDriverWait wait = new WebDriverWait(driver, HelperConstants.TimeToWait);
+            wait.until(ExpectedConditions.numberOfElementsToBeMoreThan(By.xpath(".//table[@id='detailsTable']"), 0));
+
+            assertEquals("Details", driver.getTitle());
+        }else{
+            fail(HelperConstants.Fail.XPath_Empty);
+        }
+    }
+
+    @Then("^I should be in the details of the specific contact, related to \"([^\"]*)\"$")
+    public void iShouldBeInTheDetailsOfTheSpecificContactRelatedTo(String positionString) {
+
+        String xpath = ".//table[@id='detailsTable']";
+
+        List<WebElement> elements = driver.findElements(By.xpath(xpath));
+
+        if(!elements.isEmpty()){
+            //Remove all contacts related to the avoid
+            LinkedList<Contact> contactsToEvaluate = new LinkedList<>(Arrays.asList(contacts));
+            contactsToEvaluate.removeAll(avoidContacts);
+
+            int position = 0;
+            switch (positionString){
+                case "first":
+                    position = 1;
+                    break;
+                case "half-middle1":
+                    position = (int) Math.floor(contactsToEvaluate.size() / 4);
+                    break;
+                case "middle":
+                    position = (int) Math.floor(contactsToEvaluate.size() / 2);
+                    break;
+                case "half-middle2":
+                    position = (int) Math.floor(3 * contactsToEvaluate.size() / 4);
+                    break;
+                case "last":
+                    position = contactsToEvaluate.size() - 1;
+                    break;
+                default:
+                    fail("String is not recognized");
+            }
+
+            assertEquals(contactsToEvaluate.get(position - 1).getGuid(), driver.getCurrentUrl().substring(driver.getCurrentUrl().indexOf("=") + 1));
+
+        }else{
+            fail(HelperConstants.Fail.XPath_Empty);
+        }
+    }
+
+    @When("^I see the first table remember the name of the first position$")
+    public void iSeeTheFirstTableRememberTheNameOfTheFirstPosition() {
+
+        String xpath = ".//form[@id='FormTableArea']/section[1]/table/tbody/tr[1]/td[1]";
+
+        WebElement element = driver.findElement(By.xpath(xpath));
+        if(element != null){
+            searchedString = element.getText();
+        }else{
+            fail(HelperConstants.Fail.XPath_Empty);
+        }
+    }
+
+    @And("^I go back to the Index$")
+    public void iGoBackToTheIndex() throws InterruptedException {
+        String xpath = ".//a[@id='backButton']";
+
+        WebElement element = driver.findElement(By.xpath(xpath));
+        if(element != null){
+            element.click();
+            Helper.getInstance().waitForSomething(driver, HelperConstants.TimeToWait, HelperConstants.WaitCondition_ElementToBeLoaded, ".//table[@id='contactsTable']/tbody/tr[2]/td", HelperConstants.IP.Address_Duplicates);
+        }else{
+            fail(HelperConstants.Fail.XPath_Empty);
+        }
+    }
+
+    @And("^I search for the remembered name$")
+    public void iSearchForTheRememberedName() throws InterruptedException {
+        //XPath to the correct position
+        String xpath = ".//div[@id='contactsTable_filter']/label/input";
+
+        //Wait for the position related to the XPath is clickable (If it exists)
+        Helper.getInstance().waitForSomething(driver, HelperConstants.TimeToWait, HelperConstants.WaitCondition_ElementToBeClickable, xpath, HelperConstants.IP.Address_Index);
+
+        //Get the elements that are related to the XPath
+        WebElement valuesFromSearch = driver.findElement(By.xpath(xpath));
+
+        if (valuesFromSearch != null){
+            //Write on the search bar
+            valuesFromSearch.sendKeys(searchedString);
+        }else{
+            fail(HelperConstants.Fail.XPath_Empty);
+        }
+    }
+
+    @And("^I annotate how many values were gotten$")
+    public void iAnnotateHowManyValuesWereGotten() throws InterruptedException {
+
+        //XPath to the correct position
+        String xpath = ".//div[@id='contactsTable_info']";
+
+        //Wait for the position related to the XPath to be clickable (If it exists)
+        Helper.getInstance().waitForSomething(driver, HelperConstants.TimeToWait, HelperConstants.WaitCondition_ElementToBeClickable, xpath, HelperConstants.IP.Address_Index);
+
+        //Get the elements that are related to the XPath
+        List<WebElement> valuesFromDiv = driver.findElements(By.xpath(xpath));
+
+        //Did the div returned an empty List?
+        if (!valuesFromDiv.isEmpty()) {
+            //Split the gotten string into several sub-strings, were we only get the Integers from the string (And the first Letter, for some reason).
+
+            //Wait for the position related to the XPath to be clickable (If it exists)
+            Helper.getInstance().waitForSomething(driver, HelperConstants.TimeToWait, HelperConstants.WaitCondition_ElementToBeClickable, xpath, HelperConstants.IP.Address_Index);
+
+            Thread.sleep(1000);
+
+            //Get the elements that are related to the XPath
+            valuesFromDiv = driver.findElements(By.xpath(xpath));
+
+            if (!valuesFromDiv.isEmpty()) {
+                List<String> chunks = new LinkedList<>();
+                Matcher matcher = Pattern.compile("[0-9]+|[A-Z]+").matcher(valuesFromDiv.get(0).getText());
+                while (matcher.find()) {
+                    chunks.add(matcher.group());
+                }
+
+                if (!chunks.isEmpty()) {
+                    searchedStringOriginalSize = Integer.parseInt(chunks.get(chunks.size() - 2));
+                }else{
+                    fail(HelperConstants.Fail.Chunks_Empty);
+                }
+            }else{
+                fail(HelperConstants.Fail.XPath_Empty);
+            }
+        }else{
+            fail(HelperConstants.Fail.XPath_Empty);
+        }
+    }
+
+    @And("^I access the Duplicate page again$")
+    public void iAccessTheDuplicatePageAgain() throws InterruptedException {
+
+        String xpath = ".//a[@id='duplicateButton']";
+
+        //Get Button
+        WebElement button = driver.findElement(By.xpath(xpath));
+        if(button != null){
+            button.click();
+
+            Helper.getInstance().waitForSomething(driver, HelperConstants.TimeToWait, HelperConstants.WaitCondition_TitleContains, "Duplicates", HelperConstants.IP.Address_Duplicates);
+        }else{
+            fail(HelperConstants.Fail.XPath_Empty);
+        }
+    }
+
+    @And("^I select random values except the first table$")
+    public void iSelectRandomValuesExceptTheFirstTable() throws InterruptedException {
+        //XPath to the correct position
+        String xpath = ".//form[@id='FormTableArea']";
+
+        Helper.getInstance().waitForSomething(driver, HelperConstants.TimeToWait, HelperConstants.WaitCondition_NumberOfElementsMoreThan, xpath, HelperConstants.IP.Address_Duplicates);
+
+        xpath = ".//form[@id='FormTableArea']/section";
+
+        Thread.sleep(300);
+
+        List<WebElement> listOfSections = driver.findElements(By.xpath(xpath));
+
+        if(!listOfSections.isEmpty()){
+
+            List<WebElement> tableRows, rows;
+            int position;
+
+            //Decline the first position
+            tableRows = listOfSections.get(0).findElements(By.xpath("table/tbody/tr"));
+            if (!tableRows.isEmpty()) {
+                for (WebElement tableRow : tableRows) {
+                    rows = tableRow.findElements(By.xpath("td"));
+                    if (!rows.isEmpty()) {
+                        rows.get(rows.size() - 1).findElement(By.xpath("div")).click();
+                        avoidContacts.add(contacts[Integer.parseInt(tableRow.findElement(By.xpath("th")).getText()) - 1]);
+                    } else {
+                        fail(HelperConstants.Fail.XPath_Empty);
+                    }
+                }
+            }else{
+                fail(HelperConstants.Fail.XPath_Empty);
+            }
+
+            listOfSections.remove(0);
+            for (WebElement listOfSection : listOfSections) {
+                tableRows = listOfSection.findElements(By.xpath("table/tbody/tr"));
+                if (!tableRows.isEmpty()) {
+                    for (WebElement tableRow : tableRows) {
+                        rows = tableRow.findElements(By.xpath("td"));
+                        if (!rows.isEmpty()) {
+                            position = (Math.random() <= 0.5) ? 1 : 2;
+                            rows.get(rows.size() - position).findElement(By.xpath("div")).click();
+                            //This means we are declining a contact. Add it to the contact List.
+                            if(position == 1){
+                                //Get possible positions of this contact
+                                avoidContacts.add(contacts[Integer.parseInt(tableRow.findElement(By.xpath("th")).getText()) - 1]);
+                            }
+                        } else {
+                            fail(HelperConstants.Fail.XPath_Empty);
+                        }
+                    }
+                } else {
+                    fail(HelperConstants.Fail.XPath_Empty);
+                }
+            }
+        }else{
+            fail(HelperConstants.Fail.XPath_Empty);
+        }
+    }
+
+    @And("^I search for the name regarding the remembered name$")
+    public void iSearchForTheNameRegardingTheRememberedName() throws InterruptedException {
+        //XPath to the correct position
+        String xpath = ".//div[@id='contactsTable_filter']/label/input";
+
+        //Wait for the position related to the XPath is clickable (If it exists)
+        Helper.getInstance().waitForSomething(driver, HelperConstants.TimeToWait, HelperConstants.WaitCondition_ElementToBeClickable, xpath, HelperConstants.IP.Address_Duplicates_Free);
+
+        //Get the elements that are related to the XPath
+        WebElement valuesFromSearch = driver.findElement(By.xpath(xpath));
+
+        if (valuesFromSearch != null){
+            //Write on the search bar
+            valuesFromSearch.sendKeys(searchedString);
+        }else{
+            fail(HelperConstants.Fail.XPath_Empty);
+        }
+    }
+
+    @Then("^I should have less results than the value gotten before$")
+    public void iShouldHaveLessResultsThanTheValueGottenBefore() throws InterruptedException {
+
+        String xpath = ".//div[@id='contactsTable_info']";
+
+        //Wait for the position related to the XPath to be clickable (If it exists)
+        Helper.getInstance().waitForSomething(driver, HelperConstants.TimeToWait, HelperConstants.WaitCondition_ElementToBeClickable, xpath, HelperConstants.IP.Address_Index);
+
+        //Get the elements that are related to the XPath
+        List<WebElement> valuesFromDiv = driver.findElements(By.xpath(xpath));
+
+        //Did the div returned an empty List?
+        if (!valuesFromDiv.isEmpty()) {
+            //Split the gotten string into several sub-strings, were we only get the Integers from the string (And the first Letter, for some reason).
+
+            //Wait for the position related to the XPath to be clickable (If it exists)
+            Helper.getInstance().waitForSomething(driver, HelperConstants.TimeToWait, HelperConstants.WaitCondition_ElementToBeClickable, xpath, HelperConstants.IP.Address_Index);
+
+            Thread.sleep(1000);
+
+            //Get the elements that are related to the XPath
+            valuesFromDiv = driver.findElements(By.xpath(xpath));
+
+            if (!valuesFromDiv.isEmpty()) {
+                List<String> chunks = new LinkedList<>();
+                Matcher matcher = Pattern.compile("[0-9]+|[A-Z]+").matcher(valuesFromDiv.get(0).getText());
+                while (matcher.find()) {
+                    chunks.add(matcher.group());
+                }
+
+                if (!chunks.isEmpty()) {
+                    assertNotSame(searchedStringOriginalSize, Integer.parseInt(chunks.get(chunks.size() - 2)));
+
+                    //Make our own search and see if they are equal as well!
+                    //Remove all contacts related to the avoid
+                    LinkedList<Contact> contactsToEvaluate = new LinkedList<>(Arrays.asList(contacts));
+                    contactsToEvaluate.removeAll(avoidContacts);
+                    Contact[] contactsToEvaluateArr = new Contact[contactsToEvaluate.size()];
+                    contactsToEvaluateArr = contactsToEvaluate.toArray(contactsToEvaluateArr);
+
+                    assertEquals(Integer.parseInt(chunks.get(chunks.size() - 2)), Helper.getInstance().filterDatabase(searchedString, contactsToEvaluateArr).size());
                 }else{
                     fail(HelperConstants.Fail.Chunks_Empty);
                 }

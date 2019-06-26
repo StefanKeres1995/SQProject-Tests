@@ -3,8 +3,6 @@ Feature: Access to the Contacts Orchestrator Solution's (COS) Landing Page
   I want to access to the URL address provided for the details page
   So that I can see the details of the searched user
 
-
-  #Verify if details button is working
   Scenario Outline: Contacts table contains the details button and redirects to the Details page
     Given I access the landing page of COS
     When I click on the Details button on row with id "<position>"
@@ -18,7 +16,6 @@ Feature: Access to the Contacts Orchestrator Solution's (COS) Landing Page
       | half-middle2  |
       | last          |
 
-  #Verify wrong link on details page
   Scenario Outline: Badly formatted contact link on Details page
     Given I enter the details page with the following case "<case>"
     Then I should be presented with an alarm box
@@ -39,6 +36,7 @@ Feature: Access to the Contacts Orchestrator Solution's (COS) Landing Page
     Examples:
     | id |
     | 5  |
+    | 15 |
 
   Scenario Outline: Image being correctly loaded from K8
     Given I access the landing page of COS and want to see the details of contact "<id>"

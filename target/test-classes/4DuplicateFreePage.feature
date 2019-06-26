@@ -119,3 +119,31 @@ Feature: Access to the Contacts Orchestrator Solution's (COS) Duplicates Free pa
       | Facebook |
       | LinkedIn |
       | Skype    |
+
+  Scenario Outline: Duplicate Free Page contains the selector related to the source
+    Given I access that landing page of COS and want to go to the list of possible duplicates
+    When I select random values
+    And I click on the Accept Manually
+    And I click on the Confirm
+    And I click on the "<position>" of a contact, related to details
+    Then I should be in the details of the specific contact, related to "<position>"
+
+    Examples:
+      | position      |
+      | first         |
+      | half-middle1  |
+      | middle        |
+      | half-middle2  |
+      | last          |
+
+  Scenario: Duplicate Free page does in fact hide those contacts that were ommited
+    Given I access that landing page of COS and want to go to the list of possible duplicates
+    When I see the first table remember the name of the first position
+    And I go back to the Index
+    And I search for the remembered name
+    And I annotate how many values were gotten
+    And I access the Duplicate page again
+    And I select random values except the first table
+    And I click on the Confirm
+    And I search for the name regarding the remembered name
+    Then I should have less results than the value gotten before
